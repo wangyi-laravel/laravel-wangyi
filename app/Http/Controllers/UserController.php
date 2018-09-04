@@ -53,6 +53,7 @@ class UserController extends Controller
         $user -> name = $request->name;
         $user -> phone = $request->phone;
         $user -> sex = $request->sex;
+        $user -> weight = $request->weight;
         $user -> site = $request->site;
         $user -> jifen = $request->jifen;
         // dd($request->post());
@@ -109,6 +110,7 @@ class UserController extends Controller
         $user -> name = $request->name;
         $user -> phone = $request->phone;
         $user -> sex = $request->sex;
+        $user -> weight = $request->weight;
         $user -> site = $request->site;
         $user -> jifen = $request->jifen;
         // dd($request->post());
