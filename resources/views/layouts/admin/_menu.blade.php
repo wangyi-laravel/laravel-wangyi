@@ -21,61 +21,86 @@
             </li>
         </ul>
     </li>
-    
     <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-<<<<<<< HEAD
-            <span>商品属性管理</span>
-=======
-            <span>商品管理</span>
->>>>>>> 4f9b66c70055b7cdfc1e067dec4b1e49ef779d09
+            <span>文章管理</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-<<<<<<< HEAD
-                <a href="/attr/create">
+                <a href="/article/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性添加</span>
+                    <span>文章添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/attr">
+                <a href="/article">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性列表</span>
-=======
-                <a href="/good/create">
-                    <i class="am-icon-angle-right"></i>
-                    <span>商品添加</span>
-                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                </a>
-
-                <a href="/good">
-                    <i class="am-icon-angle-right"></i>
-                    <span>商品列表</span>
->>>>>>> 4f9b66c70055b7cdfc1e067dec4b1e49ef779d09
+                    <span>文章列表</span>
                 </a>
             </li>
         </ul>
     </li>
-    <li class="tpl-left-nav-item">
+        <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>商品属性值管理</span>
+            <span>友情链接管理</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="#">
+                <a href="/link/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性值添加</span>
+                    <span>友情链接添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="#">
+                <a href="/link">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性值列表</span>
+                    <span>友情链接列表</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+        <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>分类管理</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/cate/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>分类添加</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/cate">
+                    <i class="am-icon-angle-right"></i>
+                    <span>分类列表</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+        <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>标签管理</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/tag/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>标签添加</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/tag">
+                    <i class="am-icon-angle-right"></i>
+                    <span>标签列表</span>
                 </a>
             </li>
         </ul>

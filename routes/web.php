@@ -22,7 +22,7 @@ Route::get('/admin',function(){
 
 //后台用户
 
-<<<<<<< HEAD
+
 Route::resource('user','UserController');
 
 //后台商品属性
@@ -46,6 +46,6 @@ Route::resource('eval','EvalController');
 //后台标签
 Route::resource('tag','TagController');
 
-=======
->>>>>>> 4f9b66c70055b7cdfc1e067dec4b1e49ef779d09
+//后台商品管理
+Route::resource('good','GoodController');
 
