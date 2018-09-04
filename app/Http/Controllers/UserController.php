@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -36,6 +37,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+         // dd($request->all());
+        $user = new User;
+
+        $user -> username = $request->username;
+        $user -> username = $request->username;
+        $user -> username = $request->username;
+        $user -> username = $request->username;
+        $user -> username = $request->username;
+
+        if($user -> save()){
+            return redirect('/user')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
