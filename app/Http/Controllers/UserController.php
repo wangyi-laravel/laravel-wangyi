@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -103,7 +104,7 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-
+        
         $user -> username = $request->username;
         $user -> name = $request->name;
         $user -> phone = $request->phone;
