@@ -24,6 +24,14 @@
                         </div>
                     </div>
 
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">权限 <span class="tpl-form-line-small-title">password</span></label>
+                        <div class="am-u-sm-9">
+                            <input type="radio" @if($user->weight == 1) checked @endif name="weight" value="1">管理员
+                            <input type="radio" @if($user->weight == 2) checked @endif name="weight" value="2">普通用户
+                            <small></small>
+                        </div>
+                    </div>
 
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">昵称 <span class="tpl-form-line-small-title">name</span></label>

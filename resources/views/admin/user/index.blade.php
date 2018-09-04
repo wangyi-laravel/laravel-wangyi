@@ -51,6 +51,7 @@
                                 <th class="table-id">ID</th>
                                 <th class="table-title">用户名</th>
                                 <th class="table-set">昵称</th>
+                                <th class="table-set">权限</th>
                                 <th class="table-set">手机号</th>
                                 <th class="table-set">头像</th>
                                 <th class="table-set">性别</th>
@@ -68,11 +69,26 @@
                                 <td>{{$v['id']}}</td>
                                 <td class="am-hide-sm-only">{{$v['username']}}</td>
                                 <td class="am-hide-sm-only">{{$v['name']}}</td>
+                                <td class="am-hide-sm-only">
+                                @if($v['weight'] == 1)
+                                        管理员
+                                @endif
+                                @if($v['weight'] == 2)
+                                        普通用户
+                                @endif
+                                </td>
                                 <td class="am-hide-sm-only">{{$v['phone']}}</td>
                                 <td class="am-hide-sm-only">
                                     <img src="{{$v['image']}}" width="50" height="50">
                                 </td>
-                                <td class="am-hide-sm-only">{{$v['sex']}}</td>
+                                <td class="am-hide-sm-only">
+                                @if($v['sex'] == 0)
+                                        男
+                                @endif
+                                @if($v['sex'] == 1)
+                                        女
+                                @endif
+                                </td>
                                 <td class="am-hide-sm-only">{{$v['site']}}</td>
                                 <td class="am-hide-sm-only">{{$v['jifen']}}</td>
                                 <td>
