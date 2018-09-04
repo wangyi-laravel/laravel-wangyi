@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cate_1;
 use Illuminate\Http\Request;
 
 class Cate_1Controller extends Controller
@@ -13,7 +14,12 @@ class Cate_1Controller extends Controller
      */
     public function index()
     {
-        //
+        //¶ÁÈ¡Êý¾Ý¿â »ñÈ¡ÓÃ»§Êý¾Ý
+        $cates = Cate_1::orderBy('id','desc')
+            ->where('name','like', '%'.request()->keywords.'%')
+            ->get();
+        //½âÎöÄ£°åÏÔÊ¾ÓÃ»§Êý¾Ý
+        return view('admin.cate.index', ['cates'=>$cates]);
     }
 
     /**
@@ -23,8 +29,9 @@ class Cate_1Controller extends Controller
      */
     public function create()
     {
-        //分类
+        //·ÖÀà
         return view('admin.cate.create');
+
     }
 
     /**
@@ -35,7 +42,16 @@ class Cate_1Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cate = new Cate_1;
+
+        $cate -> name = $request->name;
+        if($cate -> save()){
+            return redirect('/cate_1')->with('success', '更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        } 
+
+       
     }
 
     /**
@@ -58,6 +74,9 @@ class Cate_1Controller extends Controller
     public function edit($id)
     {
         //
+        $cate = cate_1::findOrFail($id);
+
+        return view('admin.cate.edit', ['cate'=>$cate]);
     }
 
     /**
@@ -70,6 +89,15 @@ class Cate_1Controller extends Controller
     public function update(Request $request, $id)
     {
         //
+        $cate = cate_1::findOrFail($id);
+        
+        $cate -> name = $request -> name;
+
+        if($cate -> save()){
+            return redirect('/cate_1')->with('success', '更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        } 
     }
 
     /**
@@ -80,6 +108,13 @@ class Cate_1Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $cate = cate_1::findOrFail($id);
+
+        if($cate -> delete()){
+            return redirect('/cate_1')->with('success', '删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        } 
     }
 }

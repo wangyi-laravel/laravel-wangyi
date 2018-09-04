@@ -46,9 +46,6 @@ Route::resource('eval','EvalController');
 //后台标签
 Route::resource('tag','TagController');
 
-
-
 //后台商品管理
 Route::resource('good','GoodController');
-
 
