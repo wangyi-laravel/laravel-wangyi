@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -15,6 +17,11 @@ class UserController extends Controller
     public function index()
     {
         //
+        $users = User::all();
+        // ->where('title','like','%'.request()->keywords.'%')
+        // ->paginate(10);
+        //解析模板  显示用户数据
+        return view('admin.user.index',['users'=>$users]);
     }
 
     /**
@@ -37,15 +44,21 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-         // dd($request->all());
+        // dd($request->all());
         $user = new User;
 
         $user -> username = $request->username;
-        $user -> username = $request->username;
-        $user -> username = $request->username;
-        $user -> username = $request->username;
-        $user -> username = $request->username;
-
+        $user-> password = Hash::make($request ->password);
+        $user -> name = $request->name;
+        $user -> phone = $request->phone;
+        $user -> sex = $request->sex;
+        $user -> site = $request->site;
+        $user -> jifen = $request->jifen;
+        // dd($request->post());
+        if ($request -> hasFile('image')) {
+            $user -> image = '/'.$request -> image -> store('upload/'.date('Ymd'));
+        }
+        // dd($user -> all());
         if($user -> save()){
             return redirect('/user')->with('success','添加成功');
         }else{
@@ -62,6 +75,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -73,6 +87,9 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        // dump($user->username);
+        return view('admin.user.edit',compact('user'));
     }
 
     /**
@@ -85,6 +102,24 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::findOrFail($id);
+
+        $user -> username = $request->username;
+        $user -> name = $request->name;
+        $user -> phone = $request->phone;
+        $user -> sex = $request->sex;
+        $user -> site = $request->site;
+        $user -> jifen = $request->jifen;
+        // dd($request->post());
+        if ($request -> hasFile('image')) {
+            $user -> image = '/'.$request -> image -> store('upload/'.date('Ymd'));
+        }
+        // dd($user -> all());
+        if($user -> save()){
+            return redirect('/user')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
@@ -96,5 +131,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $username = DB::table('users')->where('id',$id)->value('name');
+        $user = User::findOrFail($id);
+
+
+        if($user->delete()) {
+            return redirect('/user')->with('success','删除'.$username.'成功');
+        }else{
+            return back()->with('error','删除'.$username.'失败');
+        }
     }
 }
