@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Good;
 use Illuminate\Http\Request;
 
 class GoodController extends Controller
@@ -13,7 +14,12 @@ class GoodController extends Controller
      */
     public function index()
     {
-        //
+        // 读取数据库  获取商品数据
+        $goods = Good::orderBy('id','desc')
+        ->where('title', 'like','%'.request()->keywords.'%')
+        ->paginate(10);
+        // 解析模板显示用户数据
+        return view('admin.good.index', ['goods'=>$goods]);
     }
 
     /**
@@ -23,7 +29,7 @@ class GoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.good.create');
     }
 
     /**

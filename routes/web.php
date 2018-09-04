@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 //后台用户
 Route::resource('/user','UserController');
+
+//后台商品
+Route::resource('good','GoodController');
