@@ -13,8 +13,9 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="tpl-form-body tpl-form-line">
-                <form class="am-form tpl-form-line-form" action="/user" method="post"  enctype="multipart/form-data">
+                <form class="am-form tpl-form-line-form" action="/user/{{$user->id}}" method="post"  enctype="multipart/form-data">
                     {{csrf_field()}}
+                    {{method_field('PUT')}}
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">用户名 <span class="tpl-form-line-small-title">username</span></label>
                         <div class="am-u-sm-9" >
