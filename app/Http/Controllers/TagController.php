@@ -94,7 +94,7 @@ class TagController extends Controller
         $update = DB::table('tags')->where('id',$id)->update(['name'=>$username]);
         
         if($update){
-            return redirect('/tag')->with('success','修改用户成功成功');
+            return redirect('/tag')->with('success','修改成功');
         }else{
             return back()->with('error','修改失败');
         }
