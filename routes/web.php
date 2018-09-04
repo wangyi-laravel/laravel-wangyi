@@ -17,10 +17,11 @@ Route::get('/', function () {
 
 //后台主页
 Route::get('/admin',function(){
-	return view('_admin');
+	return view('admin');
 });
 
 //后台用户
+
 Route::resource('user','UserController');
 
 //后台商品属性
@@ -43,3 +44,5 @@ Route::resource('eval','EvalController');
 
 //后台标签
 Route::resource('tag','TagController');
+
+
