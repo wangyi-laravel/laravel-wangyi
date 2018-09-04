@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Attr;
+use App\Attrval;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AttrvalController extends Controller
 {
@@ -14,7 +17,12 @@ class AttrvalController extends Controller
     public function index()
     {
         //
-        return '列表页';
+        $attrvals = Attrval::orderBy('id','desc')
+            ->where('val','like', '%'.request()->keywords.'%')
+            ->paginate(5);
+        // dd($attr);
+        //解析模板显示用户数据
+        return view('admin.attrval.index', compact('attrvals'));
     }
 
     /**
@@ -25,7 +33,8 @@ class AttrvalController extends Controller
     public function create()
     {
         //
-        return '添加页面';
+        $attrs = Attr::all();
+        return view('admin.attrval.create',compact('attrs'));
     }
 
     /**
@@ -37,7 +46,30 @@ class AttrvalController extends Controller
     public function store(Request $request)
     {
         //
-        return '执行添加';
+        $attrval = new Attrval;
+
+        $attrval -> val = $request->val;
+        $attrval -> attr_id = $request->attr_id;
+        // dd($attrval);
+
+
+        if($attrval -> save()){
+
+            try{              
+                DB::table('attr_attrval')->insert([
+                    'attr_id'=>$attrval->id, 
+                    'attrval_id' => $request->attr_id,
+                ]);
+                
+                return redirect('/attrval')->with('success','添加成功');
+            }catch(\Exception $e){
+                return back()->with('error','添加失败!!!');
+            }
+
+            // return redirect('/attrval')->with('success', '添加成功');
+        }else{
+            return back()->with('error','添加失败...');
+        }
     }
 
     /**
@@ -60,7 +92,9 @@ class AttrvalController extends Controller
     public function edit($id)
     {
         //
-        return '修改页面';
+        $attrval = Attrval::findOrFail($id);
+        $attrs = Attr::all();
+        return view('admin.attrval.edit',compact('attrs','attrval'));
     }
 
     /**
@@ -73,7 +107,16 @@ class AttrvalController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return '执行修改';
+        $attrval = Attrval::findOrFail($id);
+        
+        $attrval -> val = $request -> val;
+        $attrval -> attr_id = $request -> attr_id;
+
+        if($attrval -> save()){
+            return redirect('/attrval')->with('success', '更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -85,6 +128,12 @@ class AttrvalController extends Controller
     public function destroy($id)
     {
         //
-        return '执行删除';
+        $attrval = Attrval::findOrFail($id);
+
+        if($attrval -> delete()){
+            return redirect('/attrval')->with('success', '删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        } 
     }
 }
