@@ -23,7 +23,8 @@ class Cate_1Controller extends Controller
      */
     public function create()
     {
-        //
+        //分类
+        return view('admin.cate.create');
     }
 
     /**
