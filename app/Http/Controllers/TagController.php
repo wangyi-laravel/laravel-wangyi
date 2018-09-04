@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TagController extends Controller
 {
@@ -14,6 +16,12 @@ class TagController extends Controller
     public function index()
     {
         //
+        //读取数据库  读取用户数据
+        $tags = Tag::orderBy('id','desc')
+        ->where('name','like','%'.request()->keywords.'%')
+        ->paginate(10);
+        //解析模板  显示用户数据
+        return view('admin.tag.index',['tags'=>$tags]);
     }
 
     /**
@@ -24,6 +32,7 @@ class TagController extends Controller
     public function create()
     {
         //
+        return view('admin.tag.create');
     }
 
     /**
@@ -35,6 +44,15 @@ class TagController extends Controller
     public function store(Request $request)
     {
         //
+        $tag = new Tag;
+
+        $tag->name = $request ->username;
+
+        if($tag -> save()){
+            return redirect('/tag')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
@@ -57,6 +75,8 @@ class TagController extends Controller
     public function edit($id)
     {
         //
+        $username =  DB::table('tags')->where('id',$id)->value('name');
+        return view('/admin/tag/edit',['id'=>$id,'username'=>$username]);
     }
 
     /**
@@ -69,6 +89,15 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $username = $request -> username;
+
+        $update = DB::table('tags')->where('id',$id)->update(['name'=>$username]);
+        
+        if($update){
+            return redirect('/tag')->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');
+        }
     }
 
     /**
@@ -80,5 +109,11 @@ class TagController extends Controller
     public function destroy($id)
     {
         //
+        $tags = DB::table('tags')->where('id',$id)->delete();
+        if($tags){
+            return redirect('/tag')->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }
