@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 //后台用户
 Route::resource('/user','UserController');
+
+//购物车
+Route::resource();
