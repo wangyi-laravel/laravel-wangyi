@@ -19,7 +19,8 @@ class CreateSitesTable extends Migration
             $table->string('shi')->comment('市');
             $table->string('qu')->comment('区');
             $table->string('address')->comment('详细地址');
-            $table->integer('user_id')->comment('用户id');
+            $table->string('call')->comment('联系电话');
+            $table->string('name')->comment('收货人');
             $table->timestamps();
         });
     }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Site;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -11,9 +14,13 @@ class SiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $sites = Site::all();
+        // $users -> name = $request -> name;
+        // dd($users);
+        return view('admin.site.index',compact('sites'));
     }
 
     /**
@@ -24,7 +31,8 @@ class SiteController extends Controller
     public function create()
     {
         //
-        return view('admin.site.create');
+        $site = Site::all();
+        return view('admin.site.create',compact('site'));
     }
 
     /**
@@ -36,6 +44,21 @@ class SiteController extends Controller
     public function store(Request $request)
     {
         //
+        $site = new Site;
+
+        $site -> name = $request->name;
+        $site -> call = $request->call;
+        $site -> sheng = $request->sheng;
+        $site -> shi = $request->shi;
+        $site -> qu = $request->qu;
+        $site -> address = $request->address;
+
+        if($site -> save()){
+            return redirect('/site')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');;
+        }
+
     }
 
     /**
@@ -47,6 +70,7 @@ class SiteController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -58,6 +82,8 @@ class SiteController extends Controller
     public function edit($id)
     {
         //
+        $site = Site::findOrFail($id);
+        return view('admin.site.edit',compact('site'));
     }
 
     /**
@@ -70,6 +96,20 @@ class SiteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $site = Site::findOrFail($id);
+
+        $site -> name = $request->name;
+        $site -> call = $request->call;
+        $site -> sheng = $request->sheng;
+        $site -> shi = $request->shi;
+        $site -> qu = $request->qu;
+        $site -> address = $request->address;
+
+        if($site -> save()){
+            return redirect('/site')->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');;
+        }
     }
 
     /**
@@ -81,5 +121,14 @@ class SiteController extends Controller
     public function destroy($id)
     {
         //
+        $username = DB::table('sites')->where('id',$id)->value('name');
+        $site = Site::findOrFail($id);
+
+
+        if($site->delete()) {
+            return redirect('/site')->with('success','删除'.$username.'成功');
+        }else{
+            return back()->with('error','删除'.$username.'失败');
+        }
     }
 }

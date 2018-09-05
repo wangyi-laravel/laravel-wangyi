@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="/assets/css/admin.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/city-picker.css">
     <script src="/assets/js/echarts.min.js"></script>
 </head>
 
@@ -171,9 +170,6 @@
     <script src="/assets/js/amazeui.min.js"></script>
     <script src="/assets/js/iscroll.js"></script>
     <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/jquery1.min.js"></script>
-    <script src="/assets/js/citydata.js"></script>
-    <script src="/assets/js/cityPicker-1.0.0.js?v=1"></script>
 </body>
 
 </html>
