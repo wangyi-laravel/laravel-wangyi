@@ -21,9 +21,10 @@ Route::get('/admin',function(){
 });
 
 //后台用户
-
-
 Route::resource('user','UserController');
+
+//后台地址管理
+Route::resource('site','SiteController');
 
 //后台商品属性
 Route::resource('attr','AttrController');
@@ -49,3 +50,5 @@ Route::resource('tag','TagController');
 //后台商品管理
 Route::resource('good','GoodController');
 
+//后台友情链接
+Route::resource('link','LinkController');
