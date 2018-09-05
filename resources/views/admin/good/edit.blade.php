@@ -1,4 +1,4 @@
-@extends('layouts.admin') @section('title') 商品添加 @endsection @section('title', '商品添加') @section('content')
+@extends('layouts.admin') @section('title') 商品修改 @endsection @section('title', '商品修改') @section('content')
 <hr>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
@@ -6,7 +6,7 @@
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
-            <span class="am-icon-code"></span> 商品添加
+            <span class="am-icon-code"></span> 商品修改
         </div>
     </div>
     <div class="tpl-block">
@@ -27,9 +27,29 @@
                                 <div class="tpl-form-file-img">
                                 </div>
                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
-                                    <i class="am-icon-cloud-upload"></i> 添加商品图片</button>
+                                    <i class="am-icon-cloud-upload"></i> 修改商品图片</button>
                                 <input id="doc-form-file" type="file" name="image">
                             </div>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性</label>
+                        <div class="am-u-sm-9">
+                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                                @foreach($attrs as $v)
+                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性值</label>
+                        <div class="am-u-sm-9">
+                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                                @foreach($attrvals as $v)
+                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="am-form-group">

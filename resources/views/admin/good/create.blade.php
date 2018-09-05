@@ -32,6 +32,26 @@
                         </div>
                     </div>
                     <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性</label>
+                        <div class="am-u-sm-9">
+                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                                @foreach($attrs as $v)
+                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性值</label>
+                        <div class="am-u-sm-9">
+                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                                @foreach($attrvals as $v)
+                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品描述</label>
                         <div class="am-u-sm-9">
                             <textarea class="" name="miaoshu" rows="5"></textarea>
