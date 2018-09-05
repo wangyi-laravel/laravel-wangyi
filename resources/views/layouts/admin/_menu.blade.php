@@ -132,7 +132,73 @@
     <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>下次用这个</span>
+            <span>友情链接</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/tag/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>添加链接</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/tag">
+                    <i class="am-icon-angle-right"></i>
+                    <span>链接管理</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>张赵岩</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/tag/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>下次用这个</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/tag">
+                    <i class="am-icon-angle-right"></i>
+                    <span>下次用这个</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>张泽斌</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/tag/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>下次用这个</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/tag">
+                    <i class="am-icon-angle-right"></i>
+                    <span>下次用这个</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>赵钰轩</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
