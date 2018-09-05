@@ -14,11 +14,11 @@ class Cate_1Controller extends Controller
      */
     public function index()
     {
-        //¶ÁÈ¡Êý¾Ý¿â »ñÈ¡ÓÃ»§Êý¾Ý
+        //
         $cates = Cate_1::orderBy('id','desc')
             ->where('name','like', '%'.request()->keywords.'%')
             ->get();
-        //½âÎöÄ£°åÏÔÊ¾ÓÃ»§Êý¾Ý
+        //
         return view('admin.cate.index', ['cates'=>$cates]);
     }
 
