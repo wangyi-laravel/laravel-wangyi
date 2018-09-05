@@ -38,6 +38,9 @@ Route::resource('cate_1','Cate_1Controller');
 //后台二级分类
 Route::resource('cate_2','Cate_2Controller');
 
+//后台分类
+Route::resource('cates','CatesController');
+
 //后台评价表
 Route::resource('eval','EvalController');
 
