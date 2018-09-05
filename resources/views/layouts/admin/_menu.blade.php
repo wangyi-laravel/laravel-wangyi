@@ -203,13 +203,13 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/tag/create">
+                <a href="/cates/create">
                     <i class="am-icon-angle-right"></i>
                     <span>下次用这个</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/tag">
+                <a href="/cates">
                     <i class="am-icon-angle-right"></i>
                     <span>下次用这个</span>
                 </a>
