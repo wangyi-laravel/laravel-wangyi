@@ -21,10 +21,20 @@
             <div class="am-u-sm-12 am-u-md-3">
             	<form action="/attrval" method="get">
                 <div class="am-input-group am-input-group-sm">
-                    <input type="text" name="keywords" class="am-form-field" value="{{request()->keywords}}">
+                    <input type="text" name="keywords" class="am-form-field" value="{{request()->keywords}}" placeholder="按属性值搜索">
                     <span class="am-input-group-btn">
 			            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"></button>
 			          </span>
+                </div>
+                </form>
+            </div>
+            <div class="am-u-sm-12 am-u-md-3">
+                <form action="/attrval" method="get">
+                <div class="am-input-group am-input-group-sm">
+                    <input type="text" name="attrwords" class="am-form-field" value="{{request()->attrwards}}" placeholder="按属性id搜索">
+                    <span class="am-input-group-btn">
+                        <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"></button>
+                      </span>
                 </div>
                 </form>
             </div>
@@ -39,7 +49,7 @@
                             </th>
                             <th class="table-id">ID</th>
                             <th class="table-title">属性值</th>
-                            <th class="table-title">属性名</th>
+                            <th class="table-title">属性名_id</th>
                             <th class="table-set">操作</th>
                         </tr>
                     </thead>
@@ -51,7 +61,7 @@
                             </td>
                             <td>{{$v['id']}}</td>
                             <td>{{$v['val']}}</td>
-                            <td>{{$v->attr['name']}}</td>
+                            <td>{{$v->attr['name']}}_{{$v['attr_id']}}</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">

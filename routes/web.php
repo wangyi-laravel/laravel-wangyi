@@ -21,8 +21,6 @@ Route::get('/admin',function(){
 });
 
 //后台用户
-
-
 Route::resource('user','UserController');
 
 //后台商品属性
