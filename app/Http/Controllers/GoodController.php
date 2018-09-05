@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Attr;
+use App\Attrval;
 use App\Good;
 use Illuminate\Http\Request;
 
@@ -29,7 +31,16 @@ class GoodController extends Controller
      */
     public function create()
     {
-        return view('admin.good.create');
+        //读取属性
+        $attrs = Attr::all();
+
+        //读取属性值
+        $attrvals = Attrval::all();
+
+        return view('admin.good.create', [
+            'attrs' => $attrs,
+            'attrvals' => $attrvals
+        ]);
     }
 
     /**
@@ -86,8 +97,13 @@ class GoodController extends Controller
     {
         // 获取商品的信息
         $good = Good::findOrFail($id);
+        //读取属性
+        $attrs = Attr::all();
+
+        //读取属性值
+        $attrvals = Attrval::all();
         // 解析模板显示数据
-        return view('admin.good.edit',['good'=>$good]);
+        return view('admin.good.edit',compact('good','attrs','attrvals'));
     }
 
     /**

@@ -17,12 +17,19 @@ class AttrvalController extends Controller
     public function index()
     {
         //
+
         $attrvals = Attrval::orderBy('id','desc')
             ->where('val','like', '%'.request()->keywords.'%')
             ->paginate(5);
+        $attrvals = Attrval::orderBy('id','desc')
+            ->where('attr_id','like', '%'.request()->attrwords.'%')
+            ->paginate(5);
+
+        // $attr = Attrval::where('cate_id->','like','%'.request()->attrwords.'%');
+
         // dd($attr);
         //解析模板显示用户数据
-        return view('admin.attrval.index', compact('attrvals'));
+        return view('admin.attrval.index', compact('attrvals','attr'));
     }
 
     /**
