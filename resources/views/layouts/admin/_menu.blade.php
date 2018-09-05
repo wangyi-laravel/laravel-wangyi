@@ -217,7 +217,7 @@
         </ul>
     </li>
     <li class="tpl-left-nav-item">
-        <a href="/admin/setting" class="nav-link tpl-left-nav-link-list">
+        <a href="/admin/set" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
             <span>网站设置</span>
         </a>

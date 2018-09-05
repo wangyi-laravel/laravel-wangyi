@@ -12,4 +12,9 @@ class Attrval extends Model
     	return $this->belongsTo('App\Attr');
     }
 
+    public function good()
+    {
+    	return $this->belongsTo('App\Good');
+    }
+
 }
