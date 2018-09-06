@@ -72,7 +72,9 @@ class CatesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cates = Cates::findOrFail($id);
+        // 解析模板显示数据
+        return view('admin.cates.edit',compact('cates'));
     }
 
     /**
@@ -84,7 +86,15 @@ class CatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cates = Cates::findOrFail($id);
+        $cates -> name = $request->name;
+        // $cates -> parent_id = $request->parent_id;
+
+        if ($cates -> save()) {
+            return redirect('/cates')->with('success', '更新成功');
+        }else{
+            return back()->with('error', '更新失败');
+        }
     }
 
     /**
@@ -95,6 +105,12 @@ class CatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cates = Cates::findOrFail($id);
+
+        if ($cates->delete()) {
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('success','删除失败');
+        } 
     }
 }
