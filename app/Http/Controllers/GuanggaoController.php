@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cate_1;
+use App\Guanggao;
 use Illuminate\Http\Request;
 
-class Cate_1Controller extends Controller
+class GuanggaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,13 @@ class Cate_1Controller extends Controller
      */
     public function index()
     {
-        //
-        $cates = Cate_1::orderBy('id','desc')
+        //读取数据库,把值放到表单中
+        
+         $gao = guanggao::orderBy('id','desc')
             ->where('name','like', '%'.request()->keywords.'%')
             ->get();
-        //
-        return view('admin.cate.index', ['cates'=>$cates]);
+         return view('admin.guanggao.index',['gao'=>$gao]);
+        //return '555';
     }
 
     /**
@@ -29,9 +30,9 @@ class Cate_1Controller extends Controller
      */
     public function create()
     {
-        //·ÖÀà
-        return view('admin.cate.create');
-
+        //
+        return view('admin.guanggao.create');
+       
     }
 
     /**
@@ -42,16 +43,27 @@ class Cate_1Controller extends Controller
      */
     public function store(Request $request)
     {
-        $cate = new Cate_1;
+        //
+        $gao = new Guanggao;
 
-        $cate -> name = $request->name;
-        if($cate -> save()){
-            return redirect('/cate_1')->with('success', '更新成功');
+        $gao -> name = $request -> name;
+        $gao -> image = $request -> image;
+        $gao -> site = $request -> site;
+        $gao -> jieshao = $request -> jieshao;
+
+        //文件上传
+        //检测是否有文件上传
+        if ($request->hasFile('image')) {
+            $gao->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
+
+        //插入
+        if ($gao -> save()) {
+            return redirect('/guanggao')->with('success', '添加成功');
         }else{
-            return back()->with('error','更新失败');
-        } 
-
-       
+            return back()->with('error', '添加失败');
+        }
+        
     }
 
     /**
@@ -74,9 +86,6 @@ class Cate_1Controller extends Controller
     public function edit($id)
     {
         //
-        $cate = cate_1::findOrFail($id);
-
-        return view('admin.cate.edit', ['cate'=>$cate]);
     }
 
     /**
@@ -89,15 +98,6 @@ class Cate_1Controller extends Controller
     public function update(Request $request, $id)
     {
         //
-        $cate = cate_1::findOrFail($id);
-        
-        $cate -> name = $request -> name;
-
-        if($cate -> save()){
-            return redirect('/cate_1')->with('success', '更新成功');
-        }else{
-            return back()->with('error','更新失败');
-        } 
     }
 
     /**
@@ -108,13 +108,13 @@ class Cate_1Controller extends Controller
      */
     public function destroy($id)
     {
-        
-        $cate = cate_1::findOrFail($id);
+        //删除
+        $gao = Guanggao::findOrFail($id);
 
-        if($cate -> delete()){
-            return redirect('/cate_1')->with('success', '删除成功');
+        if($gao->delete()){
+            return redirect('/guanggao')->with('sussion','删除成功');
         }else{
             return back()->with('error','删除失败');
-        } 
+        }
     }
 }

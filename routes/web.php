@@ -16,9 +16,13 @@ Route::get('/', function () {
 });
 
 //后台主页
-Route::get('/admin',function(){
-	return view('admin');
-});
+Route::get('/admin','AdminController@index');
+
+//网站设置页
+Route::get('/admin/set','AdminController@set');
+
+//保存网站设置
+Route::post('/admin/set', 'AdminController@update');
 
 //后台用户
 Route::resource('user','UserController');
@@ -52,6 +56,9 @@ Route::resource('tag','TagController');
 
 //后台商品管理
 Route::resource('good','GoodController');
+
+//广告位
+Route::resource('guanggao','GuanggaoController');
 
 //后台友情链接
 Route::resource('link','LinkController');
