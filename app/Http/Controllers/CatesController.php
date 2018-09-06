@@ -16,8 +16,10 @@ class CatesController extends Controller
     {
         // 读取数据库  获取分类数据
         $cates = Cates::orderBy('id','desc')
+        ->where('parent_id', 0)
         ->where('name', 'like','%'.request()->keywords.'%')
         ->get();
+        // dd($cates);
         // 解析模板显示用户数据
         return view('admin.cates.index', ['cates'=>$cates]);
     }
@@ -103,9 +105,14 @@ class CatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $cates = Cates::findOrFail($id);
+
+        for ($i=0; $i<count($request['cates->child']); $i++) {
+              $cates = Key::where('id', $request['cates->child'][$i])->update(['isDelete' => 1]);   // 遍历删除
+          }
+
 
         if ($cates->delete()) {
             return back()->with('success','删除成功');

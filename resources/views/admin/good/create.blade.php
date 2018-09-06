@@ -3,6 +3,7 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/jquery-3.3.1.js"></script>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -34,13 +35,19 @@
                     <div class="am-form-group">
                         <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性</label>
                         <div class="am-u-sm-9">
-                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                            <select data-am-selected="{searchBox: 1}" name="attr_id" style="display: none;">
                                 @foreach($attrs as $v)
-                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                <option value="{{$v['id']}}" >{{$v['name']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
+                        <script>
+                            var a = $('#abc option').change(function(){
+                                alert('123');
+                            });
+                            console.log(a);
+                        </script>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">属性值 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
@@ -49,6 +56,22 @@
                             @endforeach
                         </div>
                     </div>
+
+                    <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品分类</label>
+                        <div class="am-u-sm-9">
+
+                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
+                                @foreach($cates as $v)
+                                @if($v['parent_id'] != 0)
+                                <option value="{{$v['id']}}" >{{$v['name']}}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                                
+                        </div>
+                    </div>
+
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品描述</label>
                         <div class="am-u-sm-9">
@@ -89,6 +112,7 @@
                 <script>
                     var ue = UE.getEditor('editor');
                 </script>
+                
             </div>
         </div>
     </div>
