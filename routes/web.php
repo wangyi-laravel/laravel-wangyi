@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//登陆页面
+Route::get('/admin/login', 'LoginController@login');
+
+//登陆操作
+Route::post('/admin/login', 'LoginController@dologin');
+
+//后台路由
+Route::group(['middleware'=>'login'],function(){
 //后台主页
 Route::get('/admin','AdminController@index');
 
@@ -59,3 +67,7 @@ Route::resource('good','GoodController');
 
 //后台友情链接
 Route::resource('link','LinkController');
+
+//退出
+Route::get('/admin/logout', 'LoginController@logout');
+});

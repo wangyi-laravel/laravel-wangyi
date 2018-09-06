@@ -44,7 +44,7 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">手机号 <span class="tpl-form-line-small-title">phone</span></label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="phone" class="tpl-form-input" id="user-name" value="{{$user -> phone}}">
+                            <input type="number" name="phone" class="tpl-form-input" id="user-name" value="{{$user -> phone}}">
                             <small></small>
                         </div>
                     </div>
@@ -74,13 +74,6 @@
                         </div>
                     </div>
 
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">积分 <span class="tpl-form-line-small-title">jifen</span></label>
-                        <div class="am-u-sm-9">
-                            <input type="text" name="jifen" class="tpl-form-input" id="user-name" value="{{$user -> jifen}}">
-                            <small></small>
-                        </div>
-                    </div>
                     <div class="am-form-group">
                         <div class="am-u-sm-9 am-u-sm-push-3">
                             <button class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>

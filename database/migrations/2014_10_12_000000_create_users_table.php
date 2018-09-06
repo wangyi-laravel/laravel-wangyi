@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('image')->comment('头像');
             $table->string('sex')->comment('性别');
             $table->string('site')->comment('地址');
-            $table->string('jifen')->comment('积分');
             $table->timestamps();
         });
     }
