@@ -68,7 +68,7 @@
 
                             
                             
-                            <td >@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach </td>
+                            <td>@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach </td>
                             
                             <td >@if(!$v['parent_id']) {{$v['name']}} @endif</td>
                         
