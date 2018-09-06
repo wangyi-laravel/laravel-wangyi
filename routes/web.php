@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//验证码
+Route::get('capcha','LoginController@captcha');
+
 //登陆页面
 Route::get('/admin/login', 'LoginController@login');
 
@@ -64,9 +68,6 @@ Route::resource('tag','TagController');
 
 //后台商品管理
 Route::resource('good','GoodController');
-
-//广告位
-Route::resource('guanggao','GuanggaoController');
 
 //后台友情链接
 Route::resource('link','LinkController');

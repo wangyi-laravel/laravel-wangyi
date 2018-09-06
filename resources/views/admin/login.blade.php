@@ -10,20 +10,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/houtai/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/houtai/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script src="/houtai/js/jquery.min.js"></script>
 <!-- //js -->
 <!-- cart -->
-<script src="js/simpleCart.min.js"></script>
+<script src="/houtai/js/simpleCart.min.js"></script>
 <!-- cart -->
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="/houtai/js/bootstrap-3.1.1.min.js"></script>
 <!-- //for bootstrap working -->
 <!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet"> 
-<script src="js/wow.min.js"></script>
+<link href="/houtai/css/animate.min.css" rel="stylesheet"> 
+<script src="/houtai/js/wow.min.js"></script>
 <script>
  new WOW().init();
 </script>
@@ -227,7 +227,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <input type="password" placeholder="Password" required="" name="password">
           <i class="glyphicon glyphicon-lock"></i>
         </div>
-           <a class="news-letter " href="#">
+        <input type="text" name="num" >
+        <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">
+        
+
+        <a class="news-letter " href="#">
              <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forgot Password</label>
              </a>
 
