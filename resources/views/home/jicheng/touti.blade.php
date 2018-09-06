@@ -1,5 +1,4 @@
-@section('tou')  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -197,10 +196,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    ---------------------------------<br>
-    ---------------------------------<br>
-    ---------------------------------<br>
-    ---------------------------------
+    
+    @include('home.jicheng.zhong')
+    
     <!-- footer -->
     <div class="footer">
         <div class="container">
@@ -243,7 +241,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //footer -->
-    @show
+    
 </body>
 
 </html>

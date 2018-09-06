@@ -1,4 +1,3 @@
-@section('zhong')
 <!-- banner -->
 <div class="banner">
     <div class="banner-right">
@@ -8,7 +7,7 @@
                     <h2>Featured Products</h2>
                     <div class="wome">
                         <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="" />
-								</a>
+                                </a>
                         <div class="women simpleCart_shelfItem">
                             <a href="#"><img src="images/ll.png" alt=""></a>
                             <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
@@ -24,7 +23,7 @@
                     <h2>Featured Products</h2>
                     <div class="wome">
                         <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="" />
-								</a>
+                                </a>
                         <div class="women simpleCart_shelfItem">
                             <a href="#"><img src="images/ll.png" alt=""></a>
                             <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
@@ -40,7 +39,7 @@
                     <h2>Featured Products</h2>
                     <div class="wome">
                         <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="" />
-								</a>
+                                </a>
                         <div class="women simpleCart_shelfItem">
                             <a href="#"><img src="images/ll.png" alt=""></a>
                             <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
@@ -91,7 +90,7 @@
             <div class="col-1">
                 <div class="col-md-6 col-2">
                     <a href="single.html"><img src="images/pi3.jpg" class="img-responsive" alt="">
-							</a></div>
+                            </a></div>
                 <div class="col-md-6 col-p">
                     <h5>For All Collections</h5>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
@@ -107,7 +106,7 @@
                 </div>
                 <div class="col-md-6 col-2">
                     <a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt="">
-							</a></div>
+                            </a></div>
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -157,10 +156,10 @@
     <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
         <div class="col-3">
             <a href="single.html"><img src="images/pi1.jpg" class="img-responsive " alt="">
-							<div class="col-pic">	
-								<h5> Women's Wear</h5>
-								<p>At vero eos et accusamus et</p>
-							</div></a>
+                            <div class="col-pic">   
+                                <h5> Women's Wear</h5>
+                                <p>At vero eos et accusamus et</p>
+                            </div></a>
         </div>
     </div>
     <div class="col-md-7 col-md2 animated wow fadeInRight" data-wow-delay=".1s">
@@ -315,10 +314,10 @@
     <div class="col-md-5 col-md1 animated wow fadeInRight" data-wow-delay=".1s">
         <div class="col-3">
             <a href="single.html"><img src="images/pi2.jpg" class="img-responsive " alt="">
-							<div class="col-pic">
-								<h5> Men's Wear</h5>
-								<p>At vero eos et accusamus et</p>
-							</div></a>
+                            <div class="col-pic">
+                                <h5> Men's Wear</h5>
+                                <p>At vero eos et accusamus et</p>
+                            </div></a>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -341,4 +340,3 @@
         <div class="clearfix"></div>
     </div>
 </div>
-@show
