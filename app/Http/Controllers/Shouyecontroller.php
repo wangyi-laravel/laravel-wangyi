@@ -11,10 +11,10 @@ class Shouyecontroller extends Controller
     {
     	return view('home.jicheng.touti');
     }
-    public function zhong()
-    {
-    	return view('home.jicheng.zhong');
-    }
+    // public function zhong()
+    // {
+    // 	return view('home.jicheng.zhong');
+    // }
     
     
 }
