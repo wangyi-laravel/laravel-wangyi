@@ -79,5 +79,10 @@ Route::group(['middleware'=>'login'],function(){
 
 
 //前台首页
-Route::get('/','ShouyeController@tou');
+Route::get('/','ShouyeController@show');
+
+//注册页面
+Route::get('/admin/register','ShouyeController@register');
+//执行注册
+Route::post('/admin/store','ShouyeController@store');
 

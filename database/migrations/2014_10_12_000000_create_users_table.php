@@ -18,10 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('username')->comment('账号');
             $table->string('password')->comment('密码');
             $table->string('name')->comment('昵称');
-            $table->string('phone')->comment('手机号');
-            $table->string('image')->comment('头像');
-            $table->string('sex')->comment('性别');
-            $table->string('site')->comment('地址');
+            $table->string('phone')->comment('手机号')->nullable();
+            $table->string('image')->comment('头像')->nullable();
+            $table->string('sex')->comment('性别')->nullable();
+            $table->string('site')->comment('地址')->nullable();
             $table->timestamps();
         });
     }
