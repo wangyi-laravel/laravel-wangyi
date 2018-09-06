@@ -90,7 +90,6 @@
                                 @endif
                                 </td>
                                 <td class="am-hide-sm-only">{{$v['site']}}</td>
-                                <td class="am-hide-sm-only">{{$v['jifen']}}</td>
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
