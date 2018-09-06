@@ -159,13 +159,13 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/tag/create">
+                <a href="/guanggao/create">
                     <i class="am-icon-angle-right"></i>
                     <span>广告添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/tag">
+                <a href="/guanggao">
                     <i class="am-icon-angle-right"></i>
                     <span>广告列表</span>
                 </a>

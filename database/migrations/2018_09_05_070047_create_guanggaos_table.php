@@ -18,11 +18,7 @@ class CreateGuanggaosTable extends Migration
             $table->string('name')->comment('名称');
             $table->string('site')->comment('连接地址');
             $table->string('image')->comment('图片');
-            $table->string('cate')->comment('类型');
             $table->string('jieshao')->comment('介绍');
-            $table->string('paixu')->comment('排序');
-            $table->string('weizhi')->comment('位置');
-
             $table->timestamps();
         });
     }

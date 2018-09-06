@@ -48,5 +48,5 @@ Route::resource('tag','TagController');
 Route::resource('good','GoodController');
 
 //广告位
-//Route::resource('');
+Route::resource('guanggao','GuanggaoController');
 
