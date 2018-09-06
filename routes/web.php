@@ -62,3 +62,8 @@ Route::resource('guanggao','GuanggaoController');
 
 //后台友情链接
 Route::resource('link','LinkController');
+
+
+
+//前台首页
+Route::get('/','ShouyeController@tou');

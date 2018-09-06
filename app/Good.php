@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Good extends Model
 {
-    public function attrs()
+    public function attr()
     {
-    	return $this->belongsToMany('App\Attr');
+    	return $this->belongsTo('App\Attr');
     }
 
     public function attrvals()
     {
-    	return $this->belongsTo('App\Attrval');
+    	return $this->hasMany('App\Attrval');
     }
 }

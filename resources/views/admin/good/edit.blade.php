@@ -43,13 +43,11 @@
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性值</label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">属性值 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
-                                @foreach($attrvals as $v)
-                                <option value="{{$v['id']}}">{{$v['name']}}</option>
-                                @endforeach
-                            </select>
+                            @foreach($attrvals as $val)
+                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="attrval_id[]" value="{{$val['id']}}">{{$val['val']}}</label>
+                            @endforeach
                         </div>
                     </div>
                     <div class="am-form-group">
