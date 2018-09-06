@@ -16,12 +16,19 @@ Route::get('/', function () {
 });
 
 //后台主页
-Route::get('/admin',function(){
-	return view('admin');
-});
+Route::get('/admin','AdminController@index');
+
+//网站设置页
+Route::get('/admin/set','AdminController@set');
+
+//保存网站设置
+Route::post('/admin/set', 'AdminController@update');
 
 //后台用户
 Route::resource('user','UserController');
+
+//后台地址管理
+Route::resource('site','SiteController');
 
 //后台商品属性
 Route::resource('attr','AttrController');
@@ -34,6 +41,9 @@ Route::resource('cate_1','Cate_1Controller');
 
 //后台二级分类
 Route::resource('cate_2','Cate_2Controller');
+
+//后台分类
+Route::resource('cates','CatesController');
 
 //后台评价表
 Route::resource('eval','EvalController');
@@ -50,3 +60,5 @@ Route::resource('good','GoodController');
 //广告位
 Route::resource('guanggao','GuanggaoController');
 
+//后台友情链接
+Route::resource('link','LinkController');

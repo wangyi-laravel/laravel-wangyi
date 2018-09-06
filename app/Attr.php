@@ -11,4 +11,9 @@ class Attr extends Model
     {
     	return $this->hasMany('App\Attrval');
     }
+
+    public function goods()
+    {
+    	return $this->hasMany('App\Good');
+    }
 }

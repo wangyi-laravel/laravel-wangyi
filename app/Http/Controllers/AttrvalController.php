@@ -20,8 +20,6 @@ class AttrvalController extends Controller
 
         $attrvals = Attrval::orderBy('id','desc')
             ->where('val','like', '%'.request()->keywords.'%')
-            ->paginate(5);
-        $attrvals = Attrval::orderBy('id','desc')
             ->where('attr_id','like', '%'.request()->attrwords.'%')
             ->paginate(5);
 

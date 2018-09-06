@@ -21,6 +21,28 @@
             </li>
         </ul>
     </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>地址管理</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/site/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>地址添加</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/site">
+                    <i class="am-icon-angle-right"></i>
+                    <span>地址列表</span>
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
@@ -137,13 +159,13 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/tag/create">
+                <a href="/link/create">
                     <i class="am-icon-angle-right"></i>
                     <span>添加链接</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/tag">
+                <a href="/link">
                     <i class="am-icon-angle-right"></i>
                     <span>链接管理</span>
                 </a>
@@ -203,13 +225,13 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/tag/create">
+                <a href="/cates/create">
                     <i class="am-icon-angle-right"></i>
                     <span>下次用这个</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/tag">
+                <a href="/cates">
                     <i class="am-icon-angle-right"></i>
                     <span>下次用这个</span>
                 </a>
@@ -217,7 +239,7 @@
         </ul>
     </li>
     <li class="tpl-left-nav-item">
-        <a href="/admin/setting" class="nav-link tpl-left-nav-link-list">
+        <a href="/admin/set" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
             <span>网站设置</span>
         </a>
