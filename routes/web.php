@@ -62,3 +62,10 @@ Route::resource('guanggao','GuanggaoController');
 
 //后台友情链接
 Route::resource('link','LinkController');
+
+
+
+//前台头脚继承 tou
+Route::get('/tou','ShouyeController@tou');
+//前台体继承 zhong
+Route::get('/zhong','ShouyeController@zhong');
