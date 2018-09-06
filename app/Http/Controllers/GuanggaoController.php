@@ -31,7 +31,8 @@ class GuanggaoController extends Controller
     public function create()
     {
         //
-        return view('admin.guanggao.create');
+        $gao = Guanggao::all();
+        return view('admin.guanggao.create', ['gao'=>$gao] );
        
     }
 
@@ -86,6 +87,9 @@ class GuanggaoController extends Controller
     public function edit($id)
     {
         //
+        $gao = Guanggao::findOrFail($id);
+
+        return view('admin.guanggao.edit', ['gao'=>$gao]);
     }
 
     /**
@@ -98,6 +102,8 @@ class GuanggaoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+        
     }
 
     /**
@@ -111,10 +117,10 @@ class GuanggaoController extends Controller
         //删除
         $gao = Guanggao::findOrFail($id);
 
-        if($gao->delete()){
-            return redirect('/guanggao')->with('sussion','删除成功');
+        if($gao -> delete()){
+            return redirect('/guanggao')->with('success', '删除成功');
         }else{
             return back()->with('error','删除失败');
-        }
+        } 
     }
 }
