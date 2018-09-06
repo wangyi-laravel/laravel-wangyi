@@ -199,9 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //header -->
     ---------------------------------<br>
     ---------------------------------<br>
-   @extends('home.jicheng.zhong.') @section('zhong')
 
-    @endsection
 
     ---------------------------------<br>
     ---------------------------------
