@@ -1,86 +1,120 @@
 <!-- banner -->
 <div class="banner">
+    
+    
     <div class="banner-right">
-        <ul id="flexiselDemo2">
-            <li>
-                <div class="banner-grid">
-                    <h2>Featured Products</h2>
-                    <div class="wome">
-                        <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="" />
+                    <div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul id="flexiselDemo2" class="nbs-flexisel-ul" style="left: -443px; display: block;">           
+                        
+                        
+                        <li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="">
+                                </a>    
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                      
+                                </div>                      
+                            </div></li>
+                        
+                    
+                    <li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="">
                                 </a>
-                        <div class="women simpleCart_shelfItem">
-                            <a href="#"><img src="images/ll.png" alt=""></a>
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <p class="ba-price">
-                                <del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="banner-grid">
-                    <h2>Featured Products</h2>
-                    <div class="wome">
-                        <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="" />
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                          
+                                </div>                          
+                            </div></li><li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="">
+                                </a>    
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                      
+                                </div>                      
+                            </div></li><li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="">
+                                </a>    
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                      
+                                </div>                      
+                            </div></li><li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="">
                                 </a>
-                        <div class="women simpleCart_shelfItem">
-                            <a href="#"><img src="images/ll.png" alt=""></a>
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <p class="ba-price">
-                                <del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="banner-grid">
-                    <h2>Featured Products</h2>
-                    <div class="wome">
-                        <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="" />
-                                </a>
-                        <div class="women simpleCart_shelfItem">
-                            <a href="#"><img src="images/ll.png" alt=""></a>
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <p class="ba-price">
-                                <del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <script type="text/javascript">
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                          
+                                </div>                          
+                            </div></li><li class="nbs-flexisel-item" style="width: 443px;"><div class="banner-grid">
+                        <h2>Featured Products</h2>
+                        <div class="wome">
+                                <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="">
+                                </a>    
+                                <div class="women simpleCart_shelfItem">
+                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                    <p class="ba-price"><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                    <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                </div>                      
+                                </div>                      
+                            </div></li></ul><div class="nbs-flexisel-nav-left" style="top: 247.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 247.5px;"></div></div></div>
+                    <script type="text/javascript">
         $(window).load(function() {
             $("#flexiselDemo2").flexisel({
                 visibleItems: 1,
                 animationSpeed: 1000,
                 autoPlay: true,
-                autoPlaySpeed: 5000,
+                autoPlaySpeed: 5000,            
                 pauseOnHover: true,
                 enableResponsiveBreakpoints: true,
-                responsiveBreakpoints: {
-                    portrait: {
-                        changePoint: 480,
+                responsiveBreakpoints: { 
+                    portrait: { 
+                        changePoint:480,
+                        visibleItems: 1
+                    }, 
+                    landscape: { 
+                        changePoint:640,
                         visibleItems: 1
                     },
-                    landscape: {
-                        changePoint: 640,
-                        visibleItems: 1
-                    },
-                    tablet: {
-                        changePoint: 768,
+                    tablet: { 
+                        changePoint:768,
                         visibleItems: 1
                     }
                 }
             });
-
+            
         });
-        </script>
+    </script>
         <script type="text/javascript" src="js/jquery.flexisel.js"></script>
-    </div>
-</div>
+
+                    </div>
+
+                
+                </div>
 </div>
 <!-- //banner -->
 <!--content-->
