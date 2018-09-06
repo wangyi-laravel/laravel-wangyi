@@ -8,10 +8,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -24,10 +24,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi2.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -40,10 +40,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi1.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -56,10 +56,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -72,10 +72,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi2.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi2.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -88,10 +88,10 @@
                         <div class="banner-grid">
                             <h2>Featured Products</h2>
                             <div class="wome">
-                                <a href="single.html"><img class="img-responsive" src="images/bi1.jpg" alt="">
+                                <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi1.jpg" alt="">
                                 </a>
                                 <div class="women simpleCart_shelfItem">
-                                    <a href="#"><img src="images/ll.png" alt=""></a>
+                                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                     <p class="ba-price">
                                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -141,7 +141,7 @@
         <div class="col-md-6 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-1">
                 <div class="col-md-6 col-2">
-                    <a href="single.html"><img src="images/pi3.jpg" class="img-responsive" alt="">
+                    <a href="single.html"><img src="/qiantai/images/pi3.jpg" class="img-responsive" alt="">
                             </a></div>
                 <div class="col-md-6 col-p">
                     <h5>For All Collections</h5>
@@ -157,7 +157,7 @@
                     <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
                 </div>
                 <div class="col-md-6 col-2">
-                    <a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt="">
+                    <a href="single.html"><img src="/qiantai/images/pi.jpg" class="img-responsive" alt="">
                             </a></div>
                 <div class="clearfix"> </div>
             </div>
@@ -165,8 +165,8 @@
         <div class="col-md-6 col-m2 animated wow fadeInRight" data-wow-delay=".1s">
             <!---->
             <!-- requried-jsfiles-for owl -->
-            <link href="css/owl.carousel.css" rel="stylesheet">
-            <script src="js/owl.carousel.js"></script>
+            <link href="/qiantai/css/owl.carousel.css" rel="stylesheet">
+            <script src="/qiantai/js/owl.carousel.js"></script>
             <script>
             $(document).ready(function() {
                 $("#owl-demo").owlCarousel({
@@ -183,19 +183,19 @@
             <!-- start content_slider -->
             <div id="owl-demo" class="owl-carousel">
                 <div class="item">
-                    <a href="single.html"><img class="img-responsive" src="images/bb.png" alt="" /></a>
+                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb.png" alt="" /></a>
                     <a href="single.html" class="shop-2">Shop Now</a>
                 </div>
                 <div class="item">
-                    <a href="single.html"><img class="img-responsive" src="images/bb1.png" alt="" /></a>
+                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
                     <a href="single.html" class="shop-2">Shop Now</a>
                 </div>
                 <div class="item">
-                    <a href="single.html"><img class="img-responsive" src="images/bb.png" alt="" /> </a>
+                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb.png" alt="" /> </a>
                     <a href="single.html" class="shop-2">Shop Now</a>
                 </div>
                 <div class="item">
-                    <a href="single.html"><img class="img-responsive" src="images/bb1.png" alt="" /></a>
+                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
                     <a href="single.html" class="shop-2">Shop Now</a>
                 </div>
             </div>
@@ -207,7 +207,7 @@
 <div class="content-top">
     <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
         <div class="col-3">
-            <a href="single.html"><img src="images/pi1.jpg" class="img-responsive " alt="">
+            <a href="single.html"><img src="/qiantai/images/pi1.jpg" class="img-responsive " alt="">
                             <div class="col-pic">   
                                 <h5> Women's Wear</h5>
                                 <p>At vero eos et accusamus et</p>
@@ -221,16 +221,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr1.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr1.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -244,16 +244,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr3.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr3.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr2.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr2.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -267,16 +267,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr5.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr5.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr4.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr4.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -298,16 +298,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr6.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr6.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr7.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr7.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -321,16 +321,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr9.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr9.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr8.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr8.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -344,16 +344,16 @@
                     <figure>
                         <a href="single.html">
                             <div class="grid-img">
-                                <img src="images/pr10.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr10.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="grid-img">
-                                <img src="images/pr11.jpg" class="img-responsive" alt="">
+                                <img src="/qiantai/images/pr11.jpg" class="img-responsive" alt="">
                             </div>
                         </a>
                     </figure>
                 </div>
                 <div class="women">
-                    <a href="#"><img src="images/ll.png" alt=""></a>
+                    <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
                     <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                     <p>
                         <del>$100.00</del><em class="item_price">$70.00</em></p>
@@ -365,7 +365,7 @@
     </div>
     <div class="col-md-5 col-md1 animated wow fadeInRight" data-wow-delay=".1s">
         <div class="col-3">
-            <a href="single.html"><img src="images/pi2.jpg" class="img-responsive " alt="">
+            <a href="single.html"><img src="/qiantai/images/pi2.jpg" class="img-responsive " alt="">
                             <div class="col-pic">
                                 <h5> Men's Wear</h5>
                                 <p>At vero eos et accusamus et</p>
