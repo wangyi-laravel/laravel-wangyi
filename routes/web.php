@@ -57,5 +57,8 @@ Route::resource('tag','TagController');
 //后台商品管理
 Route::resource('good','GoodController');
 
+//广告位
+Route::resource('guanggao','GuanggaoController');
+
 //后台友情链接
 Route::resource('link','LinkController');

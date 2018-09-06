@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cates;
+use App\Cate_1;
 use Illuminate\Http\Request;
 
-class CatesController extends Controller
+class Cate_1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class CatesController extends Controller
      */
     public function index()
     {
-        // 读取数据库  获取分类数据
-        $cates = Cates::orderBy('id','desc')
-        ->where('name', 'like','%'.request()->keywords.'%')
-        ->get();
-        // 解析模板显示用户数据
-        return view('admin.cates.index', ['cates'=>$cates]);
+        //
+        $cates = Cate_1::orderBy('id','desc')
+            ->where('name','like', '%'.request()->keywords.'%')
+            ->get();
+        //
+        return view('admin.cate.index', ['cates'=>$cates]);
     }
 
     /**
@@ -29,9 +29,9 @@ class CatesController extends Controller
      */
     public function create()
     {
-        //读取分类表信息
-        $cates = Cates::all();
-        return view('admin.cates.create',compact('cates'));
+        //·ÖÀà
+        return view('admin.cate.create');
+
     }
 
     /**
@@ -42,15 +42,16 @@ class CatesController extends Controller
      */
     public function store(Request $request)
     {
-        $cates = new Cates;
-        $cates -> name = $request->name;
-        $cates -> parent_id = $request->parent_id;
+        $cate = new Cate_1;
 
-        if ($cates -> save()) {
-            return redirect('/cates')->with('success', '添加成功');
+        $cate -> name = $request->name;
+        if($cate -> save()){
+            return redirect('/cate_1')->with('success', '更新成功');
         }else{
-            return back()->with('error', '添加失败');
-        }
+            return back()->with('error','更新失败');
+        } 
+
+       
     }
 
     /**
@@ -72,9 +73,10 @@ class CatesController extends Controller
      */
     public function edit($id)
     {
-        $cates = Cates::findOrFail($id);
-        // 解析模板显示数据
-        return view('admin.cates.edit',compact('cates'));
+        //
+        $cate = cate_1::findOrFail($id);
+
+        return view('admin.cate.edit', ['cate'=>$cate]);
     }
 
     /**
@@ -86,15 +88,16 @@ class CatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cates = Cates::findOrFail($id);
-        $cates -> name = $request->name;
-        // $cates -> parent_id = $request->parent_id;
+        //
+        $cate = cate_1::findOrFail($id);
+        
+        $cate -> name = $request -> name;
 
-        if ($cates -> save()) {
-            return redirect('/cates')->with('success', '更新成功');
+        if($cate -> save()){
+            return redirect('/cate_1')->with('success', '更新成功');
         }else{
-            return back()->with('error', '更新失败');
-        }
+            return back()->with('error','更新失败');
+        } 
     }
 
     /**
@@ -105,12 +108,13 @@ class CatesController extends Controller
      */
     public function destroy($id)
     {
-        $cates = Cates::findOrFail($id);
+        
+        $cate = cate_1::findOrFail($id);
 
-        if ($cates->delete()) {
-            return back()->with('success','删除成功');
+        if($cate -> delete()){
+            return redirect('/cate_1')->with('success', '删除成功');
         }else{
-            return back()->with('success','删除失败');
+            return back()->with('error','删除失败');
         } 
     }
 }
