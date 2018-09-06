@@ -53,8 +53,8 @@
                                 <input type="checkbox" class="tpl-table-fz-check">
                             </th>
                             <th class="table-id">ID</th>
-                            <th class="table-title">一级分类名</th>
                             <th class="table-title">二级分类名</th>
+                            <th class="table-title">一级分类名</th>
                             <th class="table-set">操作</th>
                         </tr>
                     </thead>
@@ -66,11 +66,11 @@
                             </td>
                             <td>{{$v['id']}}</td>
 
+                            
+                            
+                            <td >@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach </td>
+                            
                             <td >@if(!$v['parent_id']) {{$v['name']}} @endif</td>
-                            
-                            <td >@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach</td>
-                            
-                            
                         
                             
                             <td>
