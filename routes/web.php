@@ -75,7 +75,6 @@ Route::post('/admin/login', 'LoginController@dologin');
 		//广告
 		Route::resource('guanggao','GuanggaoController');
 
-
 		//退出
 		Route::get('/admin/logout', 'LoginController@logout');
  //});

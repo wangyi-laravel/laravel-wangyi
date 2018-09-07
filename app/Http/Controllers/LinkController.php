@@ -2,28 +2,21 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Link;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\links;
-use Illuminate\Support\Facades\DB;
 
 class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-         $link = Link::orderBy('id','desc')
-                 ->where('name','like','%'.request()->keywords.'%')
-                 ->paginate(10);
-        //解析模板  显示用户数据
-        return view('admin.link.index',['link'=>$link]);
-
+        //读取数据库 获取标签数据
+        $links = Link::all();
+        //解析模板显示用户数据
+        return view('admin.link.index', ['links'=>$links]);
     }
 
     /**
@@ -33,7 +26,6 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.link.create');
     }
 
@@ -45,23 +37,17 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // dd($request);
-
         $link = new Link;
 
-        $link->name = $request ->name;
-
-        $link->url = $request ->url;
-
-        $link->order = $request ->order;
+        $link -> name = $request->name;
+        $link -> url = $request->url;
+        $link -> order = $request->order;
 
         if($link -> save()){
-            return redirect('/link')->with('success','添加成功');
+            return redirect('/link')->with('success', '添加成功');
         }else{
             return back()->with('error','添加失败');
         }
-        
     }
 
     /**
@@ -83,10 +69,9 @@ class LinkController extends Controller
      */
     public function edit($id)
     {
-        //
-        $username =  DB::table('links')->where('id',$id)->get();
-        // dd($username);
-        return view('/admin/link/edit',['username'=>$username]);
+        $link = Link::findOrFail($id);
+
+        return view('admin.link.edit', ['link'=>$link]);
     }
 
     /**
@@ -98,16 +83,16 @@ class LinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $username = $request -> username;
+        $link = Link::findOrFail($id);
 
+        $link -> name = $request->name;
+        $link -> url = $request->url;
+        $link -> order = $request->order;
 
-        $update = DB::table('links')->where('id',$id)->update(['name'=>$username]);
-        
-        if($update){
-            return redirect('/link')->with('success','修改用户成功成功');
+        if($link -> save()){
+            return redirect('/link')->with('success', '更新成功');
         }else{
-            return back()->with('error','修改失败');
+            return back()->with('error','更新失败');
         }
     }
 
@@ -119,14 +104,12 @@ class LinkController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $username = DB::table('links')->where('id',$id)->value('name');
-        $user = DB::table('links')->where('id',$id)->delete();
-        if($user){
-            return redirect('/link')->with('success','删除'.$username.'成功');
+        $link = Link::findOrFail($id);
+
+        if($link -> delete()){
+            return redirect('/link')->with('success', '删除成功');
         }else{
             return back()->with('error','删除失败');
-        }
+        }   
     }
 }
-

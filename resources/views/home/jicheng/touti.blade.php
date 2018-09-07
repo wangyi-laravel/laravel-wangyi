@@ -51,6 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
                     <div class="header-right1 ">
                         <ul>
+                            
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/admin/login">Login</a></li>
                             <li><i class="glyphicon glyphicon-book"></i><a href="/admin/register">Register</a></li>
                         </ul>
