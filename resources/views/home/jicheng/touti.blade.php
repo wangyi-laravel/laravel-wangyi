@@ -54,9 +54,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
                 <div class="header-right1 ">
                     <ul>
-        
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="login.html">Login</a></li>
-                        <li><i class="glyphicon glyphicon-book"></i><a href="register.html">Register</a></li>
+                        @if(!Session::has('id'))
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/admin/login">登录</a></li>
+                        <li><i class="glyphicon glyphicon-book"></i><a href="/admin/register">注册</a></li>
+                        @endif
+                        @if(Session::has('id'))
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人</a></li>
+                        <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
+                        
                     </ul>
                 </div>
                 <div class="header-right2">
@@ -68,6 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </h3>
                         </a>
                         <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                        @endif
                         <div class="clearfix"> </div>
                     </div>  
                 </div>
@@ -611,7 +617,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

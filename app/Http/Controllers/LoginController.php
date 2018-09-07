@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
+use App\Setting;
 use App\User;
 use Gregwar\Captcha\CaptchaBuilder;
-use Session;
 use Illuminate\Http\Concerns\flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Session;
 
 class LoginController extends Controller
 {
     public function index()
 	{
+		
 		return view('admin');
 	}
 
@@ -21,7 +24,9 @@ class LoginController extends Controller
 	 */
 	public function login()
 	{
-		return view('home.login');
+		$setting = Setting::all();
+		$link = Link::all();
+		return view('home.login',compact('setting','link'));
 	}
 
 	/**

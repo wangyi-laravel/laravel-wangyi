@@ -78,8 +78,7 @@ Route::post('/admin/login', 'LoginController@dologin');
 		Route::resource('guanggao','GuanggaoController');
 
 		// //退出
-		// Route::get('/admin/logout', 'LoginController@logout');
-
+		Route::get('/admin/logout', 'LoginController@logout');
 
 });
 
