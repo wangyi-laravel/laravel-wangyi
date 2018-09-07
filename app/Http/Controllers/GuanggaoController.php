@@ -119,9 +119,9 @@ class GuanggaoController extends Controller
 
         //插入
         if ($gao -> save()) {
-            return redirect('/guanggao')->with('success', '添加成功');
+            return redirect('/guanggao')->with('success', '修改成功');
         }else{
-            return back()->with('error', '添加失败');
+            return back()->with('error', '修改失败');
         }
         
     }
