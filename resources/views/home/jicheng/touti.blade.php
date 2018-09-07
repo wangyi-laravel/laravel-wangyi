@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         @if(Session::has('id'))
                         <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人</a></li>
                         <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
-                        
+                        @endif
                     </ul>
                 </div>
                 <div class="header-right2">
@@ -73,7 +73,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </h3>
                         </a>
                         <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-                        @endif
                         <div class="clearfix"> </div>
                     </div>  
                 </div>
@@ -101,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div> 
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html" class="act">Home</a></li>   
+                            <li class="active"><a href="/" class="act">Home</a></li>   
                             <!-- Mega Menu -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <b class="caret"></b></a>
@@ -617,7 +616,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">加入我们</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

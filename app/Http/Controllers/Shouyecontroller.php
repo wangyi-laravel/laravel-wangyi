@@ -22,7 +22,8 @@ class Shouyecontroller extends Controller
     public function register()
     {
         $link = Link::all();
-      	return view('home.jicheng.register',compact('link'));
+        $setting = Setting::all();
+      	return view('home.jicheng.register',compact('link','setting'));
     }  
 
     //执行注册
