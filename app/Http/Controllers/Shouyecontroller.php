@@ -51,4 +51,12 @@ class Shouyecontroller extends Controller
       $request->session()->flush();
       return redirect('/')->with('success','退出成功');
     }
+
+    /**
+     * 个人中心
+     */
+    public function people()
+    {
+      return view('home.jicheng.people');
+    }
 }

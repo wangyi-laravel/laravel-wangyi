@@ -96,3 +96,6 @@ Route::post('/admin/store','ShouyeController@store');
 //前台退出
 Route::get('/home/logout','ShouyeController@logout');
 
+//个人中心
+Route::get('/home/people','ShouyeController@people');
+

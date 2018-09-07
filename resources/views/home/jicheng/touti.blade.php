@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -58,8 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @endif
                             @if(Session::has('id')){
                            <li><i class="glyphicon glyphicon-book"></i>
-                               <a href="/home/my">個人信息</a></li>
-                           <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
+                               <a href="/home/people">Personal</a></li>
+                           <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">LogOut</a></li>
                         </ul>
                     </div>
                     <div class="header-right2">
