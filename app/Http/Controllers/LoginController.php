@@ -31,7 +31,7 @@ class LoginController extends Controller
 	{
 		//获取用户的数据
 		$user = User::where('username', $request->username)->first();
-		dd($user);
+		
 		$res = $request->num;
 
 		$php = Session::get('milkcaptcha');

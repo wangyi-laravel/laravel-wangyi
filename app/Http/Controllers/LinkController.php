@@ -13,10 +13,12 @@ class LinkController extends Controller
      */
     public function index()
     {
+
         //读取数据库 获取标签数据
         $links = Link::all();
         //解析模板显示用户数据
         return view('admin.link.index', ['links'=>$links]);
+
     }
 
     /**
@@ -69,9 +71,11 @@ class LinkController extends Controller
      */
     public function edit($id)
     {
+
         $link = Link::findOrFail($id);
 
         return view('admin.link.edit', ['link'=>$link]);
+
     }
 
     /**
