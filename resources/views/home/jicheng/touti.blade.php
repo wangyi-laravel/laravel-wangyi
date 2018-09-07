@@ -581,6 +581,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="clearfix"></div>
 </div>
+@show
 <!--products-->
 <div class="social animated wow fadeInDown" data-wow-delay=".1s">
     <div class="container">
@@ -599,7 +600,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"></div>
     </div>
 </div>
-    @show
+    
     <!-- footer -->
     <div class="footer">
         <div class="container">
