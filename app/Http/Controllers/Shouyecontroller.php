@@ -22,7 +22,8 @@ class Shouyecontroller extends Controller
     public function register()
     {
         $link = Link::all();
-      	return view('home.jicheng.register',compact('link'));
+        $setting = Setting::all();
+      	return view('home.jicheng.register',compact('link','setting'));
     }  
 
     //执行注册
@@ -36,10 +37,19 @@ class Shouyecontroller extends Controller
         $user -> name = $request->name;
 
       	if($user -> save()){
-            return redirect('/admin/login')->with('success','添加成功');
+            return redirect('/admin/login')->with('success','註冊成功');
         }else{
-            return back()->with('error','添加失败');
+            return back()->with('error','註冊失败');
         }
       	
     }  
+
+    /**
+     * 退出登錄
+     */
+    public function logout(Request $request)
+    {
+      $request->session()->flush();
+      return redirect('/')->with('success','退出成功');
+    }
 }

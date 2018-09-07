@@ -76,7 +76,9 @@ Route::post('/admin/login', 'LoginController@dologin');
 	Route::resource('guanggao','GuanggaoController');
 
 
+
 // });
+
 
 
 
@@ -88,4 +90,7 @@ Route::get('/admin/register','ShouyeController@register');
 
 //执行注册
 Route::post('/admin/store','ShouyeController@store');
+
+//前台退出
+Route::get('/home/logout','ShouyeController@logout');
 
