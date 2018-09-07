@@ -32,9 +32,9 @@ class Shouyecontroller extends Controller
         $user -> name = $request->name;
 
       	if($user -> save()){
-            return redirect('/admin/login')->with('success','添加成功');
+            return redirect('/admin/login')->with('success','註冊成功');
         }else{
-            return back()->with('error','添加失败');
+            return back()->with('error','註冊失败');
         }
       	
     }  

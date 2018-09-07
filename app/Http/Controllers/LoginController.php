@@ -31,7 +31,7 @@ class LoginController extends Controller
 	{
 		//获取用户的数据
 		$user = User::where('username', $request->username)->first();
-		
+		dd($user);
 		$res = $request->num;
 
 		$php = Session::get('milkcaptcha');
@@ -47,7 +47,7 @@ class LoginController extends Controller
 		if(Hash::check($request->password, $user->password)){
 			//写入session
 			session(['username'=>$user->username, 'id'=>$user->id]);
-			return redirect('/admin')->with('success','登陆成功');
+			return redirect('/')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');
 		}
