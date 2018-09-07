@@ -43,7 +43,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($links as $v)
+                        @foreach($link as $v)
                         <tr>
                             <td>
                                 <input type="checkbox">

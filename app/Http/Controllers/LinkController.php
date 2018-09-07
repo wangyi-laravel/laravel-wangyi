@@ -18,9 +18,7 @@ class LinkController extends Controller
     public function index()
     {
         //
-         $link = Link::orderBy('id','desc')
-                 ->where('name','like','%'.request()->keywords.'%')
-                 ->paginate(10);
+         $link = Link::all();
         //解析模板  显示用户数据
         return view('admin.link.index',['link'=>$link]);
 
@@ -86,7 +84,7 @@ class LinkController extends Controller
         //
         $username =  DB::table('links')->where('id',$id)->get();
         // dd($username);
-        return view('/admin/link/edit',['username'=>$username]);
+        return view('admin.link.edit',['username'=>$username]);
     }
 
     /**
