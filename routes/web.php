@@ -26,7 +26,7 @@ Route::get('/admin/login', 'LoginController@login');
 Route::post('/admin/login', 'LoginController@dologin');
 
 //后台路由
- Route::group(['middleware'=>'login'],function(){
+// Route::group(['middleware'=>'login'],function(){
 		//后台主页
 		Route::get('/admin','AdminController@index');
 
@@ -78,7 +78,7 @@ Route::post('/admin/login', 'LoginController@dologin');
 
 		//退出
 		Route::get('/admin/logout', 'LoginController@logout');
- });
+ //});
 
 
 
