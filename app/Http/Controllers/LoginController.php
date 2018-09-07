@@ -21,7 +21,7 @@ class LoginController extends Controller
 	 */
 	public function login()
 	{
-		return view('admin.login');
+		return view('home.login');
 	}
 
 	/**
@@ -59,7 +59,7 @@ class LoginController extends Controller
 	public function logout(Request $request)
 	{
 		$request->session()->flush();
-		return redirect('/admin/login')->with('success','退出成功');
+		return redirect('/home/login')->with('success','退出成功');
 	}
 
 	/**
