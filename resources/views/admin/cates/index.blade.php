@@ -32,13 +32,10 @@
 
             <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-center admin-header-list tpl-header-list">
                 <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
-                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                         一级分类名 <span class="am-badge tpl-badge-success am-round"></span>
-                    </a>
                     <ul class="am-dropdown-content tpl-dropdown-content">
                         <li class="tpl-dropdown-content-external">
-                            <span class="tpl-color-success">5</span><a href="###">全部</a></li>
-                        
+                            <span class="tpl-color-success">5</span><a href="###">全部</a>
+                        </li>
                     </ul>
                 </li>
                 
@@ -53,8 +50,7 @@
                                 <input type="checkbox" class="tpl-table-fz-check">
                             </th>
                             <th class="table-id">ID</th>
-                            <th class="table-title">二级分类名</th>
-                            <th class="table-title">一级分类名</th>
+                            <th class="table-title">分类名</th>
                             <th class="table-set">操作</th>
                         </tr>
                     </thead>
@@ -64,6 +60,7 @@
                             <td>
                                 <input type="checkbox">
                             </td>
+<<<<<<< HEAD
                             <td>{{$v['id']}}</td>
 
                             
@@ -72,7 +69,15 @@
                             
                             <td >@if(!$v['parent_id']) {{$v['name']}} @endif</td>
                         
+=======
+                            <td>
+                                {{$v['id']}}
+                            </td>
+>>>>>>> f757913b85d4fd5ec97b6d89aa795d815006fd36
                             
+                            <td >
+                                {{$v['name']}}
+                            </td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
@@ -80,13 +85,50 @@
                                         <form style="float:left" action="/cates/{{$v['id']}}" method="post">
                                             {{method_field('DELETE')}}
                                             {{csrf_field()}}
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                            @if(!empty($v->child))
+                                                <a href="#" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o" ></span> 不能删除</a>
+                                            @endif
                                         </form>
-
                                     </div>
+                                    <form  action="/cates/{{$v['id']}}" method="post">
+                                            {{method_field('DELETE')}}
+                                            {{csrf_field()}}
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" style="float:right;"><span class="am-icon-trash-o" ></span> 强制删除</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
+                        @if(!empty($v->child))
+                            @foreach($v->child as $b)
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>
+                                        {{$b['id']}}
+                                </td>
+                                
+                                <td >
+                                    |-----{{$b['name']}}
+                                </td>
+                                
+                                
+                                <td>
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            <a href="/cates/{{$b['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                            <form style="float:left" action="/cates/{{$b['id']}}" method="post">
+                                                {{method_field('DELETE')}}
+                                                {{csrf_field()}}
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @endif
                         @endforeach
                     </tbody>
                 </table>

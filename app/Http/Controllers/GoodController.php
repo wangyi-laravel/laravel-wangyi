@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Attr;
 use App\Attrval;
+use App\Cates;
 use App\Good;
 use Illuminate\Http\Request;
 
@@ -33,13 +34,17 @@ class GoodController extends Controller
     {
         //读取属性
         $attrs = Attr::all();
-
         //读取属性值
         $attrvals = Attrval::all();
 
+        //读取分类
+        $cates = Cates::all();
+        // dd($cates);
+
         return view('admin.good.create', [
             'attrs' => $attrs,
-            'attrvals' => $attrvals
+            'attrvals' => $attrvals,
+            'cates' => $cates
         ]);
     }
 
@@ -61,7 +66,10 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
-
+        $goods -> cate_id = $request -> cate_id;
+        $goods -> attr_id = $request -> attr_id;
+        $req = implode($request -> attrval_id,'-');
+        $goods -> attrval_id = $req;
         //文件上传
         //检测是否有文件上传
         if ($request->hasFile('image')) {

@@ -25,22 +25,14 @@
                         </div>
                     </div> -->
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">分类名 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">二级分类名 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="name" value="{{$cates['name']}}" class="tpl-form-input" id="user-name" placeholder="">
                         </div>
                     </div>
                     @else
                     <div class="am-form-group">
-                        <label for="user-phone" class="am-u-sm-3 am-form-label">一级分类名 </label>
-                        <div class="am-u-sm-9">
-                            <select data-am-selected="{searchBox: 1}" name="parent_id" style="display: none;">
-                                <option value="0">修改一级分类</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">分类名 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">一级分类名 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="name" value="{{$cates['name']}}" class="tpl-form-input" id="user-name" placeholder="">
                         </div>

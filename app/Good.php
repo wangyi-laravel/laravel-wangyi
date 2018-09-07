@@ -15,4 +15,9 @@ class Good extends Model
     {
     	return $this->hasMany('App\Attrval');
     }
+
+    public function cate()
+    {
+    	return $this -> belonds('App\Cates');
+    }
 }

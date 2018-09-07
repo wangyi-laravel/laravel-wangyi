@@ -210,7 +210,7 @@
 
                 <a href="/cates">
                     <i class="am-icon-angle-right"></i>
-                    <span>分类修改</span>
+                    <span>分类列表</span>
                 </a>
             </li>
         </ul>

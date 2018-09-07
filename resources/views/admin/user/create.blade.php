@@ -20,7 +20,6 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">用户名 <span class="tpl-form-line-small-title">username</span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="username" class="tpl-form-input" id="user-name" placeholder="请填写标题文字6-20位字母数字下划线">
-                            <small></small>
                         </div>
                     </div>
 
@@ -52,7 +51,7 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">手机号 <span class="tpl-form-line-small-title">phone</span></label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="phone" class="tpl-form-input" id="user-name" placeholder="请填写6~20位非空白字符">
+                            <input type="number" name="phone" class="tpl-form-input" id="user-name" placeholder="请填写6~20位非空白字符">
                             <small></small>
                         </div>
                     </div>
@@ -78,14 +77,6 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">地址 <span class="tpl-form-line-small-title">site</span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="site" class="tpl-form-input" id="user-name" placeholder="请填写6~20位非空白字符">
-                            <small></small>
-                        </div>
-                    </div>
-
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">积分 <span class="tpl-form-line-small-title">jifen</span></label>
-                        <div class="am-u-sm-9">
-                            <input type="text" name="jifen" class="tpl-form-input" id="user-name" placeholder="请填写6~20位非空白字符">
                             <small></small>
                         </div>
                     </div>
