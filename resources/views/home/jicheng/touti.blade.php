@@ -41,16 +41,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="header-grid">
             <div class="container">
+                @foreach($setting as $v)
                 <div class="header-left animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                     <ul>
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">@example.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone"></i>+1234 567 892</li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>
+                @endforeach
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
                     <div class="header-right1 ">
                         <ul>
+                            
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/admin/login">Login</a></li>
                             <li><i class="glyphicon glyphicon-book"></i><a href="/admin/register">Register</a></li>
                         </ul>
@@ -573,52 +576,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="clearfix"></div>
 </div>
+@show
 <!--products-->
 <div class="social animated wow fadeInDown" data-wow-delay=".1s">
     <div class="container">
+        @foreach($link as $v)
         <div class="col-sm-3 social-ic">
-            <a href="#">FACEBOOK</a>
+            <a href="{{$v['url']}}">{{$v['name']}}</a>
         </div>
-        <div class="col-sm-3 social-ic">
-            <a href="#">TWITTER</a>
-        </div>
-        <div class="col-sm-3 social-ic">
-            <a href="#">GOOGLE+</a>
-        </div>
-        <div class="col-sm-3 social-ic">
-            <a href="#">PINTEREST</a>
-        </div>
+        @endforeach
         <div class="clearfix"></div>
     </div>
 </div>
-    @show
+    
     <!-- footer -->
     <div class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="col-md-9 footer-top1">
-                    <h4>Duis aute irure dolor in reprehenderit in voluptate </h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.Excepteur sint occaecat cupidatat non proident Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                    <h4>与我一起开创武'装'新时代</h4>
+                    <p>一直以来,你们都在想办法跟上潮流的脚步名,却不懂如何创新.加入我们,创造属于自己的潮流!  从今天开始,做潮流的主人.武'装'大师,期待你的加入!</p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">联系我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
+            @foreach($setting as $v)
             <div class="footer-grids">
                 <div class="col-md-4 footer-grid animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-                    <h3>About Us</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat 
-						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+                    <h3>{{$v['author']}}</h3>
+                    <p>{!!$v['jianjie']!!}</span></p>
                 </div>
                 <div class="col-md-4 footer-grid animated wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-                    <h3>Contact Info</h3>
+                    <h3>联系信息</h3>
                     <ul>
-                        <li><i class="glyphicon glyphicon-map-marker"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone"></i>+1234 567 567</li>
+                        <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
+                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>
+                @endforeach
                 <div class="col-md-4 footer-grid animated wow fadeInLeft animated" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
                     <h3>Sign up for newsletter </h3>
                     <form>
@@ -627,9 +625,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </form>
                 </div>
                 <div class="clearfix"> </div>
-            </div>
-            <div class="copy-right animated wow fadeInUp" data-wow-delay=".5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
-                <p>Copyright © 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
             </div>
         </div>
     </div>

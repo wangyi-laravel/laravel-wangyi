@@ -90,6 +90,7 @@ class GuanggaoController extends Controller
         $gao = Guanggao::findOrFail($id);
 
         return view('admin.guanggao.edit', ['gao'=>$gao]);
+
     }
 
     /**
@@ -102,7 +103,26 @@ class GuanggaoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        
+        //插入数据
+        $gao = Guanggao::findOrFail($id);
+        $gao -> name = $request-> name;
+        $gao -> image = $request -> image;
+        $gao -> site = $request -> site;
+        $gao -> jieshao = $request -> jieshao;
+        // $gao -> parent_id = $request->parent_id;
+
+        //文件上传
+        //检测是否有文件上传
+        if ($request->hasFile('image')) {
+            $gao->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
+
+        //插入
+        if ($gao -> save()) {
+            return redirect('/guanggao')->with('success', '修改成功');
+        }else{
+            return back()->with('error', '修改失败');
+        }
         
     }
 

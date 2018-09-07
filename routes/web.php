@@ -26,7 +26,9 @@ Route::get('/admin/login', 'LoginController@login');
 Route::post('/admin/login', 'LoginController@dologin');
 
 //后台路由
-Route::group(['middleware'=>'login'],function(){
+
+
+ // Route::group(['middleware'=>'login'],function(){
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
@@ -42,8 +44,6 @@ Route::group(['middleware'=>'login'],function(){
 
 	//后台地址管理
 	Route::resource('site','SiteController');
-
-
 
 	//后台商品属性
 	Route::resource('attr','AttrController');
@@ -62,10 +62,7 @@ Route::group(['middleware'=>'login'],function(){
 
 	//后台标签
 	Route::resource('tag','TagController');
-	
-	//分类跳商品添加
-	Route::get('/tj/{id}','GoodController@create');
-	
+		
 	//后台商品管理
 	Route::resource('good','GoodController');
 
@@ -74,7 +71,12 @@ Route::group(['middleware'=>'login'],function(){
 
 	//退出
 	Route::get('/admin/logout', 'LoginController@logout');
-});
+
+	//广告
+	Route::resource('guanggao','GuanggaoController');
+
+
+// });
 
 
 

@@ -37,22 +37,28 @@
                         <div class="am-u-sm-9">
                             <select data-am-selected="{searchBox: 1}" name="attr_id" style="display: none;">
                                 @foreach($attrs as $v)
-                                <option value="{{$v['id']}}" >{{$v['name']}}</option>
+                                    @foreach($cate as $b)
+                                        @if($v['cate_id'] == $b)
+                                        <option value="{{$v['id']}}" >{{$v['name']}}</option>
+                                        @endif
+                                    @endforeach
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                        <script>
-                            var a = $('#abc option').change(function(){
-                                alert('123');
-                            });
-                            console.log(a);
-                        </script>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">属性值 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            @foreach($attrvals as $val)
-                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="attrval_id[]" value="{{$val['id']}}">{{$val['val']}}</label>
+                            @foreach($cate as $b)
+                                @foreach($attrs as $v)
+                                    @if($v['cate_id'] == $b)
+                                        @foreach($attrvals as $val)
+                                            @if($val['attr_id'] == $v['id'])
+                                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="attrval_id[]" value="{{$val['id']}}">{{$val['val']}}</label>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach
                             @endforeach
                         </div>
                     </div>

@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\User;
 use Gregwar\Captcha\CaptchaBuilder;
-use Session;
 use Illuminate\Http\Concerns\flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Session;
 
 class LoginController extends Controller
 {
     public function index()
 	{
+		
 		return view('admin');
 	}
 
@@ -21,7 +23,8 @@ class LoginController extends Controller
 	 */
 	public function login()
 	{
-		return view('admin.login');
+		$link = Link::all();
+		return view('home.login',compact('link'));
 	}
 
 	/**
@@ -59,7 +62,7 @@ class LoginController extends Controller
 	public function logout(Request $request)
 	{
 		$request->session()->flush();
-		return redirect('/admin/login')->with('success','退出成功');
+		return redirect('/home/login')->with('success','退出成功');
 	}
 
 	/**

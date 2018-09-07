@@ -42,6 +42,7 @@
                                 </th>
                                 <th class="table-id">ID</th>
                                 <th class="table-author am-hide-sm-only">商品属性名</th>
+                                <th class="table-author am-hide-sm-only">分类名</th>
                                 <th class="table-set">操作</th>
                             </tr>
                         </thead>
@@ -53,6 +54,7 @@
                                 </td>
                                 <td>{{$v['id']}}</td>
                                 <td class="am-hide-sm-only">{{$v['name']}}</td>
+                                <td class="am-hide-sm-only">{{$v->cate['name']}}</td>
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">

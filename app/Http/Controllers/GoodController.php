@@ -22,26 +22,10 @@ class GoodController extends Controller
         $goods = Good::orderBy('id','desc')
         ->where('title', 'like','%'.request()->keywords.'%')
         ->paginate(10);
-        // $all = Good::all();
-        // $attrvals = Attrval::all();
-        foreach($goods as $v){
-            $zhi = $v['attrval_id'];
-        }
-        // dd($attrvals);
         // 解析模板显示用户数据
 
-        // 添加入中间表
-        try{              
-            DB::table('attr_attrval')->insert([
-                'attr_id'=>$attrval->id, 
-                'attrval_id' => $request->attr_id,
-            ]);
-            
-            return redirect('/attrval')->with('success','添加成功');
-        }catch(\Exception $e){
-            return back()->with('error','添加失败!!!');
-        }
-        return view('admin.good.index', ['goods'=>$goods,'zhi' => $zhi]);
+        
+        return view('admin.good.index', ['goods'=>$goods]);
     }
 
     /**
@@ -58,20 +42,13 @@ class GoodController extends Controller
         //读取属性值
         $attrvals = Attrval::all();
         
-        //
+        //获取所有分类
         $cates = Cates::all();
 
-        //获取分类id
+        //获取分类页传过得id
         $cate = $_GET;
-        // $cate = 
-
-
-        return view('admin.good.create', [
-            'attrs' => $attrs,
-            'attrvals' => $attrvals,
-            'cate' => $cate,
-            'cates' => $cates
-        ]);
+        
+        return view('admin.good.create', compact('attrs','attrvals','cates','cate'));
     }
 
     /**
@@ -92,7 +69,7 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
-        $goods -> cate_id = 1;
+        $goods -> cate_id = 11111;
 
         //文件上传
         //检测是否有文件上传
@@ -100,9 +77,23 @@ class GoodController extends Controller
             $goods->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
-        //插入
+        //写入
         if ($goods -> save()) {
-            return redirect('/good')->with('success', '添加成功');
+
+            // 写加入中间表
+            try{              
+                DB::table('goods_attr_val')->insert([
+                    'goods_id'=>$goods->goods_id,
+                    'attr_id'=>$attrval->attr_id, 
+                    'attrval_id' => $request->attr_id,
+                ]);
+                
+                return redirect('/good')->with('success','添加成功');
+            }catch(\Exception $e){
+                return back()->with('error','添加失败!!!');
+            }
+
+            // return redirect('/good')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
         }
