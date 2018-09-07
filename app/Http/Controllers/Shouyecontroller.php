@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,8 +12,8 @@ class Shouyecontroller extends Controller
     //前台显示页面
     public function show()
     {
-
-    	return view('home.jicheng.touti');
+      $link = Link::all();
+    	return view('home.jicheng.touti',compact('link'));
     }
 
     //前台注册页面
