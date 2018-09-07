@@ -42,7 +42,7 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">联系方式 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <input type="number" name="phone" class="tpl-form-input" value="{{$setting ? $setting->phone : ''}}" id="user-name" placeholder="">
+                            <input type="text" name="phone" class="tpl-form-input" value="{{$setting ? $setting->phone : ''}}" id="user-name" placeholder="">
                         </div>
                     </div>
 

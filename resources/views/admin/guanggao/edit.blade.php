@@ -9,8 +9,8 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="tpl-form-body tpl-form-line">
-                <form class="am-form tpl-form-line-form" action="/guanggao" method="post" enctype="multipart/form-data">
-                    {{csrf_field()}}
+                <form class="am-form tpl-form-line-form" action="/guanggao/{{$gao['id']}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}  {{method_field('PUT')}}
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">广告名称 <span class="tpl-form-line-small-title">name</span></label>
                         <div class="am-u-sm-9">
