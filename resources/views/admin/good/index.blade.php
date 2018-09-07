@@ -40,6 +40,7 @@
                             <th class="table-title">商品图片</th>
                             <th class="table-title">商品描述</th>
                             <th class="table-title">商品价格</th>
+                            <th class="table-title">商品属性值</th>
                             <th class="table-title">积分</th>
                             <th class="table-title">数量</th>
                             <th class="table-set">操作</th>
@@ -56,6 +57,7 @@
                             <td><img src="{{$v['image']}}" width="80"></td>
                             <td>{{$v['miaoshu']}}</td>
                             <td>{{$v['price']}}</td>
+                            <td>{{$zhi}}</td>
                             <td>{{$v['jifen']}}</td>
                             <td>{{$v['number']}}</td>
                             <td>

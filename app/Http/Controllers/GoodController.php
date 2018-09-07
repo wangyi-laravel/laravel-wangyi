@@ -7,6 +7,7 @@ use App\Attrval;
 use App\Cates;
 use App\Good;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GoodController extends Controller
 {
@@ -21,8 +22,26 @@ class GoodController extends Controller
         $goods = Good::orderBy('id','desc')
         ->where('title', 'like','%'.request()->keywords.'%')
         ->paginate(10);
+        // $all = Good::all();
+        // $attrvals = Attrval::all();
+        foreach($goods as $v){
+            $zhi = $v['attrval_id'];
+        }
+        // dd($attrvals);
         // 解析模板显示用户数据
-        return view('admin.good.index', ['goods'=>$goods]);
+
+        // 添加入中间表
+        try{              
+            DB::table('attr_attrval')->insert([
+                'attr_id'=>$attrval->id, 
+                'attrval_id' => $request->attr_id,
+            ]);
+            
+            return redirect('/attrval')->with('success','添加成功');
+        }catch(\Exception $e){
+            return back()->with('error','添加失败!!!');
+        }
+        return view('admin.good.index', ['goods'=>$goods,'zhi' => $zhi]);
     }
 
     /**
@@ -30,20 +49,27 @@ class GoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        
+
         //读取属性
         $attrs = Attr::all();
         //读取属性值
         $attrvals = Attrval::all();
-
-        //读取分类
+        
+        //
         $cates = Cates::all();
-        // dd($cates);
+
+        //获取分类id
+        $cate = $_GET;
+        // $cate = 
+
 
         return view('admin.good.create', [
             'attrs' => $attrs,
             'attrvals' => $attrvals,
+            'cate' => $cate,
             'cates' => $cates
         ]);
     }
@@ -66,10 +92,8 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
-        $goods -> cate_id = $request -> cate_id;
-        $goods -> attr_id = $request -> attr_id;
-        $req = implode($request -> attrval_id,'-');
-        $goods -> attrval_id = $req;
+        $goods -> cate_id = 1;
+
         //文件上传
         //检测是否有文件上传
         if ($request->hasFile('image')) {
@@ -133,6 +157,10 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
+        $goods -> cate_id = $request -> cate_id;
+        $goods -> attr_id = $request -> attr_id;
+        $req = implode($request -> attrval_id,'_');
+        $goods -> attrval_id = $req;
 
         //文件上传
         //检测是否有文件上传

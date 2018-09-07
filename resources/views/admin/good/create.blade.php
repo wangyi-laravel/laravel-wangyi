@@ -21,15 +21,15 @@
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品分类</label>
                         <div class="am-u-sm-9">
-                            <div class="am-form-group am-form-file">
-                                <div class="tpl-form-file-img">
-                                </div>
-                                <button type="button" class="am-btn am-btn-danger am-btn-sm">
-                                    <i class="am-icon-cloud-upload"></i> 添加商品图片</button>
-                                <input id="doc-form-file" type="file" name="image">
-                            </div>
+                            @foreach($cates as $a)
+                                @foreach($cate as $b)
+                                    @if($b == $a['id'])
+                                        {{$a['name']}}
+                                    @endif
+                                @endforeach
+                            @endforeach
                         </div>
                     </div>
                     <div class="am-form-group">
@@ -56,22 +56,18 @@
                             @endforeach
                         </div>
                     </div>
-
                     <div class="am-form-group">
-                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品分类</label>
+                        <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
                         <div class="am-u-sm-9">
-
-                            <select data-am-selected="{searchBox: 1}" name="cate_id" style="display: none;">
-                                @foreach($cates as $v)
-                                @if($v['parent_id'] != 0)
-                                <option value="{{$v['id']}}" >{{$v['name']}}</option>
-                                @endif
-                                @endforeach
-                            </select>
-                                
+                            <div class="am-form-group am-form-file">
+                                <div class="tpl-form-file-img">
+                                </div>
+                                <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                    <i class="am-icon-cloud-upload"></i> 添加商品图片</button>
+                                <input id="doc-form-file" type="file" name="image">
+                            </div>
                         </div>
                     </div>
-
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品描述</label>
                         <div class="am-u-sm-9">

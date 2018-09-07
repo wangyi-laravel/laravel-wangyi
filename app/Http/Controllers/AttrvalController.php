@@ -60,6 +60,9 @@ class AttrvalController extends Controller
 
         if($attrval -> save()){
 
+
+            /*
+            // 添加入中间表
             try{              
                 DB::table('attr_attrval')->insert([
                     'attr_id'=>$attrval->id, 
@@ -69,9 +72,9 @@ class AttrvalController extends Controller
                 return redirect('/attrval')->with('success','添加成功');
             }catch(\Exception $e){
                 return back()->with('error','添加失败!!!');
-            }
+            }*/
 
-            // return redirect('/attrval')->with('success', '添加成功');
+            return redirect('/attrval')->with('success', '添加成功');
         }else{
             return back()->with('error','添加失败...');
         }
