@@ -24,7 +24,6 @@ class Shouyecontroller extends Controller
     public function register()
     {
         $link = Link::all();
-      $setting = Setting::all();
         $setting = Setting::all();
       	return view('home.jicheng.register',compact('link','setting'));
     }  

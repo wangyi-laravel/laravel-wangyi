@@ -47,11 +47,10 @@
 						
 						</div>
 						@endforeach
-						@foreach($site as $v)
 						<div class="contact-form2">
 							<h4>收货人电话</h4>
 							
-								<input type="text" placeholder="" required="" name="call" value="{{$v['call']}}">
+								<input type="text" placeholder="" required="" name="call" value="">
 							
 						</div>
 						<div class="contact-form2">
@@ -59,13 +58,13 @@
 								<label for="user-name" class="am-u-sm-3 am-form-label">收货地址 <span class="tpl-form-line-small-title"></span></label>
                       		 		<div class="am-u-sm-9" id="city_china">
                         				<select class="province" name="sheng">
-                        					<option>{{$v['sheng']}}</option>
+                        					<option></option>
                         				</select>
 	                        			<select class="city" name="shi">
-	                        				<option>{{$v['shi']}}</option>
+	                        				<option></option>
 	                        			</select>
 	                        			<select class="area" name="qu">
-	                        				<option>{{$v['qu']}}</option>
+	                        				<option></option>
 	                        			</select>
                         			</div>
 
@@ -80,11 +79,10 @@
 					
 				<div class="contact-me ">
 				
-						<textarea type="text" placeholder="" required="" name="address"> {{$v['address']}}</textarea>
+						<textarea type="text" placeholder="" required="" name="address"> }</textarea>
 						</div>
 						<input type="submit" value="Submit">
 				</form>
-				@endforeach
 			</div>
 			
 			<div class="col-md-4 contact-grids">
