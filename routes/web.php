@@ -44,11 +44,11 @@ Route::post('/admin/login', 'LoginController@dologin');
 	//后台地址管理
 	Route::resource('site','SiteController');
 
-	//后台商品属性
-	Route::resource('attr','AttrController');
+	//后台颜色管理
+	Route::resource('color','ColorController');
 
-	//后台商品属性值
-	Route::resource('attrval','AttrvalController');
+	//后台尺码管理
+	Route::resource('size','SizeController');
 
 	//后台分类
 	Route::resource('cates','CatesController');
@@ -74,6 +74,12 @@ Route::post('/admin/login', 'LoginController@dologin');
 	//广告
 	Route::resource('guanggao','GuanggaoController');
 
+	//购物车
+	Route::resource('cart_items','Cart_itemsController');
+
+	//订单
+	//Route::resource('guanggao','GuanggaoController');
+
 // });
 
 
@@ -94,3 +100,14 @@ Route::get('/home/logout','ShouyeController@logout');
 //个人中心
 Route::get('/home/people','ShouyeController@people');
 Route::post('/prople/z','ShouyeController@z');
+
+
+
+//商品详情页
+Route::resource('/home/xiang','XiangController');
+
+//商品列表
+Route::resource('/home/liebiao','LiebiaoController');
+
+
+

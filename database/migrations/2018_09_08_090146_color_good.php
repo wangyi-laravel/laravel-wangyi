@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AttrAttrval extends Migration
+class ColorGood extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AttrAttrval extends Migration
      */
     public function up()
     {
-        Schema::create('attr_attrval', function (Blueprint $table) {
-            $table->integer('attr_id');
-            $table->integer('attrval_id');
+        Schema::create('color_good', function (Blueprint $table) {
+            
+            $table->integer('color_id');
+            $table->integer('good_id');
+            
         });
     }
 
@@ -26,6 +28,6 @@ class AttrAttrval extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attr_attrval');
+        Schema::dropIfExists('color_good');
     }
 }

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Cates;
 use App\Link;
 use App\Setting;
 use App\Site;
 use App\User;
-use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Session;
 
 class Shouyecontroller extends Controller
 {
@@ -17,7 +18,8 @@ class Shouyecontroller extends Controller
     {
       $link = Link::all();
       $setting = Setting::all();
-    	return view('home.jicheng.touti',compact('link','setting'));
+      $cates = Cates::all();
+    	return view('home.jicheng.touti',compact('link','setting','cates'));
     }
 
     //前台注册页面

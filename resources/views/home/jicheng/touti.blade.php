@@ -99,49 +99,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
 
                     </div> 
+                    
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/" class="act">Home</a></li>   
                             <!-- Mega Menu -->
+                            @foreach($cates as $v)
+                            @if($v['parent_id'] == 0)
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    
+                                    {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
-                                                <h6>Submenu1</h6>
-                                                
-                                                <li><a href="products.html">Accessories</a></li>
-                                                <li><a href="products.html">Bags</a></li>
-                                                <li><a href="products.html">Caps &amp; Hats</a></li>
-                                                <li><a href="products.html">Hoodies &amp; Sweatshirts</a></li>
+                                                @if(!empty($v->child))
+                                                @foreach($v->child as $b)
+                                                <li><a href="products.html">{{$b['name']}}</a></li>
+                                                @endforeach
+                                                @endif
+                                            </ul>
+                                        </div>
                                         
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <h6>Submenu2</h6>
-                                                <li><a href="products.html">Jackets &amp; Coats</a></li>
-                                                <li><a href="products.html">Jeans</a></li>
-                                                <li><a href="products.html">Jewellery</a></li>
-                                                <li><a href="products.html">Jumpers &amp; Cardigans</a></li>
-                                                <li><a href="products.html">Leather Jackets</a></li>
-                                                <li><a href="products.html">Long Sleeve T-Shirts</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <h6>Submenu3</h6>
-                                                <li><a href="products.html">Shirts</a></li>
-                                                <li><a href="products.html">Shoes, Boots &amp; Trainers</a></li>
-                                                <li><a href="products.html">Sunglasses</a></li>
-                                                <li><a href="products.html">Sweatpants</a></li>
-                                                <li><a href="products.html">Swimwear</a></li>
-                                                <li><a href="products.html">Trousers &amp; Chinos</a></li>
-
-                                            </ul>
-                                        </div>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="row-top">
@@ -155,63 +135,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
-                                <ul class="dropdown-menu multi multi1">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <h6>Submenu1</h6>
-                                                
-                                                <li><a href="products1.html">Accessories</a></li>
-                                                <li><a href="products1.html">Bags</a></li>
-                                                <li><a href="products1.html">Caps &amp; Hats</a></li>
-                                                <li><a href="products1.html">Hoodies &amp; Sweatshirts</a></li>
-                                        
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <h6>Submenu2</h6>
-                                                <li><a href="products1.html">Jackets &amp; Coats</a></li>
-                                                <li><a href="products1.html">Jeans</a></li>
-                                                <li><a href="products1.html">Jewellery</a></li>
-                                                <li><a href="products1.html">Jumpers &amp; Cardigans</a></li>
-                                                <li><a href="products1.html">Leather Jackets</a></li>
-                                                <li><a href="products1.html">Long Sleeve T-Shirts</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <h6>Submenu3</h6>
-                                                <li><a href="products1.html">Shirts</a></li>
-                                                <li><a href="products1.html">Shoes, Boots &amp; Trainers</a></li>
-                                                <li><a href="products1.html">Sunglasses</a></li>
-                                                <li><a href="products1.html">Sweatpants</a></li>
-                                                <li><a href="products1.html">Swimwear</a></li>
-                                                <li><a href="products1.html">Trousers &amp; Chinos</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="row-top">
-                                        <div class="col-sm-6 row1">
-                                            <a href="products1.html"><img src="images/me2.jpg" alt="" class="img-responsive"></a>
-                                        </div>
-                                        <div class=" col-sm-6 row2">
-                                            <a href="products1.html"><img src="images/me3.jpg" alt="" class="img-responsive"></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-                            
+                            @endif
+                            @endforeach
                             <li><a href="codes.html"> Codes</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
+                    
                     </nav>
                 </div>
                 
@@ -624,7 +554,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
