@@ -67,20 +67,20 @@
         <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>商品属性管理</span>
+            <span>颜色管理(功能暂不能用)</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/attr/create">
+                <a href="/color/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性添加</span>
+                    <span>添加颜色</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/attr">
+                <a href="/color">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性列表</span>
+                    <span>颜色列表</span>
                 </a>
             </li>
         </ul>
@@ -88,20 +88,20 @@
         <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>属性值管理</span>
+            <span>尺码管理(功能暂不能用)</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/attrval/create">
+                <a href="/size/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>属性值添加</span>
+                    <span>添加尺码</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/attrval">
+                <a href="/size">
                     <i class="am-icon-angle-right"></i>
-                    <span>属性值列表</span>
+                    <span>尺码列表</span>
                 </a>
             </li>
         </ul>
@@ -215,6 +215,51 @@
             </li>
         </ul>
     </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>购物车管理</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/cart_items/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>666666</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/cart_items">
+                    <i class="am-icon-angle-right"></i>
+                    <span>888888</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>订单管理</span>
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none;">
+            <li>
+                <a href="/tag/create">
+                    <i class="am-icon-angle-right"></i>
+                    <span>666666</span>
+                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                </a>
+
+                <a href="/tag">
+                    <i class="am-icon-angle-right"></i>
+                    <span>888888</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
     <li class="tpl-left-nav-item">
         <a href="/admin/set" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>

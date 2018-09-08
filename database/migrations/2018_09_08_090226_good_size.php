@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GoodsAttrVal extends Migration
+class GoodSize extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class GoodsAttrVal extends Migration
      */
     public function up()
     {
-        Schema::create('goods_attr_val', function (Blueprint $table) {
-            $table->increments('id');
-            $table->Integer('goods_id');
-            $table->Integer('attr_id');
-            $table->Integer('attrval_id');
-            $table->timestamps();
+        Schema::create('good_size', function (Blueprint $table) {
+            $table->integer('good_id');
+            $table->integer('size_id');
         });
     }
 
@@ -29,6 +26,6 @@ class GoodsAttrVal extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('goods_attr_val');
+        Schema::dropIfExists('good_size');
     }
 }

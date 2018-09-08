@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cates;
+use App\Color;
 use Illuminate\Http\Request;
 
-class CatesController extends Controller
+class ColorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +14,14 @@ class CatesController extends Controller
      */
     public function index()
     {
+        //
         // 读取数据库  获取分类数据
-        $cates = Cates::orderBy('id','desc')
-        ->where('parent_id', 0)
+        $colors = Color::orderBy('id','desc')
         ->where('name', 'like','%'.request()->keywords.'%')
-        ->get();
-        // dd($cates);
+        ->paginate(10);
+        // dd($colors);
         // 解析模板显示用户数据
-        return view('admin.cates.index', ['cates'=>$cates]);
+        return view('admin.color.index', ['colors'=>$colors]);
     }
 
     /**
@@ -31,9 +31,8 @@ class CatesController extends Controller
      */
     public function create()
     {
-        //读取分类表信息
-        $cates = Cates::all();
-        return view('admin.cates.create',compact('cates'));
+        //
+        return view('admin.color.create');
     }
 
     /**
@@ -44,12 +43,12 @@ class CatesController extends Controller
      */
     public function store(Request $request)
     {
-        $cates = new Cates;
-        $cates -> name = $request->name;
-        $cates -> parent_id = $request->parent_id;
+        //
+        $colors = new Color;
+        $colors -> name = $request->name;
 
-        if ($cates -> save()) {
-            return redirect('/cates')->with('success', '添加成功');
+        if ($colors -> save()) {
+            return redirect('/color')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
         }
@@ -74,9 +73,10 @@ class CatesController extends Controller
      */
     public function edit($id)
     {
-        $cates = Cates::findOrFail($id);
+        //
+        $colors = Color::findOrFail($id);
         // 解析模板显示数据
-        return view('admin.cates.edit',compact('cates'));
+        return view('admin.color.edit',compact('colors'));
     }
 
     /**
@@ -88,12 +88,12 @@ class CatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cates = Cates::findOrFail($id);
-        $cates -> name = $request->name;
-        // $cates -> parent_id = $request->parent_id;
+        //
+        $colors = Color::findOrFail($id);
+        $colors -> name = $request->name;
 
-        if ($cates -> save()) {
-            return redirect('/cates')->with('success', '更新成功');
+        if ($colors -> save()) {
+            return redirect('/color')->with('success', '更新成功');
         }else{
             return back()->with('error', '更新失败');
         }
@@ -105,11 +105,12 @@ class CatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
-        $cates = Cates::findOrFail($id);
+        //
+        $colors = Color::findOrFail($id);
 
-        if ($cates->delete()) {
+        if ($colors->delete()) {
             return back()->with('success','删除成功');
         }else{
             return back()->with('success','删除失败');

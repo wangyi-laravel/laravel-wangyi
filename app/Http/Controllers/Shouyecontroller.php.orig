@@ -25,12 +25,7 @@ class Shouyecontroller extends Controller
     {
         $link = Link::all();
       $setting = Setting::all();
-<<<<<<< HEAD
-=======
 
->>>>>>> d32f736b05769128d539495956f0ab4debcb4238
-        $setting = Setting::all();
-      	return view('home.jicheng.register',compact('link','setting'));
     }  
 
     //执行注册

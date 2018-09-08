@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Attr;
-use App\Cates;
+use App\Size;
 use Illuminate\Http\Request;
 
-class AttrController extends Controller
+class SizeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,12 @@ class AttrController extends Controller
     public function index()
     {
         //
-        $attrs = Attr::orderby('id','desc')
-        ->where('name','like','%'.request()->keywords.'%')
-        ->get();
-        return view('admin.attr.index',compact('attrs'));
+        // 读取数据库  获取分类数据
+        $sizes = Size::orderBy('id','desc')
+        ->where('name', 'like','%'.request()->keywords.'%')
+        ->paginate(10);
+        // 解析模板显示用户数据
+        return view('admin.size.index', ['sizes'=>$sizes]);
     }
 
     /**
@@ -30,8 +31,7 @@ class AttrController extends Controller
     public function create()
     {
         //
-        $cates = Cates::all();
-        return view('admin.attr.create',compact('cates'));
+        return view('admin.size.create');
     }
 
     /**
@@ -43,13 +43,13 @@ class AttrController extends Controller
     public function store(Request $request)
     {
         //
-        $attr = new Attr;
-        $attr->name = $request->name;
-        $attr->cate_id = $request->cate_id;
-        if ($attr -> save()) {
-            return redirect('/attr') -> with('success','添加成功');
+        $sizes = new Size;
+        $sizes -> name = $request->name;
+
+        if ($sizes -> save()) {
+            return redirect('/size')->with('success', '添加成功');
         }else{
-            return back() -> with('error','添加失败');
+            return back()->with('error', '添加失败');
         }
     }
 
@@ -73,8 +73,9 @@ class AttrController extends Controller
     public function edit($id)
     {
         //
-        $attr = Attr::find($id); 
-        return view('admin.attr.edit',compact('attr'));
+        $sizes = Size::findOrFail($id);
+        // 解析模板显示数据
+        return view('admin.size.edit',compact('sizes'));
     }
 
     /**
@@ -87,12 +88,13 @@ class AttrController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $attr = Attr::find($id);
-        $attr->name = $request->name;
-        if ($attr->save()) {
-            return redirect('/attr')->with('success','修改成功');
+        $sizes = Size::findOrFail($id);
+        $sizes -> name = $request->name;
+
+        if ($sizes -> save()) {
+            return redirect('/size')->with('success', '更新成功');
         }else{
-            return back()->with('success','修改失败');
+            return back()->with('error', '更新失败');
         }
     }
 
@@ -105,13 +107,12 @@ class AttrController extends Controller
     public function destroy($id)
     {
         //
-        $attr = Attr::find($id);
-        $attr->delete();
+        $sizes = Size::findOrFail($id);
 
-        if ($attr) {
-            return redirect('/attr')->with('success','删除成功');
+        if ($sizes->delete()) {
+            return back()->with('success','删除成功');
         }else{
-            return back()->with('error','删除失败');
-        }
+            return back()->with('success','删除失败');
+        } 
     }
 }

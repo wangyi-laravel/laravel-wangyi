@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterAttrvaladdTable extends Migration
+class CreateSizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AlterAttrvaladdTable extends Migration
      */
     public function up()
     {
-        Schema::table('attrvals', function (Blueprint $table) {
-            $table -> integer('attr_id');
+        Schema::create('sizes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->comment('尺码名称');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AlterAttrvaladdTable extends Migration
      */
     public function down()
     {
-        Schema::table('attrvals', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('sizes');
     }
 }
