@@ -60,9 +60,20 @@
                             <td>
                                 <input type="checkbox">
                             </td>
+<<<<<<< HEAD
+                            <td>{{$v['id']}}</td>
+
+                            
+                            
+                            <td>@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach </td>
+                            
+                            <td >@if(!$v['parent_id']) {{$v['name']}} @endif</td>
+                        
+=======
                             <td>
                                 {{$v['id']}}
                             </td>
+>>>>>>> f757913b85d4fd5ec97b6d89aa795d815006fd36
                             
                             <td >
                                 {{$v['name']}}

@@ -1,18 +1,6 @@
 @extends('home.jicheng.touti')
 @section('content')
-    </div>
-  </div>
-<!-- //header -->
-<!--banner-->
-<div class="banner-top">
-  <div class="container">
-    <h2 class="animated wow fadeInLeft" data-wow-delay=".5s">Login</h2>
-    <h3 class="animated wow fadeInRight" data-wow-delay=".5s"><a href="index.html">Home</a><label>/</label>Login</h3>
-    <div class="clearfix"> </div>
-  </div>
-</div>
-<!-- contact -->
-  <div class="login">
+<div class="login">
     <div class="container">
     <form action="/admin/login" method="post">
       {{csrf_field()}} 
@@ -35,7 +23,7 @@
 
       
       </div>
-      <div class="col-md-6 login-do animated wow fadeInRight" data-wow-delay=".5s">
+      <div class="col-md-6 login-do animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
         <label class="hvr-sweep-to-top login-sub">
           <input type="submit" value="login">
           </label>
