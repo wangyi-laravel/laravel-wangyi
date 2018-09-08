@@ -26,12 +26,8 @@ Route::get('/admin/login', 'LoginController@login');
 Route::post('/admin/login', 'LoginController@dologin');
 
 //后台路由
- Route::group(['middleware'=>'login'],function(){
-
-
-
-
  // Route::group(['middleware'=>'login'],function(){
+
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
@@ -78,10 +74,6 @@ Route::post('/admin/login', 'LoginController@dologin');
 	//广告
 	Route::resource('guanggao','GuanggaoController');
 
-
- });
-
-
 // });
 
 
@@ -99,3 +91,6 @@ Route::post('/admin/store','ShouyeController@store');
 //前台退出
 Route::get('/home/logout','ShouyeController@logout');
 
+//个人中心
+Route::get('/home/people','ShouyeController@people');
+Route::post('/prople/z','ShouyeController@z');

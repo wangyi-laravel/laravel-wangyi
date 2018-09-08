@@ -15,10 +15,10 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sheng')->comment('省');
-            $table->string('shi')->comment('市');
-            $table->string('qu')->comment('区');
-            $table->string('address')->comment('详细地址');
+            $table->string('sheng')->comment('省')->nullable();
+            $table->string('shi')->comment('市')->nullable();
+            $table->string('qu')->comment('区')->nullable();
+            $table->string('address')->comment('详细地址')->nullable();
             $table->string('call')->comment('联系电话');
             $table->string('name')->comment('收货人');
             $table->timestamps();
