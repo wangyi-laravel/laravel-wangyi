@@ -74,6 +74,12 @@ Route::post('/admin/login', 'LoginController@dologin');
 	//广告
 	Route::resource('guanggao','GuanggaoController');
 
+	//购物车
+	Route::resource('cart_items','Cart_itemsController');
+
+	//订单
+	//Route::resource('guanggao','GuanggaoController');
+
 // });
 
 
@@ -94,3 +100,14 @@ Route::get('/home/logout','ShouyeController@logout');
 //个人中心
 Route::get('/home/people','ShouyeController@people');
 Route::post('/prople/z','ShouyeController@z');
+
+
+
+//商品详情页
+Route::resource('/home/xiang','XiangController');
+
+//商品列表
+Route::resource('/home/liebiao','LiebiaoController');
+
+
+
