@@ -58,7 +58,9 @@ class UserController extends Controller
         $user -> site = $request->site;
         // dd($request->post());
         if ($request -> hasFile('image')) {
-            $user -> image = '/'.$request -> image -> store('uploads/'.date('Ymd'));
+
+            $user -> image = '/'.$request -> image -> store('uploads/user/'.date('Ymd'));
+
         }
         // dd($user -> all());
         if($user -> save()){

@@ -16,4 +16,9 @@ class Attr extends Model
     {
     	return $this->hasMany('App\Good');
     }
+
+    public function cate()
+    {
+    	return $this->belongsTo('App\Cates');
+    }
 }

@@ -23,8 +23,7 @@ class CreateGoodsTable extends Migration
             $table->string('jifen')->comment('积分');
             $table->string('number')->comment('数量');
             $table->Integer('cate_id')->comment('关联二级分类'); 
-            $table->Integer('attr_id')->comment('关联属性'); 
-            $table->string('attrval_id')->comment('关联属性值');
+
             $table->timestamps();
         });
     }

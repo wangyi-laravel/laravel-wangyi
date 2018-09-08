@@ -23,10 +23,6 @@ class AttrvalController extends Controller
             ->where('attr_id','like', '%'.request()->attrwords.'%')
             ->paginate(5);
 
-        // $attr = Attrval::where('cate_id->','like','%'.request()->attrwords.'%');
-
-        // dd($attr);
-        //解析模板显示用户数据
         return view('admin.attrval.index', compact('attrvals','attr'));
     }
 
@@ -60,6 +56,9 @@ class AttrvalController extends Controller
 
         if($attrval -> save()){
 
+
+            /*
+            // 添加入中间表
             try{              
                 DB::table('attr_attrval')->insert([
                     'attr_id'=>$attrval->id, 
@@ -69,9 +68,9 @@ class AttrvalController extends Controller
                 return redirect('/attrval')->with('success','添加成功');
             }catch(\Exception $e){
                 return back()->with('error','添加失败!!!');
-            }
+            }*/
 
-            // return redirect('/attrval')->with('success', '添加成功');
+            return redirect('/attrval')->with('success', '添加成功');
         }else{
             return back()->with('error','添加失败...');
         }
