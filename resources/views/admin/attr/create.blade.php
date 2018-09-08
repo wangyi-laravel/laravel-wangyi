@@ -15,7 +15,17 @@
             <div class="tpl-form-body tpl-form-line">
                 <form class="am-form tpl-form-line-form" method="post" action="/attr">
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">属性名 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">属性名<span class="tpl-form-line-small-title"></span></label>
+                        <div class="am-u-sm-9">
+                            @foreach($cates as $v)
+                                @if($v['parent_id'] != 0)
+                                <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="cate_id" value="{{$v['id']}}">{{$v['name']}}</label>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">属性名<span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" class="tpl-form-input" id="user-name" placeholder="" name="name">
                         </div>

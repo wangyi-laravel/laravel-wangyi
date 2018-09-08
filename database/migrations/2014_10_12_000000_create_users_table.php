@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password')->comment('密码');
             $table->string('name')->comment('昵称');
             $table->enum('weight', [1,2])->comment('权限')->default(2);
+            $table->enum('sex',[0,1])->comment('性别')->nullable();
             $table->string('phone')->comment('手机号')->nullable();
             $table->string('image')->comment('头像')->nullable();
-            $table->string('sex')->comment('性别')->nullable();
             $table->string('site')->comment('地址')->nullable();
             $table->timestamps();
         });

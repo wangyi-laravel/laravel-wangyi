@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Good extends Model
 {
-    public function attr()
+    public function attrs()
     {
-    	return $this->belongsTo('App\Attr');
+    	return $this->belongsToMany('App\Attr');
     }
 
     public function attrvals()
@@ -18,6 +18,6 @@ class Good extends Model
 
     public function cate()
     {
-    	return $this -> belonds('App\Cates');
+    	return $this -> belongsTo('App\Cates');
     }
 }

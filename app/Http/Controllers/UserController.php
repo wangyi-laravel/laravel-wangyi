@@ -22,6 +22,7 @@ class UserController extends Controller
         // ->where('title','like','%'.request()->keywords.'%')
         // ->paginate(10);
         //解析模板  显示用户数据
+        // dd($users);
         return view('admin.user.index',['users'=>$users]);
     }
 
@@ -57,7 +58,9 @@ class UserController extends Controller
         $user -> site = $request->site;
         // dd($request->post());
         if ($request -> hasFile('image')) {
-            $user -> image = '/'.$request -> image -> store('uploads/'.date('Ymd'));
+
+            $user -> image = '/'.$request -> image -> store('uploads/user/'.date('Ymd'));
+
         }
         // dd($user -> all());
         if($user -> save()){
