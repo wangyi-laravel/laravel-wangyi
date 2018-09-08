@@ -141,6 +141,7 @@
 		        </div>
 
 			<div class="mid-popular">
+							@foreach($goods as $v)
 				<div class="col-sm-4 item-grid item-gr  simpleCart_shelfItem">
 							<div class="grid-pro">
 								<div  class=" grid-product " >
@@ -156,189 +157,14 @@
 									</figure>	
 								</div>
 								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+									<a href="#"><img src="{{$v['image']}}" alt="" width="200px"></a>
+									<h6><a href="single.html">{{$v['title']}}</a></h6>
+									<p ><del>$100.00</del><em class="item_price">{{$v['price']}}</em></p>
+									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">添加到购物车</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr3.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr2.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr5.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr4.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr12.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr13.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr15.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr14.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr17.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr16.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr19.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr18.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr21.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr20.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 item-grid item-gr simpleCart_shelfItem">
-							<div class="grid-pro">
-								<div  class=" grid-product " >
-									<figure>		
-										<a href="single.html">
-											<div class="grid-img">
-												<img  src="images/pr23.jpg" class="img-responsive" alt="">
-											</div>
-											<div class="grid-img">
-												<img  src="images/pr22.jpg" class="img-responsive"  alt="">
-											</div>			
-										</a>		
-									</figure>	
-								</div>
-								<div class="women">
-									<a href="#"><img src="images/ll.png" alt=""></a>
-									<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-									<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-									<a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-								</div>
-							</div>
-						</div>
+							@endforeach
 					<div class="clearfix"></div>
 				</div>
 			</div>

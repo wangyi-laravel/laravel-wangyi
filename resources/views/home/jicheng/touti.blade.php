@@ -562,7 +562,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 @foreach($setting as $v)
                 <div class="col-md-4 footer-grid animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                     <h3>{{$v['author']}}</h3>
-                    <p>{{$v['jianjie']}}</p>
+                    <p>{!!$v['jianjie']!!}</p>
                 </div>
                 <div class="col-md-4 footer-grid animated wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
                     <h3>联系我们</h3>

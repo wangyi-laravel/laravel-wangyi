@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cates;
+use App\Good;
 use App\Link;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -18,7 +20,9 @@ class LiebiaoController extends Controller
         //
         $setting = Setting::all();
         $link = Link::all();
-         return view('home.liebiao.index',compact('setting','link'));
+        $cates = Cates::all();
+        $goods = Good::all();
+         return view('home.liebiao.index',compact('setting','link','cates','goods'));
 
     }
 
