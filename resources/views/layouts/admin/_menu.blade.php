@@ -51,11 +51,11 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/good/create">
+                <!-- <a href="/good/create">
                     <i class="am-icon-angle-right"></i>
                     <span>商品添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                </a>
+                </a> -->
 
                 <a href="/good">
                     <i class="am-icon-angle-right"></i>

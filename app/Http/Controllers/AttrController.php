@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Attr;
+use App\Cates;
 use Illuminate\Http\Request;
 
 class AttrController extends Controller
@@ -29,7 +30,8 @@ class AttrController extends Controller
     public function create()
     {
         //
-        return view('admin.attr.create');
+        $cates = Cates::all();
+        return view('admin.attr.create',compact('cates'));
     }
 
     /**
@@ -43,6 +45,7 @@ class AttrController extends Controller
         //
         $attr = new Attr;
         $attr->name = $request->name;
+        $attr->cate_id = $request->cate_id;
         if ($attr -> save()) {
             return redirect('/attr') -> with('success','添加成功');
         }else{

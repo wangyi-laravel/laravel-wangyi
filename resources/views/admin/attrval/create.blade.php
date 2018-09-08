@@ -20,7 +20,11 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">属性名 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             @foreach($attrs as $v)
+                            @if(!empty($v))
                             <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="attr_id" value="{{$v['id']}}">{{$v['name']}}</label>
+                            @else
+                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="attr_id" value="{{$v['id']}}">213</label>
+                            @endif
                             @endforeach
                         </div>
                     </div>

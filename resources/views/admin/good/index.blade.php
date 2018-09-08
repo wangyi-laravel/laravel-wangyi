@@ -1,4 +1,6 @@
-@extends('layouts.admin') @section('title','商品列表') @section('content')
+@extends('layouts.admin') 
+@section('title','商品列表') 
+@section('content')
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -10,7 +12,13 @@
             <div class="am-u-sm-12 am-u-md-6">
                 <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                        <a href="/good/create" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</a>
+                        <a href="#" id="return" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</a>
+                        <script type="text/javascript" src="/ueditor/jquery-3.3.1.js"></script>
+                        <script>
+                            $("#return").click(function(){
+                                alert('请到分类列表页进行添加');
+                            })
+                        </script>
                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                     </div>
                 </div>

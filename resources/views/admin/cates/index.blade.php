@@ -60,21 +60,9 @@
                             <td>
                                 <input type="checkbox">
                             </td>
-<<<<<<< HEAD
-                            <td>{{$v['id']}}</td>
-
-                            
-                            
-                            <td>@foreach($cates as $val) @if($v['parent_id']==$val['id']) {{$v['name']}} @endif @endforeach </td>
-                            
-                            <td >@if(!$v['parent_id']) {{$v['name']}} @endif</td>
-                        
-=======
                             <td>
                                 {{$v['id']}}
-                            </td>
->>>>>>> f757913b85d4fd5ec97b6d89aa795d815006fd36
-                            
+                            </td>                           
                             <td >
                                 {{$v['name']}}
                             </td>
@@ -83,8 +71,6 @@
                                     <div class="am-btn-group am-btn-group-xs">
                                         <a href="/cates/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
                                         <form style="float:left" action="/cates/{{$v['id']}}" method="post">
-                                            {{method_field('DELETE')}}
-                                            {{csrf_field()}}
                                             @if(!empty($v->child))
                                                 <a href="#" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o" ></span> 不能删除</a>
                                             @endif
@@ -122,7 +108,7 @@
                                                 {{csrf_field()}}
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                             </form>
-
+                                            <a href="/good/create?cate_id={{$b['id']}}" class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><input type="hidden" value="{{$b['id']}}"><span class="am-icon-plus"></span> 添加商品</a>
                                         </div>
                                     </div>
                                 </td>
