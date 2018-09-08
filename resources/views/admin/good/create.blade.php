@@ -30,32 +30,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="am-form-group">
-                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性</label>
-                        <div class="am-u-sm-9">
-                            <select data-am-selected="{searchBox: 1}" name="attr_id" style="display: none;">
-                                @foreach($attrs as $v)
-                                    @if($v['cate_id'] == $cate)
-                                    <option value="{{$v['id']}}" >{{$v['name']}}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">属性值 <span class="tpl-form-line-small-title"></span></label>
-                        <div class="am-u-sm-9">
-                            @foreach($attrs as $v)
-                                @if($v['cate_id'] == $cate)
-                                    @foreach($attrvals as $val)
-                                        @if($val['attr_id'] == $v['id'])
-                                        <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="attrval_id[]" value="{{$val['id']}}">{{$val['val']}}</label>
-                                        @endif
-                                    @endforeach
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
+                    
                     <div class="am-form-group">
                         <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
                         <div class="am-u-sm-9">
