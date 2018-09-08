@@ -14,6 +14,7 @@ class SizeController extends Controller
     public function index()
     {
         //
+        return '列表页';
     }
 
     /**
@@ -24,6 +25,7 @@ class SizeController extends Controller
     public function create()
     {
         //
+        return '添加页';
     }
 
     /**
@@ -35,6 +37,7 @@ class SizeController extends Controller
     public function store(Request $request)
     {
         //
+        return '执行添加';
     }
 
     /**
@@ -57,6 +60,7 @@ class SizeController extends Controller
     public function edit($id)
     {
         //
+        return '修改页';
     }
 
     /**
@@ -69,6 +73,7 @@ class SizeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return '执行修改';
     }
 
     /**
@@ -80,5 +85,6 @@ class SizeController extends Controller
     public function destroy($id)
     {
         //
+        return '删除页';
     }
 }

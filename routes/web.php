@@ -45,10 +45,10 @@ Route::post('/admin/login', 'LoginController@dologin');
 	Route::resource('site','SiteController');
 
 	//后台颜色管理
-	Route::resource('color','AttrController');
+	Route::resource('color','ColorController');
 
 	//后台尺码管理
-	Route::resource('size','AttrvalController');
+	Route::resource('size','SizeController');
 
 	//后台分类
 	Route::resource('cates','CatesController');

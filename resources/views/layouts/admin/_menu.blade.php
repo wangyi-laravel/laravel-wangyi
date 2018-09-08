@@ -72,15 +72,15 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="#">
+                <a href="/color/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性添加</span>
+                    <span>添加颜色</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="#">
+                <a href="/color">
                     <i class="am-icon-angle-right"></i>
-                    <span>商品属性列表</span>
+                    <span>颜色列表</span>
                 </a>
             </li>
         </ul>
@@ -93,15 +93,15 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="#">
+                <a href="/size">
                     <i class="am-icon-angle-right"></i>
-                    <span>属性值添加</span>
+                    <span>添加尺码</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="#">
+                <a href="/size/create">
                     <i class="am-icon-angle-right"></i>
-                    <span>属性值列表</span>
+                    <span>尺码列表</span>
                 </a>
             </li>
         </ul>
