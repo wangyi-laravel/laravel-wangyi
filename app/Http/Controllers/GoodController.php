@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Color;
 use App\Good;
+use App\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,11 +38,16 @@ class GoodController extends Controller
                 
         //获取所有分类
         $cates = Cates::all();
-
         //获取分类页传过得id
         $cate = $_GET['cate_id'];
+
+        //获取所有颜色
+        $colors = Color::all();
+
+        //获取所有尺码
+        $sizes = Size::all();
         
-        return view('admin.good.create', compact('cates','cate'));
+        return view('admin.good.create', compact('cates','cate','colors','sizes'));
     }
 
     /**
@@ -73,9 +80,17 @@ class GoodController extends Controller
         if ($goods -> save()) {
 
             // 写加入中间表
+            try{
+                $res = $goods->colors()->sync($request->color_id);
+                $res = $goods->sizes()->sync($request->size_id);
+                DB::commit();
+                return redirect('/good')->with('success','添加成功');
+            }catch(\Exception $e){
+                DB::rollback();
+                return back()->with('error','添加失败!');
+            }
 
-
-            return redirect('/good')->with('success', '添加成功');
+            // return redirect('/good')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
         }
@@ -102,10 +117,15 @@ class GoodController extends Controller
     {
         // 获取商品的信息
         $good = Good::findOrFail($id);
-        //读取属性
         
+        //获取所有颜色
+        $colors = Color::all();
+
+        //获取所有尺码
+        $sizes = Size::all();
+
         // 解析模板显示数据
-        return view('admin.good.edit',compact('good'));
+        return view('admin.good.edit',compact('good','colors','sizes'));
     }
 
     /**

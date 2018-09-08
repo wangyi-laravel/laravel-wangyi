@@ -93,13 +93,13 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/size">
+                <a href="/size/create">
                     <i class="am-icon-angle-right"></i>
                     <span>添加尺码</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/size/create">
+                <a href="/size">
                     <i class="am-icon-angle-right"></i>
                     <span>尺码列表</span>
                 </a>

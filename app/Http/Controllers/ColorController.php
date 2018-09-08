@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Color;
 use Illuminate\Http\Request;
 
 class ColorController extends Controller
@@ -14,7 +15,13 @@ class ColorController extends Controller
     public function index()
     {
         //
-        return '列表页';
+        // 读取数据库  获取分类数据
+        $colors = Color::orderBy('id','desc')
+        ->where('name', 'like','%'.request()->keywords.'%')
+        ->paginate(10);
+        // dd($colors);
+        // 解析模板显示用户数据
+        return view('admin.color.index', ['colors'=>$colors]);
     }
 
     /**
@@ -25,7 +32,7 @@ class ColorController extends Controller
     public function create()
     {
         //
-        return '添加页';
+        return view('admin.color.create');
     }
 
     /**
@@ -37,7 +44,14 @@ class ColorController extends Controller
     public function store(Request $request)
     {
         //
-        return '执行添加';
+        $colors = new Color;
+        $colors -> name = $request->name;
+
+        if ($colors -> save()) {
+            return redirect('/color')->with('success', '添加成功');
+        }else{
+            return back()->with('error', '添加失败');
+        }
     }
 
     /**
@@ -60,7 +74,9 @@ class ColorController extends Controller
     public function edit($id)
     {
         //
-        return '修改页';
+        $colors = Color::findOrFail($id);
+        // 解析模板显示数据
+        return view('admin.color.edit',compact('colors'));
     }
 
     /**
@@ -73,7 +89,14 @@ class ColorController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return '执行修改';
+        $colors = Color::findOrFail($id);
+        $colors -> name = $request->name;
+
+        if ($colors -> save()) {
+            return redirect('/color')->with('success', '更新成功');
+        }else{
+            return back()->with('error', '更新失败');
+        }
     }
 
     /**
@@ -85,6 +108,12 @@ class ColorController extends Controller
     public function destroy($id)
     {
         //
-        return '执行删除';
+        $colors = Color::findOrFail($id);
+
+        if ($colors->delete()) {
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('success','删除失败');
+        } 
     }
 }

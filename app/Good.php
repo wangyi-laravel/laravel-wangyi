@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Good extends Model
 {
-    public function attrs()
+    public function colors()
     {
-    	return $this->belongsToMany('App\Attr');
+    	return $this->belongsToMany('App\Color');
     }
 
-    public function attrvals()
+    public function sizes()
     {
-    	return $this->hasMany('App\Attrval');
+    	return $this->belongsToMany('App\Size');
     }
 
     public function cate()

@@ -20,7 +20,30 @@
                             <input type="text" name="title" class="tpl-form-input" value="{{$good['title']}}" id="user-name" placeholder="">
                         </div>
                     </div>
-
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">颜色<span class="tpl-form-line-small-title"></span></label>
+                        <div class="am-u-sm-9">
+                            @foreach($colors as $v)
+                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox"
+                                @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
+                                    checked  
+                                @endif
+                             name="color_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">尺码<span class="tpl-form-line-small-title"></span></label>
+                        <div class="am-u-sm-9">
+                            @foreach($sizes as $v)
+                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox"
+                                @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
+                                    checked  
+                                @endif
+                             name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+                            @endforeach
+                        </div>
+                    </div>
                     <div class="am-form-group">
                         <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
                         <div class="am-u-sm-9">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Size;
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
@@ -14,7 +15,12 @@ class SizeController extends Controller
     public function index()
     {
         //
-        return '列表页';
+        // 读取数据库  获取分类数据
+        $sizes = Size::orderBy('id','desc')
+        ->where('name', 'like','%'.request()->keywords.'%')
+        ->paginate(10);
+        // 解析模板显示用户数据
+        return view('admin.size.index', ['sizes'=>$sizes]);
     }
 
     /**
@@ -25,7 +31,7 @@ class SizeController extends Controller
     public function create()
     {
         //
-        return '添加页';
+        return view('admin.size.create');
     }
 
     /**
@@ -37,7 +43,14 @@ class SizeController extends Controller
     public function store(Request $request)
     {
         //
-        return '执行添加';
+        $sizes = new Size;
+        $sizes -> name = $request->name;
+
+        if ($sizes -> save()) {
+            return redirect('/size')->with('success', '添加成功');
+        }else{
+            return back()->with('error', '添加失败');
+        }
     }
 
     /**
@@ -60,7 +73,9 @@ class SizeController extends Controller
     public function edit($id)
     {
         //
-        return '修改页';
+        $sizes = Size::findOrFail($id);
+        // 解析模板显示数据
+        return view('admin.size.edit',compact('sizes'));
     }
 
     /**
@@ -73,7 +88,14 @@ class SizeController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return '执行修改';
+        $sizes = Size::findOrFail($id);
+        $sizes -> name = $request->name;
+
+        if ($sizes -> save()) {
+            return redirect('/size')->with('success', '更新成功');
+        }else{
+            return back()->with('error', '更新失败');
+        }
     }
 
     /**
@@ -85,6 +107,12 @@ class SizeController extends Controller
     public function destroy($id)
     {
         //
-        return '删除页';
+        $sizes = Size::findOrFail($id);
+
+        if ($sizes->delete()) {
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('success','删除失败');
+        } 
     }
 }

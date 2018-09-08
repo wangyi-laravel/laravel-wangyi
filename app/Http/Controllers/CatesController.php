@@ -109,11 +109,6 @@ class CatesController extends Controller
     {
         $cates = Cates::findOrFail($id);
 
-        for ($i=0; $i<count($request['cates->child']); $i++) {
-              $cates = Key::where('id', $request['cates->child'][$i])->update(['isDelete' => 1]);   // 遍历删除
-          }
-
-
         if ($cates->delete()) {
             return back()->with('success','删除成功');
         }else{
