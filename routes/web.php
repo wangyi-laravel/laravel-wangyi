@@ -44,11 +44,11 @@ Route::post('/admin/login', 'LoginController@dologin');
 	//后台地址管理
 	Route::resource('site','SiteController');
 
-	//后台商品属性
-	Route::resource('attr','AttrController');
+	//后台颜色管理
+	Route::resource('color','AttrController');
 
-	//后台商品属性值
-	Route::resource('attrval','AttrvalController');
+	//后台尺码管理
+	Route::resource('size','AttrvalController');
 
 	//后台分类
 	Route::resource('cates','CatesController');
