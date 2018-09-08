@@ -67,18 +67,18 @@
         <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>商品属性管理</span>
+            <span>颜色管理(功能暂不能用)</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/attr/create">
+                <a href="#">
                     <i class="am-icon-angle-right"></i>
                     <span>商品属性添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/attr">
+                <a href="#">
                     <i class="am-icon-angle-right"></i>
                     <span>商品属性列表</span>
                 </a>
@@ -88,18 +88,18 @@
         <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
-            <span>属性值管理</span>
+            <span>尺码管理(功能暂不能用)</span>
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/attrval/create">
+                <a href="#">
                     <i class="am-icon-angle-right"></i>
                     <span>属性值添加</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
                 </a>
 
-                <a href="/attrval">
+                <a href="#">
                     <i class="am-icon-angle-right"></i>
                     <span>属性值列表</span>
                 </a>

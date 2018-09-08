@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Attr;
-use App\Cates;
 use Illuminate\Http\Request;
 
-class AttrController extends Controller
+class SizeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,6 @@ class AttrController extends Controller
     public function index()
     {
         //
-        $attrs = Attr::orderby('id','desc')
-        ->where('name','like','%'.request()->keywords.'%')
-        ->get();
-        return view('admin.attr.index',compact('attrs'));
     }
 
     /**
@@ -30,8 +24,6 @@ class AttrController extends Controller
     public function create()
     {
         //
-        $cates = Cates::all();
-        return view('admin.attr.create',compact('cates'));
     }
 
     /**
@@ -43,14 +35,6 @@ class AttrController extends Controller
     public function store(Request $request)
     {
         //
-        $attr = new Attr;
-        $attr->name = $request->name;
-        $attr->cate_id = $request->cate_id;
-        if ($attr -> save()) {
-            return redirect('/attr') -> with('success','添加成功');
-        }else{
-            return back() -> with('error','添加失败');
-        }
     }
 
     /**
@@ -73,8 +57,6 @@ class AttrController extends Controller
     public function edit($id)
     {
         //
-        $attr = Attr::find($id); 
-        return view('admin.attr.edit',compact('attr'));
     }
 
     /**
@@ -87,13 +69,6 @@ class AttrController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $attr = Attr::find($id);
-        $attr->name = $request->name;
-        if ($attr->save()) {
-            return redirect('/attr')->with('success','修改成功');
-        }else{
-            return back()->with('success','修改失败');
-        }
     }
 
     /**
@@ -105,13 +80,5 @@ class AttrController extends Controller
     public function destroy($id)
     {
         //
-        $attr = Attr::find($id);
-        $attr->delete();
-
-        if ($attr) {
-            return redirect('/attr')->with('success','删除成功');
-        }else{
-            return back()->with('error','删除失败');
-        }
     }
 }

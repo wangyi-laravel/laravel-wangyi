@@ -46,7 +46,7 @@ class GoodController extends Controller
         $cates = Cates::all();
 
         //获取分类页传过得id
-        $cate = $_GET;
+        $cate = $_GET['cate_id'];
         
         return view('admin.good.create', compact('attrs','attrvals','cates','cate'));
     }
@@ -59,6 +59,7 @@ class GoodController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request -> attr_id,$request -> attrval_id);
         //插入数据
         $goods = new Good;
 
@@ -69,8 +70,8 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
-        $goods -> cate_id = 11111;
-
+        $goods -> cate_id = $request -> cate_id;
+        // dd($goods);
         //文件上传
         //检测是否有文件上传
         if ($request->hasFile('image')) {
@@ -81,19 +82,9 @@ class GoodController extends Controller
         if ($goods -> save()) {
 
             // 写加入中间表
-            try{              
-                DB::table('goods_attr_val')->insert([
-                    'goods_id'=>$goods->goods_id,
-                    'attr_id'=>$attrval->attr_id, 
-                    'attrval_id' => $request->attr_id,
-                ]);
-                
-                return redirect('/good')->with('success','添加成功');
-            }catch(\Exception $e){
-                return back()->with('error','添加失败!!!');
-            }
 
-            // return redirect('/good')->with('success', '添加成功');
+
+            return redirect('/good')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
         }
