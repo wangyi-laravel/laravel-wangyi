@@ -624,7 +624,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

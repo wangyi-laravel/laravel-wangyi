@@ -24,44 +24,13 @@
                         <label for="user-phone" class="am-u-sm-3 am-form-label">商品分类</label>
                         <div class="am-u-sm-9">
                             @foreach($cates as $a)
-                                @foreach($cate as $b)
-                                    @if($b == $a['id'])
-                                        {{$a['name']}}
-                                    @endif
-                                @endforeach
+                                @if($cate == $a['id'])
+                                <input type="hidden" name="cate_id" value="{{$a['id']}}">{{$a['name']}}
+                                @endif
                             @endforeach
                         </div>
                     </div>
-                    <div class="am-form-group">
-                        <label for="user-phone" class="am-u-sm-3 am-form-label">商品属性</label>
-                        <div class="am-u-sm-9">
-                            <select data-am-selected="{searchBox: 1}" name="attr_id" style="display: none;">
-                                @foreach($attrs as $v)
-                                    @foreach($cate as $b)
-                                        @if($v['cate_id'] == $b)
-                                        <option value="{{$v['id']}}" >{{$v['name']}}</option>
-                                        @endif
-                                    @endforeach
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">属性值 <span class="tpl-form-line-small-title"></span></label>
-                        <div class="am-u-sm-9">
-                            @foreach($cate as $b)
-                                @foreach($attrs as $v)
-                                    @if($v['cate_id'] == $b)
-                                        @foreach($attrvals as $val)
-                                            @if($val['attr_id'] == $v['id'])
-                                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="attrval_id[]" value="{{$val['id']}}">{{$val['val']}}</label>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                @endforeach
-                            @endforeach
-                        </div>
-                    </div>
+                    
                     <div class="am-form-group">
                         <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
                         <div class="am-u-sm-9">

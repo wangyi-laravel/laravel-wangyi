@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Attr;
-use App\Attrval;
 use App\Cates;
 use App\Good;
 use Illuminate\Http\Request;
@@ -35,20 +33,14 @@ class GoodController extends Controller
      */
     public function create(Request $request)
     {
-        
-
-        //读取属性
-        $attrs = Attr::all();
-        //读取属性值
-        $attrvals = Attrval::all();
-        
+                
         //获取所有分类
         $cates = Cates::all();
 
         //获取分类页传过得id
-        $cate = $_GET;
+        $cate = $_GET['cate_id'];
         
-        return view('admin.good.create', compact('attrs','attrvals','cates','cate'));
+        return view('admin.good.create', compact('cates','cate'));
     }
 
     /**
@@ -69,8 +61,8 @@ class GoodController extends Controller
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
-        $goods -> cate_id = 11111;
-
+        $goods -> cate_id = $request -> cate_id;
+        // dd($goods);
         //文件上传
         //检测是否有文件上传
         if ($request->hasFile('image')) {
@@ -81,19 +73,9 @@ class GoodController extends Controller
         if ($goods -> save()) {
 
             // 写加入中间表
-            try{              
-                DB::table('goods_attr_val')->insert([
-                    'goods_id'=>$goods->goods_id,
-                    'attr_id'=>$attrval->attr_id, 
-                    'attrval_id' => $request->attr_id,
-                ]);
-                
-                return redirect('/good')->with('success','添加成功');
-            }catch(\Exception $e){
-                return back()->with('error','添加失败!!!');
-            }
 
-            // return redirect('/good')->with('success', '添加成功');
+
+            return redirect('/good')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
         }
@@ -121,12 +103,9 @@ class GoodController extends Controller
         // 获取商品的信息
         $good = Good::findOrFail($id);
         //读取属性
-        $attrs = Attr::all();
-
-        //读取属性值
-        $attrvals = Attrval::all();
+        
         // 解析模板显示数据
-        return view('admin.good.edit',compact('good','attrs','attrvals'));
+        return view('admin.good.edit',compact('good'));
     }
 
     /**
@@ -149,9 +128,7 @@ class GoodController extends Controller
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
         $goods -> cate_id = $request -> cate_id;
-        $goods -> attr_id = $request -> attr_id;
-        $req = implode($request -> attrval_id,'_');
-        $goods -> attrval_id = $req;
+        
 
         //文件上传
         //检测是否有文件上传

@@ -17,6 +17,7 @@
                         <script>
                             $("#return").click(function(){
                                 alert('请到分类列表页进行添加');
+                                location.replace('/cates');
                             })
                         </script>
                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>

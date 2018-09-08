@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GoodsAttrVal extends Migration
+class CreateSizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class GoodsAttrVal extends Migration
      */
     public function up()
     {
-        Schema::create('goods_attr_val', function (Blueprint $table) {
+        Schema::create('sizes', function (Blueprint $table) {
             $table->increments('id');
-            $table->Integer('goods_id');
-            $table->Integer('attr_id');
-            $table->Integer('attrval_id');
+            $table->string('name')->comment('尺码名称');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class GoodsAttrVal extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('goods_attr_val');
+        Schema::dropIfExists('sizes');
     }
 }
