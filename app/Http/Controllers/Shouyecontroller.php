@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Link;
 use App\Setting;
+use App\Site;
 use App\User;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,7 +24,8 @@ class Shouyecontroller extends Controller
     public function register()
     {
         $link = Link::all();
-      	return view('home.jicheng.register',compact('link'));
+      $setting = Setting::all();
+      	return view('home.jicheng.register',compact('link','setting'));
     }  
 
     //执行注册
@@ -36,6 +39,7 @@ class Shouyecontroller extends Controller
         $user -> name = $request->name;
 
       	if($user -> save()){
+
             return redirect('/admin/login')->with('success','註冊成功');
         }else{
             return back()->with('error','註冊失败');
@@ -57,6 +61,44 @@ class Shouyecontroller extends Controller
      */
     public function people()
     {
-      return view('home.jicheng.people');
+      $link = Link::all();
+      $setting = Setting::all();
+      $user = User::all();
+      $site = Site::all();
+      return view('home.jicheng.people',compact('link','setting','user','site'));
+    }
+
+    /**
+     * 个人中心增加
+     */
+    
+    public function z(Request $request)
+    {
+      // dd($request);  
+      $id = Session::get('id');
+
+      $user =  User::find($id);
+
+      $user->name = $request-> name;
+      $user->phone = $request-> phone;
+      $user->sex = $request-> sex;
+
+      $site = new Site;
+      $site->sheng = $request-> sheng;
+      $site->shi = $request-> shi;
+      $site->qu = $request-> qu;
+      $site->address = $request-> address;
+      $site->name = $request-> name;
+      $site->call = $request-> call;
+
+      if ($request -> hasFile('image')) {
+            $user -> image = '/'.$request -> image -> store('uploads/'.date('Ymd'));
+        }
+
+       if($user -> save() && $site -> save()){
+            return redirect('/home/people')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 }

@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
+use App\Setting;
 use App\User;
 use Gregwar\Captcha\CaptchaBuilder;
-use Session;
 use Illuminate\Http\Concerns\flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Session;
 
 class LoginController extends Controller
 {
     public function index()
 	{
+		
 		return view('admin');
 	}
 
@@ -21,7 +24,9 @@ class LoginController extends Controller
 	 */
 	public function login()
 	{
-		return view('home.login');
+		$setting = Setting::all();
+		$link = Link::all();
+		return view('home.login',compact('setting','link'));
 	}
 
 	/**
@@ -46,7 +51,7 @@ class LoginController extends Controller
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id]);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password]);
 			return redirect('/')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');
