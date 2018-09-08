@@ -22,6 +22,7 @@ class UserController extends Controller
         // ->where('title','like','%'.request()->keywords.'%')
         // ->paginate(10);
         //解析模板  显示用户数据
+        // dd($users);
         return view('admin.user.index',['users'=>$users]);
     }
 

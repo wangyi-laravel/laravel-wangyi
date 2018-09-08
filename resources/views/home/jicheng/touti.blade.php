@@ -1,3 +1,4 @@
+@section('header')
 <!DOCTYPE html>
 <html>
 
@@ -94,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="icon-bar"></span>
                         </button>
                          <div class="navbar-brand logo-nav-left ">
-                            <h1 class="animated wow pulse animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pulse;"><a href="index.html">Classic<span>Style</span></a></h1>
+                            <h1 class="animated wow pulse animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pulse;"><a href="/">Classic<span>Style</span></a></h1>
                         </div>
 
                     </div> 
@@ -217,6 +218,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
+    @show
+
     @section('content')
     <!-- banner -->
     <div class="banner">
@@ -595,6 +598,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"></div>
     </div>
     @show
+
+    @section('products')
     <!--products-->
     <div class="social animated wow fadeInDown" data-wow-delay=".1s">
         <div class="container">
@@ -606,6 +611,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"></div>
         </div>
     </div>
+    @show
+
+    @section('footer')
     <!-- footer -->
     <div class="footer">
         <div class="container">
@@ -616,7 +624,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -647,6 +655,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //footer -->
+    @show
 </body>
 
 </html>
