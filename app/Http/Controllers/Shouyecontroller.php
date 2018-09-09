@@ -27,7 +27,8 @@ class Shouyecontroller extends Controller
     {
         $link = Link::all();
         $setting = Setting::all();
-      	return view('home.jicheng.register',compact('link','setting'));
+        $cates = Cates::all();
+      	return view('home.jicheng.register',compact('link','setting','cates'));
     }  
 
     //执行注册
