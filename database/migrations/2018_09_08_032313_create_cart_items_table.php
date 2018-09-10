@@ -14,9 +14,9 @@ class CreateCartItemsTable extends Migration
     public function up()
     {
         Schema::create('cart_items', function (Blueprint $table) {
-            $table->increments('id')>commit('购物车');
-            $table->increments('user_id')>commit('用户ID');
-            $table->increments('product_sku_id')>commit('商品 sku(款) ID');
+            $table->increments('id')->commit('购物车');
+            $table->increments('user_id')->commit('用户ID');
+            $table->increments('product_sku_id')->commit('商品 sku(款) ID');
             $table->string('amount')->comment('数量');
             $table->timestamps();
         });

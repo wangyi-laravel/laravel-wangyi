@@ -99,7 +99,7 @@ Route::get('/home/logout','ShouyeController@logout');
 
 //个人中心
 Route::get('/home/people','ShouyeController@people');
-Route::post('/prople/z','ShouyeController@z');
+Route::post('/people/z','ShouyeController@z');
 
 
 

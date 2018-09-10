@@ -65,11 +65,7 @@ class Shouyecontroller extends Controller
      */
     public function people()
     {
-      $link = Link::all();
-      $setting = Setting::all();
-      $user = User::all();
-      $site = Site::all();
-      $cates = Cates::all();
+
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));
     }
 
