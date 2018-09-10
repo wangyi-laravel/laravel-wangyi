@@ -84,9 +84,9 @@ table.dataintable tr:nth-child(even) {
                 <tr>
                     <th>收货地址</th>
                     <th>详细地址</th>
-                    <th>邮政编码</th>
-                    <th>收货人姓名</th>
-                    <th>收货人电话</th>
+                    <th style="width: 100px">邮政编码</th>
+                    <th style="width: 110px">收货人姓名</th>
+                    <th style="width: 100px">收货人电话</th>
                     <th>操作</th>
                 </tr>
                 @foreach($site as $v)
@@ -96,7 +96,7 @@ table.dataintable tr:nth-child(even) {
                 	<td>{{$v['mail']}}</td>
                 	<td>{{$v['name']}}</td>
                 	<td>{{$v['call']}}</td>
-                	<td>
+                	<td style="width: 60px">
                 		<a href="/home/delsite/{{$v['id']}}">删除</a>
                 	</td>
                 </tr>

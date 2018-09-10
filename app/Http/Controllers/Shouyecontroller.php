@@ -68,11 +68,11 @@ class Shouyecontroller extends Controller
     /**
      * 个人中心
      */
-    public function people()
+    public function people($id)
     {
       $link = Link::all();
       $setting = Setting::all();
-      $user = User::all();
+      $user = User::findOrFail($id);
       $cates = Cates::all();
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));
     }
@@ -99,7 +99,7 @@ class Shouyecontroller extends Controller
         }
 
       if($user -> save()){
-            return redirect('/home/people')->with('success','添加成功');
+            return back()->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');
         }

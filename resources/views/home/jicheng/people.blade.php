@@ -39,45 +39,44 @@ table.dataintable tr:nth-child(even) {
         <div class="col-md-8 contact-grids1 animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
             <form action="/people/z" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                @foreach($user as $v)
                 <div class="contact-form2">
                     <h4>头像</h4>
                     <p class="grid1">
-                    	<img src="{{$v['image']}}">
+                    	<img src="{{$user['image']}}" width="50" height="50">
                         <input type="file" placeholder="" required="" name="image">
                     </p>
                 </div>
                 <div class="contact-form2">
                     <h4>姓名</h4>
                     <p class="grid1">
-                        <input type="text" placeholder="" required="" name="name" value="{{$v['name']}}">
+                        <input type="text" placeholder="" required="" name="name" value="{{$user['name']}}">
                     </p>
                 </div>
                 
                 <div class="contact-form2">
                     <h4>电话</h4>
-                    <input type="text" placeholder="" required="" name="phone" value="{{$v['phone']}}">
+                    <input type="text" placeholder="" required="" name="phone" value="{{$user['phone']}}">
                 </div>
                 <div class="contact-form2">
                     <h4>性别</h4>
                     <input type="radio" 
-                    	@if($v['sex'] == 0) checked @endif
+                    	@if($user['sex'] == 0) checked @endif
                     placeholder="" required="" name="sex" value="0">男
                     <input type="radio" 
-                    	@if($v['sex'] == 1) checked @endif
+                    	@if($user['sex'] == 1) checked @endif
                     placeholder="" required="" name="sex" value="1">女
                 </div>
                 <div class="contact-form2">
                     <label for="user-name" class="am-u-sm-3 am-form-label">居住地<span class="tpl-form-line-small-title"></span></label>
                     <div class="am-u-sm-9" id="city_china">
                         <select class="province" name="sheng">
-                            <option>{{$v['sheng']}}</option>
+                            <option>{{$user['sheng']}}</option>
                         </select>
                         <select class="city" name="shi">
-                            <option>{{$v['shi']}}</option>
+                            <option>{{$user['shi']}}</option>
                         </select>
                         <select class="area" name="xian">
-                            <option>{{$v['xian']}}</option>
+                            <option>{{$user['xian']}}</option>
                         </select>
                     </div>
                     <script>
@@ -89,7 +88,6 @@ table.dataintable tr:nth-child(even) {
                     </script>
                 </div>
                 <input type="submit" value="Submit">
-                @endforeach
             </form>
         </div>
         <div class="col-md-4 contact-grids">
