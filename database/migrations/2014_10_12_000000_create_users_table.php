@@ -22,7 +22,9 @@ class CreateUsersTable extends Migration
             $table->enum('sex',[0,1])->comment('性别')->nullable();
             $table->string('phone')->comment('手机号')->nullable();
             $table->string('image')->comment('头像')->nullable();
-            $table->string('site')->comment('地址')->nullable();
+            $table->string('sheng')->comment('省')->nullable();
+            $table->string('shi')->comment('市')->nullable();
+            $table->string('xian')->comment('县')->nullable();
             $table->timestamps();
         });
     }

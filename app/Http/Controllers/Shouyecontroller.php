@@ -34,16 +34,18 @@ class Shouyecontroller extends Controller
     //执行注册
     public function store(Request $request)
     {
+        $this->validate($request, [
+        'username' => 'required|regex:/^[a-zA-Z0-9_-]{6,12}$/',
+        ]);
 
       	$user = new User;
-
       	$user -> username = $request->username;
         $user-> password = Hash::make($request ->password);
         $user -> name = $request->name;
 
       	if($user -> save()){
 
-            return redirect('/admin/login')->with('success','註冊成功');
+            return redirect('/login')->with('success','註冊成功');
         }else{
             return back()->with('error','註冊失败');
         }
@@ -67,7 +69,6 @@ class Shouyecontroller extends Controller
       $link = Link::all();
       $setting = Setting::all();
       $user = User::all();
-      $site = Site::all();
       $cates = Cates::all();
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));
     }
@@ -78,7 +79,6 @@ class Shouyecontroller extends Controller
     
     public function z(Request $request)
     {
-      // dd($request);  
       $id = Session::get('id');
 
       $user =  User::find($id);
@@ -86,23 +86,60 @@ class Shouyecontroller extends Controller
       $user->name = $request-> name;
       $user->phone = $request-> phone;
       $user->sex = $request-> sex;
-
-      $site = new Site;
-      $site->sheng = $request-> sheng;
-      $site->shi = $request-> shi;
-      $site->qu = $request-> qu;
-      $site->address = $request-> address;
-      $site->name = $request-> name;
-      $site->call = $request-> call;
+      $user->sheng = $request-> sheng;
+      $user->shi = $request-> shi;
+      $user->xian = $request-> xian;
 
       if ($request -> hasFile('image')) {
             $user -> image = '/'.$request -> image -> store('uploads/'.date('Ymd'));
         }
 
-       if($user -> save() && $site -> save()){
+      if($user -> save()){
             return redirect('/home/people')->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');
         }
+    }
+
+    public function site()
+    {
+      $link = Link::all();
+      $setting = Setting::all();
+      $user = User::all();
+      $cates = Cates::all();
+      $site = Site::all();
+      return view('home.jicheng.site',compact('link','setting','user','site','cates'));
+    }
+
+    public function dosite(Request $request)
+    {
+      $id = 
+
+      $site = new Site;
+
+      $site->name = $request-> name;
+      $site->address = $request-> address;
+      $site->call = $request-> call;
+      $site->mail = $request-> mail;
+      $site->sheng = $request-> sheng;
+      $site->shi = $request-> shi;
+      $site->qu = $request-> qu;
+      $site->user_id = Session::get('id');
+      if($site -> save()){
+            return redirect('/home/site')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
+    }
+
+    public function delsite($id)
+    {
+       $site = Site::findOrFail($id);
+
+        if($site -> delete()){
+            return back()->with('success', '删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }   
     }
 }
