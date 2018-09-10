@@ -67,7 +67,7 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品价格 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="price" class="tpl-form-input" id="user-name" placeholder="">
+                            <input type="text" name="price" class="tpl-form-input" id="user-name" value="￥">
                         </div>
                     </div>
                     <div class="am-form-group">

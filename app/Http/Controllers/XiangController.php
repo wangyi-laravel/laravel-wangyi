@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cates;
 use App\Link;
 use App\Setting;
 use App\Cates;
