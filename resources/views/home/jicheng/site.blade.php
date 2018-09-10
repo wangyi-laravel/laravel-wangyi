@@ -1,7 +1,7 @@
 @extends('home.jicheng.touti') @section('content')
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/sj/js/jquery.cxselect.js"></script>
- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 table.dataintable {
     margin-top: 15px;
@@ -34,52 +34,26 @@ table.dataintable tr:nth-child(even) {
     background-color: #fff;
 }
 </style>
-
 <div class="contact">
     <div class="container">
         <div class="col-md-8 contact-grids1 animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-            <form action="/people/z" method="post" enctype="multipart/form-data">
+            <form action="/home/dosite" method="post">
                 {{csrf_field()}}
-                @foreach($user as $v)
                 <div class="contact-form2">
-                    <h4>头像</h4>
-                    <p class="grid1">
-                    	<img src="{{$v['image']}}">
-                        <input type="file" placeholder="" required="" name="image">
-                    </p>
-                </div>
-                <div class="contact-form2">
-                    <h4>姓名</h4>
-                    <p class="grid1">
-                        <input type="text" placeholder="" required="" name="name" value="{{$v['name']}}">
-                    </p>
-                </div>
-                
-                <div class="contact-form2">
-                    <h4>电话</h4>
-                    <input type="text" placeholder="" required="" name="phone" value="{{$v['phone']}}">
-                </div>
-                <div class="contact-form2">
-                    <h4>性别</h4>
-                    <input type="radio" 
-                    	@if($v['sex'] == 0) checked @endif
-                    placeholder="" required="" name="sex" value="0">男
-                    <input type="radio" 
-                    	@if($v['sex'] == 1) checked @endif
-                    placeholder="" required="" name="sex" value="1">女
-                </div>
-                <div class="contact-form2">
-                    <label for="user-name" class="am-u-sm-3 am-form-label">居住地<span class="tpl-form-line-small-title"></span></label>
+                    <label for="user-name" class="am-u-sm-3 am-form-label">收货地址<span class="tpl-form-line-small-title"></span></label>
                     <div class="am-u-sm-9" id="city_china">
                         <select class="province" name="sheng">
-                            <option>{{$v['sheng']}}</option>
                         </select>
                         <select class="city" name="shi">
-                            <option>{{$v['shi']}}</option>
                         </select>
-                        <select class="area" name="xian">
-                            <option>{{$v['xian']}}</option>
+                        <select class="area" name="qu">
                         </select>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">详细地址<span class="tpl-form-line-small-title"></span></label>
+                        <br>
+                        <textarea style="width: 300px;height: 100px" name="address"></textarea>
                     </div>
                     <script>
                     var urlChina = '/sj/js/cityData.min.json';
@@ -89,9 +63,45 @@ table.dataintable tr:nth-child(even) {
                     });
                     </script>
                 </div>
+                <div class="contact-form2">
+                    <h4>邮政编码</h4>
+                    <p class="grid1">
+                        <input type="text" placeholder="" required="" name="mail">
+                    </p>
+                </div>
+                <div class="contact-form2">
+                    <h4>收货人姓名</h4>
+                    <input type="text" placeholder="" required="" name="name">
+                </div>
+                <div class="contact-form2">
+                    <h4>手机号码</h4>
+                    <input type="text" placeholder="" required="" name="call">
+                </div>
                 <input type="submit" value="Submit">
-                @endforeach
             </form>
+
+<table class="dataintable">
+                <tr>
+                    <th>收货地址</th>
+                    <th>详细地址</th>
+                    <th>邮政编码</th>
+                    <th>收货人姓名</th>
+                    <th>收货人电话</th>
+                    <th>操作</th>
+                </tr>
+                @foreach($site as $v)
+                <tr>
+                	<td>{{$v['sheng']}}/{{$v['shi']}}/{{$v['qu']}}</td>
+                	<td>{{$v['address']}}</td>
+                	<td>{{$v['mail']}}</td>
+                	<td>{{$v['name']}}</td>
+                	<td>{{$v['call']}}</td>
+                	<td>
+                		<a href="/home/delsite/{{$v['id']}}">删除</a>
+                	</td>
+                </tr>
+                @endforeach
+            </table>
         </div>
         <div class="col-md-4 contact-grids">
             <div class=" contact-grid animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
