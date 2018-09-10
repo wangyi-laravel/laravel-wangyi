@@ -104,6 +104,7 @@ Route::get('/home/logout','ShouyeController@logout');
 
 //个人中心
 Route::get('/home/people','ShouyeController@people');
+Route::get('/home/people/{id}','ShouyeController@people');
 Route::post('/people/z','ShouyeController@z');
 
 //收货地址
