@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class AlertGoodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('image')->nullable()->comment('商品图片名称');
-            $table->Integer('good_id')->comment('商品id');
-            $table->timestamps();
+        Schema::table('goods', function (Blueprint $table) {
+            //
+            $table->string('image')->nullable()->change();
         });
     }
 
@@ -28,6 +26,8 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::table('goods', function (Blueprint $table) {
+            //
+        });
     }
 }
