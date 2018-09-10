@@ -132,7 +132,10 @@ img {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 .good-content {
@@ -141,6 +144,9 @@ img {
 	overflow: hidden;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
+=======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
@@ -295,8 +301,13 @@ img {
                                     <div class="color">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <p>Size</p>
                                         <span>S, M, L, XL</span>
+=======
+                                        <p>尺码</p>
+                                        <span></span>
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
                                         <p>尺码</p>
                                         <span></span>
@@ -311,7 +322,11 @@ img {
                             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Reviews</h2>
+=======
+                            <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
@@ -391,9 +406,12 @@ img {
             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             @endif
             @endforeach
 =======
+=======
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
             <div class="good-content">{!!$v['content']!!}</div>
@@ -402,6 +420,9 @@ img {
             @endforeach
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
+=======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 =======
 >>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
