@@ -363,7 +363,7 @@ img {
                 </div>
             </div>
             <div class="good-content">{!!$v['content']!!}</div>
-            
+
             @endif
             @endforeach
 
