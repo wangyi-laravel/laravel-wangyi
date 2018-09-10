@@ -135,7 +135,7 @@
 			
 		
 		 </div>
-		 </div>
+		 </div>!!
 		 				<!--quantity-->
 			<script>
 			$('.value-plus').on('click', function(){
