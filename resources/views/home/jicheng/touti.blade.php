@@ -77,8 +77,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                         <div class="clearfix"> </div>
                     </div>  
-                    @endif
+                   
                 </div>
+                 @endif
                 <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
