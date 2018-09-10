@@ -130,6 +130,11 @@ img {
     color: #ff6600;
     cursor: pointer;
 }
+.good-content {
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
 </style>
 <div class="banner-top">
     <div class="container">
@@ -357,8 +362,11 @@ img {
                     </div>
                 </div>
             </div>
+            <div class="good-content">{!!$v['content']!!}</div>
+            
             @endif
             @endforeach
+
         </div>
     </div>
     @endsection
