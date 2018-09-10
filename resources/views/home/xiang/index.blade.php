@@ -130,26 +130,11 @@ img {
     color: #ff6600;
     cursor: pointer;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 .good-content {
 	height: auto;
 	width: 100%;
 	overflow: hidden;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
 </style>
 <div class="banner-top">
     <div class="container">
@@ -299,40 +284,16 @@ img {
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                                         <p>Size</p>
                                         <span>S, M, L, XL</span>
-=======
                                         <p>尺码</p>
                                         <span></span>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
-                                        <p>尺码</p>
-                                        <span></span>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
-                                        <p>尺码</p>
-                                        <span></span>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Reviews</h2>
-=======
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
-                            <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
-                            <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
                             <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
                                 <div class="comments-top-top">
                                     <div class="top-comment-left">
@@ -404,28 +365,10 @@ img {
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             @endif
             @endforeach
-=======
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
             <div class="good-content">{!!$v['content']!!}</div>
             
-            @endif
-            @endforeach
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
-=======
->>>>>>> 3c4fb4171d477b6d74add87b670e8356b04b43b0
         </div>
     </div>
     @endsection
