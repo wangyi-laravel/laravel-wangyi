@@ -7,7 +7,6 @@ use App\Color;
 use App\Good;
 use App\Link;
 use App\Setting;
-use App\Cates;
 use Illuminate\Http\Request;
 
 class XiangController extends Controller
