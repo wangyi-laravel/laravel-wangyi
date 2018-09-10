@@ -3,7 +3,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/sj/js/jquery.cxselect.js"></script>
 
-
+<?php echo \Session::get('success') ?>
 <div class="contact">
 		<div class="container">
 		
