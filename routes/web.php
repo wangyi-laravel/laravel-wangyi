@@ -109,5 +109,7 @@ Route::resource('/home/xiang','XiangController');
 //商品列表
 Route::resource('/home/liebiao','LiebiaoController');
 
+//购物车
+Route::resource('/home/cart_items','Cart_itemsController');
 
 
