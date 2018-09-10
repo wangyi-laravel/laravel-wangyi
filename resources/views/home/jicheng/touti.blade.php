@@ -585,6 +585,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //footer -->
+    <script src="/qiantai/js/imagezoom.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script defer src="/qiantai/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="/qiantai/css/flexslider.css" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
     @show
 </body>
 

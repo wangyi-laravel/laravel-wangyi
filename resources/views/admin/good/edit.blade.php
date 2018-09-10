@@ -62,7 +62,7 @@
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品描述</label>
                         <div class="am-u-sm-9">
-                            <textarea class="" name="miaoshu" rows="5">{{$good['miaoshu']}}</textarea>
+                            <textarea class="" name="miaoshu" rows="5">{!!$good['miaoshu']!!}</textarea>
                         </div>
                     </div>
                     <div class="am-form-group">

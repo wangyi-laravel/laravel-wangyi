@@ -1,5 +1,12 @@
 @extends('home.jicheng.touti') @section('content')
 <!--banner-->
+<style>
+.chaochu{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+</style>
 <div class="banner-top">
     <div class="container">
         <h2 class="animated wow fadeInLeft" data-wow-delay=".5s">Products</h2>
@@ -13,6 +20,7 @@
     <div class="container">
         <div class="col-md-3 product-bottom">
             <!--categories-->
+            <!-- 侧边分类 start -->
             <div class="categories animated wow fadeInUp animated" data-wow-delay=".5s">
                 <h3>全部分类</h3>
                 <ul class="cate">
@@ -28,6 +36,8 @@
                     @endif @endforeach
                 </ul>
             </div>
+            <!-- 侧边分类 end -->
+
             <!--//menu-->
             <!--price-->
             <div class="price animated wow fadeInUp animated" data-wow-delay=".5s">
@@ -133,8 +143,8 @@
                             </figure>
                         </div>
                         <div class="women">
-                            <a href="#"><img src="{{$v['image']}}" alt="" width="200px"></a>
-                            <h6><a href="single.html">{{$v['title']}}</a></h6>
+                            <a href="#"><img src="{{$v['image']}}" alt="" width="200px" height="220px"></a>
+                            <h6 class="chaochu"><a href="single.html">{{$v['title']}}</a></h6>
                             <p><em class="item_price">{{$v['price']}}</em></p>
                             <a href="#" data-text="Add To Cart" class="but-hover1 item_add">添加到购物车</a>
                         </div>
