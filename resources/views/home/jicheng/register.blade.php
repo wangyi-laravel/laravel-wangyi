@@ -10,7 +10,7 @@
 
 <div class="login">
         <div class="container">
-        <form action="/admin/store" method="post">
+        <form action="/store" method="post">
             {{csrf_field()}}            
             <div class="col-md-6 login-do1 animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                 Username:<div class="login-mail">

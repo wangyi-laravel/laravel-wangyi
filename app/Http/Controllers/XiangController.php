@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Cates;
 use App\Link;
 use App\Setting;
-use App\Cates;
 use Illuminate\Http\Request;
 
 class XiangController extends Controller
@@ -21,7 +20,8 @@ class XiangController extends Controller
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-         return view('home.xiang.index',compact('setting','link','cates'));
+        $good = $_GET['good_id'];
+         return view('home.xiang.index',compact('setting','link','cates','good'));
          // ['xiang'=>$xiang]
     }
 

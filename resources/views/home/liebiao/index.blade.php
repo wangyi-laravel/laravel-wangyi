@@ -138,7 +138,7 @@
                         </div>
                         <div class="women">
                             <a href="#"><img src="{{$v['image']}}" alt="" width="200px"></a>
-                            <h6><a href="single.html">{{$v['title']}}</a></h6>
+                            <h6><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                             <p><em class="item_price">{{$v['price']}}</em></p>
                             <a href="#" data-text="Add To Cart" class="but-hover1 item_add">添加到购物车</a>
                         </div>

@@ -56,8 +56,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header-right1 ">
                     <ul>
                         @if(!Session::has('id'))
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/admin/login">登录</a></li>
-                        <li><i class="glyphicon glyphicon-book"></i><a href="/admin/register">注册</a></li>
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
+                        <li><i class="glyphicon glyphicon-book"></i><a href="/register">注册</a></li>
                         @endif
                         @if(Session::has('id'))
                         <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人</a></li>

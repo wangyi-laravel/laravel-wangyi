@@ -45,7 +45,7 @@ class Shouyecontroller extends Controller
 
       	if($user -> save()){
 
-            return redirect('/admin/login')->with('success','註冊成功');
+            return redirect('/login')->with('success','註冊成功');
         }else{
             return back()->with('error','註冊失败');
         }
