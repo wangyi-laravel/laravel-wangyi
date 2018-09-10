@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cates;
 use App\Link;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class XiangController extends Controller
         //
         $setting = Setting::all();
         $link = Link::all();
-         return view('home.xiang.index',compact('setting','link'));
+        $cates = Cates::all();
+         return view('home.xiang.index',compact('setting','link','cates'));
          // ['xiang'=>$xiang]
     }
 
