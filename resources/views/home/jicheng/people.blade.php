@@ -38,49 +38,47 @@ table.dataintable tr:nth-child(even) {
 <div class="contact">
     <div class="container">
         <div class="col-md-8 contact-grids1 animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-            <form action="/prople/z" method="post" enctype="multipart/form-data">
+            <form action="/people/z" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
+                @foreach($user as $v)
                 <div class="contact-form2">
                     <h4>头像</h4>
                     <p class="grid1">
+                    	<img src="{{$v['image']}}">
                         <input type="file" placeholder="" required="" name="image">
                     </p>
                 </div>
                 <div class="contact-form2">
-                    <h4>账号</h4>
-                    <input type="text" placeholder="" required="" name="name" value="">
-                </div>
-                <div class="contact-form2">
                     <h4>姓名</h4>
                     <p class="grid1">
-                        <input type="text" placeholder="" required="" name="name">
+                        <input type="text" placeholder="" required="" name="name" value="{{$v['name']}}">
                     </p>
                 </div>
                 
                 <div class="contact-form2">
                     <h4>电话</h4>
-                    <input type="text" placeholder="" required="" name="phone" value="">
+                    <input type="text" placeholder="" required="" name="phone" value="{{$v['phone']}}">
                 </div>
                 <div class="contact-form2">
                     <h4>性别</h4>
-                    <input type="radio" placeholder="" required="" name="sex" value="0">男
-                    <input type="radio" placeholder="" required="" name="sex" value="1">女
+                    <input type="radio" 
+                    	@if($v['sex'] == 0) checked @endif
+                    placeholder="" required="" name="sex" value="0">男
+                    <input type="radio" 
+                    	@if($v['sex'] == 1) checked @endif
+                    placeholder="" required="" name="sex" value="1">女
                 </div>
                 <div class="contact-form2">
-                    <h4>电话</h4>
-                    <input type="text" placeholder="" required="" name="call" value="">
-                </div>
-                <div class="contact-form2">
-                    <label for="user-name" class="am-u-sm-3 am-form-label">家乡 <span class="tpl-form-line-small-title"></span></label>
+                    <label for="user-name" class="am-u-sm-3 am-form-label">居住地<span class="tpl-form-line-small-title"></span></label>
                     <div class="am-u-sm-9" id="city_china">
                         <select class="province" name="sheng">
-                            <option></option>
+                            <option>{{$v['sheng']}}</option>
                         </select>
                         <select class="city" name="shi">
-                            <option></option>
+                            <option>{{$v['shi']}}</option>
                         </select>
-                        <select class="area" name="qu">
-                            <option></option>
+                        <select class="area" name="xian">
+                            <option>{{$v['xian']}}</option>
                         </select>
                     </div>
                     <script>
@@ -92,6 +90,7 @@ table.dataintable tr:nth-child(even) {
                     </script>
                 </div>
                 <input type="submit" value="Submit">
+                @endforeach
             </form>
         </div>
         <div class="col-md-4 contact-grids">

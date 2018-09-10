@@ -62,7 +62,6 @@ class GoodController extends Controller
         $goods = new Good;
 
         $goods -> title = $request -> title;
-        $goods -> image = $request -> image;
         $goods -> miaoshu = $request -> miaoshu;
         $goods -> price = $request -> price;
         $goods -> content = $request -> content;
@@ -141,14 +140,13 @@ class GoodController extends Controller
         $goods = Good::findOrFail($id);
 
         $goods -> title = $request -> title;
-        $goods -> image = $request -> image;
         $goods -> miaoshu = $request -> miaoshu;
         $goods -> price = $request -> price;
         $goods -> content = $request -> content;
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
         $goods -> cate_id = $request -> cate_id;
-        
+        // dd($goods);
 
         //文件上传
         //检测是否有文件上传
