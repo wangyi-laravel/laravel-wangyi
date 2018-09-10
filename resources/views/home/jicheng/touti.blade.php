@@ -116,7 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul class="multi-column-dropdown">
                                                 @if(!empty($v->child))
                                                 @foreach($v->child as $b)
-                                                <li><a href="/home/liebiao">{{$b['name']}}</a></li>
+                                                <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
                                                 @endforeach
                                                 @endif
                                             </ul>

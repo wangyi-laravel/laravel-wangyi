@@ -17,15 +17,18 @@
                 <h3>全部分类</h3>
                 <ul class="cate">
                     @foreach($cates as $v)
-                            @if($v['parent_id'] == 0)
-                    <li><i class="glyphicon glyphicon-menu-right"></i><a href="products.html">{{$v['name']}}</a> <span>(16)</span></li>
+                    @if($v['parent_id'] == 0)
+                    <li><i class="glyphicon glyphicon-menu-right"></i><a href="#">{{$v['name']}}</a> <span>(16)</span></li>
 
                     <ul>
-                        @if(!empty($v->child)) @foreach($v->child as $b)
-                        <li><i class="glyphicon glyphicon-menu-right"></i><a href="products.html">{{$b['name']}}</a></li>
-                        @endforeach @endif
+                        @if(!empty($v->child)) 
+                        @foreach($v->child as $b)
+                        <li><i class="glyphicon glyphicon-menu-right"></i><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
+                        @endforeach 
+                        @endif
                     </ul>
-                    @endif @endforeach
+                    @endif 
+                    @endforeach
                 </ul>
             </div>
             <!--//menu-->
@@ -118,6 +121,7 @@
             </div>
             <div class="mid-popular">
                 @foreach($goods as $v)
+                @if($v['cate_id'] == $cate)
                 <div class="col-sm-4 item-grid item-gr  simpleCart_shelfItem">
                     <div class="grid-pro">
                         <div class=" grid-product ">
@@ -140,6 +144,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
                 <div class="clearfix"></div>
             </div>

@@ -22,7 +22,8 @@ class LiebiaoController extends Controller
         $link = Link::all();
         $cates = Cates::all();
         $goods = Good::all();
-         return view('home.liebiao.index',compact('setting','link','cates','goods'));
+        $cate = $_GET['cate_id'];
+        return view('home.liebiao.index',compact('setting','link','cates','goods','cate'));
 
     }
 
