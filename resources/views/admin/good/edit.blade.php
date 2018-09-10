@@ -20,6 +20,7 @@
                             <input type="text" name="title" class="tpl-form-input" value="{{$good['title']}}" id="user-name" placeholder="">
                         </div>
                     </div>
+                    
                     <input type="hidden" name="cate_id" value="{{$good['cate_id']}}">
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">颜色<span class="tpl-form-line-small-title"></span></label>
@@ -62,7 +63,7 @@
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品描述</label>
                         <div class="am-u-sm-9">
-                            <textarea class="" name="miaoshu" rows="5">{{$good['miaoshu']}}</textarea>
+                            <textarea class="" name="miaoshu" rows="5">{!!$good['miaoshu']!!}</textarea>
                         </div>
                     </div>
                     <div class="am-form-group">

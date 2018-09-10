@@ -56,13 +56,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header-right1 ">
                     <ul>
                         @if(!Session::has('id'))
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/admin/login">登录</a></li>
-                        <li><i class="glyphicon glyphicon-book"></i><a href="/admin/register">注册</a></li>
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
+                        <li><i class="glyphicon glyphicon-book"></i><a href="/register">注册</a></li>
                         @endif
                         @if(Session::has('id'))
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人</a></li>
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人信息</a></li>
+                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/site">收货地址</a></li>
                         <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
-                        @endif
+                        
                     </ul>
                 </div>
                 <div class="header-right2">
@@ -76,6 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                         <div class="clearfix"> </div>
                     </div>  
+                    @endif
                 </div>
                 <div class="clearfix"> </div>
                 </div>
@@ -108,7 +110,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @if($v['parent_id'] == 0)
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    
                                     {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
@@ -116,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul class="multi-column-dropdown">
                                                 @if(!empty($v->child))
                                                 @foreach($v->child as $b)
-                                                <li><a href="/home/liebiao">{{$b['name']}}</a></li>
+                                                <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
                                                 @endforeach
                                                 @endif
                                             </ul>
@@ -585,6 +586,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //footer -->
+    <script src="/qiantai/js/imagezoom.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script defer src="/qiantai/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="/qiantai/css/flexslider.css" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
     @show
 </body>
 

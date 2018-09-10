@@ -18,9 +18,11 @@ class CreateSitesTable extends Migration
             $table->string('sheng')->comment('省')->nullable();
             $table->string('shi')->comment('市')->nullable();
             $table->string('qu')->comment('区')->nullable();
+            $table->string('mail')->comment('邮政编码')->nullable();
             $table->string('address')->comment('详细地址')->nullable();
             $table->string('call')->comment('联系电话');
             $table->string('name')->comment('收货人');
+            $table->string('user_id')->comment('用户');
             $table->timestamps();
         });
     }
