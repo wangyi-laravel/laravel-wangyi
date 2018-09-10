@@ -32,7 +32,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //animation-effect -->
 <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/dianji/js/jquery.1.4.2-min.js"></script>
 </head>
 	
 <body>
@@ -564,26 +563,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
   <script type="text/javascript" src="/dianji/js/Flow.js"></script>
     <script type="text/javascript">
-    /* ==== create imageFlow ==== */
-    if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
-        imf.create("imageFlow", 0.78, 1, 5);
-        $(document).ready(function() {
-            $(".bar").attr("src", "/dianji/images/clear.gif");
-            $(".bar").attr("style", "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='/dianji/images/sc.png')");
-            $(".arrow-left").attr("src", "/dianji/images/clear.gif");
-            $(".arrow-left").attr("style", "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='/dianji/images/btn_Pro_show_left.png')");
-            $(".arrow-right").attr("src", "/dianji/images/clear.gif");
-            $(".arrow-right").attr("style", "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='/dianji/images/btn_Pro_show_right.png')");
-        });
-    } else {
-        imf.create("imageFlow", 0.5, 1.5, 5);
-    }
+    
+    imf.create("imageFlow", 0.5, 1.5, 5);
     </script>
     <div id="imageFlow">
         <div class="bank">
             <a rel='/dianji/images/1090.png' href='http://www.xwcms.net/'>
                 <ul>
                     <li class="ProTi">1090笔记本型光学无线鼠标 </li>
+                    <li>高精度光学寻迹引擎 </li>
+                    <li>无线自由 </li>
+                    <li>NANO接收器，即插即忘 </li>
+                    <li class="ProMo">了解更多...</li>
+                </ul>
+            </a>
+            <a rel='/dianji/images/1090jzb.png' href='http://www.xwcms.net/'>
+                <ul>
+                    <li class="ProTi">1090精致版笔记本型光学无线鼠标</li>
                     <li>高精度光学寻迹引擎 </li>
                     <li>无线自由 </li>
                     <li>NANO接收器，即插即忘 </li>
