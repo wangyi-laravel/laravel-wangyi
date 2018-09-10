@@ -250,7 +250,7 @@ img {
                     <hr>
                     <div class="price_single">
                         <span class="reducedfrom item_price">{{$v['price']}}</span>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
+                        <a href="/home/cart_items" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"> </div>
@@ -284,12 +284,15 @@ img {
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
+                                        <p>Size</p>
+                                        <span>S, M, L, XL</span>
                                         <p>尺码</p>
                                         <span></span>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
+                            <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Reviews</h2>
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
                             <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
                                 <div class="comments-top-top">
@@ -362,11 +365,10 @@ img {
                     </div>
                 </div>
             </div>
-            <div class="good-content">{!!$v['content']!!}</div>
-            
             @endif
             @endforeach
-
+            <div class="good-content">{!!$v['content']!!}</div>
+            
         </div>
     </div>
     @endsection

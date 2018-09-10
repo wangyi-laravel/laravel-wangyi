@@ -103,6 +103,7 @@ Route::post('/store','ShouyeController@store');
 Route::get('/home/logout','ShouyeController@logout');
 
 //个人中心
+Route::get('/home/people','ShouyeController@people');
 Route::get('/home/people/{id}','ShouyeController@people');
 Route::post('/people/z','ShouyeController@z');
 
@@ -119,5 +120,7 @@ Route::resource('/home/xiang','XiangController');
 //商品列表
 Route::resource('/home/liebiao','LiebiaoController');
 
+//购物车
+Route::resource('/home/cart_items','Cart_itemsController');
 
 
