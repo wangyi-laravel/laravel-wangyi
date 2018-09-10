@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Color;
+use App\Good;
 use App\Link;
 use App\Setting;
-use App\Cates;
 use Illuminate\Http\Request;
 
 class XiangController extends Controller
@@ -18,10 +19,13 @@ class XiangController extends Controller
     public function index()
     {
         //
+        $goods = Good::all();
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-         return view('home.xiang.index',compact('setting','link','cates'));
+        $good = $_GET['good_id'];
+        $colors = Color::all();
+         return view('home.xiang.index',compact('setting','link','cates','goods','colors','good'));
          // ['xiang'=>$xiang]
     }
 

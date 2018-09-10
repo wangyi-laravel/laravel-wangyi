@@ -19,14 +19,19 @@
 //验证码
 Route::get('capcha','LoginController@captcha');
 
-//登陆页面
-Route::get('/admin/login', 'LoginController@login');
+//用户登陆页面
+Route::get('/login', 'LoginController@login');
 
 //登陆操作
-Route::post('/admin/login', 'LoginController@dologin');
+Route::post('/login', 'LoginController@dologin');
+
+//管理员登录
+Route::get('/admin/login','AdminController@login');
+//执行管理员登录
+Route::post('/admin/login','AdminController@dologin');
 
 //后台路由
- // Route::group(['middleware'=>'login'],function(){
+// Route::group(['middleware'=>'login'],function(){
 
 
 	//后台主页
@@ -89,10 +94,10 @@ Route::post('/admin/login', 'LoginController@dologin');
 Route::get('/','ShouyeController@show');
 
 //注册页面
-Route::get('/admin/register','ShouyeController@register');
+Route::get('/register','ShouyeController@register');
 
 //执行注册
-Route::post('/admin/store','ShouyeController@store');
+Route::post('/store','ShouyeController@store');
 
 //前台退出
 Route::get('/home/logout','ShouyeController@logout');

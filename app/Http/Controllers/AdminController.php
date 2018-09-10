@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -49,6 +51,42 @@ class AdminController extends Controller
 		}else{
 			return back()->with('error','设置失败!!');
 		}
+	}
+
+	/**
+     * 管理员登录
+     */
+    public function login() 
+    {
+    	return view('admin.login');
+    }
+
+    /**
+	 * 登陆操作
+	 */
+	public function dologin(Request $request)
+	{
+		//获取用户的数据
+		$user = User::where('username', $request->username)->first();
 		
+		$res = $request->num;
+
+		// $php = Session::get('milkcaptcha');
+
+		if(!$user){
+			return back()->with('error','登陆失败!');
+		}
+
+		/*if ($res != $php) {
+			return back()->with('error','验证码错误');
+		}*/
+		//校验密码
+		if(Hash::check($request->password, $user->password)){
+			//写入session
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password]);
+			return redirect('/admin')->with('success','登陆成功');
+		}else{
+			return back()->with('error','登陆失败!');
+		}
 	}
 }
