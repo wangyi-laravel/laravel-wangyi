@@ -7,6 +7,7 @@ use App\Color;
 use App\Good;
 use App\Link;
 use App\Setting;
+use App\Size;
 use Illuminate\Http\Request;
 
 class XiangController extends Controller
@@ -16,17 +17,16 @@ class XiangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $goods = Good::all();
+        $id = $request->good_id;
+        $good = Good::find($id);
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-        $good = $_GET['good_id'];
         $colors = Color::all();
-         return view('home.xiang.index',compact('setting','link','cates','goods','colors','good'));
-         // ['xiang'=>$xiang]
+        $sizes = Size::all();
+        return view('home.xiang.index',compact('setting','link','cates','good','colors','sizes'));
     }
 
     /**

@@ -227,13 +227,12 @@ img {
         </div>
         <div class="col-md-9 animated wow fadeInRight" data-wow-delay=".5s">
             <!-- 商品详情 -->
-            @foreach($goods as $v)
-            @if($v['id'] == $good)
+
             <div class="col-md-5 grid-im">
                 <div class="flexslider">
                     <ul class="slides">
                         <li data-thumb="/qiantai/images/si.jpg">
-                            <div class="thumb-image"> <img src="{{$v['image']}}" data-imagezoom="true" class="img-responsive"> </div>
+                            <div class="thumb-image"> <img src="{{$good['image']}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
                     </ul>
                 </div>
@@ -241,10 +240,10 @@ img {
             <div class="col-md-7 single-top-in">
                 <div class="span_2_of_a1 simpleCart_shelfItem">
                     <br>
-                    <h4>{{$v['title']}}</h4>
+                    <h4>{{$good['title']}}</h4>
                     <hr>
                     <div class="price_single">
-                        <span class="reducedfrom item_price">{{$v['price']}}</span>
+                        <span class="reducedfrom item_price">{{$good['price']}}</span>
                         <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
                         <div class="clearfix"></div>
                     </div>
@@ -264,7 +263,7 @@ img {
                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                 <div class="facts">
                                     <p>
-                                        {!!$v['miaoshu']!!}
+                                        {!!$good['miaoshu']!!}
                                     </p>
                                 </div>
                             </div>
@@ -273,14 +272,20 @@ img {
                                 <div class="facts1">
                                     <div class="color">
                                         <p>颜色</p>
-                                        <span>
-                                        	
-                        				</span>
+                                        @foreach($colors as $v)
+                                        @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
+			                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+			                            @endif
+			                            @endforeach                        				
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
-                                        <p>Size</p>
-                                        <span>S, M, L, XL</span>
+                                        <p>尺码</p>
+                                        @foreach($sizes as $v)
+                                        @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
+			                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+			                            @endif
+			                            @endforeach
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -357,8 +362,7 @@ img {
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+
         </div>
     </div>
     @endsection
