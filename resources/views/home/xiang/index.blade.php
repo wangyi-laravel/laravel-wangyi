@@ -250,7 +250,7 @@ img {
                     <hr>
                     <div class="price_single">
                         <span class="reducedfrom item_price">{{$v['price']}}</span>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
+                        <a href="/home/cart_items" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"> </div>
