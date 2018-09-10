@@ -130,6 +130,11 @@ img {
     color: #ff6600;
     cursor: pointer;
 }
+.good-content {
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
 </style>
 <div class="banner-top">
     <div class="container">
@@ -291,6 +296,7 @@ img {
                                 </div>
                             </div>
                             <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Reviews</h2>
+                            <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>评论</h2>
                             <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
                                 <div class="comments-top-top">
                                     <div class="top-comment-left">
@@ -362,6 +368,8 @@ img {
                     </div>
                 </div>
             </div>
+
+            <div class="good-content">{!!$good['content']!!}</div>
 
         </div>
     </div>
