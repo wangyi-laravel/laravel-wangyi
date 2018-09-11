@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Good;
 use App\Link;
 use App\Setting;
 use App\User;
 use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
 use Illuminate\Http\Concerns\flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +30,8 @@ class LoginController extends Controller
 		$setting = Setting::all();
 		$link = Link::all();
 		$cates = Cates::all();
-		return view('home.login',compact('setting','link','cates'));
+		$goods = Good::all();
+		return view('home.login',compact('setting','link','cates','goods'));
 	}
 
 	/**
@@ -66,7 +69,7 @@ class LoginController extends Controller
 	public function logout(Request $request)
 	{
 		$request->session()->flush();
-		return redirect('/home/login')->with('success','退出成功');
+		return redirect('/admin/login')->with('success','退出成功');
 	}
 
 	/**
@@ -74,7 +77,9 @@ class LoginController extends Controller
 	 */
 	public function captcha()
     {
-        $builder = new CaptchaBuilder();
+    	$phraseBuilder = new PhraseBuilder(1,'1');
+
+        $builder = new CaptchaBuilder(null, $phraseBuilder);
         $builder->build(150,32);
         $phrase = $builder->getPhrase();
         //把内容存入session
