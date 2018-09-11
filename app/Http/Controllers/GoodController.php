@@ -156,7 +156,19 @@ class GoodController extends Controller
 
         //插入
         if ($goods -> save()) {
-            return redirect('/good')->with('success', '更新成功');
+
+            // 写加入中间表
+            try{
+                $res = $goods->colors()->sync($request->color_id);
+                $res = $goods->sizes()->sync($request->size_id);
+                DB::commit();
+                return redirect('/good')->with('success','添加成功');
+            }catch(\Exception $e){
+                DB::rollback();
+                return back()->with('error','添加失败!');
+            }
+            
+            // return redirect('/good')->with('success', '更新成功');
         }else{
             return back()->with('error', '更新失败');
         }
