@@ -30,7 +30,7 @@ class Cart_itemsController extends Controller
      */
     public function create()
     {
-        //
+        echo 111;
     }
 
     /**
