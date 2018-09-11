@@ -1,139 +1,10 @@
 @extends('home.jicheng.touti') @section('content')
 <!--banner-->
-<style type="text/css">
-* {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-a,
-img {
-    border: 0;
-    text-decoration: none;
-}
-
-
-
-/* imageFlow */
-
-#imageFlow {
-    width: 810px;
-    height: 390px;
+<style>
+.chaochu{
     overflow: hidden;
-    position: relative;
-    margin: 0px auto 0 50px;
-}
-
-#imageFlow .diapo {
-    position: absolute;
-    left: -1000px;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-#imageFlow .bank {
-    visibility: hidden;
-    overflow: hidden;
-}
-
-#imageFlow ul {
-    height: 20px;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-}
-
-#imageFlow ul li {
-    color: #333;
-    font-size: 12px;
-    text-align: left;
-    margin-left: 30%;
-    height: 20px;
-    line-height: 20px;
-    overflow: hidden;
-    width: 100%;
-    vertical-align: bottom;
-}
-
-#imageFlow .text {
-    position: absolute;
-    left: 0px;
-    width: 80px;
-    bottom: 1%;
-    text-align: center;
-    color: #333;
-    font-family: verdana, arial, Helvetica, sans-serif;
-    z-index: 1000;
-}
-
-#imageFlow .title {
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-#imageFlow .legend {
-    font-size: 0.8em;
-}
-
-#imageFlow .scrollbar {
-    position: absolute;
-    left: 10%;
-    top: 0;
-    width: 80%;
-    height: 16px;
-    z-index: 1;
-}
-
-#imageFlow .scrollbar img {
-    cursor: pointer;
-}
-
-#imageFlow .track {
-    position: absolute;
-    left: -55px;
-    width: 950px;
-    height: 16px;
-    top: 0px;
-}
-
-#imageFlow .arrow-left {
-    position: absolute;
-    left: -82px;
-    z-index: 1;
-}
-
-#imageFlow .arrow-right {
-    position: absolute;
-    right: -82px;
-    z-index: 1;
-}
-
-#imageFlow .bar {
-    position: absolute;
-    height: 16px;
-    left: 25px;
-    top: 0px;
-    cursor: pointer;
-}
-
-#imageFlow .ProTi {
-    color: #ff6600;
-    font-weight: bold;
-}
-
-#imageFlow .ProRmb {
-    font-weight: bold;
-}
-
-#imageFlow .ProMo {
-    color: #ff6600;
-    cursor: pointer;
-}
-.good-content {
-	height: auto;
-	width: 100%;
-	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 </style>
 <div class="banner-top">
@@ -153,7 +24,7 @@ img {
                 <h3>全部分类</h3>
                 <ul class="cate">
                     @foreach($cates as $v) @if($v['parent_id'] == 0)
-                    <li><i class="glyphicon glyphicon-menu-right"></i>{{$v['name']}} <span>(16)</span></li>
+                    <li><i class="glyphicon glyphicon-menu-right"></i>{{$v['name']}}</li>
                     <ul>
                         @if(!empty($v->child)) @foreach($v->child as $b)
                         <li><i class="glyphicon glyphicon-menu-right"></i><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
@@ -232,7 +103,6 @@ img {
         </div>
         <div class="col-md-9 animated wow fadeInRight" data-wow-delay=".5s">
             <!-- 商品详情 -->
-
             <div class="col-md-5 grid-im">
                 <div class="flexslider">
                     <ul class="slides">
@@ -277,20 +147,18 @@ img {
                                 <div class="facts1">
                                     <div class="color">
                                         <p>颜色</p>
-                                        @foreach($colors as $v)
-                                        @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
-			                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
-			                            @endif
-			                            @endforeach                        				
+                                        @foreach($colors as $v) @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
+                                        <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
+                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+                                        @endif @endforeach
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
                                         <p>尺码</p>
-                                        @foreach($sizes as $v)
-                                        @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
-			                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
-			                            @endif
-			                            @endforeach
+                                        @foreach($sizes as $v) @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
+                                        <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
+                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+                                        @endif @endforeach
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -328,12 +196,36 @@ img {
             <!----->
             <div class="clearfix"> </div>
             <div class=" col-md-si">
-                <script type="text/javascript" src="/dianji/js/Flow.js"></script>
-                <script type="text/javascript">
-                imf.create("imageFlow", 0.5, 1.5, 5);
-                </script>
-                
+
+                @foreach($goods as $v)
+                <div class="col-sm-4 item-grid simpleCart_shelfItem">
+                    <div class="grid-pro">
+                        <div class=" grid-product ">
+                            <figure>
+                                <a href="single.html">
+                                    <div class="grid-img">
+                                        <img src="images/pr1.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="grid-img">
+                                        <img src="images/pr.jpg" class="img-responsive" alt="">
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="women">
+                            <a href="/home/xiang?good_id={{$v['id']}}"><img src="{{$v['image']}}" alt="" width="200px" height="220px"></a>
+                            <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
+
+                            <p><em class="item_price">{{$v['price']}}</em></p>
+                            <a href="/home/cart_items" data-text="Add To Cart" class="but-hover1 item_add">添加到购物车</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <div class="clearfix"> </div>
+
             </div>
+            <hr>
             <div class="good-content">{!!$good['content']!!}</div>
         </div>
     </div>
