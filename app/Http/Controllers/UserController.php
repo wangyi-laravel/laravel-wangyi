@@ -113,11 +113,9 @@ class UserController extends Controller
         $user -> sex = $request->sex;
         $user -> weight = $request->weight;
         $user -> site = $request->site;
-        // dd($request->post());
         if ($request -> hasFile('image')) {
-            $user -> image = '/'.$request -> image -> store('upload/'.date('Ymd'));
+            $user -> image = '/'.$request -> image -> store('uploads/user/'.date('Ymd'));
         }
-        // dd($user -> all());
         if($user -> save()){
             return redirect('/user')->with('success','添加成功');
         }else{

@@ -35,7 +35,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-    
+
+
+    <style type="text/css">
+        .multi{
+            width:2px;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,10 +81,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                             <div class="clearfix"> </div>
                         </div>
-                            @endif
                         
                     </div>
-                    
+                    @endif
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -109,10 +114,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
+                                        <div class="col-sm-4" >
+                                            <ul class="multi-column-dropdown" >
                                                 @if(!empty($v->child)) @foreach($v->child as $b)
-                                                <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
+                                                <li style="float: left;"><a href="/home/liebiao?cate_id={{$b['id']}}" >{{$b['name']}}</a></li>
                                                 @endforeach @endif
                                             </ul>
                                         </div>
@@ -139,7 +144,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    @show @section('content')
+    @show 
+    @section('content')
     <!-- banner -->
     <div class="banner">
         <div class="banner-right">
