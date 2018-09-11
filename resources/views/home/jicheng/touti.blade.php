@@ -20,6 +20,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- js -->
     <script src="/qiantai/js/jquery.min.js"></script>
     <!-- //js -->
+    <!-- 评论引入 -->
+     <link rel="stylesheet" href="/pingluns/css/style.css">
+    <link rel="stylesheet" href="/pingluns/css/comment.css">
+    <!-- 评论结束 -->
     <!-- cart -->
     <script src="/qiantai/js/simpleCart.min.js"></script>
     <!-- cart -->
