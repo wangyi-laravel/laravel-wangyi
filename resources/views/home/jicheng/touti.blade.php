@@ -1,7 +1,6 @@
 @section('header')
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Home</title>
     <!-- for-mobile-apps -->
