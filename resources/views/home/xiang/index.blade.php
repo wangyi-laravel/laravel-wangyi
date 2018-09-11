@@ -198,6 +198,7 @@
             <div class=" col-md-si">
 
                 @foreach($goods as $v)
+                @if($v['cate_id'] == $good['cate_id'] && $v['id'] != $good['id'])
                 <div class="col-sm-4 item-grid simpleCart_shelfItem">
                     <div class="grid-pro">
                         <div class=" grid-product ">
@@ -221,6 +222,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
                 <div class="clearfix"> </div>
 
