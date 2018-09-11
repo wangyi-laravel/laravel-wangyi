@@ -131,7 +131,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="mid-popular">
-                @foreach($goods as $v)
+                @foreach($good as $v)
                 @if($v['cate_id'] == $cate)
                 <div class="col-sm-4 item-grid item-gr  simpleCart_shelfItem">
                     <div class="grid-pro">
