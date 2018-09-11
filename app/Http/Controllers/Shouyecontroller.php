@@ -68,7 +68,7 @@ class Shouyecontroller extends Controller
     {
       $link = Link::all();
       $setting = Setting::all();
-      $user = User::all();
+
       $user = User::findOrFail($id);
       $cates = Cates::all();
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));
