@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Good;
 use App\Link;
 use App\Setting;
 use App\Site;
@@ -19,7 +20,8 @@ class Shouyecontroller extends Controller
       $link = Link::all();
       $setting = Setting::all();
       $cates = Cates::all();
-    	return view('home.jicheng.touti',compact('link','setting','cates'));
+      $goods = Good::orderBy('id','desc');
+    	return view('home.jicheng.touti',compact('link','setting','cates','goods'));
     }
 
     //前台注册页面
@@ -72,7 +74,7 @@ class Shouyecontroller extends Controller
     {
       $link = Link::all();
       $setting = Setting::all();
-      $user = User::all();
+
       $user = User::findOrFail($id);
       $cates = Cates::all();
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));

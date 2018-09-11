@@ -2,8 +2,8 @@
 @section('content')
 <div class="banner-top">
     <div class="container">
-        <h2 class="animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">寄存器</font></font></h2>
-        <h3 class="animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;"><a href="index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主页</font></font></a><label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/</font></font></label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注册</font></font></h3>
+        <h2 class="animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">welcome</font></font></h2>
+        <h3 class="animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;"><a href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主页</font></font></a><label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/</font></font></label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注册</font></font></h3>
         <div class="clearfix"> </div>
     </div>
 </div>
