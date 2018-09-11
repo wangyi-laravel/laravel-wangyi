@@ -147,18 +147,24 @@
                                 <div class="facts1">
                                     <div class="color">
                                         <p>颜色</p>
-                                        @foreach($colors as $v) @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
+                                        @foreach($colors as $v) 
+                                        @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
-                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
-                                        @endif @endforeach
+                                            <input type="radio" name="color_id" value="{{$v['id']}}">{{$v['name']}}
+                                        </label>
+                                        @endif 
+                                        @endforeach
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
                                         <p>尺码</p>
-                                        @foreach($sizes as $v) @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
+                                        @foreach($sizes as $v) 
+                                        @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
-                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
-                                        @endif @endforeach
+                                            <input type="radio" name="size_id" value="{{$v['id']}}">{{$v['name']}}
+                                        </label>
+                                        @endif 
+                                        @endforeach
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
