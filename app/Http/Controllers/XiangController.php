@@ -20,13 +20,14 @@ class XiangController extends Controller
     public function index(Request $request)
     {
         $id = $request->good_id;
+        $goods = Good::all();
         $good = Good::find($id);
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
         $colors = Color::all();
         $sizes = Size::all();
-        return view('home.xiang.index',compact('setting','link','cates','good','colors','sizes'));
+        return view('home.xiang.index',compact('setting','link','cates','good','colors','sizes','goods'));
     }
 
     /**
