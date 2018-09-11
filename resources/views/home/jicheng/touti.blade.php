@@ -35,11 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-        .container{
-            background: white;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -66,7 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people/{{session('id')}}">个人信息</a></li>
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/site">收货地址</a></li>
                             <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
-                            @endif
                         </ul>
                     </div>
                     <div class="header-right2">
@@ -80,6 +75,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                             <div class="clearfix"> </div>
                         </div>
+                            @endif
+                        
                     </div>
                     
                     <div class="clearfix"> </div>

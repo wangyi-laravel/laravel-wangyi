@@ -71,6 +71,13 @@ class AdminController extends Controller
 		
 		$res = $request->num;
 
+		$weight = $user->weight;
+		if ($weight == 2) {
+			return back()->with('error','您没有权限,请先联系管理员');
+		}
+
+
+
 		// $php = Session::get('milkcaptcha');
 
 		if(!$user){

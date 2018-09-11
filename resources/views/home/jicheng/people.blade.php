@@ -35,7 +35,7 @@ table.dataintable tr:nth-child(even) {
 }
 </style>
 
-<div class="contact">
+
     <div class="container">
         <div class="col-md-8 contact-grids1 animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
             <form action="/people/z" method="post" enctype="multipart/form-data">
@@ -43,7 +43,7 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>头像</h4>
                     <p class="grid1">
-                    	<img src="{{$user['image']}}" width="50" height="50">
+                        <img src="{{$user['image']}}" width="50" height="50">
                         <input type="file" placeholder="" required="" name="image">
                     </p>
                 </div>
@@ -61,10 +61,11 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>性别</h4>
                     <input type="radio" 
-                    	@if($user['sex'] == 0) checked @endif
+
+                        @if($user['sex'] == 0) checked @endif
                     placeholder="" required="" name="sex" value="0">男
                     <input type="radio" 
-                    	@if($user['sex'] == 1) checked @endif
+                        @if($user['sex'] == 1) checked @endif
                     placeholder="" required="" name="sex" value="1">女
                 </div>
                 <div class="contact-form2">
