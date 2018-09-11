@@ -116,10 +116,10 @@ class GoodController extends Controller
     {
         // 获取商品的信息
         $good = Good::findOrFail($id);
-        
+
         //获取所有颜色
         $colors = Color::all();
-
+        // dd($good,$colors);
         //获取所有尺码
         $sizes = Size::all();
 
