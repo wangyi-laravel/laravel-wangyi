@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Good;
 use App\Link;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -20,7 +21,9 @@ class Cart_itemsController extends Controller
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-         return view('home.Cart_items.index',compact('setting','link','cates'));
+        $good = Good::all();
+        $goods = Good::orderBy('id','desc');
+         return view('home.Cart_items.index',compact('setting','link','cates','goods','good'));
     }
 
     /**

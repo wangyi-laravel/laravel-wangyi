@@ -35,9 +35,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+
+    <style type="text/css">
+        .multi{
+            width:2px;
+        }
+    </style>
 </head>
 
 <body>
+    <style>
+.chaochu{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+</style>
     <!-- header -->
     <div class="header">
         <div class="header-grid">
@@ -46,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @foreach($setting as $v)
                     <ul>
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:{{$v['email']}}">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                     @endforeach
@@ -75,6 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                             <div class="clearfix"> </div>
                         </div>
+                        
                     </div>
                     
                     <div class="clearfix"> </div>
@@ -107,10 +122,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
+                                        <div class="col-sm-4" >
+                                            <ul class="multi-column-dropdown" >
                                                 @if(!empty($v->child)) @foreach($v->child as $b)
-                                                <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
+                                                <li style="float: left;"><a href="/home/liebiao?cate_id={{$b['id']}}" >{{$b['name']}}</a></li>
                                                 @endforeach @endif
                                             </ul>
                                         </div>
@@ -137,109 +152,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    @show @section('content')
+    @show 
+    @section('content')
     <!-- banner -->
     <div class="banner">
         <div class="banner-right">
             <div class="nbs-flexisel-container">
                 <div class="nbs-flexisel-inner">
                     <ul id="flexiselDemo2" class="nbs-flexisel-ul" style="left: -443px; display: block;">
+                        @foreach($good as $v)
                         <li class="nbs-flexisel-item" style="width: 443px;">
                             <div class="banner-grid">
-                                <h2>Featured Products</h2>
+                                <h2 class="chaochu">新品推荐</h2>
                                 <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi.jpg" alt="">
+                                    <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive" src="{{$v['image']}}" alt="">
                                 </a>
                                     <div class="women simpleCart_shelfItem">
                                         <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                                        <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                                         <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                                            <em class="item_price">{{$v['price']}}</em></p>
+                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li class="nbs-flexisel-item" style="width: 443px;">
-                            <div class="banner-grid">
-                                <h2>Featured Products</h2>
-                                <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi2.jpg" alt="">
-                                </a>
-                                    <div class="women simpleCart_shelfItem">
-                                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nbs-flexisel-item" style="width: 443px;">
-                            <div class="banner-grid">
-                                <h2>Featured Products</h2>
-                                <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi1.jpg" alt="">
-                                </a>
-                                    <div class="women simpleCart_shelfItem">
-                                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nbs-flexisel-item" style="width: 443px;">
-                            <div class="banner-grid">
-                                <h2>Featured Products</h2>
-                                <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi.jpg" alt="">
-                                </a>
-                                    <div class="women simpleCart_shelfItem">
-                                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nbs-flexisel-item" style="width: 443px;">
-                            <div class="banner-grid">
-                                <h2>Featured Products</h2>
-                                <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi2.jpg" alt="">
-                                </a>
-                                    <div class="women simpleCart_shelfItem">
-                                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nbs-flexisel-item" style="width: 443px;">
-                            <div class="banner-grid">
-                                <h2>Featured Products</h2>
-                                <div class="wome">
-                                    <a href="single.html"><img class="img-responsive" src="/qiantai/images/bi1.jpg" alt="">
-                                </a>
-                                    <div class="women simpleCart_shelfItem">
-                                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <p class="ba-price">
-                                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -537,7 +475,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="/register">加入我们</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
