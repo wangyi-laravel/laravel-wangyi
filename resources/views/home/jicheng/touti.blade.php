@@ -1,7 +1,13 @@
 @section('header')
 <!DOCTYPE html>
 <html>
-
+<?php 
+    $good = \App\Good::all();
+    $link = \App\Link::all();
+    $setting = \App\Setting::all();
+    $cates = \App\Cates::all();
+    $goods = \App\Good::orderBy('id','desc');
+?>
 <head>
     <title>Home</title>
     <!-- for-mobile-apps -->
@@ -35,6 +41,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+
+    <style type="text/css">
+        .multi{
+            width:2px;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,13 +66,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @foreach($setting as $v)
                     <ul>
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:{{$v['email']}}">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 ">
+                    <div class="header-right1 " style="float:left;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
@@ -71,6 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @endif
                         </ul>
                     </div>
+                    @if(Session::has('id'))
                     <div class="header-right2">
                         <div class="cart box_1">
                             <a href="/home/cart_items">
@@ -82,8 +96,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                             <div class="clearfix"> </div>
                         </div>
+                        
                     </div>
-                    
+                    @endif
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -114,10 +129,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
+                                        <div class="col-sm-4" >
+                                            <ul class="multi-column-dropdown" >
                                                 @if(!empty($v->child)) @foreach($v->child as $b)
-                                                <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
+                                                <li style="float: left;"><a href="/home/liebiao?cate_id={{$b['id']}}" >{{$b['name']}}</a></li>
                                                 @endforeach @endif
                                             </ul>
                                         </div>
@@ -144,7 +159,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    @show @section('content')
+    @show 
+    @section('content')
     <!-- banner -->
     <div class="banner">
         <div class="banner-right">
@@ -459,7 +475,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="/register">加入我们</a>
+                    <a href="contact.html">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

@@ -5,9 +5,9 @@ return [
     'characters' => '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ',
 
     'default'   => [
-        'length'    => 5,
+        'length'    => 6,
         'width'     => 120,
-        'height'    => 36,
+        'height'    => 1,
         'quality'   => 90,
     ],
 
@@ -24,13 +24,13 @@ return [
     ],
 
     'mini'   => [
-        'length'    => 3,
+        'length'    => 6,
         'width'     => 60,
         'height'    => 32,
     ],
 
     'inverse'   => [
-        'length'    => 5,
+        'length'    => 6,
         'width'     => 120,
         'height'    => 36,
         'quality'   => 90,
