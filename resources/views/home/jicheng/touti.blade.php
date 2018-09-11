@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @foreach($setting as $v)
                     <ul>
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:{{$v['email']}}">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                     @endforeach
@@ -62,7 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/site">收货地址</a></li>
                             <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
                             @endif
-
                         </ul>
                     </div>
                     <div class="header-right2">
@@ -538,7 +537,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">加入我们</a>
+                    <a href="/register">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>

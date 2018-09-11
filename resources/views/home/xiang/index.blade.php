@@ -332,41 +332,7 @@ img {
                 <script type="text/javascript">
                 imf.create("imageFlow", 0.5, 1.5, 5);
                 </script>
-                <div id="imageFlow">
-                    <div class="bank">
-                        <a rel='/dianji/images/1090.png' href='http://www.xwcms.net/'>
-                            <ul>
-                                <li class="ProTi">1090笔记本型光学无线鼠标 </li>
-                                <li>高精度光学寻迹引擎 </li>
-                                <li>无线自由 </li>
-                                <li>NANO接收器，即插即忘 </li>
-                                <li class="ProMo">了解更多...</li>
-                            </ul>
-                        </a>
-                        <a rel='/dianji/images/1090jzb.png' href='http://www.xwcms.net/'>
-                            <ul>
-                                <li class="ProTi">1090精致版笔记本型光学无线鼠标</li>
-                                <li>高精度光学寻迹引擎 </li>
-                                <li>无线自由 </li>
-                                <li>NANO接收器，即插即忘 </li>
-                                <li class="ProMo">了解更多...</li>
-                            </ul>
-                        </a>
-                        <a rel='/dianji/images/1090jzb.png' href='http://www.xwcms.net/'>
-                            <ul>
-                                <li class="ProTi">1090精致版笔记本型光学无线鼠标</li>
-                                <li>高精度光学寻迹引擎 </li>
-                                <li>无线自由 </li>
-                                <li>NANO接收器，即插即忘 </li>
-                                <li class="ProMo">了解更多...</li>
-                            </ul>
-                        </a>
-                    </div>
-                    <div class="scrollbar">
-                        <img class="arrow-left" src="/dianji/images/left.png" alt="" />
-                        <img class="arrow-right" src="/dianji/images/right.png" alt="" />
-                    </div>
-                </div>
+                
             </div>
             <div class="good-content">{!!$good['content']!!}</div>
         </div>
