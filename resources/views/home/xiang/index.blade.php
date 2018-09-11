@@ -368,9 +368,7 @@ img {
                     </div>
                 </div>
             </div>
-
             <div class="good-content">{!!$good['content']!!}</div>
-
         </div>
     </div>
     @endsection
