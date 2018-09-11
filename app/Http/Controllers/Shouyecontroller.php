@@ -20,8 +20,9 @@ class Shouyecontroller extends Controller
       $link = Link::all();
       $setting = Setting::all();
       $cates = Cates::all();
+      $good = Good::all();
       $goods = Good::orderBy('id','desc');
-    	return view('home.jicheng.touti',compact('link','setting','cates','goods'));
+    	return view('home.jicheng.touti',compact('link','setting','cates','goods','good'));
     }
 
     //前台注册页面
