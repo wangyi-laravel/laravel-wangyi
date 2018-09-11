@@ -1,7 +1,13 @@
 @section('header')
 <!DOCTYPE html>
 <html>
-
+<?php 
+    $good = \App\Good::all();
+    $link = \App\Link::all();
+    $setting = \App\Setting::all();
+    $cates = \App\Cates::all();
+    $goods = \App\Good::orderBy('id','desc');
+?>
 <head>
     <title>Home</title>
     <!-- for-mobile-apps -->
