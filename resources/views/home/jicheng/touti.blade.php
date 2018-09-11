@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 ">
+                    <div class="header-right1 " style="float:left;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
@@ -84,6 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @endif
                         </ul>
                     </div>
+                    @if(Session::has('id'))
                     <div class="header-right2">
                         <div class="cart box_1">
                             <a href="/home/cart_items">
@@ -97,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         
                     </div>
-                    
+                    @endif
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -115,7 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="icon-bar"></span>
                         </button>
                         <div class="navbar-brand logo-nav-left ">
-                            <h1 class="animated wow pulse animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pulse;"><a href="/">Classic<span>Style</span></a></h1>
+                            <h1 class="animated wow pulse animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pulse;"><a href="/">武'装'<span>大师</span></a></h1>
                         </div>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
@@ -178,7 +179,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                                         <p class="ba-price">
                                             <em class="item_price">{{$v['price']}}</em></p>
-                                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
                                     </div>
                                 </div>
                             </div>
@@ -291,10 +291,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/pi1.jpg" class="img-responsive " alt="">
+                <a href="single.html"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="700px">
                             <div class="col-pic">   
-                                <h5> Women's Wear</h5>
-                                <p>At vero eos et accusamus et</p>
+                                <h5> 女士专区</h5>
+                                <p>轻松搭配让你与众不同</p>
                             </div></a>
             </div>
         </div>
@@ -318,7 +318,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -341,7 +340,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -364,7 +362,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -395,7 +392,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -418,7 +414,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -441,7 +436,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                         <p>
                             <del>$100.00</del><em class="item_price">$70.00</em></p>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -449,10 +443,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="col-md-5 col-md1 animated wow fadeInRight" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/pi2.jpg" class="img-responsive " alt="">
+                <a href="single.html"><img src="/qiantai/images/man.jpg" class="img-responsive " alt="" width="700px">
                             <div class="col-pic">
-                                <h5> Men's Wear</h5>
-                                <p>At vero eos et accusamus et</p>
+                                <h5> 男士专区</h5>
+                                <p>穿上新衣告别青涩油腻</p>
                             </div></a>
             </div>
         </div>
