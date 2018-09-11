@@ -27,7 +27,7 @@
                 <ul class="cate">
                     @foreach($cates as $v)
                     @if($v['parent_id'] == 0)
-                    <li><i class="glyphicon glyphicon-menu-right"></i>{{$v['name']}}<span>(16)</span></li>
+                    <li><i class="glyphicon glyphicon-menu-right"></i>{{$v['name']}}</li>
 
                     <ul>
                         @if(!empty($v->child)) 

@@ -39,59 +39,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
     <!-- header -->
-<div class="header">
-            <div class="header-grid">
-                    <div class="container">
+    <div class="header">
+        <div class="header-grid">
+            <div class="container">
                 <div class="header-left animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                     @foreach($setting as $v)
                     <ul>
-                    <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:{{$v['email']}}">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
-                        
                     </ul>
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                <div class="header-right1 ">
-                    <ul>
-                        @if(!Session::has('id'))
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
-                        <li><i class="glyphicon glyphicon-book"></i><a href="/register">注册</a></li>
-                        @endif
-                        @if(Session::has('id'))
-<<<<<<< HEAD
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people">个人信息</a></li>
-=======
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people/{{session('id')}}">个人信息</a></li>
->>>>>>> 290d5ab8afd10556649e6b94a72ac1f360a7a3d6
-                        <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/site">收货地址</a></li>
-                        <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="header-right2">
-                    <div class="cart box_1">
-                        <a href="checkout.html">
-                            <h3> <div class="total">
+                    <div class="header-right1 ">
+                        <ul>
+                            @if(!Session::has('id'))
+                            <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
+                            <li><i class="glyphicon glyphicon-book"></i><a href="/register">注册</a></li>
+                            @endif @if(Session::has('id'))
+                            <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/people/{{session('id')}}">个人信息</a></li>
+                            <li><i class="glyphicon glyphicon-log-in"></i><a href="/home/site">收货地址</a></li>
+                            <li><i class="glyphicon glyphicon-book"></i><a href="/home/logout">退出</a></li>
+                            @endif
+                        </ul>
+                    </div>
+                    <div class="header-right2">
+                        <div class="cart box_1">
+                            <a href="/home/cart_items">
+                                <h3> <div class="total">
                                 <span class="simpleCart_total">$140.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">1</span> items)</div>
                                 <img src="images/cart.png" alt="">
                             </h3>
-                        </a>
-                        <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-                        <div class="clearfix"> </div>
-                    </div>  
-                    @endif
-                </div>
-                <div class="clearfix"> </div>
+                            </a>
+                            <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            </div>
-            <div class="container">
+        </div>
+        <div class="container">
             <div class="logo-nav">
-                
-                    <nav class="navbar navbar-default">
+                <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header nav_2">
                         <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
@@ -100,18 +93,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                         <div class="navbar-brand logo-nav-left ">
+                        <div class="navbar-brand logo-nav-left ">
                             <h1 class="animated wow pulse animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pulse;"><a href="/">Classic<span>Style</span></a></h1>
                         </div>
-
-                    </div> 
-                    
+                    </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/" class="act">Home</a></li>   
+                            <li class="active"><a href="/" class="act">Home</a></li>
                             <!-- Mega Menu -->
-                            @foreach($cates as $v)
-                            @if($v['parent_id'] == 0)
+                            @foreach($cates as $v) @if($v['parent_id'] == 0)
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     {{$v['name']}} <b class="caret"></b></a>
@@ -119,14 +109,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
-                                                @if(!empty($v->child))
-                                                @foreach($v->child as $b)
+                                                @if(!empty($v->child)) @foreach($v->child as $b)
                                                 <li><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
-                                                @endforeach
-                                                @endif
+                                                @endforeach @endif
                                             </ul>
                                         </div>
-                                        
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="row-top">
@@ -140,22 +127,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </ul>
                             </li>
-                            @endif
-                            @endforeach
+                            @endif @endforeach
                             <li><a href="codes.html"> Codes</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
-                    
-                    </nav>
-                </div>
-                
+                </nav>
+            </div>
         </div>
     </div>
     <!-- //header -->
-    @show
-
-    @section('content')
+    @show @section('content')
     <!-- banner -->
     <div class="banner">
         <div class="banner-right">
@@ -532,9 +514,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="clearfix"></div>
     </div>
-    @show
-
-    @section('products')
+    @show @section('products')
     <!--products-->
     <div class="social animated wow fadeInDown" data-wow-delay=".1s">
         <div class="container">
@@ -546,9 +526,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"></div>
         </div>
     </div>
-    @show
-
-    @section('footer')
+    @show @section('footer')
     <!-- footer -->
     <div class="footer">
         <div class="container">
@@ -559,7 +537,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">加入我们</a>
+                    <a href="/register">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -591,20 +569,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- //footer -->
     <script src="/qiantai/js/imagezoom.js"></script>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script defer src="/qiantai/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="/qiantai/css/flexslider.css" type="text/css" media="screen" />
-
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
-</script>
+    <script defer src="/qiantai/js/jquery.flexslider.js"></script>
+    <link rel="stylesheet" href="/qiantai/css/flexslider.css" type="text/css" media="screen" />
+    <script>
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+    </script>
     @show
 </body>
 
