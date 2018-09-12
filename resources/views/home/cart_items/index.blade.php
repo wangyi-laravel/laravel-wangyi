@@ -56,12 +56,12 @@
 
         <table class="table animated wow fadeInLeft" data-wow-delay=".5s">
             <tr>
-                <th class="t-head head-it ">Item</th>
-                <th class="t-head head-it ">尺码/颜色</th>
-                <th class="t-head">Price</th>
-                <th class="t-head">Quantity</th>
-                <th class="t-head">Total</th>
-                <th class="t-head">操作</th>
+                <th class="t-head head-it " style="font-size:20px">Item</th>
+                <th class="t-head head-it " style="font-size:20px">尺码/颜色</th>
+                <th class="t-head" style="font-size:20px">Price</th>
+                <th class="t-head" style="font-size:20px">Quantity</th>
+                <th class="t-head" style="font-size:20px">Total</th>
+                <th class="t-head" style="font-size:20px">操作</th>
             </tr>
             @foreach($cart as $v)
             <tr class="cross">
@@ -76,9 +76,16 @@
                     <!-- <div class="close1"> </div> -->
                 </td>
                 <td class="t-data">
-                    @foreach($colors as $c) @if($v['color'] == $c['id']) 颜色: {{$c['name']}}
-                    <br/> @endif @endforeach @foreach($size as $s) @if($v['color'] == $s['id']) 尺寸: {{$s['name']}}
-                    <br/> @endif @endforeach
+                    @foreach($colors as $c) 
+                    @if($v['color'] == $c['id']) 
+                    颜色: {{$c['name']}}
+                    <br/> 
+                    @endif
+                    @endforeach 
+                    @foreach($size as $s) 
+                    @if($v['color'] == $s['id']) 尺寸: {{$s['name']}}
+                    <br/> 
+                    @endif @endforeach
                 </td>
                 <td class="t-data">{{$v['price']}}</td>
                 <td class="t-data">

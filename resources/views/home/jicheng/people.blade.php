@@ -67,27 +67,7 @@ table.dataintable tr:nth-child(even) {
                         @if($user['sex'] == 1) checked @endif
                     placeholder="" required="" name="sex" value="1">女
                 </div>
-                <div class="contact-form2">
-                    <label for="user-name" class="am-u-sm-3 am-form-label">居住地<span class="tpl-form-line-small-title"></span></label>
-                    <div class="am-u-sm-9" id="city_china">
-                        <select class="province" name="sheng">
-                            <option>{{$user['sheng']}}</option>
-                        </select>
-                        <select class="city" name="shi">
-                            <option>{{$user['shi']}}</option>
-                        </select>
-                        <select class="area" name="xian">
-                            <option>{{$user['xian']}}</option>
-                        </select>
-                    </div>
-                    <script>
-                    var urlChina = '/sj/js/cityData.min.json';
-                    $.cxSelect.defaults.url = urlChina;
-                    $('#city_china').cxSelect({
-                        selects: ['province', 'city', 'area']
-                    });
-                    </script>
-                </div>
+                
                 <input type="submit" value="Submit">
             </form>
         </div>

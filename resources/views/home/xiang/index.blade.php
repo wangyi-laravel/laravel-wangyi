@@ -107,7 +107,7 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li data-thumb="/qiantai/images/si.jpg">
-                            <div class="thumb-image"> <img src="{{$good['image']}}" data-imagezoom="true" class="img-responsive"> </div>
+                            <div class="thumb-image"> <img src="{{$good['image']}}" data-imagezoom="true" class="img-responsive" style="height: 394px"> </div>
                         </li>
                     </ul>
                 </div>
@@ -226,7 +226,6 @@
                             <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
 
                             <p><em class="item_price">{{$v['price']}}</em></p>
-                            <a href="/home/cart_items" data-text="Add To Cart" class="but-hover1 item_add">添加到购物车</a>
                         </div>
                     </div>
                 </div>
