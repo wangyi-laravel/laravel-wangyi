@@ -137,7 +137,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                 <div class="facts">
                                     <div class="color">
-                                        <p style="width: 20%">详情</p>
+                                        <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">关于<br>商品</b></p>
                                             {!!$good['miaoshu']!!}
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
                                             <div class="clearfix"></div>
