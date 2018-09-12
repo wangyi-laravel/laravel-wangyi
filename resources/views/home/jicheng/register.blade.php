@@ -7,31 +7,7 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-<!-- <style>
-   
-#show{
 
-}
-#set{
-    display: inline-block;
-    
-    cursor: pointer;
-}
-</style>
-<input id="show" type="password" maxlength="6">
-<span id="set">显示密码</span>
-<script>
-set.onclick = function(){
-
-    if(this.innerHTML == '显示密码'){
-        this.innerHTML = '隐藏密码';
-        show.type="text";
-    }else{
-        this.innerHTML = '显示密码';
-        show.type="password";
-    }
-}    
-</script> -->
 <div class="login">
     <div class="container">
         <form action="/store" method="post">
@@ -39,14 +15,15 @@ set.onclick = function(){
             <div class="col-md-6 login-do1 animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                 Username:
                 <div class="login-mail">
-                    <input type="text" required="" name="username">
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <input type="text" required="" name="username" placeholder="请输入6~12位作为用户名" style="width:400px;">
+                    <span></span>
+                    <i class="glyphicon glyphicon-envelope" style="float: right;"></i>
                 </div>
                 Password:
                 <div class="login-mail">
-                    <input type="password" id="show" required="" name="password">
-                    <span id="set" class="glyphicon glyphicon-eye-open"></span>
-                    <!-- <span  class="glyphicon glyphicon-eye-close"></span> -->
+                    <input type="password" id="show" required="" name="password" placeholder="请输入8~20位非空字符" style="width:400px;">
+                    <span></span>
+                    <span id="set" class="glyphicon glyphicon-eye-open" style="float:right;"></span>
                 </div>
                 <style type="text/css">
                 #set {
@@ -59,24 +36,22 @@ set.onclick = function(){
                 $('#set').click(function() {
 
                         if ($(this).attr('erro')==0) {
-                            // alert(123);
                             $(this).attr('erro','1');
                             $(this).attr('class','glyphicon glyphicon-eye-open');
                             $('#show').attr('type',"password");
                         } else {
-                            // alert(456);
                             $(this).attr('erro','0');
 
-                            
                             $(this).attr('class','glyphicon glyphicon-eye-close');
                             
                             $('#show').attr('type',"text");
                         }
                     });
                 </script>
+                
                 Name:
                 <div class="login-mail">
-                    <input type="text" required="" name="name">
+                    <input type="text" required="" name="name" placeholder="起个昵称吧!!!">
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                 <a class="news-letter" href="#">
@@ -107,6 +82,126 @@ set.onclick = function(){
                     </font>
                 </a>
             </div>
+            <style>
+                td{
+                    padding:10px;
+                    font-size:14px;
+                }
+                input{
+                    height:22px;
+                }
+
+                .active{
+                    border:solid 1px #2bf666;
+                }
+
+                .error{
+                    border:solid 1px red;
+                }
+            </style>
+            <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                    
+                    var CUSER = false;
+                    var CPASS = false;
+                    // var CHECKBOX = false;
+
+                    //用户名
+                    $('input[name=username]').focus(function(){
+                        //边框颜色
+                        $(this).addClass('active');
+                        //提示语显示
+                        // $(this).next().show().html('输入8~18位字母数字下划线');
+                    }).blur(function(){
+                        //移出激活状态的class active
+                        $(this).removeClass('active');
+                        //正则判断
+                        var v = $(this).val();
+                        //声明正则
+                        var reg = /^\w{6,12}$/;
+                        //判断
+                        if(!reg.test(v)){
+                            //边框
+                            $(this).addClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:red">格式不正确</span>').show();
+                            CUSER = false;
+                        }else{
+                            var input = $(this);
+                            //发送 AJAX 请求检测用户名是否已经存在
+                            // $.post('./check-user-exists.php', {username: v}, function(data){
+                            // })
+
+                            $.ajax({
+                                url: '/ajax/check-user-exists.php',
+                                type: 'post',
+                                data: {username: v},
+                                success: function(data){
+                                    if(data != '1'){
+                                        //边框
+                                        input.addClass('error');
+                                        //文字提醒
+                                        input.next().html('<span style="color:red">该用户名太受欢迎, 请换一个!!</span>').show();
+                                        CUSER = false;
+                                    }else{
+                                        input.removeClass('error');
+                                        input.next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+                                        CUSER = true;
+                                    }
+                                },
+                                async: false
+                            })              
+                        }
+                    })
+
+                    
+                    //密码
+                    $('input[name=password]').focus(function(){
+                        //边框颜色
+                        $(this).addClass('active');
+                        //提示语显示
+                        // $(this).next().show().html('8~20非空白字符');
+                    }).blur(function(){
+                        $(this).removeClass('active');
+                        //获取用户的输入值
+                        var v = $(this).val();
+                        //正则
+                        var reg = /^\S{8,20}$/;
+
+                        if(!reg.test(v)) {
+                            //边框
+                            $(this).addClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:red">格式不正确</span>').show();
+                            CPASS = false;
+                        }else{
+                            //边框
+                            $(this).removeClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+                            CPASS = true;
+
+                        }
+                    })
+
+                    //条款
+
+
+                    
+                    //表单的提交事件
+                    $('form').submit(function(){
+                        //触发错误提醒
+                        $('input').trigger('blur');
+                        console.log(CUSER);
+                        //判断输入值是否都正确
+                        if(CUSER  && CPASS && CHECKBOX) {
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    });
+
+                </script>
             <div class="clearfix"> </div>
         </form>
     </div>
