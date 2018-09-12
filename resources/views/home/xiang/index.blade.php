@@ -138,21 +138,23 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                 <div class="facts">
                                     <div class="color">
-                                        <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">关于<br>商品</b></p>
+                                        <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">简介</b></p>
                                             {!!$good['miaoshu']!!}
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
                                             <div class="clearfix"></div>
                                     </div>
                                     <div class="color">
-                                        <p style="width: 20%">颜色</p>
+                                        <p>颜色</p>
                                         @foreach($colors as $v) @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
+
                                             <input type="radio" name="color" value="{{$v['id']}}">{{$v['name']}}</label>
                                         @endif @endforeach
                                         <div class="clearfix"></div>
-                                        <p style="width: 20%">尺码</p>
+                                        <p>尺码</p>
                                         @foreach($sizes as $v) @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
+
                                             <input type="radio" name="size" >{{$v['name']}}</label>
                                         @endif @endforeach
                                         <div class="clearfix"></div>
@@ -224,28 +226,31 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                 <div class="clearfix"> </div>
             </div>
             <div>
-                <!-- 评论开始 -->
+                
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">详情</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">评论</a></li>
                     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">常见问题</a></li>
                 </ul>
                 <!-- Tab panes -->
-                 <form action="/comment" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+                 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
                         <div class="good-content">{!!$good['content']!!}</div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile">
                         <div class="commentAll">
+                            <!-- 评论开始 -->
                             <!--评论区域 begin-->
+                            <form action="/comment" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
                             <div class="reviewArea clearfix">
-                                <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="conte"  onkeyup="keyUP(this)"></textarea>
+                                <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="content"  onkeyup="keyUP(this)"></textarea>
                                 {{csrf_field()}}
-                                  <input href="javascript:;" name="imageField"  class="plBtn" type="submit" value="提交">
+                                  <input href="javascript:;"  type="submit" value="提交">
 
-
+                            
                             </div>
+                        </form>
                             <!--评论区域 end-->
                             <!--回复区域 begin-->
                             <div class="comment-show">
@@ -308,7 +313,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
                             console.log(oSize);
                             //动态创建评论模块
-                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="  " alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;' + oSize + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + now + '</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
+                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="  " alt="">头像</div> <div class="comment-show-con-list pull-left clearfix">名字<div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con" name="content">&nbsp;' + oSize + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + now + '</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
                             if (oSize.replace(/(^\s*)|(\s*$)/g, "") != '') {
                                 $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
                                 $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value', '').siblings('pre').find('span').text('');
@@ -427,17 +432,16 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             }
                         })
                         </script>
-                    </form>
                         <!-- 评论结束 -->
                     </div>
                     <div role="tabpanel" class="tab-pane" id="messages">
                         <pre>
-<b style="font-size: 18px">购买运费如何收取？</b>
+购买运费如何收取？
 单笔订单金额（不含运费）满88元免邮费；不满88元，每单收取10元运费。
 (港澳台地区需满500元免邮费；不满500元，每单收取30元运费)
 网易严选的订单如何配送？
 网易严选会根据商品所在地、顾客所在地和商品的尺寸重量优选物流配送商，确保优质用户体验。目前暂不支持自选快递，具体物流信息可在下单成功后“我的订单-追踪物流”中查看。
-<br><b style="font-size: 18px">如何申请退换货？</b>
+如何申请退换货？
 1.自收到商品之日起30日内，顾客可申请无忧退货；如果是退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；
 2.内裤和食品等特殊商品无质量问题不支持退换货；
 3.退货流程：
@@ -445,11 +449,11 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
 4.换货流程：
 确认收货-申请换货-客服审核通过-用户寄回商品-仓库签收验货-客服确认-换货完成；
 5.退换货运费由网易严选承担（大件商品除外）。上门取件费用由网易严选统一与快递服务商结算，顾客只需将退换货商品交给上门取件快递员寄回。如顾客选择自行寄回商品，请先垫付运费，到货验证商品后，严选将以现金券形式为用户报销运费，不接受单方面到付件。
-<br><b  style="font-size: 18px">如何开具发票？</b>
+如何开具发票？
 1.请在下单时选择“我要开发票”并填写相关信息（APP仅限2.4.0及以上版本）。开具增值税专用发票需在下单时填写增票资质信息。温馨提示：请确保增票资质信息与贵司税务登记证信息一致，避免因开票信息错误给贵司带来损失。 
 2.可选开票内容：
 依照国税总局开票法规，严选订单开具纸质发票、电子发票，开票内容为明细；礼品卡开票内容为预付卡；增值税专用发票开票内容为明细。
-<br><b  style="font-size: 18px">关于严选相关价格说明？</b>
+关于严选相关价格说明？
 1.划线价、指导价：商品展示的划线价或指导价可能是商品制造厂商的零售市场指导价、品牌专柜价、商品吊牌价或该商品在严选上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。
 2.活动价：如无特殊说明，促销价是商家在划线价、指导价基础上给予的优惠价格。如有疑问，您可以在购买前与客服联系。
 3.严选价：严选非会员用户购买的商品详情页显示的售价。
