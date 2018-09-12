@@ -75,6 +75,7 @@ class GoodController extends Controller
             $goods->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
+        DB::beginTransaction();
         //写入
         if ($goods -> save()) {
 
