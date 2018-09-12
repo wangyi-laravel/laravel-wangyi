@@ -8,7 +8,6 @@ table.dataintable {
     border-collapse: collapse;
     border: 1px solid #aaa;
     width: 100%;
-
 }
 
 table.dataintable th {
@@ -66,39 +65,38 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>邮政编码</h4>
                     <p class="grid1">
-                        <input type="text" placeholder="" required="" name="mail">
+                        <input type="text" placeholder="请输入6位邮政编码" minlength="6" maxlength="6" required="" name="mail">
                     </p>
                 </div>
                 <div class="contact-form2">
                     <h4>收货人姓名</h4>
-                    <input type="text" placeholder="" required="" name="name">
+                    <input type="text" placeholder="请输入您的姓名" required="" name="name">
                 </div>
                 <div class="contact-form2">
                     <h4>手机号码</h4>
-                    <input type="text" placeholder="" required="" name="call">
+                    <input type="number" placeholder="请输入11位手机号" maxlength="11" required="" name="call">
                 </div>
                 <input type="submit" value="Submit">
             </form>
-
-<table class="dataintable">
+            <table class="dataintable">
                 <tr>
-                    <th>收货地址</th>
-                    <th>详细地址</th>
-                    <th style="width: 100px">邮政编码</th>
-                    <th style="width: 110px">收货人姓名</th>
-                    <th style="width: 100px">收货人电话</th>
+                    <th style="width: 250px; padding: 0px 5px 0px 6px"> 收货地址</th>
+                    <th style="width: 90px; padding: 0px 5px 0px 6px"> 详细地址</th>
+                    <th style="width: 80px; padding: 0px 5px 0px 6px"> 邮政编码</th>
+                    <th style="width: 100px; padding: 0px 5px 0px 6px"> 收货人姓名</th>
+                    <th style="width: 100px; padding: 0px 5px 0px 6px"> 收货人电话</th>
                     <th>操作</th>
                 </tr>
                 @foreach($site as $v)
                 <tr>
-                	<td>{{$v['sheng']}}/{{$v['shi']}}/{{$v['qu']}}</td>
-                	<td>{{$v['address']}}</td>
-                	<td>{{$v['mail']}}</td>
-                	<td>{{$v['name']}}</td>
-                	<td>{{$v['call']}}</td>
-                	<td style="width: 60px">
-                		<a href="/home/delsite/{{$v['id']}}">删除</a>
-                	</td>
+                    <td>{{$v['sheng']}}/{{$v['shi']}}/{{$v['qu']}}</td>
+                    <td>{{$v['address']}}</td>
+                    <td>{{$v['mail']}}</td>
+                    <td>{{$v['name']}}</td>
+                    <td>{{$v['call']}}</td>
+                    <td style="width: 60px">
+                        <a href="/home/delsite/{{$v['id']}}">删除</a>
+                    </td>
                 </tr>
                 @endforeach
             </table>

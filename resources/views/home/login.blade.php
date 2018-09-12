@@ -9,9 +9,31 @@
                     <i class="glyphicon glyphicon-envelope"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="password" placeholder="Password" required="" name="password">
-                    <i class="glyphicon glyphicon-lock"></i>
+                    <input id="show" type="password" placeholder="Password" required="" name="password">
+                    <span id="set" class="glyphicon glyphicon-eye-open" ></span>
                 </div>
+                <style type="text/css">
+                #set {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                </style>
+                <script>
+                $('#set').click(function() {
+
+                        if ($(this).attr('erro')==0) {
+                            $(this).attr('erro','1');
+                            $(this).attr('class','glyphicon glyphicon-eye-open');
+                            $('#show').attr('type',"password");
+                        } else {
+                            $(this).attr('erro','0');
+
+                            $(this).attr('class','glyphicon glyphicon-eye-close');
+                            
+                            $('#show').attr('type',"text");
+                        }
+                    });
+                </script>
                 <input type="text" name="num">
                 <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">
                 <a class="news-letter " href="#">
