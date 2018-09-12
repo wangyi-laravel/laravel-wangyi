@@ -32,7 +32,7 @@ class Shouyecontroller extends Controller
         $setting = Setting::all();
         $cates = Cates::all();
       	return view('home.jicheng.register',compact('link','setting','cates'));
-    }  
+    }
 
     //执行注册
     public function store(Request $request)
@@ -118,7 +118,6 @@ class Shouyecontroller extends Controller
 
     public function dosite(Request $request)
     {
-      $id = 
 
       $site = new Site;
 
