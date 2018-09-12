@@ -129,3 +129,6 @@ Route::resource('/home/liebiao','LiebiaoController');
 Route::get('/home/cart_items/{id}','GwcController@create');
 Route::get('/home/cart_items','GwcController@index');
 Route::get('/home/cart_items/delete/{id}','GwcController@delete');
+
+//用户条款
+Route::get('/terms','ShouyeController@terms');
