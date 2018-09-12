@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cates;
+use App\Good;
 use App\Link;
 use App\Setting;
 use App\User;
@@ -29,7 +30,8 @@ class LoginController extends Controller
 		$setting = Setting::all();
 		$link = Link::all();
 		$cates = Cates::all();
-		return view('home.login',compact('setting','link','cates'));
+		$goods = Good::all();
+		return view('home.login',compact('setting','link','cates','goods'));
 	}
 
 	/**

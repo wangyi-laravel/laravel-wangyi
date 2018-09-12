@@ -112,6 +112,7 @@
                     </ul>
                 </div>
             </div>
+            <form action="/home/cart_items/{{$good['id']}}" method="get">
             <div class="col-md-7 single-top-in">
                 <div class="span_2_of_a1 simpleCart_shelfItem">
                     <br>
@@ -119,7 +120,7 @@
                     <hr>
                     <div class="price_single">
                         <span class="reducedfrom item_price">{{$good['price']}}</span>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
+                        <button data-text="Add To Cart" class="but-hover1 item_add">加入购物车</button>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"> </div>
@@ -199,6 +200,7 @@
                     <!---->
                 </div>
             </div>
+            </form>
             <!----->
             <div class="clearfix"> </div>
             <div class=" col-md-si">
