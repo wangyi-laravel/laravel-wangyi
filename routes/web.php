@@ -114,7 +114,7 @@ Route::get('/home/delsite/{id}','ShouyeController@delsite');
 
 
 //评论
-Route::resource('/comment','CommentController');
+Route::resource('comment','CommentController');
 
 
 //商品详情页

@@ -222,28 +222,29 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                 <div class="clearfix"> </div>
             </div>
             <div>
-                <!-- 评论开始 -->
+                
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">详情</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">评论</a></li>
                     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">常见问题</a></li>
                 </ul>
                 <!-- Tab panes -->
-                 <form action="/comment" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+                 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
                         <div class="good-content">{!!$good['content']!!}</div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile">
                         <div class="commentAll">
+                            <!-- 评论开始 -->
                             <!--评论区域 begin-->
-                            <div class="reviewArea clearfix">
-                                <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="conte"  onkeyup="keyUP(this)"></textarea>
-                                {{csrf_field()}}
-                                  <input href="javascript:;" name="imageField"  class="plBtn" type="submit" value="提交">
-
-
-                            </div>
+                            <form action="/comment" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+                                <div class="reviewArea clearfix">
+                                    <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="content"   onkeyup="keyUP(this)"></textarea>
+                                    {{csrf_field()}}
+                                      <input  class="plBtn" type="submit" value="提交">
+                                </div>
+                            </form>
                             <!--评论区域 end-->
                             <!--回复区域 begin-->
                             <div class="comment-show">
@@ -306,7 +307,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
                             console.log(oSize);
                             //动态创建评论模块
-                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="  " alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;' + oSize + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + now + '</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
+                            oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="  " alt="">头像</div> <div class="comment-show-con-list pull-left clearfix">名字<div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con" name="content">&nbsp;' + oSize + '</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + now + '</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
                             if (oSize.replace(/(^\s*)|(\s*$)/g, "") != '') {
                                 $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
                                 $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value', '').siblings('pre').find('span').text('');
@@ -349,7 +350,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             //获取当前日
                             var date = myDate.getDate();
                             var h = myDate.getHours(); //获取当前小时数(0-23)
-                            var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+                            var m = myDate.getMinutes(); //获取当前分钟数(0-59)y6
                             if (m < 10) m = '0' + m;
                             var s = myDate.getSeconds();
                             if (s < 10) s = '0' + s;
@@ -425,7 +426,6 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             }
                         })
                         </script>
-                    </form>
                         <!-- 评论结束 -->
                     </div>
                     <div role="tabpanel" class="tab-pane" id="messages">

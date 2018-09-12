@@ -34,18 +34,19 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        dd($request->all()); 
         // 创建评论模型
-        $comment = new Comment;
+        // $comment = new Comment;
 
-        $comment -> content = $request->content;
-        $comment -> good_id = $request->article_id;
+        // $comment -> content = $request->content;
+        // $comment -> good_id = $request->article_id;
 
-        if($comment -> save()){
-            return back()->with('success', '添加成功');
-        }else{
-            return back()->with('error','添加失败');
-        }
+        // if($comment -> save()){
+        //     return back()->with('success', '添加成功');
+        // }else{
+        //     return back()->with('error','添加失败');
+        // }
     }
 
     /**
