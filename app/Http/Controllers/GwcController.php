@@ -25,7 +25,7 @@ class GwcController extends Controller
     	$cart->image = $good->image;
     	$cart->price = $good->price;
     	$cart->color = request()->color;
-
+    	
     	$cart->size = request()->size;
     	$cart->user_id = Session::get('id');
 

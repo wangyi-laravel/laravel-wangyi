@@ -153,7 +153,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                         <p>尺码</p>
                                         @foreach($sizes as $v) @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
-                                            <input type="radio" name="size" value="{{$v['id']}}">{{$v['name']}}</label>
+                                            <input type="radio" name="size" >{{$v['name']}}</label>
                                         @endif @endforeach
                                         <div class="clearfix"></div>
                                     </div>
