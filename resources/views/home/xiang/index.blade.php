@@ -247,6 +247,9 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="reviewArea clearfix">
                                 <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="content"  onkeyup="keyUP(this)"></textarea>
                                 {{csrf_field()}}
+                                <input type="hidden" name="username" value="{{$Session->image}}">
+                                <input type="hidden" name="image" value="{{$Session->image}}">
+                                <input type="hidden" name="good_id" value="{{$good->id}}">
                                   <input href="javascript:;"  type="submit" value="提交">
 
                             
