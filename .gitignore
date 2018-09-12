@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 .env
 /public/uploads
+/ueditor/php/upload/image

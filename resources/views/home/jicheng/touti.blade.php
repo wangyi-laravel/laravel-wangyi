@@ -55,6 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         .multi{
             width:2px;
         }
+        
     </style>
 </head>
 
@@ -80,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 " style="float:left;">
+                    <div class="header-right1 " style="float:left;margin-left:-175px;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
@@ -89,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/home/people/{{session('id')}}">个人信息</a></li>
                             <li></i><a href="/home/site">收货地址</a></li>
                             <li><a href="/home/logout">退出</a></li>
-                            <li>{{Session::get('username')}}<img src="{{Session::get('image')}}"></li>
+                            <li>{{Session::get('username')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
                             @endif
                         </ul>
                     </div>
@@ -104,13 +105,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
-                            <div class="clearfix"> </div>
+                            <div class="clearfix" ></div>
 
                         </div>
                         
                     </div>
                     @endif
-                    <div class="clearfix"> </div>
+                    <div class="clearfix" style="margin-right:0px;"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
