@@ -944,7 +944,7 @@ p.in-para{
 }
 .price_single {
 	border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 1em;
+    padding-bottom: 0em;
 }
 span.reducedfrom {
 	color: #01CFCF;
@@ -1038,7 +1038,7 @@ padding: 1em 0;
 }
 .color {
 	background:#eee;
-	  margin: 1em 0;
+	  margin: 0 0 0.5em 0;
   padding: 1em;
 }
 .color p,.color span{
@@ -1091,7 +1091,7 @@ a.add-re:hover{
 	margin: 2em 0;	
 }
 .col-md-si {
-    padding-top: 9em;
+    padding-top: 5em;
 }
 /*-- contact --*/
 .contact {

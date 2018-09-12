@@ -43,19 +43,21 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>头像</h4>
                     <p class="grid1">
-                        <img src="{{$user['image']}}" width="50" height="50">
+                    	<img src="{{$user['image']}}" width="50" height="50">
                         <input type="file" placeholder="" required="" name="image">
                     </p>
                 </div>
                 <div class="contact-form2">
                     <h4>姓名</h4>
                     <p class="grid1">
+
                         <input type="text" placeholder="" required="" name="name" value="{{$user['name']}}">
                     </p>
                 </div>
                 
                 <div class="contact-form2">
                     <h4>电话</h4>
+
                     <input type="text" placeholder="" required="" name="phone" value="{{$user['phone']}}">
                 </div>
                 <div class="contact-form2">
@@ -65,11 +67,12 @@ table.dataintable tr:nth-child(even) {
                         @if($user['sex'] == 0) checked @endif
                     placeholder="" required="" name="sex" value="0">男
                     <input type="radio" 
-                        @if($user['sex'] == 1) checked @endif
+                    	@if($user['sex'] == 1) checked @endif
                     placeholder="" required="" name="sex" value="1">女
                 </div>
                 
                 <input type="submit" value="Submit">
+
             </form>
         </div>
         <div class="col-md-4 contact-grids">

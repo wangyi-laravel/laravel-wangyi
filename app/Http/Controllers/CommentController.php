@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 
-class EvalController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,17 @@ class EvalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //创建评论模型
+        // $comment = new Comment;
+
+        // $comment -> content = $request->content;
+        // $comment -> good_id = $request->article_id;
+
+        // if($comment -> save()){
+        //     return back()->with('success', '添加成功');
+        // }else{
+        //     return back()->with('error','添加失败');
+        // }
     }
 
     /**

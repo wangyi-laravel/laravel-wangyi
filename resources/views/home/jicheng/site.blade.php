@@ -80,11 +80,11 @@ table.dataintable tr:nth-child(even) {
             </form>
             <table class="dataintable">
                 <tr>
-                    <th style="width: 250px; padding: 0px 5px 0px 6px"> 收货地址</th>
-                    <th style="width: 90px; padding: 0px 5px 0px 6px"> 详细地址</th>
-                    <th style="width: 80px; padding: 0px 5px 0px 6px"> 邮政编码</th>
-                    <th style="width: 100px; padding: 0px 5px 0px 6px"> 收货人姓名</th>
-                    <th style="width: 100px; padding: 0px 5px 0px 6px"> 收货人电话</th>
+                    <th style="width: 250px">收货地址</th>
+                    <th>详细地址</th>
+                    <th style="width: 80px; padding: 0px" >邮政编码</th>
+                    <th style="width: 100px; padding: 0px">收货人姓名</th>
+                    <th style="width: 100px">收货人电话</th>
                     <th>操作</th>
                 </tr>
                 @foreach($site as $v)
