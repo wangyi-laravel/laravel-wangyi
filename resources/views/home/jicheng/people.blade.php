@@ -35,7 +35,7 @@ table.dataintable tr:nth-child(even) {
 }
 </style>
 
-<div class="contact">
+
     <div class="container">
         <div class="col-md-8 contact-grids1 animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
             <form action="/people/z" method="post" enctype="multipart/form-data">
@@ -63,7 +63,12 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>性别</h4>
                     <input type="radio" 
+<<<<<<< HEAD
                     	@if($user['sex'] == 0) checked @endif
+=======
+
+                        @if($user['sex'] == 0) checked @endif
+>>>>>>> d32c98c567d1e1fa31c7b8787e440b6c8ed44451
                     placeholder="" required="" name="sex" value="0">男
                     <input type="radio" 
                     	@if($user['sex'] == 1) checked @endif
