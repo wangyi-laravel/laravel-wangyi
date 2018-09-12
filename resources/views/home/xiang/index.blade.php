@@ -107,7 +107,7 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li data-thumb="/qiantai/images/si.jpg">
-                            <div class="thumb-image"> <img src="{{$good['image']}}" data-imagezoom="true" class="img-responsive"> </div>
+                            <div class="thumb-image"> <img src="{{$good['image']}}" data-imagezoom="true" class="img-responsive" style="height: 394px"> </div>
                         </li>
                     </ul>
                 </div>
