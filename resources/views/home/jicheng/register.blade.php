@@ -15,15 +15,15 @@
             <div class="col-md-6 login-do1 animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                 Username:
                 <div class="login-mail">
-                    <input type="text" required="" name="username" placeholder="请输入6~12位作为用户名" style="width:400px;">
+                    <input type="text" required="" name="username" placeholder="请输入6~12位作为用户名" style="width:345px;">
                     <span></span>
-                    <i class="glyphicon glyphicon-envelope" style="float: right;"></i>
+                    <i class="glyphicon glyphicon-user" style="float: right;"></i>
                 </div>
                 Password:
                 <div class="login-mail">
-                    <input type="password" id="show" required="" name="password" placeholder="请输入8~20位非空字符" style="width:400px;">
+                    <input type="password" id="show" required="" name="password" placeholder="请输入8~20位非空字符" style="width:345px;">
                     <span></span>
-                    <span id="set" class="glyphicon glyphicon-eye-open" style="float:right;"></span>
+                    <i id="set" class="glyphicon glyphicon-eye-open" style="float:right;"></i>
                 </div>
                 <style type="text/css">
                 #set {
@@ -52,7 +52,7 @@
                 Name:
                 <div class="login-mail">
                     <input type="text" required="" name="name" placeholder="起个昵称吧!!!">
-                    <i class="glyphicon glyphicon-lock"></i>
+                    <i class="glyphicon glyphicon-edit"></i>
                 </div>
                 <a class="news-letter" href="#">
                     <label class="checkbox1">
@@ -64,10 +64,10 @@
                 </a>
             </div>
             <div class="col-md-6 login-do animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                <label class="hvr-sweep-to-top login-sub">
+                <label class="hvr-sweep-to-top login-sub" style="height: 42px">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
-                            <input type="submit" value="提交">
+                            <input type="submit" value="提交" style="height: 10px">
                         </font>
                     </font>
                 </label>
@@ -124,7 +124,7 @@
                             //边框
                             $(this).addClass('error');
                             //文字提醒
-                            $(this).next().html('<span style="color:red">格式不正确</span>').show();
+                            $(this).next().html('<span style="color:red">格式不正确!!</span>').show();
                             CUSER = false;
                         }else{
                             var input = $(this);
@@ -141,7 +141,7 @@
                                         //边框
                                         input.addClass('error');
                                         //文字提醒
-                                        input.next().html('<span style="color:red">该用户名太受欢迎, 请换一个!!</span>').show();
+                                        input.next().html('<span style="color:red">被注册了?换一个吧!</span>').show();
                                         CUSER = false;
                                     }else{
                                         input.removeClass('error');
@@ -172,7 +172,7 @@
                             //边框
                             $(this).addClass('error');
                             //文字提醒
-                            $(this).next().html('<span style="color:red">格式不正确</span>').show();
+                            $(this).next().html('<span style="color:red">格式不正确!!</span>').show();
                             CPASS = false;
                         }else{
                             //边框
