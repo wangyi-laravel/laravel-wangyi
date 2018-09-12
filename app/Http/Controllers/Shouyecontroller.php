@@ -37,9 +37,13 @@ class Shouyecontroller extends Controller
     //执行注册
     public function store(Request $request)
     {
+        
+
         $this->validate($request, [
         'username' => 'required|regex:/^[a-zA-Z0-9_-]{6,12}$/',
-        ]);
+        ]);          
+        
+
 
       	$user = new User;
       	$user -> username = $request->username;

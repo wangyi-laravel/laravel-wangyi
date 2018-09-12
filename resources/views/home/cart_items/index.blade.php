@@ -37,25 +37,57 @@
             });
         });
         </script>
+
+        @if(Session::has('success'))
+            <div class=" am-u-sm-12" style="padding:0px;margin:0px;" id="xiaoshi">
+                <div class="dashboard-stat green">
+                        <div class="desc" style="text-align: center;line-height:95px;color:white">{{Session::get('success')}} </div>
+                </div>
+            </div>
+            @endif
+
+            @if(Session::has('error'))
+            <div class=" am-u-sm-12" style="padding:0px;margin:0px;" id="xiaoshi">
+                <div class="dashboard-stat red">
+                        <div class="desc" style="text-align: center;line-height:95px;color:white">{{Session::get('error')}} </div>
+                </div>
+            </div>
+            @endif
+
         <table class="table animated wow fadeInLeft" data-wow-delay=".5s">
             <tr>
-                <th class="t-head head-it ">Item</th>
-                <th class="t-head">Price</th>
-                <th class="t-head">Quantity</th>
-                <th class="t-head">Total</th>
+                <th class="t-head head-it " style="font-size:20px">Item</th>
+                <th class="t-head head-it " style="font-size:20px">尺码/颜色</th>
+                <th class="t-head" style="font-size:20px">Price</th>
+                <th class="t-head" style="font-size:20px">Quantity</th>
+                <th class="t-head" style="font-size:20px">Total</th>
+                <th class="t-head" style="font-size:20px">操作</th>
             </tr>
+            @foreach($cart as $v)
             <tr class="cross">
                 <td class="ring-in t-data">
                     <a href="single.html" class="at-in">
-					<img src="/qiantai/images/pcc.jpg" class="img-responsive" alt="">
-				</a>
+                    <img src="{{$v['image']}}" style="width:100px; height:130px" class="img-responsive" alt="">
+                </a>
                     <div class="sed">
-                        <h5>Sed ut perspiciatis unde</h5>
+                        <h5>{{$v['title']}}</h5>
                     </div>
                     <div class="clearfix"> </div>
-                    <div class="close1"> </div>
+                    <!-- <div class="close1"> </div> -->
                 </td>
-                <td class="t-data">$100.00</td>
+                <td class="t-data">
+                    @foreach($colors as $c) 
+                    @if($v['color'] == $c['id']) 
+                    颜色: {{$c['name']}}
+                    <br/> 
+                    @endif
+                    @endforeach 
+                    @foreach($size as $s) 
+                    @if($v['color'] == $s['id']) 尺寸: {{$s['name']}}
+                    <br/> 
+                    @endif @endforeach
+                </td>
+                <td class="t-data">{{$v['price']}}</td>
                 <td class="t-data">
                     <div class="quantity">
                         <div class="quantity-select">
@@ -66,50 +98,11 @@
                     </div>
                 </td>
                 <td class="t-data">$100.00</td>
+                <td class="t-data"><a href="/home/cart_items/delete/{{$v['id']}}">删除</a></td>
             </tr>
-            <tr class="cross1">
-                <td class="t-data ring-in"><a href="single.html" class="at-in"><img src="/qiantai/images/pcc2.jpg" class="img-responsive" alt=""></a>
-                    <div class="sed">
-                        <h5>Sed ut perspiciatis unde</h5>
-                    </div>
-                    <div class="clearfix"> </div>
-                    <div class="close2"> </div>
-                </td>
-                <td class="t-data">$200.00</td>
-                <td class="t-data">
-                    <div class="quantity">
-                        <div class="quantity-select">
-                            <div class="entry value-minus">&nbsp;</div>
-                            <div class="entry value"><span class="span-1">1</span></div>
-                            <div class="entry value-plus active">&nbsp;</div>
-                        </div>
-                    </div>
-                    <!--quantity-->
-                </td>
-                <td class="t-data">$200.00</td>
-            </tr>
-            <tr class="cross2">
-                <td class="t-data ring-in"><a href="single.html" class="at-in"><img src="/qiantai/images/pcc1.jpg" class="img-responsive" alt=""></a>
-                    <div class="sed">
-                        <h5>Sed ut perspiciatis unde</h5>
-                    </div>
-                    <div class="clearfix"> </div>
-                    <div class="close3"> </div>
-                </td>
-                <td class="t-data">$150.00</td>
-                <td class="t-data">
-                    <div class="quantity">
-                        <div class="quantity-select">
-                            <div class="entry value-minus">&nbsp;</div>
-                            <div class="entry value"><span class="span-1">1</span></div>
-                            <div class="entry value-plus active">&nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="t-data">$150.00</td>
-            </tr>
+            @endforeach
         </table>
-        <div class=" cart-total">
+        <div class=" v-total">
             <h5 class="continue">Cart Total</h5>
             <div class="price-details">
                 <h3>Price Details</h3>
@@ -144,5 +137,12 @@ $('.value-minus').on('click', function() {
         newVal = parseInt(divUpd.text(), 10) - 1;
     if (newVal >= 1) divUpd.text(newVal);
 });
+
+    setTimeout(function()
+    {
+        $('#xiaoshi').css('display','none');
+    },2000);
+
+
 </script>
 @endsection

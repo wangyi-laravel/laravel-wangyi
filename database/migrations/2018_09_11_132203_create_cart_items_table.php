@@ -14,9 +14,13 @@ class CreateCartItemsTable extends Migration
     public function up()
     {
         Schema::create('cart_items', function (Blueprint $table) {
-            $table->increments('id')->commit('购物车');
-            $table->Integer('user_id')->commit('用户ID');
-            $table->Integer('product_sku_id')->commit('商品 sku(款) ID');
+            $table->increments('id')->comment('购物车');
+            $table->string('title')->comment('商品标题')->nullable();
+            $table->string('image')->comment('商品图片')->nullable();
+            $table->string('price')->comment('商品价格')->nullable();
+            $table->string('color')->comment('商品颜色')->nullable();
+            $table->string('size')->comment('商品尺寸')->nullable();
+            $table->Integer('user_id')->comment('用户ID');
             $table->string('amount')->comment('数量');
             $table->timestamps();
         });
@@ -32,3 +36,5 @@ class CreateCartItemsTable extends Migration
         Schema::dropIfExists('cart_items');
     }
 }
+
+

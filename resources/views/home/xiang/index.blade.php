@@ -117,6 +117,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                     </ul>
                 </div>
             </div>
+            <form action="/home/cart_items/{{$good['id']}}" method="get">
             <div class="col-md-7 single-top-in">
                 <div class="span_2_of_a1 simpleCart_shelfItem">
                     <br>
@@ -124,7 +125,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                     <hr>
                     <div class="price_single">
                         <span class="reducedfrom item_price">{{$good['price']}}</span>
-                        <a href="#" data-text="Add To Cart" class="but-hover1 item_add">加入购物车</a>
+                        <button data-text="Add To Cart" class="but-hover1 item_add">加入购物车</button>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"> </div>
@@ -137,8 +138,9 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                 <div class="facts">
                                     <div class="color">
-                                        <p>详情</p>
-                                        {!!$good['miaoshu']!!}
+
+                                        <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">关于<br>商品</b></p>
+                                            {!!$good['miaoshu']!!}
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
                                             <div class="clearfix"></div>
                                     </div>
@@ -146,13 +148,15 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                         <p>颜色</p>
                                         @foreach($colors as $v) @if(in_array($v->id, $good->colors()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
-                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+
+                                            <input type="radio" name="color" value="{{$v['id']}}">{{$v['name']}}</label>
                                         @endif @endforeach
                                         <div class="clearfix"></div>
                                         <p>尺码</p>
                                         @foreach($sizes as $v) @if(in_array($v->id, $good->sizes()->pluck('id')->toArray()))
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
-                                            <input type="radio" name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
+
+                                            <input type="radio" name="size" >{{$v['name']}}</label>
                                         @endif @endforeach
                                         <div class="clearfix"></div>
                                     </div>
@@ -193,6 +197,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                     <!---->
                 </div>
             </div>
+            </form>
             <!----->
             <div class="clearfix"> </div>
             <div class=" col-md-si">

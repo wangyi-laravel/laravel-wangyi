@@ -20,4 +20,9 @@ class Good extends Model
     {
     	return $this -> belongsTo('App\Cates');
     }
+
+    public function user()
+    {
+        return $this -> belongsTo('App\User');
+    }
 }
