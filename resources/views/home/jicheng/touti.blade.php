@@ -89,6 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/home/people/{{session('id')}}">个人信息</a></li>
                             <li></i><a href="/home/site">收货地址</a></li>
                             <li><a href="/home/logout">退出</a></li>
+                            <li>{{Session::get('username')}}<img src="{{Session::get('image')}}"></li>
                             @endif
                         </ul>
                     </div>
@@ -102,7 +103,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </h3>
                             </a>
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+
                             <div class="clearfix"> </div>
+
                         </div>
                         
                     </div>
