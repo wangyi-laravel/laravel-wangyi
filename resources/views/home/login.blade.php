@@ -40,7 +40,7 @@
                         }
                     });
                 </script>
-                <input type="text" name="num" style="height: 40px; border: 0px solid black">
+                <input type="text" name="num" style="height: 40px; border: 0px solid black;">
                 <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">
                 <a class="news-letter " href="#">
                     <label class="checkbox1">
