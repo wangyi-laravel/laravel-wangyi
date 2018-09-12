@@ -19,24 +19,15 @@ class GwcController extends Controller
     	// $good = Good::findOrFail($id);
     	$goods = request()->all();
     	
-    	// $cart-> title = $good->title;
-    	// $cart-> color = $colors->$id;
-    	// $cart-> size = $size->$id;
-    	
     	$good =Good::find($id);
 
-    	// $color = request()->color_id;
     	$cart->title = $good->title;
     	$cart->image = $good->image;
     	$cart->price = $good->price;
-    	$cart->color = request()->color_id;
-    	$cart->size = request()->size_id;
+    	$cart->color = request()->color;
+
+    	$cart->size = request()->size;
     	$cart->user_id = Session::get('id');
-    	$colors = Color::first();
-    	$size = Size::first();
-
-    	// dd($colors);
-
 
 
     	if($cart->save()){
