@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Setting;
 use App\User;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -67,30 +68,26 @@ class AdminController extends Controller
 	public function dologin(Request $request)
 	{
 		//获取用户的数据
-		$user = User::where('username', $request->username)->first();
+		$user = User::where('username','=',$request->username)->first();
 		
-		$res = $request->num;
+		// $res = $request->num;
 
-		$weight = $user->weight;
+		$weight = Session::get('weight');
+		// dd($weight);
+		// 
 		if ($weight == 2) {
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 
 
-
-		// $php = Session::get('milkcaptcha');
-
 		if(!$user){
 			return back()->with('error','登陆失败!');
 		}
 
-		/*if ($res != $php) {
-			return back()->with('error','验证码错误');
-		}*/
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password]);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight]);
 			return redirect('/admin')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');

@@ -71,12 +71,12 @@ class Shouyecontroller extends Controller
     /**
      * 个人中心
      */
-    public function people($id)
+    public function people()
     {
       $link = Link::all();
       $setting = Setting::all();
 
-      $user = User::findOrFail($id);
+      $user = User::first();
       $cates = Cates::all();
       return view('home.jicheng.people',compact('link','setting','user','site','cates'));
     }

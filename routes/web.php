@@ -31,8 +31,7 @@ Route::get('/admin/login','AdminController@login');
 Route::post('/admin/login','AdminController@dologin');
 
 //后台路由
-Route::group(['middleware'=>'login'],function(){
-
+Route::group(['middleware'=>['login','admin']],function(){
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
