@@ -1,6 +1,20 @@
 @extends('layouts.admin') 
 @section('title','商品列表') 
 @section('content')
+<style type="text/css">
+    .miaoshu{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+    .title{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+</style>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -57,18 +71,18 @@
                     <tbody>
                         @foreach($goods as $v)
                         <tr>
-                            <td>
+                            <td style="width:3%">
                                 <input type="checkbox">
                             </td>
-                            <td>{{$v['id']}}</td>
-                            <td>{{$v['title']}}</td>
-                            <td><img src="{{$v['image']}}" width="80"></td>
-                            <td>{{$v['miaoshu']}}</td>
-                            <td>{{$v['price']}}</td>
-                            <td>{{$v['jifen']}}</td>
-                            <td>{{$v['number']}}</td>
-                            <td>
-                                <div class="am-btn-toolbar">
+                            <td style="width:3%"><div style="width:95%">{{$v['id']}}</div></td>
+                            <td style="width:10%"><div class="title" style="width:90%">{{$v['title']}}</div></td>
+                            <td style="width:10%"><img src="{{$v['image']}}" width="80"></td>
+                            <td style="width:40%"><div class="miaoshu"  style="width:95%">{{$v['miaoshu']}}</div></td>
+                            <td style="width:8%"><div style="width: 90%">{{$v['price']}}</div></td>
+                            <td style="width:5%"><div style="width: 80%">{{$v['jifen']}}</div></td>
+                            <td style="width:7%"><div>{{$v['number']}}</div></td>
+                            <td style="width:20%">
+                                <div class="am-btn-toolbar" style="width:95%">
                                     <div class="am-btn-group am-btn-group-xs">
                                         <a href="/good/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
                                         <form style="float:left" action="/good/{{$v['id']}}" method="post">
