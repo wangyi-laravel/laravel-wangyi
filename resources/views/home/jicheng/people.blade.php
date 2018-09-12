@@ -8,9 +8,7 @@ table.dataintable {
     border-collapse: collapse;
     border: 1px solid #aaa;
     width: 100%;
-
 }
-
 table.dataintable th {
     vertical-align: baseline;
     padding: 5px 15px 5px 6px;
@@ -25,6 +23,7 @@ table.dataintable td {
     padding: 6px 15px 6px 6px;
     border: 1px solid #aaa;
 }
+>>>>>>> 678caa3cd75c83f993edab8facfccf0a9d66bc26
 
 table.dataintable tr:nth-child(odd) {
     background-color: #F5F5F5;

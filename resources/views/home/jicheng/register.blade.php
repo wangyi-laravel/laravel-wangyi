@@ -1,4 +1,10 @@
 @extends('home.jicheng.touti') @section('content')
+<style type="text/css">
+    .login-mail{
+        border: 1px  gray; 
+        background: white;
+    }
+</style>
 <script src="/ueditor/jquery-3.3.1.js"></script>
 <div class="banner-top">
     <div class="container">
@@ -15,7 +21,7 @@
             <div class="col-md-6 login-do1 animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                 Username:
                 <div class="login-mail">
-                    <input type="text" required="" name="username" placeholder="请输入6~12位作为用户名" style="width:345px;">
+                    <input type="text" required="" name="username" placeholder="请输入6~12位用户名" style="width:345px;">
                     <span></span>
                     <i class="glyphicon glyphicon-user" style="float: right;"></i>
                 </div>
@@ -51,8 +57,8 @@
                 
                 Name:
                 <div class="login-mail">
-                    <input type="text" required="" name="name" placeholder="起个昵称吧!!!">
-                    <i class="glyphicon glyphicon-edit"></i>
+                    <input type="text" required="" name="name" placeholder="起个昵称吧!!!" style="width:345px;">
+                    <i class="glyphicon glyphicon-edit" style="float:right;"></i>
                 </div>
                 <a class="news-letter" href="#">
                     <label class="checkbox1">
@@ -65,9 +71,9 @@
             </div>
             <div class="col-md-6 login-do animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
                 <label class="hvr-sweep-to-top login-sub" style="height: 42px">
-                    <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;" >
                         <font style="vertical-align: inherit;">
-                            <input type="submit" value="提交" style="height: 10px">
+                            <input type="submit" value="提交" style="height: 42px">
                         </font>
                     </font>
                 </label>
@@ -185,8 +191,6 @@
                     })
 
                     //条款
-
-
                     
                     //表单的提交事件
                     $('form').submit(function(){

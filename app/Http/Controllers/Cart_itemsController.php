@@ -21,9 +21,8 @@ class Cart_itemsController extends Controller
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-        $good = Good::all();
         $goods = Good::orderBy('id','desc');
-         return view('home.Cart_items.index',compact('setting','link','cates','goods','good'));
+         return view('home.Cart_items.index',compact('setting','link','cates','goods'));
     }
 
     /**
@@ -33,7 +32,11 @@ class Cart_itemsController extends Controller
      */
     public function create()
     {
-        //
+        $setting = Setting::all();
+        $link = Link::all();
+        $cates = Cates::all();
+        $goods = Good::orderBy('id','desc');
+         return view('home.Cart_items.create',compact('setting','link','cates','goods'));
     }
 
     /**

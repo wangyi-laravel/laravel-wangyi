@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cart_items extends Model
+class Cart_items extends Model
 {
     //
 }

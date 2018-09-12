@@ -152,6 +152,7 @@
                             <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
 
                             <p><em class="item_price">{{$v['price']}}</em></p>
+
                         </div>
                     </div>
                 </div>

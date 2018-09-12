@@ -8,6 +8,7 @@
     $cates = \App\Cates::all();
     $goods = \App\Good::orderBy('id','desc');
 ?>
+
 <head>
     <title>Home</title>
     <!-- for-mobile-apps -->
@@ -45,6 +46,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
 
 
     <style type="text/css">

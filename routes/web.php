@@ -114,7 +114,7 @@ Route::get('/home/delsite/{id}','ShouyeController@delsite');
 
 
 //评论
-Route::resource('/comment','CommentController');
+Route::resource('comment','CommentController');
 
 
 //商品详情页
@@ -124,6 +124,9 @@ Route::resource('/home/xiang','XiangController');
 Route::resource('/home/liebiao','LiebiaoController');
 
 //购物车
-Route::resource('/home/cart_items','Cart_itemsController');
+// Route::resource('/home/cart_items','Cart_itemsController');
 
 
+Route::get('/home/cart_items/{id}','GwcController@create');
+Route::get('/home/cart_items','GwcController@index');
+Route::get('/home/cart_items/delete/{id}','GwcController@delete');
