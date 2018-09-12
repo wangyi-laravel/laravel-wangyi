@@ -1,16 +1,22 @@
 @extends('home.jicheng.touti') @section('content')
+<style type="text/css">
+    .login-mail{
+        border: 0px  gray; 
+        background: white;
+    }
+</style>
 <div class="login">
     <div class="container">
         <form action="/login" method="post">
             {{csrf_field()}}
             <div class="col-md-6 login-do1 animated wow fadeInLeft" data-wow-delay=".5s">
                 <div class="login-mail">
-                    <input type="text" placeholder="hahha1" required="" name="username">
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <input type="text" placeholder="hahha1" required="" name="username" style="width:485px;">
+                    <i class="glyphicon glyphicon-envelope" style=""></i>
                 </div>
                 <div class="login-mail">
-                    <input id="show" type="password" placeholder="Password" required="" name="password">
-                    <span id="set" class="glyphicon glyphicon-eye-open" ></span>
+                    <input id="show" type="password" placeholder="Password" required="" name="password" style="width:485px;">
+                    <i id="set" class="glyphicon glyphicon-eye-open" ></i>
                 </div>
                 <style type="text/css">
                 #set {
@@ -34,7 +40,7 @@
                         }
                     });
                 </script>
-                <input type="text" name="num">
+                <input type="text" name="num" style="height: 40px; border: 0px solid black">
                 <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">
                 <a class="news-letter " href="#">
                     <label class="checkbox1">

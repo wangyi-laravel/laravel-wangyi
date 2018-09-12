@@ -103,6 +103,7 @@ class Shouyecontroller extends Controller
         }
 
       if($user -> save()){
+            Session(['image'=>$user->image]);
             return redirect('/home/people')->with('success','添加成功');
             return back()->with('success','添加成功');
         }else{
