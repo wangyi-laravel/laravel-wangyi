@@ -1,6 +1,6 @@
 @section('header')
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <?php 
     $good = \App\Good::all();
     $link = \App\Link::all();
@@ -12,6 +12,8 @@
 
 <head>
     <title>Home</title>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2863917487" type="text/javascript" charset="utf-8"></script> -->
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -77,11 +79,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
                         <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
+                        
                     </ul>
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 " style="float:left;margin-left:-175px;">
+                    <div class="header-right1 " style="float:left;margin-left:-180px;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
@@ -234,29 +237,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--content-->
     <div class="content">
         <div class="content-head">
-            <div class="col-md-12 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
+            <div class="col-md-6 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
                 <div class="col-1">
-                    <div class="col-md-6">
-                        <a href="https://clot.com/"><img src="/qiantai/images/CLOT.jpg" class="img-responsive" alt="" width="450px" height="300px">
+                    <div class="col-md-6 col-2">
+                        <a href="single.html"><img src="/qiantai/images/pi3.jpg" class="img-responsive" alt="">
                             </a></div>
-                    <div class="col-md-6 col-p">
-                        <h5>CLOT</h5>
-                        <p>CLOT是香港著名艺人陈冠希创办的凝结集团（CLOT FAMILY）的简称及该公司旗下潮流服装品牌名称。凝结集团是一个LIFESTYLE的公司，由香港著名艺人陈冠希创办于2003年6月。主要以创作服装（包括CLOT品牌服装以及在香港的JUICE店铺）、策划PARTY、帮助服装公司做Consultant等。CLOT品牌服装是中国第一潮牌，在全球潮流品牌中占有一席之地。</p>
-                        <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <!-- <div class="col-1">
                     <div class="col-md-6 col-p">
                         <h5>For All Collections</h5>
                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
                         <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-1">
+                    <div class="col-md-6 col-p">
+                        <h5>For All Collections</h5>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
+                    </div>
+                    <div class="col-md-6 col-2">
                         <a href="single.html"><img src="/qiantai/images/pi.jpg" class="img-responsive" alt="">
                             </a></div>
                     <div class="clearfix"> </div>
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6 col-m2 animated wow fadeInRight" data-wow-delay=".1s">
                 <!---->
@@ -277,13 +280,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </script>
                 <!-- //requried-jsfiles-for owl -->
                 <!-- start content_slider -->
-                <!-- <div id="owl-demo" class="owl-carousel">
+                <div id="owl-demo" class="owl-carousel">
                     <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc.png" alt="" /></a>
+                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
                     <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc1.png" alt="" /></a>
+                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
                     <div class="item">
@@ -294,7 +297,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -303,7 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
+                <a href="single.html"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="700px">
                             <div class="col-pic">   
                                 <h5> 女士专区</h5>
                                 <p>轻松搭配让你与众不同</p>
