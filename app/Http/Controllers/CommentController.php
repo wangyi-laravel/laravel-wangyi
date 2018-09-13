@@ -41,6 +41,7 @@ class CommentController extends Controller
         
 
         $comment -> username = $request->username;
+        $comment -> image = $request->image;
         $comment -> content = $request->content;
         $comment -> good_id = $request->good_id;
 
@@ -94,5 +95,12 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
+
+    }
+
+     public function aaa()
+    {
+        //
+        return 212;
     }
 }
