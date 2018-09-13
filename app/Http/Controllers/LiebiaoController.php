@@ -35,6 +35,7 @@ class LiebiaoController extends Controller
     public function create()
     {
         //
+        return view('home.liebiao.lei');
     }
 
     /**
