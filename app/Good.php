@@ -25,4 +25,9 @@ class Good extends Model
     {
         return $this -> belongsTo('App\User');
     }
+
+    public function comment()
+    {
+        return $this->hasMany('APP\Comment');
+    }
 }

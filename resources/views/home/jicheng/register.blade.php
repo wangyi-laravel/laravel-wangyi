@@ -21,7 +21,7 @@
             <div class="col-md-6 login-do1 animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                 Username:
                 <div class="login-mail">
-                    <input type="text" required="" name="username" placeholder="请输入6~12位用户名" style="width:345px;">
+                    <input type="text" required="" name="username" placeholder="请输入2~12位用户名" style="width:345px;">
                     <span></span>
                     <i class="glyphicon glyphicon-user" style="float: right;"></i>
                 </div>
@@ -60,13 +60,12 @@
                     <input type="text" required="" name="name" placeholder="起个昵称吧!!!" style="width:345px;">
                     <i class="glyphicon glyphicon-edit" style="float:right;"></i>
                 </div>
-                <a class="news-letter" href="#">
+                <a class="news-letter" href="/terms" style="width: 140px">
                     <label class="checkbox1">
                         <input type="checkbox" name="checkbox"><i> </i>
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">我同意这些条款</font>
+                            <font style="vertical-align: inherit;">我同意这些</label><b style="font-size: 15px">条款</b></font>
                         </font>
-                    </label>
                 </a>
             </div>
             <div class="col-md-6 login-do animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
@@ -79,7 +78,7 @@
                 </label>
                 <p>
                     <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">已经注册</font>
+                        <font style="vertical-align: inherit;">已经注册?</font>
                     </font>
                 </p>
                 <a href="login.html" class="hvr-sweep-to-top">
@@ -110,21 +109,18 @@
                     
                     var CUSER = false;
                     var CPASS = false;
-                    // var CHECKBOX = false;
+                    
 
                     //用户名
                     $('input[name=username]').focus(function(){
-                        //边框颜色
-                        $(this).addClass('active');
-                        //提示语显示
-                        // $(this).next().show().html('输入8~18位字母数字下划线');
+
                     }).blur(function(){
                         //移出激活状态的class active
                         $(this).removeClass('active');
                         //正则判断
                         var v = $(this).val();
                         //声明正则
-                        var reg = /^\w{6,12}$/;
+                        var reg = /^\w{2,12}$/;
                         //判断
                         if(!reg.test(v)){
                             //边框
@@ -135,9 +131,6 @@
                         }else{
                             var input = $(this);
                             //发送 AJAX 请求检测用户名是否已经存在
-                            // $.post('./check-user-exists.php', {username: v}, function(data){
-                            // })
-
                             $.ajax({
                                 url: '/ajax/check-user-exists.php',
                                 type: 'post',
@@ -159,14 +152,10 @@
                             })              
                         }
                     })
-
                     
                     //密码
                     $('input[name=password]').focus(function(){
-                        //边框颜色
-                        $(this).addClass('active');
-                        //提示语显示
-                        // $(this).next().show().html('8~20非空白字符');
+
                     }).blur(function(){
                         $(this).removeClass('active');
                         //获取用户的输入值
@@ -186,17 +175,30 @@
                             //文字提醒
                             $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
                             CPASS = true;
-
                         }
                     })
 
                     //条款
-                    
+                    var CHECKBOX = false;
+
+                    $('input[name=checkbox]').click(function(){
+                        if (CHECKBOX == false) {
+                            // alert(111);
+                            $(this).addClass('checked');
+                            CHECKBOX = true;
+                        }else{
+                            // alert(2222);
+                            $(this).removeClass('checked');
+                            CHECKBOX = false;
+                        }
+                    })
                     //表单的提交事件
                     $('form').submit(function(){
                         //触发错误提醒
                         $('input').trigger('blur');
-                        console.log(CUSER);
+                        /*console.log(CUSER);
+                        console.log(CPASS);
+                        console.log(CHECKBOX);*/
                         //判断输入值是否都正确
                         if(CUSER  && CPASS && CHECKBOX) {
                             return true;

@@ -63,6 +63,7 @@ class UserController extends Controller
         }
         // dd($user -> all());
         if($user -> save()){
+            session(['image'=>$user->image]);
             return redirect('/user')->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');

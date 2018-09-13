@@ -38,9 +38,12 @@ class CommentController extends Controller
         // dd($request->all()); 
         // 创建评论模型
         $comment = new Comment;
+        
 
+        $comment -> username = $request->username;
+        $comment -> image = $request->image;
         $comment -> content = $request->content;
-        $comment -> good_id = $request->article_id;
+        $comment -> good_id = $request->good_id;
 
         if($comment -> save()){
             return back()->with('success', '添加成功');
@@ -92,5 +95,12 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
+
+    }
+
+     public function aaa()
+    {
+        //
+        return 212;
     }
 }

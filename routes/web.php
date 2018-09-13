@@ -100,6 +100,28 @@ Route::get('/register','ShouyeController@register');
 //执行注册
 Route::post('/store','ShouyeController@store');
 
+//前台退出
+Route::get('/home/logout','ShouyeController@logout');
+
+//个人中心
+Route::get('/home/people','ShouyeController@people');
+Route::get('/home/people/{id}','ShouyeController@people');
+Route::post('/people/z','ShouyeController@z');
+
+//收货地址
+Route::get('/home/site','ShouyeController@site');
+Route::post('/home/dosite','ShouyeController@dosite');
+Route::get('/home/delsite/{id}','ShouyeController@delsite');
+
+
+//评论
+Route::resource('comment','CommentController');
+
+//2
+Route::get('aaa','CommentController@aaa');
+
+
+
 //商品详情页
 Route::resource('/home/xiang','XiangController');
 
@@ -122,6 +144,7 @@ Route::group(['middleware'=>'home'],function(){
 	Route::get('/home/delsite/{id}','ShouyeController@delsite');
 
 
+
 	//评论
 	Route::resource('comment','CommentController');
 
@@ -132,3 +155,5 @@ Route::group(['middleware'=>'home'],function(){
 	Route::get('/home/cart_items','GwcController@index');
 	Route::get('/home/cart_items/delete/{id}','GwcController@delete');
 });
+//用户条款
+Route::get('/terms','ShouyeController@terms');
