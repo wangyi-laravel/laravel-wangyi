@@ -48,21 +48,19 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>姓名</h4>
                     <p class="grid1">
-                        <input type="text" placeholder="" required="" name="name" value="{{$user['name']}}">
+                        <input type="text" placeholder="" required="" name="name" value="{{$user['name']}}" style="width: 85%">
                     </p>
                 </div>
                 
                 <div class="contact-form2">
                     <h4>电话</h4>
-                    <input type="text" maxlength="11" minlength="11" placeholder="" required="" name="phone" value="{{$user['phone']}}">
+                    <input type="text" maxlength="11" placeholder="" required="" name="phone" value="{{$user['phone']}}" style="width: 85%">
+                    <span></span>
                     <script>
                         CPHONE = false;
                         //手机号
                         $('input[name=phone]').focus(function(){
-                            //边框颜色
-                            $(this).addClass('active');
-                            //提示语显示
-                            $(this).next().show().html('输入您的手机号');
+                            
                         }).blur(function(){
                             $(this).removeClass('active');
                             //获取用户的输入值
@@ -81,6 +79,15 @@ table.dataintable tr:nth-child(even) {
                                 //文字提醒
                                 $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
                                 CPHONE = true;
+                            }
+                        })
+
+                        //提交事件
+                        $('form').submit(function(){
+                            if (CPHONE) {
+                                return true;
+                            }else{
+                                return false;
                             }
                         })
                     </script>

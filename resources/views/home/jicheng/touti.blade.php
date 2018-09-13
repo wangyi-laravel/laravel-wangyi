@@ -501,7 +501,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>联系我们</h3>
                     <ul>
                         <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="mailto:{{$v['email']}}">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>
