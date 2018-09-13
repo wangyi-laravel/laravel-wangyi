@@ -16,14 +16,7 @@
 });*/
 
 
-//验证码
-Route::get('capcha','LoginController@captcha');
 
-//用户登陆页面
-Route::get('/login', 'LoginController@login');
-
-//登陆操作
-Route::post('/login', 'LoginController@dologin');
 
 //管理员登录
 Route::get('/admin/login','AdminController@login');
@@ -88,6 +81,15 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 
 
+//验证码
+Route::get('capcha','LoginController@captcha');
+
+//用户登陆页面
+Route::get('/login', 'LoginController@login');
+
+//登陆操作
+Route::post('/login', 'LoginController@dologin');
+
 
 //前台首页
 Route::get('/','ShouyeController@show');
@@ -98,34 +100,35 @@ Route::get('/register','ShouyeController@register');
 //执行注册
 Route::post('/store','ShouyeController@store');
 
-//前台退出
-Route::get('/home/logout','ShouyeController@logout');
-
-//个人中心
-Route::get('/home/people','ShouyeController@people');
-Route::get('/home/people/{id}','ShouyeController@people');
-Route::post('/people/z','ShouyeController@z');
-
-//收货地址
-Route::get('/home/site','ShouyeController@site');
-Route::post('/home/dosite','ShouyeController@dosite');
-Route::get('/home/delsite/{id}','ShouyeController@delsite');
-
-
-//评论
-Route::resource('comment','CommentController');
-
-
 //商品详情页
 Route::resource('/home/xiang','XiangController');
 
 //商品列表
 Route::resource('/home/liebiao','LiebiaoController');
 
-//购物车
-// Route::resource('/home/cart_items','Cart_itemsController');
+//前台路由
+Route::group(['middleware'=>'home'],function(){
+	//前台退出
+	Route::get('/home/logout','ShouyeController@logout');
+
+	//个人中心
+	Route::get('/home/people','ShouyeController@people');
+	Route::get('/home/people/{id}','ShouyeController@people');
+	Route::post('/people/z','ShouyeController@z');
+
+	//收货地址
+	Route::get('/home/site','ShouyeController@site');
+	Route::post('/home/dosite','ShouyeController@dosite');
+	Route::get('/home/delsite/{id}','ShouyeController@delsite');
 
 
-Route::get('/home/cart_items/{id}','GwcController@create');
-Route::get('/home/cart_items','GwcController@index');
-Route::get('/home/cart_items/delete/{id}','GwcController@delete');
+	//评论
+	Route::resource('comment','CommentController');
+
+
+	//购物车
+	// Route::resource('/home/cart_items','Cart_itemsController');
+	Route::get('/home/cart_items/{id}','GwcController@create');
+	Route::get('/home/cart_items','GwcController@index');
+	Route::get('/home/cart_items/delete/{id}','GwcController@delete');
+});
