@@ -1,6 +1,6 @@
 @section('header')
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <?php 
     $good = \App\Good::all();
     $link = \App\Link::all();
@@ -14,6 +14,8 @@
 
       
     <title>Home</title>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2863917487" type="text/javascript" charset="utf-8"></script> -->
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -86,6 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
                         <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
+                        
                     </ul>
                     @endforeach
                 </div>

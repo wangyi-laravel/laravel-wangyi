@@ -50,10 +50,10 @@ table.dataintable tr:nth-child(even) {
                         <br>
                         <br>
                         <br>
-                        <label for="user-name" class="am-u-sm-3 am-form-label">详细地址<span class="tpl-form-line-small-title"></span></label>
+                    </div>
+                     <label for="user-name" class="am-u-sm-3 am-form-label">详细地址<span class="tpl-form-line-small-title"></span></label>
                         <br>
                         <textarea style="width: 300px;height: 100px" name="address"></textarea>
-                    </div>
                     <script>
                     var urlChina = '/sj/js/cityData.min.json';
                     $.cxSelect.defaults.url = urlChina;

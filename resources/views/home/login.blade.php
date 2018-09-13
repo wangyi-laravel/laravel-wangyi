@@ -52,7 +52,7 @@
                     <input type="submit" value="login">
                 </label>
                 <p>Do not have an account?</p>
-                <a href="register.html" class="hvr-sweep-to-top">Signup</a>
+                <a href="/auth/weibo" class="hvr-sweep-to-top">微博登录</a>
             </div>
             <div class="clearfix"> </div>
         </form>

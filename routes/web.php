@@ -157,3 +157,9 @@ Route::group(['middleware'=>'home'],function(){
 });
 //用户条款
 Route::get('/terms','ShouyeController@terms');
+
+
+// 引导用户到新浪微博的登录授权页面
+Route::get('auth/weibo', 'AuthController@weibo');
+// 用户授权后新浪微博回调的页面
+Route::get('auth/callback', 'AuthController@callback');
