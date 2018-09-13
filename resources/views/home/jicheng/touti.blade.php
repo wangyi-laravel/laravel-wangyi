@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 " style="float:left;margin-left:-178px;">
+                    <div class="header-right1 " style="float:left;margin-left:-180px;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
