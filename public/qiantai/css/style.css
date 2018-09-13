@@ -1729,7 +1729,7 @@ h1.grid2 {
     width: 37%;
 }
 .col-2 img{
-    margin:0 auto;
+    margin:0;
 }
 .col-p p {
     font-size: 1em;
