@@ -151,4 +151,9 @@ class Shouyecontroller extends Controller
             return back()->with('error','删除失败');
         }   
     }
+
+    public function terms()
+    {
+      return view('home.jicheng.terms');
+    }
 }
