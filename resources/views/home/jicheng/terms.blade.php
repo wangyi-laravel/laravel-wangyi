@@ -216,6 +216,6 @@
         </p>
         <p class="p-txt" style="font-size: 19px; line-height: 1.4;"></p>
     </div>
-    <span>本网页均从网络复制,如有侵权请联系<label><a href="mailto:zebinno1@foxmail.com">我<i class="glyphicon glyphicon-envelope"></i></li></a></label></span>
+    <span>本页面仅用于项目试验,如有侵权请联系<label><a href="mailto:zebinno1@foxmail.com">我<i class="glyphicon glyphicon-envelope"></i></li></a></label></span>
 </div>
 @endsection

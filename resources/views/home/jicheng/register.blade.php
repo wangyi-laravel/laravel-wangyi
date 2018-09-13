@@ -123,8 +123,7 @@
                         var reg = /^\w{2,12}$/;
                         //判断
                         if(!reg.test(v)){
-                            //边框
-                            $(this).addClass('error');
+
                             //文字提醒
                             $(this).next().html('<span style="color:red">格式不正确!!</span>').show();
                             CUSER = false;
@@ -137,8 +136,6 @@
                                 data: {username: v},
                                 success: function(data){
                                     if(data != '1'){
-                                        //边框
-                                        input.addClass('error');
                                         //文字提醒
                                         input.next().html('<span style="color:red">被注册了?换一个吧!</span>').show();
                                         CUSER = false;
