@@ -25,6 +25,9 @@ Route::get('/login', 'LoginController@login');
 //登陆操作
 Route::post('/login', 'LoginController@dologin');
 
+//加入我们
+Route::get('/home/joinus', 'JoinusController@index');
+
 //管理员登录
 Route::get('/admin/login','AdminController@login');
 //执行管理员登录
@@ -125,6 +128,7 @@ Route::resource('/home/xiang','XiangController');
 
 //商品列表
 Route::resource('/home/liebiao','LiebiaoController');
+Route::resource('/home/biao','BiaoController');
 
 //购物车
 // Route::resource('/home/cart_items','Cart_itemsController');

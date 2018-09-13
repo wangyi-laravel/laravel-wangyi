@@ -163,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                             @endif @endforeach
                             <li><a href="codes.html"> Codes</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="/home/joinus">加入我们</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -303,7 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
+                <a href="/home/biao"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
                             <div class="col-pic">   
                                 <h5> 女士专区</h5>
                                 <p>轻松搭配让你与众不同</p>
@@ -487,7 +487,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">加入我们</a>
+                    <a href="/home/joinus">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -501,7 +501,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>联系我们</h3>
                     <ul>
                         <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
+                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x-Pw8fDx9-f18Ie2tumkqKo">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>
