@@ -115,6 +115,10 @@ Route::get('/home/delsite/{id}','ShouyeController@delsite');
 //评论
 Route::resource('comment','CommentController');
 
+//2
+Route::get('aaa','CommentController@aaa');
+
+
 
 //商品详情页
 Route::resource('/home/xiang','XiangController');
