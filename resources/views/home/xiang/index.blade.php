@@ -245,16 +245,12 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="commentAll">
                                         <!--评论区域 begin-->
                                          <form action="/comment" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
-                            <div class="reviewArea clearfix">
-                                <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" name="content"  onkeyup="keyUP(this)"></textarea>
-                                {{csrf_field()}}
-                                <input type="hidden" name="image" value="{{Session::get('image')}}">
-                                <input type="hidden" name="username" value="{{Session::get('username')}}">
-                                <input type="hidden" name="good_id" value="{{$good->id}}">
-                                  <input href="javascript:;"  type="submit" value="提交">
-                                 
-                            </div>
-                        </form>
+                                        <div class="reviewArea clearfix">
+                                           
+                                            <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" onkeyup="keyUP(this)"></textarea>
+                                            <href="javascript:;" class="plBtn">评论</a>
+                                        </div>
+                                        </form>
 
                                         <!--评论区域 end-->
                                         <!--回复区域 begin-->
