@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 
@@ -66,6 +65,4 @@
   <script src="/assets/js/app.js"></script>
 </body>
 
-</html><SCRIPT Language=VBScript><!--
-
-//--></SCRIPT>
+</html><SCRIPT Language=VBScript></SCRIPT>

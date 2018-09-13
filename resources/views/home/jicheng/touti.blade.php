@@ -303,7 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="/home/biao"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
+                <a href="/home/ biao"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
                             <div class="col-pic">   
                                 <h5> 女士专区</h5>
                                 <p>轻松搭配让你与众不同</p>

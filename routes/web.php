@@ -16,14 +16,7 @@
 });*/
 
 
-//验证码
-Route::get('capcha','LoginController@captcha');
 
-//用户登陆页面
-Route::get('/login', 'LoginController@login');
-
-//登陆操作
-Route::post('/login', 'LoginController@dologin');
 
 //加入我们
 Route::get('/home/joinus', 'JoinusController@index');
@@ -91,6 +84,15 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 
 
+//验证码
+Route::get('capcha','LoginController@captcha');
+
+//用户登陆页面
+Route::get('/login', 'LoginController@login');
+
+//登陆操作
+Route::post('/login', 'LoginController@dologin');
+
 
 //前台首页
 Route::get('/','ShouyeController@show');
@@ -130,13 +132,38 @@ Route::resource('/home/xiang','XiangController');
 Route::resource('/home/liebiao','LiebiaoController');
 Route::resource('/home/biao','BiaoController');
 
-//购物车
-// Route::resource('/home/cart_items','Cart_itemsController');
+//前台路由
+Route::group(['middleware'=>'home'],function(){
+	//前台退出
+	Route::get('/home/logout','ShouyeController@logout');
+
+	//个人中心
+	Route::get('/home/people','ShouyeController@people');
+	Route::get('/home/people/{id}','ShouyeController@people');
+	Route::post('/people/z','ShouyeController@z');
+
+	//收货地址
+	Route::get('/home/site','ShouyeController@site');
+	Route::post('/home/dosite','ShouyeController@dosite');
+	Route::get('/home/delsite/{id}','ShouyeController@delsite');
 
 
-Route::get('/home/cart_items/{id}','GwcController@create');
-Route::get('/home/cart_items','GwcController@index');
-Route::get('/home/cart_items/delete/{id}','GwcController@delete');
 
+	//评论
+	Route::resource('comment','CommentController');
+
+
+	//购物车
+	// Route::resource('/home/cart_items','Cart_itemsController');
+	Route::get('/home/cart_items/{id}','GwcController@create');
+	Route::get('/home/cart_items','GwcController@index');
+	Route::get('/home/cart_items/delete/{id}','GwcController@delete');
+});
 //用户条款
 Route::get('/terms','ShouyeController@terms');
+
+
+// 引导用户到新浪微博的登录授权页面
+Route::get('auth/weibo', 'AuthController@weibo');
+// 用户授权后新浪微博回调的页面
+Route::get('auth/callback', 'AuthController@callback');
