@@ -138,7 +138,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                 <div class="facts">
                                     <div class="color">
-                                        <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">简介</b></p>
+                                        <wb:share-button appkey="2863917487" addition="simple" type="button" ralateUid="1652645752" default_text="%E6%88%91%E5%96%9C%E6%AC%A2%E8%BF%99%E4%B8%AA%E5%95%86%E5%93%81%2C%E6%88%91%E6%84%9F%E8%A7%89%E4%BD%A0%E4%B9%9F%E5%96%9C%E6%AC%A2%2C%E8%A6%81%E6%9D%A5%E7%9C%8B%E7%9C%8B%E5%90%97"></wb:share-button>
                                             {!!$good['miaoshu']!!}
                                         <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
                                             <div class="clearfix"></div>
