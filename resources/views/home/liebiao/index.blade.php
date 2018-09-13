@@ -43,68 +43,24 @@
             <!-- 侧边分类 end -->
 
             <!--//menu-->
-            <!--price-->
-            <div class="price animated wow fadeInUp animated" data-wow-delay=".5s">
-                <h3>Price Range</h3>
-                <div class="price-head">
-                    <div class="col-md-6 price-head1">
-                        <div class="price-top1">
-                            <span class="price-top">$</span>
-                            <input type="text" value="0">
-                        </div>
-                    </div>
-                    <div class="col-md-6 price-head2">
-                        <div class="price-top1">
-                            <span class="price-top">$</span>
-                            <input type="text" value="500">
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!--//price-->
-            <!--colors-->
-            <div class="colors animated wow fadeInLeft animated" data-wow-delay=".5s">
-                <h3>Colors</h3>
-                <div class="color-top">
-                    <ul>
-                        <li><a href="#"><i></i></a></li>
-                        <li><a href="#"><i class="color1"></i></a></li>
-                        <li><a href="#"><i class="color2"></i></a></li>
-                        <li><a href="#"><i class="color3"></i></a></li>
-                        <li><a href="#"><i class="color4"></i></a></li>
-                        <li><a href="#"><i class="color5"></i></a></li>
-                        <li><a href="#"><i class="color6"></i></a></li>
-                        <li><a href="#"><i class="color7"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--//colors-->
             <div class="sellers animated wow fadeInUp" data-wow-delay=".5s">
-                <h3 class="best">BEST SELLERS</h3>
+                <h3 class="best">新品推荐</h3>
                 <div class="product-head">
+                    @foreach($good as $v)
+                    @if($v['cate_id'] == $cate)
                     <div class="product-go">
                         <div class=" fashion-grid">
-                            <a href="single.html"><img class="img-responsive " src="images/pcc.jpg" alt=""></a>
+                            <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive " src="{{$v['image']}}" alt=""></a>
                         </div>
                         <div class=" fashion-grid1">
-                            <h6 class="best2"><a href="single.html">Lorem ipsum </a></h6>
-                            <span class=" price-in1"> <del>$50.00</del>$40.00</span>
-                            <p>The standard chunk of Lorem Ipsum used</p>
+                            <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
+                            <span class=" price-in1">{{$v['price']}}</span>
+                            
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <div class="product-go">
-                        <div class=" fashion-grid">
-                            <a href="single.html"><img class="img-responsive " src="images/pcc1.jpg" alt=""></a>
-                        </div>
-                        <div class=" fashion-grid1">
-                            <h6 class="best2"><a href="single.html">Lorem ipsum </a></h6>
-                            <span class=" price-in1"> <del>$50.00</del>$40.00</span>
-                            <p>The standard chunk of Lorem Ipsum used</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+                    @endif
+                    @endforeach
                 </div>
             </div>
             <!---->
