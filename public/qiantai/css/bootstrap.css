@@ -1119,6 +1119,7 @@ figure {
 }
 img {
   vertical-align: middle;
+  margin: 0;
 }
 .img-responsive,
 .thumbnail > img,
@@ -1128,6 +1129,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin: 0;
 }
 .img-rounded {
   border-radius: 6px;
