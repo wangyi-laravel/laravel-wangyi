@@ -11,6 +11,8 @@
 ?>
 
 <head>
+
+      
     <title>Home</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/jquery.min.js"></script>
     <!-- //js -->
     <!-- 评论引入 -->
-     
+    
     <!-- 评论结束 -->
     <!-- cart -->
     <script src="/qiantai/js/simpleCart.min.js"></script>
@@ -42,6 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/wow.min.js"></script>
     <script>
     new WOW().init();
+
+
     </script>
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
@@ -57,6 +61,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
         
     </style>
+
+    <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
+    <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/pingluns/js/qna.js"></script>
+    <script type="text/javascript" src="/pingluns/js/pager.js"></script>
 </head>
 
 <body>
