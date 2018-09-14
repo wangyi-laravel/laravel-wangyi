@@ -28,6 +28,11 @@
                                 <input type="hidden" name="cate_id" value="{{$a['id']}}">{{$a['name']}}
                                 @endif
                             @endforeach
+                            @foreach($cates as $c)
+                                @if($c['id'] == $cate)
+                                <input type="hidden" name="cates_id" value="{{$c['parent_id']}}">
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="am-form-group">

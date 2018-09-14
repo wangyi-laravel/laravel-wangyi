@@ -21,6 +21,8 @@ class Shouyecontroller extends Controller
       $setting = Setting::all();
       $cates = Cates::all();
       $good = Good::all();
+      
+      // dd($good3);
       $goods = Good::orderBy('id','desc');
     	return view('home.jicheng.touti',compact('link','setting','cates','goods','good'));
     }
@@ -40,7 +42,7 @@ class Shouyecontroller extends Controller
         
 
         $this->validate($request, [
-        'username' => 'required|regex:/^[a-zA-Z0-9_-]{6,12}$/',
+        'username' => 'required|regex:/^[a-zA-Z0-9_-]{2,12}$/',
         ]);          
         
 
