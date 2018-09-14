@@ -255,7 +255,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                 </div>
                                 <div class="Csunbmit">
                                     <label class="Cnick">你的昵称：</label>
-                                    <input class="Cusername" placeholder="你的昵称" id="Cusername"></input>
+                                    <input class="Cusername" placeholder="{{Session::get('username')}}" id="Cusername"></input>
                                     <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
                                 </div>
                             </div>

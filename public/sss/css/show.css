@@ -1,4 +1,5 @@
 
+body{padding:50px;}
 ul{list-style: none;}
 
 .commentBox,.CommentList{text-align: center;width: 100%;height:auto;border: 1px solid #65a6d1;padding: 20px;margin-bottom: 10px; }
