@@ -42,7 +42,7 @@ class Shouyecontroller extends Controller
         
 
         $this->validate($request, [
-        'username' => 'required|regex:/^[a-zA-Z0-9_-]{6,12}$/',
+        'username' => 'required|regex:/^[a-zA-Z0-9_-]{2,12}$/',
         ]);          
         
 
