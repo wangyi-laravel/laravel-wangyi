@@ -16,16 +16,15 @@ class CreatePinglunsTable extends Migration
         Schema::create('pingluns', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pid');
-            $table->integer('support')->nullable();
+            $table->string('nickname')->nullable()->default(0);
+            $table->integer('support')->nullable()->default(6665);
             $table->dateTime('like_time')->nullable();
-            $table->text('nickname')->nullable();
             $table->text('content')->nullable();
             $table->integer('attitude')->nullable();
             $table->dateTime('create_time')->nullable();
-            $table->text('likeIPs')->nullable();
-            $table->integer('display');
             $table->ipAddress('ip')->nullable();
-            $table->integer('good_id')->nullable();
+            $table->text('likeIPs')->nullable();
+            $table->integer('display')->default(1);
         });
     }
 

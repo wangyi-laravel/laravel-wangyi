@@ -96,7 +96,7 @@ function recursived($meta,$flag )
 		 
 	}
 	if ($flag==1) {
-		$t = '<label style="float:right"><span class="bottomSpan" onclick="answer('.$id.')">回复</span >&nbsp;&nbsp;<span class="bottomSpan" onclick="like('.$id.')" id="support'.$id.'">支持</span>(<span class="scount" id="like'.$id.'">'.$support.'</span>)</label>';
+		$t = '<label style="float:right"><span class="bottomSpan" onclick="answer('.$id.')">回复</span >&nbsp;&nbsp;<span class="bottomSpan" onclick="like('.$id.')" id="support'.$id.'"><i class="glyphicon glyphicon-thumbs-up"></i></span>(<span class="scount" id="like'.$id.'">'.$support.'</span>)</label>';
 	}
 	else{
 		$t='';

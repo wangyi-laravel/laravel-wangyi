@@ -1,6 +1,6 @@
 @section('header')
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <?php 
     $good = \App\Good::all();
     $link = \App\Link::all();
@@ -16,6 +16,7 @@
       
     <title>Home</title>
     <!-- for-mobile-apps -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Classic Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -67,6 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/pingluns/js/qna.js"></script>
     <script type="text/javascript" src="/pingluns/js/pager.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -100,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/home/people/{{session('id')}}">个人信息</a></li>
                             <li></i><a href="/home/site">收货地址</a></li>
                             <li><a href="/home/logout">退出</a></li>
-                            <li>{{Session::get('username')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
+                            <li>{{Session::get('name')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
                             @endif
                         </ul>
                     </div>

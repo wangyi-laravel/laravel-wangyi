@@ -107,7 +107,7 @@ Route::post('/store','ShouyeController@store');
 Route::get('/home/logout','ShouyeController@logout');
 
 //个人中心
-Route::get('/home/people','ShouyeController@people');
+// Route::get('/home/people','ShouyeController@people');
 Route::get('/home/people/{id}','ShouyeController@people');
 Route::post('/people/z','ShouyeController@z');
 
@@ -167,3 +167,6 @@ Route::get('/terms','ShouyeController@terms');
 Route::get('auth/weibo', 'AuthController@weibo');
 // 用户授权后新浪微博回调的页面
 Route::get('auth/callback', 'AuthController@callback');
+
+//markdown发送邮件
+Route::get('sendEmail', 'IndexController@sendEmail');
