@@ -68,6 +68,7 @@ class GoodController extends Controller
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
         $goods -> cate_id = $request -> cate_id;
+        $goods -> cates_id = $request -> cates_id;
         // dd($goods);
         //文件上传
         //检测是否有文件上传
@@ -124,8 +125,11 @@ class GoodController extends Controller
         //获取所有尺码
         $sizes = Size::all();
 
+        //获取所有分类
+        $cates = Cates::all();
+        //获取分类页传过得id
         // 解析模板显示数据
-        return view('admin.good.edit',compact('good','colors','sizes'));
+        return view('admin.good.edit',compact('good','colors','sizes','cates'));
     }
 
     /**
@@ -147,6 +151,8 @@ class GoodController extends Controller
         $goods -> jifen = $request -> jifen;
         $goods -> number = $request -> number;
         $goods -> cate_id = $request -> cate_id;
+        $goods -> cates_id = $request -> cates_id;
+        
         // dd($goods);
 
         //文件上传
