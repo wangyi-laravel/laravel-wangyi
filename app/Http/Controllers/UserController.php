@@ -113,7 +113,7 @@ class UserController extends Controller
         $user -> phone = $request->phone;
         $user -> sex = $request->sex;
         $user -> weight = $request->weight;
-        $user -> site = $request->site;
+        // $user -> site = $request->site;
         if ($request -> hasFile('image')) {
             $user -> image = '/'.$request -> image -> store('uploads/user/'.date('Ymd'));
         }
