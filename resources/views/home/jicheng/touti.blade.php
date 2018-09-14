@@ -1,6 +1,6 @@
 @section('header')
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb">
+<html>
 <?php 
     $good = \App\Good::all();
     $link = \App\Link::all();
@@ -11,9 +11,9 @@
 ?>
 
 <head>
+
+      
     <title>Home</title>
-    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-    <!-- <script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2863917487" type="text/javascript" charset="utf-8"></script> -->
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/jquery.min.js"></script>
     <!-- //js -->
     <!-- 评论引入 -->
-     
+    
     <!-- 评论结束 -->
     <!-- cart -->
     <script src="/qiantai/js/simpleCart.min.js"></script>
@@ -44,6 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/wow.min.js"></script>
     <script>
     new WOW().init();
+
+
     </script>
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
@@ -59,6 +61,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
         
     </style>
+
+    <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
+    <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/pingluns/js/qna.js"></script>
+    <script type="text/javascript" src="/pingluns/js/pager.js"></script>
 </head>
 
 <body>
@@ -79,12 +86,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><i class="glyphicon glyphicon-headphones"></i><a href="#">24x7 live support</a></li>
                         <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
-                        
                     </ul>
                     @endforeach
                 </div>
                 <div class="header-right animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                    <div class="header-right1 " style="float:left;margin-left:-180px;">
+                    <div class="header-right1 " style="float:left;margin-left:-175px;">
                         <ul>
                             @if(!Session::has('id'))
                             <li><i class="glyphicon glyphicon-log-in"></i><a href="/login">登录</a></li>
@@ -166,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                             @endif @endforeach
                             <li><a href="codes.html"> Codes</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="/home/joinus">加入我们</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -237,29 +243,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--content-->
     <div class="content">
         <div class="content-head">
-            <div class="col-md-6 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
+            <div class="col-md-12 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
                 <div class="col-1">
-                    <div class="col-md-6 col-2">
-                        <a href="single.html"><img src="/qiantai/images/pi3.jpg" class="img-responsive" alt="">
+                    <div class="col-md-6">
+                        <a href="https://clot.com/"><img src="/qiantai/images/CLOT.jpg" class="img-responsive" alt="" width="450px" height="300px">
                             </a></div>
                     <div class="col-md-6 col-p">
-                        <h5>For All Collections</h5>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <h5>CLOT</h5>
+                        <p>CLOT是香港著名艺人陈冠希创办的凝结集团（CLOT FAMILY）的简称及该公司旗下潮流服装品牌名称。凝结集团是一个LIFESTYLE的公司，由香港著名艺人陈冠希创办于2003年6月。主要以创作服装（包括CLOT品牌服装以及在香港的JUICE店铺）、策划PARTY、帮助服装公司做Consultant等。CLOT品牌服装是中国第一潮牌，在全球潮流品牌中占有一席之地。</p>
                         <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="col-1">
+                <!-- <div class="col-1">
                     <div class="col-md-6 col-p">
                         <h5>For All Collections</h5>
                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
                         <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
                     </div>
-                    <div class="col-md-6 col-2">
+                    <div class="col-md-6">
                         <a href="single.html"><img src="/qiantai/images/pi.jpg" class="img-responsive" alt="">
                             </a></div>
                     <div class="clearfix"> </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-6 col-m2 animated wow fadeInRight" data-wow-delay=".1s">
                 <!---->
@@ -280,13 +286,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </script>
                 <!-- //requried-jsfiles-for owl -->
                 <!-- start content_slider -->
-                <div id="owl-demo" class="owl-carousel">
+                <!-- <div id="owl-demo" class="owl-carousel">
                     <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb.png" alt="" /></a>
+                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
                     <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
+                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc1.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
                     <div class="item">
@@ -297,7 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
                         <a href="single.html" class="shop-2">Shop Now</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="clearfix"></div>
         </div>
@@ -306,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="700px">
+                <a href="/home/ biao"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
                             <div class="col-pic">   
                                 <h5> 女士专区</h5>
                                 <p>轻松搭配让你与众不同</p>
@@ -490,7 +496,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </p>
                 </div>
                 <div class="col-md-3 footer-top2">
-                    <a href="contact.html">加入我们</a>
+                    <a href="/home/joinus">加入我们</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -504,7 +510,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>联系我们</h3>
                     <ul>
                         <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=o5KWk5uVm5OVl5bj0tKNwMzO" style="text-decoration:none;">{{$v['email']}}</a></li>
+                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x-Pw8fDx9-f18Ie2tumkqKo">{{$v['email']}}</a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>

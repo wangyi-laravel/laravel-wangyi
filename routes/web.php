@@ -18,6 +18,9 @@
 
 
 
+//加入我们
+Route::get('/home/joinus', 'JoinusController@index');
+
 //管理员登录
 Route::get('/admin/login','AdminController@login');
 //执行管理员登录
@@ -127,6 +130,7 @@ Route::resource('/home/xiang','XiangController');
 
 //商品列表
 Route::resource('/home/liebiao','LiebiaoController');
+Route::resource('/home/biao','BiaoController');
 
 //前台路由
 Route::group(['middleware'=>'home'],function(){
