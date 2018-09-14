@@ -15,7 +15,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(\Session::has('weight')){
+        if(\Session::has('niu')){
             return $next($request);
         }else{
             return redirect('/admin/login')->with('error','您还没有登陆!!!请登陆...');

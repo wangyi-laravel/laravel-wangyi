@@ -13,6 +13,7 @@
         "laravel/socialite": "^3.1",
         "laravel/tinker": "~1.0",
         "mews/captcha": "~2.0",
+        "mrgoon/aliyun-sms": "dev-master",
         "socialiteproviders/weibo": "^3.0"
     },
     "require-dev": {
