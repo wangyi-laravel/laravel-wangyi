@@ -254,9 +254,9 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                     <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
                                 </div>
                                 <div class="Csunbmit">
-                                    <label class="Cnick">你的昵称：</label>
-                                    <input class="Cusername" placeholder="{{Session::get('username')}}" id="Cusername"></input>
-                                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                                    <label class="Cnick"></label>
+                                    <input type="hidden"class="Cusername" value="{{Session::get('username')}}{{$good['title']}}"id="Cusername"></input>
+                                    <button class="submitBtn" onclick="submit_pl(0)">发起飞吻</button>
                                 </div>
                             </div>
                             <div class="Corder">
