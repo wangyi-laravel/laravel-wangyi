@@ -252,10 +252,12 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                 </div>
                                 <div class="Cinput">
                                     <textarea placeholder="
-                                                     \_\/  請 輸 入 內 容       .-==/~\
-                                                    ___/_,__,_ __ ____ ____ __)/   /~
-                                                    ---,---,------------------,\'-' ~
-                                                                                           '-==\/
+                                              _  __________=__
+                                               \\@([____]_____()  請 輸 入 內 容
+                                              _/\|-[____]
+                                             /     /(( )
+                                            /____|'----'
+                                            \____/   
                                                         " class="Ccont" id="Ccont"></textarea>
                                 </div>
                                 <div class="Csunbmit">
