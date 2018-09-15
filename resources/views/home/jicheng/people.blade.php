@@ -55,42 +55,6 @@ table.dataintable tr:nth-child(even) {
                 <div class="contact-form2">
                     <h4>电话</h4>
                     <input type="text" maxlength="11" placeholder="" required="" name="phone" value="{{$user['phone']}}" style="width: 85%">
-                    <span></span>
-                    <script>
-                        CPHONE = false;
-                        //手机号
-                        $('input[name=phone]').focus(function(){
-                            
-                        }).blur(function(){
-                            $(this).removeClass('active');
-                            //获取用户的输入值
-                            var v = $('input[name=phone]').val();
-                            //正则
-                            var reg = /^1\d{10}$/;
-                            if(!reg.test(v)) {
-                                //边框
-                                $(this).addClass('error');
-                                //文字提醒
-                                $(this).next().html('<span style="color:red">格式不正确</span>').show();
-                                CPHONE = false;
-                            }else{
-                                //边框
-                                $(this).removeClass('error');
-                                //文字提醒
-                                $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
-                                CPHONE = true;
-                            }
-                        })
-
-                        //提交事件
-                        $('form').submit(function(){
-                            if (CPHONE) {
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        })
-                    </script>
                 </div>
                 <div class="contact-form2">
                     <h4>性别</h4>

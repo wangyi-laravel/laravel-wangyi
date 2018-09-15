@@ -44,6 +44,11 @@
                                 @endif
                              name="size_id[]" value="{{$v['id']}}">{{$v['name']}}</label>
                             @endforeach
+                            @foreach($cates as $c)
+                                @if($c['id'] == $good['cates_id'])
+                                <input type="hidden" name="cates_id" value="{{$good['cates_id']}}">
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="am-form-group">

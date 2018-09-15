@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
@@ -25,7 +26,7 @@ class AuthController extends Controller
  		// dd($res);
 
  		if ($res) {
- 			session(['username'=>$res->username, 'id'=>$res->id,'password'=>$res->password,'image'=>$res->image]);
+ 			session(['username'=>$res->username, 'id'=>$res->id,'password'=>$res->password,'image'=>$res->image,'name'=>$res->name]);
  			return redirect('/')->with('success','登录成功');
  		} else {
  			$user -> username = $oauthUser->id;
@@ -34,14 +35,9 @@ class AuthController extends Controller
  			$user -> password = Hash::make($oauthUser->expiresIn);
 
  			if($user->save()){
- 				session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'image'=>$user->image]);
+ 				session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'image'=>$user->image,'name'=>$user->name]);
  				return redirect('/')->with('success','登录成功');
  			}
  		}
- 		
-
-
-
- 		
     }
 }

@@ -138,7 +138,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                 <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                     <div class="facts">
                                         <div class="color">
-                                            <p style="width: 20%; padding: 0px"><b style="font-size: 25px; font-family: 华文彩云; width: 80%">简介</b></p>
+                                            <wb:share-button appkey="2863917487" addition="simple" type="button" ralateUid="5772825542" default_text="%E8%BF%99%E4%BB%B6%E5%95%86%E5%93%81%E4%B8%8D%E9%94%99%20%2C%E4%BD%A0%E8%A6%81%E6%9D%A5%E7%9C%8B%E7%9C%8B%E5%90%97%3F" language="zh_cn"></wb:share-button>
                                             {!!$good['miaoshu']!!}
                                             <label style="font-size: 14px;font-weight: normal;margin-right: 10px;">
                                                 <div class="clearfix"></div>
@@ -251,12 +251,19 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                     </form>
                                 </div>
                                 <div class="Cinput">
-                                    <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
+                                    <textarea placeholder="
+                                              _  __________=__
+                                               \\@([____]_____()  請 輸 入 內 容
+                                              _/\|-[____]
+                                             /     /(( )
+                                            /____|'----'
+                                            \____/   
+                                                        " class="Ccont" id="Ccont"></textarea>
                                 </div>
                                 <div class="Csunbmit">
-                                    <label class="Cnick">你的昵称：</label>
-                                    <input class="Cusername" placeholder="你的昵称" id="Cusername"></input>
-                                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                                    <label class="Cnick"></label>
+                                    <input type="hidden"class="Cusername" value="￥&nbsp;{{$good['title']}}♔★♔{{Session::get('name')}}"id="Cusername"></input>
+                                    <button class="submitBtn" onclick="submit_pl(0)">发起❤飞吻</button>
                                 </div>
                             </div>
                             <div class="Corder">

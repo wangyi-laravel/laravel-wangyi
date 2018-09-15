@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterCommentaddTable extends Migration
+class AlertGoodaddTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AlterCommentaddTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            
-            $table->string('username')->comment('用户名');
-            $table->string('image')->comment('头像');
+        Schema::table('goods', function (Blueprint $table) {
+            $table->integer('cates_id')->comment('关联一级分类');
         });
     }
 
@@ -27,7 +25,7 @@ class AlterCommentaddTable extends Migration
      */
     public function down()
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::table('goods', function (Blueprint $table) {
             //
         });
     }

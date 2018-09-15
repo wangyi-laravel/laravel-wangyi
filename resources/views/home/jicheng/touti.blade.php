@@ -1,13 +1,14 @@
 @section('header')
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <?php 
     $good = \App\Good::all();
     $link = \App\Link::all();
     $setting = \App\Setting::all();
     $cates = \App\Cates::all();
     $goods = \App\Good::orderBy('id','desc');
-    
+    $good2 = \App\Good::where('cates_id','=','2')->take(3)->get();  
+    $good1 = \App\Good::where('cates_id','=','1')->take(3)->get();  
 ?>
 
 <head>
@@ -15,6 +16,7 @@
       
     <title>Home</title>
     <!-- for-mobile-apps -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Classic Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -66,6 +68,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/pingluns/js/qna.js"></script>
     <script type="text/javascript" src="/pingluns/js/pager.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=您的密匙"></script>>
 </head>
 
 <body>
@@ -99,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/home/people/{{session('id')}}">个人信息</a></li>
                             <li></i><a href="/home/site">收货地址</a></li>
                             <li><a href="/home/logout">退出</a></li>
-                            <li>{{Session::get('username')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
+                            <li>{{Session::get('name')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
                             @endif
                         </ul>
                     </div>
@@ -251,7 +255,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-6 col-p">
                         <h5>CLOT</h5>
                         <p>CLOT是香港著名艺人陈冠希创办的凝结集团（CLOT FAMILY）的简称及该公司旗下潮流服装品牌名称。凝结集团是一个LIFESTYLE的公司，由香港著名艺人陈冠希创办于2003年6月。主要以创作服装（包括CLOT品牌服装以及在香港的JUICE店铺）、策划PARTY、帮助服装公司做Consultant等。CLOT品牌服装是中国第一潮牌，在全球潮流品牌中占有一席之地。</p>
-                        <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
+                        <a href="https://clot.com/" class="shop" data-hover="Shop Now">Shop Now</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -312,7 +316,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="content-top">
         <div class="col-md-5 col-md1 animated wow fadeInLeft" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="/home/ biao"><img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
+                @foreach($cates as $v) @if($v['parent_id'] == 0 && $v['id'] == 2)
+                <a href="/home/biao?cates_id={{$v['id']}}"> @endif @endforeach<img src="/qiantai/images/woman.jpg" class="img-responsive " alt="" width="100%">
+               
+
                             <div class="col-pic">   
                                 <h5> 女士专区</h5>
                                 <p>轻松搭配让你与众不同</p>
@@ -320,72 +327,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="col-md-7 col-md2 animated wow fadeInRight" data-wow-delay=".1s">
+            @foreach($good2 as $v)
+            @if($v['cates_id'] == 2)
             <div class="col-sm-4 item-grid simpleCart_shelfItem">
                 <div class="grid-pro">
                     <div class=" grid-product ">
                         <figure>
-                            <a href="single.html">
+                            <a href="/home/xiang?good_id={{$v['id']}}">
                                 <div class="grid-img">
-                                    <img src="/qiantai/images/pr1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr.jpg" class="img-responsive" alt="">
+                                    <img src="{{$v['image']}}" class="img-responsive" alt="">
                                 </div>
                             </a>
                         </figure>
                     </div>
                     <div class="women">
                         <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                        <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                         <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
+                            <em class="item_price">{{$v['price']}}</em></p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 item-grid simpleCart_shelfItem">
-                <div class="grid-pro">
-                    <div class=" grid-product ">
-                        <figure>
-                            <a href="single.html">
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr3.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr2.jpg" class="img-responsive" alt="">
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="women">
-                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                        <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 item-grid simpleCart_shelfItem">
-                <div class="grid-pro">
-                    <div class=" grid-product ">
-                        <figure>
-                            <a href="single.html">
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr5.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr4.jpg" class="img-responsive" alt="">
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="women">
-                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                        <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                    </div>
-                </div>
-            </div>
+            @endif
+            @endforeach
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
@@ -394,77 +358,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!---->
     <div class="content-top">
         <div class="col-md-7 col-md2 animated wow fadeInLeft" data-wow-delay=".1s">
+            @foreach($good1 as $v)
+            @if($v['cates_id'] == 1)
             <div class="col-sm-4 item-grid simpleCart_shelfItem">
                 <div class="grid-pro">
                     <div class=" grid-product ">
                         <figure>
-                            <a href="single.html">
+                            <a href="/home/xiang?good_id={{$v['id']}}">
                                 <div class="grid-img">
-                                    <img src="/qiantai/images/pr6.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr7.jpg" class="img-responsive" alt="">
+                                    <img src="{{$v['image']}}" class="img-responsive" alt="">
                                 </div>
                             </a>
                         </figure>
                     </div>
                     <div class="women">
                         <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+                        <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                         <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
+                            <em class="item_price">{{$v['price']}}</em></p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 item-grid simpleCart_shelfItem">
-                <div class="grid-pro">
-                    <div class=" grid-product ">
-                        <figure>
-                            <a href="single.html">
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr9.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr8.jpg" class="img-responsive" alt="">
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="women">
-                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                        <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 item-grid simpleCart_shelfItem">
-                <div class="grid-pro">
-                    <div class=" grid-product ">
-                        <figure>
-                            <a href="single.html">
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr10.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="grid-img">
-                                    <img src="/qiantai/images/pr11.jpg" class="img-responsive" alt="">
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="women">
-                        <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
-                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                        <p>
-                            <del>$100.00</del><em class="item_price">$70.00</em></p>
-                    </div>
-                </div>
-            </div>
+            @endif
+            @endforeach
             <div class="clearfix"></div>
         </div>
         <div class="col-md-5 col-md1 animated wow fadeInRight" data-wow-delay=".1s">
             <div class="col-3">
-                <a href="single.html"><img src="/qiantai/images/man.jpg" class="img-responsive " alt="" width="700px">
+                @foreach($cates as $v) @if($v['parent_id'] == 0 && $v['id'] == 1)
+                <a href="/home/biao?cates_id={{$v['id']}}"> @endif @endforeach<img src="/qiantai/images/man.jpg" class="img-responsive " alt="" width="700px">
                             <div class="col-pic">
                                 <h5> 男士专区</h5>
                                 <p>穿上新衣告别青涩油腻</p>

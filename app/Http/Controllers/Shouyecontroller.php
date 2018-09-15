@@ -21,6 +21,8 @@ class Shouyecontroller extends Controller
       $setting = Setting::all();
       $cates = Cates::all();
       $good = Good::all();
+      
+      // dd($good3);
       $goods = Good::orderBy('id','desc');
     	return view('home.jicheng.touti',compact('link','setting','cates','goods','good'));
     }
@@ -49,9 +51,8 @@ class Shouyecontroller extends Controller
       	$user -> username = $request->username;
         $user-> password = Hash::make($request ->password);
         $user -> name = $request->name;
-
+        $user ->image = url('http://img5.imgtn.bdimg.com/it/u=415293130,2419074865&fm=27&gp=0.jpg');
       	if($user -> save()){
-
             return redirect('/login')->with('success','註冊成功');
         }else{
             return back()->with('error','註冊失败');
@@ -71,14 +72,13 @@ class Shouyecontroller extends Controller
     /**
      * 个人中心
      */
-    public function people()
+    public function people($id)
     {
       $link = Link::all();
       $setting = Setting::all();
-
-      $user = User::first();
+      $user = User::findOrFail($id);
       $cates = Cates::all();
-      return view('home.jicheng.people',compact('link','setting','user','site','cates'));
+      return view('home.jicheng.people',compact('link','setting','user','cates'));
     }
 
     /**
@@ -89,22 +89,21 @@ class Shouyecontroller extends Controller
     {
       $id = Session::get('id');
 
-      $user =  User::find($id);
+      $user =  User::findOrFail($id);
 
       $user->name = $request-> name;
       $user->phone = $request-> phone;
       $user->sex = $request-> sex;
-      $user->sheng = $request-> sheng;
-      $user->shi = $request-> shi;
-      $user->xian = $request-> xian;
-
+      // $user->sheng = $request-> sheng;
+      // $user->shi = $request-> shi;
+      // $user->xian = $request-> xian;
       if ($request -> hasFile('image')) {
             $user -> image = '/'.$request -> image -> store('uploads/'.date('Ymd'));
         }
 
       if($user -> save()){
-            Session(['image'=>$user->image]);
-            return redirect('/home/people')->with('success','添加成功');
+            session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'image'=>$user->image,'name'=>$user->name,]);
+            // return redirect('/home/people/')->with('success','添加成功');
             return back()->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');
