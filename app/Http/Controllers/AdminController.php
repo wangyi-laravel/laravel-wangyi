@@ -73,9 +73,9 @@ class AdminController extends Controller
 		// $res = $request->num;
 
 		$weight = Session::get('weight');
-		// dd($weight);
+		dd($weight);
 		// 
-		if ($weight == 2) {
+		if ($weight != 1) {
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 
