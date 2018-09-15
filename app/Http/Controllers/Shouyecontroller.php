@@ -51,7 +51,7 @@ class Shouyecontroller extends Controller
       	$user -> username = $request->username;
         $user-> password = Hash::make($request ->password);
         $user -> name = $request->name;
-
+        $user ->image = url('http://img5.imgtn.bdimg.com/it/u=415293130,2419074865&fm=27&gp=0.jpg');
       	if($user -> save()){
             return redirect('/login')->with('success','註冊成功');
         }else{

@@ -251,12 +251,19 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                     </form>
                                 </div>
                                 <div class="Cinput">
-                                    <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
+                                    <textarea placeholder="
+                                              _  __________=__
+                                               \\@([____]_____()  請 輸 入 內 容
+                                              _/\|-[____]
+                                             /     /(( )
+                                            /____|'----'
+                                            \____/   
+                                                        " class="Ccont" id="Ccont"></textarea>
                                 </div>
                                 <div class="Csunbmit">
-                                    <label class="Cnick">你的昵称：</label>
-                                    <input class="Cusername" placeholder="你的昵称" id="Cusername"></input>
-                                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                                    <label class="Cnick"></label>
+                                    <input type="hidden"class="Cusername" value="￥&nbsp;{{$good['title']}}♔★♔{{Session::get('name')}}"id="Cusername"></input>
+                                    <button class="submitBtn" onclick="submit_pl(0)">发起❤飞吻</button>
                                 </div>
                             </div>
                             <div class="Corder">
