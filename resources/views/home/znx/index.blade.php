@@ -32,7 +32,7 @@
           <i class="am-badge tpl-badge-danger am-round">1</i>
           @endif
       </td>
-      <td style="width: 65%"><div class="content" style="width: 99%">{{$v['content']}}</div></td>
+      <td style="width: 65%"><a href="/reply/{{$v['id']}}"><div class="content" style="width: 99%">{{$v['content']}}</div></a></td>
       <td style="width: 10%">{{$v['send_name']}}</td>
       <td style="width: 10%">
         <a href="/reply/{{$v['id']}}"><button class="label label-info"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></button></a>
