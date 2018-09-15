@@ -28,7 +28,7 @@ Route::post('/admin/login','AdminController@dologin');
 
 //后台路由
 
-// Route::group(['middleware'=>['login','admin']],function(){
+Route::group(['middleware'=>['login','admin']],function(){
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
@@ -81,7 +81,15 @@ Route::post('/admin/login','AdminController@dologin');
 	//订单
 	//Route::resource('guanggao','GuanggaoController');
 
-// });
+	//站内信
+	Route::resource('message','MessageController');
+	Route::get('/back/{id}/edit','MessageController@back');
+	Route::post('/doback/{id}','MessageController@doback');
+
+	//消息数量
+	Route::get('/htadmin','MessageController@htadmin');
+
+});
 
 
 
@@ -171,3 +179,15 @@ Route::get('auth/callback', 'AuthController@callback');
 
 //markdown发送邮件
 Route::get('sendEmail', 'IndexController@sendEmail');
+
+//用户消息列表
+Route::get('/messages','MessageController@list');
+
+//消息回复页
+Route::get('/reply/{id}','MessageController@reply');
+
+//执行回复
+Route::post('/doreply/{id}','MessageController@doreply');
+
+//用户删除消息
+Route::post('/del/{id}','MessageController@delmessage');
