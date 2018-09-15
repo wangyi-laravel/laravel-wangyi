@@ -9,6 +9,12 @@
     $goods = \App\Good::orderBy('id','desc');
     $good2 = \App\Good::where('cates_id','=','2')->take(3)->get();  
     $good1 = \App\Good::where('cates_id','=','1')->take(3)->get();  
+
+    use \App\Message;
+    use \App\User;
+        $messages1 = Message::where('catch_id',Session('id'))->where('status','0')->count();
+        $messages2 = Message::where('catch_id',0)->where('status','0')->count();
+        $messages = $messages1 + $messages2;
 ?>
 
 <head>
@@ -122,6 +128,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         </div>
                         
+                    </div>
+                    <div class="message" >
+                        <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle style="padding-left: 20px;">
+                            <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
+                                <b><span class="am-icon-comment-o"></span> 消息 
+                                    @if($messages != 0)
+                                    <span class="badge">{{$messages}}</span>
+                                    @endif
+                                </b>
+                            </a>
+                        </li>
                     </div>
                     @endif
                     <div class="clearfix" style="margin-right:0px;"> </div>
