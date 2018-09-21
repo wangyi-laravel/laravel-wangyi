@@ -1,5 +1,4 @@
 @extends('home.jicheng.touti') @section('content')
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <style type="text/css">
   .one{
     width: 1100px;
@@ -14,7 +13,7 @@
 }
 </style>
 <script src="/ueditor/jquery-3.3.1.js"></script>
-
+<hr>
 <div class="one">
   <table class="table table-hover">
     <tr>
