@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/assets/css/admin.css">
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/echarts.min.js"></script>
+    <script src="/ueditor/jquery-3.3.1.js"></script>
+
 </head>
 
 <body data-type="index">
@@ -42,7 +44,7 @@
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="am-icon-comment-o"></span> 消息 
-                        @if($messages != 0)
+                        @if($messages != 0 && $message['catch_id'] != Session::get('id'))
                         <span class="am-badge tpl-badge-danger am-round">
                         {{$messages}}</span>
                         @endif

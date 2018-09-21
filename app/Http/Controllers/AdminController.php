@@ -73,9 +73,9 @@ class AdminController extends Controller
 		// $res = $request->num;
 		
 		$weight = Session::get('weight');
-
 		// 
 		if ($weight == 2) {
+
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 
@@ -87,7 +87,7 @@ class AdminController extends Controller
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight,'niu'=>'1']);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight]);
 			return redirect('/admin')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');

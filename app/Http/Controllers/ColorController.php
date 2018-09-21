@@ -110,6 +110,7 @@ class ColorController extends Controller
         //
         $colors = Color::findOrFail($id);
 
+
         if ($colors->delete()) {
             return back()->with('success','删除成功');
         }else{

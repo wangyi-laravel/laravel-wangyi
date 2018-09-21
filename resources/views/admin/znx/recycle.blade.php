@@ -16,7 +16,7 @@
         </div>
         <a href="/admin/recycle">
             <div style="float: right; font-size: 20px; color: #32C5D2;">
-                <span class="glyphicon glyphicon-piggy-bank"></span><b>回收站(制作中)</b>
+                <span class="glyphicon glyphicon-piggy-bank"></span><b>回收站</b>
             </div>
         </a>
     </div>
@@ -170,4 +170,3 @@
     <div class="tpl-alert"></div>
 </div>
 @endsection
-<!-- ------------------------- -->
