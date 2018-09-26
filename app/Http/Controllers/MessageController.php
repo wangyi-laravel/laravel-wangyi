@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use App\User;
-use Illuminate\Contracts\Session\Session;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -50,7 +50,6 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         //
-        $users = User::where('weight','2')->get();
         $messages = new Message;
         $messages -> content = $request->content;
         $messages -> send_id = $request->send_id;
@@ -59,12 +58,6 @@ class MessageController extends Controller
         if ($request->catch_id) {
             $messages-> catch_id = $request->catch_id;
         }else{
-            foreach ($users as $k => $v) {
-                for ($i=0; $i <= $k; $i++) { 
-                    $messages -> catch_id = $v['id'];
-                    $messages -> save();
-                }
-            }
             $messages->catch_id = 0;
         }
 
@@ -184,7 +177,7 @@ class MessageController extends Controller
         return view('admin.znx.recycle',compact('recycle','messages'));
     }
 
-    /*---------------------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------*/
 
     //用户消息列表
     public function list()

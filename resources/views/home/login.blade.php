@@ -42,10 +42,6 @@
                 </script>
                 <input type="text" name="num" style="height: 40px; border: 0px solid black;">
                 <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">
-                <a class="news-letter " href="#">
-                    <label class="checkbox1">
-                        <input type="checkbox" name="checkbox"><i> </i>Forgot Password</label>
-                </a>
             </div>
             <div class="col-md-6 login-do animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
                 <label class="hvr-sweep-to-top login-sub">

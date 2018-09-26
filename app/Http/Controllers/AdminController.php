@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    //
     /**
      * 后台首页
      */
@@ -70,16 +69,16 @@ class AdminController extends Controller
 		//获取用户的数据
 		$user = User::where('username','=',$request->username)->first();
 		
-		// $res = $request->num;
-		
-		$weight = Session::get('weight');
-		// 
-		if ($weight == 2) {
+		$weight = $user->weight;
+
+
+		//判断登录用户有没有管理员权限
+		if ($weight != 1) {
 
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 
-
+ 		//判断在不在用户表里
 		if(!$user){
 			return back()->with('error','登陆失败!');
 		}

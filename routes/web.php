@@ -88,8 +88,11 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');
-
 	Route::get('/admin/recycle','MessageController@recycle');
+
+
+	//订单管理
+	Route::get('/order/index','AdminOrderController@index');
 
 });
 
@@ -170,6 +173,9 @@ Route::group(['middleware'=>'home'],function(){
 	Route::get('/home/cart_items','GwcController@index');
 	Route::get('/home/cart_items/delete/{id}','GwcController@delete');
 
+	//订单
+	Route::post('/order/TianJia/{id?}','OrderController@TianJia');
+	Route::get('/order/liebiao/{id}','OrderController@liebiao');
 
 	//用户消息列表
 	Route::get('/messages','MessageController@list');
@@ -194,4 +200,3 @@ Route::get('auth/callback', 'AuthController@callback');
 
 //markdown发送邮件
 Route::get('sendEmail', 'IndexController@sendEmail');
-

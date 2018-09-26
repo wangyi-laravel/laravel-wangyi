@@ -15,9 +15,11 @@ class GwcController extends Controller
 
     public function create($id)
     {
+
     	$cart = new Cart_items;
     	// $good = Good::findOrFail($id);
     	$goods = request()->all();
+        
     	
     	$good =Good::find($id);
 
@@ -25,14 +27,14 @@ class GwcController extends Controller
     	$cart->image = $good->image;
     	$cart->price = $good->price;
     	$cart->color = request()->color;
-    	
-    	$cart->size = request()->size;
-    	$cart->user_id = Session::get('id');
+        $cart->good_id = request('id');
 
+    	$cart->size = request()->size;
+    
+    	$cart->user_id = Session::get('id');
 
     	if($cart->save()){
     		return redirect('/home/cart_items')->with('success','添加成功');
-
     	}else{
     		return back()->with('error','添加失败');
     	}
@@ -53,7 +55,7 @@ class GwcController extends Controller
     	$size = Size::all();
 
     	// dd($cart);
-    	return view('home.cart_items.index',compact('cart','colors','size','goods'));
+    	return view('home.cart_items.index',compact('cart','colors','size'));
     }
 
 

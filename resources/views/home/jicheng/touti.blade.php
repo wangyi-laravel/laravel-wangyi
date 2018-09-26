@@ -3,6 +3,7 @@
 <html xmlns:wb="http://open.weibo.com/wb">
 <?php 
     $good = \App\Good::all();
+    $cart = \App\cart_items::all();
     $link = \App\Link::all();
     $setting = \App\Setting::all();
     $cates = \App\Cates::all();
@@ -121,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <img src="images/cart.png" alt="">
                             </h3>
                             </a>
-                            <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                            <!-- <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
 
                             <div class="clearfix" ></div>
 

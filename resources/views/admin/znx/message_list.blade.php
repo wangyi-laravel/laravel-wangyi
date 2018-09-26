@@ -94,7 +94,7 @@
                                     @else
                                         @foreach($user as $u)
                                             @if($v['catch_id'] == $u['id'])
-                                                <div class="username">{{$u['username']}}</div>
+                                                <div class="username" style="width:90px">{{$u['username']}}</div>
                                             @endif
                                         @endforeach
                                     @endif
