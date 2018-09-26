@@ -28,7 +28,7 @@ Route::post('/admin/login','AdminController@dologin');
 
 //后台路由
 
-Route::group(['middleware'=>['login','admin']],function(){
+Route::group(['middleware'=>['admin','login']],function(){
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
@@ -167,6 +167,10 @@ Route::group(['middleware'=>'home'],function(){
 	Route::get('/home/cart_items/{id}','GwcController@create');
 	Route::get('/home/cart_items','GwcController@index');
 	Route::get('/home/cart_items/delete/{id}','GwcController@delete');
+
+	//订单
+	Route::post('/order/TianJia/{id?}','OrderController@TianJia');
+	Route::get('/order/liebiao/{id}','OrderController@liebiao');
 });
 //用户条款
 Route::get('/terms','ShouyeController@terms');

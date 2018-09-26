@@ -1,5 +1,4 @@
 @extends('home.jicheng.touti') @section('content')
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/sj/js/jquery.cxselect.js"></script>
 <style type="text/css">
 table.dataintable {
@@ -71,40 +70,42 @@ table.dataintable tr:nth-child(even) {
             </form>
         </div>
         <div class="col-md-4 contact-grids">
-            <div class=" contact-grid animated wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-                <div class="contact-grid1">
-                    <div class="contact-grid2 ">
-                        <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-grid3">
-                        <h4>Address</h4>
-                        <p>12K Street, 45 Building Road <span>New York City.</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class=" contact-grid animated wow fadeInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                <div class="contact-grid1">
-                    <div class="contact-grid2 contact-grid4">
-                        <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-grid3">
-                        <h4>Call Us</h4>
-                        <p>+1234 758 839<span>+1273 748 730</span></p>
+                @foreach($setting as $v)
+                <div class=" contact-grid animated wow fadeInLeft" data-wow-delay=".5s">
+                    <div class="contact-grid1">
+                        <div class="contact-grid2 ">
+                            <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="contact-grid3">
+                            <h4>Address</h4>
+                            <p>{{$v['address']}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class=" contact-grid animated wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                <div class="contact-grid1">
-                    <div class="contact-grid2 contact-grid5">
-                        <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-grid3">
-                        <h4>Email</h4>
-                        <p><a href="contactto:info@example.com">info@example1.com</a><span><a href="contactto:info@example.com">info@example2.com</a></span></p>
+                <div class=" contact-grid animated wow fadeInUp" data-wow-delay=".5s">
+                    <div class="contact-grid1">
+                        <div class="contact-grid2 contact-grid4">
+                            <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+                        </div>
+                        <div class="contact-grid3">
+                            <h4>Call Us</h4>
+                            <p>{{$v['phone']}}</p>
+                        </div>
                     </div>
                 </div>
+                <div class=" contact-grid animated wow fadeInRight" data-wow-delay=".5s">
+                    <div class="contact-grid1">
+                        <div class="contact-grid2 contact-grid5">
+                            <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="contact-grid3">
+                            <h4>Email</h4>
+                            <p>{{$v['email']}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
-        </div>
     </div>
 </div>
 @endsection

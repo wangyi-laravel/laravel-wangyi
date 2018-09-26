@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    //
     /**
      * 后台首页
      */
@@ -70,16 +69,15 @@ class AdminController extends Controller
 		//获取用户的数据
 		$user = User::where('username','=',$request->username)->first();
 		
-		// $res = $request->num;
-		
-		$weight = Session::get('weight');
+		$weight = $user->weight;
 
-		// 
-		if ($weight == 2) {
+
+		//判断登录用户有没有管理员权限
+		if ($weight != 1) {
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 
-
+ 		//判断在不在用户表里
 		if(!$user){
 			return back()->with('error','登陆失败!');
 		}
@@ -87,7 +85,7 @@ class AdminController extends Controller
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight,'niu'=>'1']);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight]);
 			return redirect('/admin')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');

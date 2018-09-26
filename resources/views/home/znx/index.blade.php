@@ -1,5 +1,4 @@
 @extends('home.jicheng.touti') @section('content')
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <style type="text/css">
   .one{
     width: 1100px;
@@ -14,7 +13,7 @@
 }
 </style>
 <script src="/ueditor/jquery-3.3.1.js"></script>
-
+<hr>
 <div class="one">
   <table class="table table-hover">
     <tr>
@@ -32,7 +31,7 @@
           <i class="am-badge tpl-badge-danger am-round">1</i>
           @endif
       </td>
-      <td style="width: 65%"><div class="content" style="width: 99%">{{$v['content']}}</div></td>
+      <td style="width: 65%"><a href="/reply/{{$v['id']}}"><div class="content" style="width: 99%">{{$v['content']}}</div></a></td>
       <td style="width: 10%">{{$v['send_name']}}</td>
       <td style="width: 10%">
         <a href="/reply/{{$v['id']}}"><button class="label label-info"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></button></a>
