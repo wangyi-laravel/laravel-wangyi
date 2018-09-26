@@ -37,9 +37,9 @@ body{
         <table style="background: #FBFCFF">
             <tr>
                 <td id="one" style="font-size:12px">
-                    <div style="float: left">
+                    <div style="float: left;">
                         <img src="{{$orders['image']}}" width="50" height="60">
-                        <div style="float: right">
+                        <div style="float: right;">
                             {{$orders['title']}}
                             <br>
                             <a href="https://xiaobao.taobao.com/contract/item_service.htm?spm=a210c.1.0.0.79791debHt500H&scm=1010.100.100.1&contract_id=7d&item_id=574932060457"><img src="//img.alicdn.com/tps/i1/T1EQA5FpVgXXceOP_X-16-16.jpg"></a>
@@ -55,10 +55,10 @@ body{
                     <div>颜色:{{$orders['color']}}</div>
                     <div>尺码:{{$orders['size']}}</div>
                 </td>
-                <td>{{$orders['price']}}</td>
+                <td style="color:red;font-size: 21px;font-weight:bold">{{$orders['price']}}</td>
                 <td>{{$orders['amount']}}</td>
                 <td>无优惠</td>
-                <td>{{$orders['prices']}}</td>
+                <td class="money" style="color:red;font-size: 21px;font-weight:bold">{{$orders['prices']}}</td>
             </tr>
         </table>
         <table class="col-md-12 qwe" style="margin-top: 30px;background: #F2F7FF">
@@ -70,7 +70,7 @@ body{
                 </td>
                 <td>
                     <div style="padding: 0px;width: 176px;float: left;font-size:12px;line-height: 50px">运送方式:&nbsp;&nbsp;&nbsp;普通配送快递 免邮</div>
-                    <span style="color: red;float: right;line-height: 50px">12312</span>
+                    <span style="color: red;float: right;line-height: 50px;font-size: 21px;font-weight:bold">0.00</span>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,9 @@ body{
             </tr>
             <tr>
                 <td colspan="2">
-                    <div style="line-height: 50px; font-size: 15px;width:130px;margin-left: 800px;">店铺合计(含运费):&nbsp;&nbsp;&nbsp;</div>
+                    <div style="line-height: 50px; font-size: 15px;width:250px;margin-left: 800px;">店铺合计(含运费):&nbsp;&nbsp;&nbsp;
+                    <span style="font-size: 35px;color: red" class="dd">123</span>
+                </div>
                 </td>
             </tr>
         </table>
@@ -109,6 +111,8 @@ body{
             return '给卖家留言:<textarea>11</textarea>';
         });
     })
+    var money = $('.money').html();
+    $('.dd').html(money);
     </script>
 </form>
 @endsection

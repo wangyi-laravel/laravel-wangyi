@@ -64,8 +64,7 @@
                 @foreach($cart as $v) @if($v['user_id'] == session('id')) {{csrf_field()}}
                 <tr class="cross">
                     <td class="t-data">
-                        <input type="checkbox" name="order[]" class="order" value="{{$v['good_id']}}">
-                        <input type="hidden" name="{{$v['good_id']}}" class="order" value="{{$v['id']}}">
+                        <input type="checkbox" name="order[]" class="order" value="{{$v['good_id']}}-{{$v->id}}">
                     </td>
                     <td class="ring-in t-data">
                         <a href="single.html" class="at-in">

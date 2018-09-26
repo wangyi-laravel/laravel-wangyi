@@ -88,8 +88,10 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');
-
 	Route::get('/admin/recycle','MessageController@recycle');
+
+	//订单管理
+	Route::get('/order/index','AdminOrderController@index');
 
 });
 
