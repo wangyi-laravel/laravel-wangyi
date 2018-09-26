@@ -17,14 +17,14 @@
 <div class="one">
   <table class="table table-hover">
     <tr>
-      <th></th>
-      <th>消息内容</th>
-      <td>来自xxx</td>
-      <td>操作</td>
-      <td>消息时间</td>
+      <th style="width:3%"></th>
+      <th style="width: 65%">消息内容</th>
+      <td style="width: 10%">来自</td>
+      <td style="width: 10%">操作</td>
+      <td style="float:left; width: 62.5px">消息时间</td>
     </tr>
     @foreach($messages as $v)
-    @if($v['catch_id'] == Session::get('id') || $v['catch_id'] == 0)
+    @if($v['catch_id'] == Session::get('id') || $v['catch_id'] == 0 || $v['send_id'] == Session::get('id'))
     <tr>
       <td style="width:3%" name="status" >
           @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
