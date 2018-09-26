@@ -74,6 +74,7 @@ class AdminController extends Controller
 
 		//判断登录用户有没有管理员权限
 		if ($weight != 1) {
+
 			return back()->with('error','您没有权限,请先联系管理员');
 		}
 

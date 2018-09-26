@@ -12,13 +12,6 @@ $('#myTabs a:first').tab('show') // Select first tab
 $('#myTabs a:last').tab('show') // Select last tab
 $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
 </style>
-<div class="banner-top">
-    <div class="container">
-        <h2 class="animated wow fadeInLeft" data-wow-delay=".5s">Single</h2>
-        <h3 class="animated wow fadeInRight" data-wow-delay=".5s"><a href="index.html">Home</a><label>/</label>Single</h3>
-        <div class="clearfix"> </div>
-    </div>
-</div>
 <!--content-->
 <div class="product">
     <div class="container">

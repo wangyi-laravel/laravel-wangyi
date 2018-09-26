@@ -9,8 +9,7 @@
 </style>
 <div class="banner-top">
     <div class="container">
-        <h2 class="animated wow fadeInLeft" data-wow-delay=".5s">Products</h2>
-        <h3 class="animated wow fadeInRight" data-wow-delay=".5s"><a href="index.html">Home</a><label>/</label>Products<label>/</label>Women's</h3>
+        <h2 class="animated wow fadeInLeft" data-wow-delay=".5s">商品列表</h2>
         <div class="clearfix"> </div>
     </div>
 </div>

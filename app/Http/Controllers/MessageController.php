@@ -20,7 +20,7 @@ class MessageController extends Controller
         //
         $messages = Message::orderBy('id','desc')
         ->where('content', 'like','%'.request()->keywords.'%')
-        ->paginate(10);
+        ->paginate(2);
         return view('admin.znx.message_list',compact('messages'));
     }
 
@@ -32,7 +32,9 @@ class MessageController extends Controller
     public function create()
     {
         //
-        $users = User::all();
+        $users = User::orderBy('id')
+        ->where('username','like','%'.request()->keywords.'%')
+        ->get();
         $count = $users->count();
         // dd($count);
         return view('admin/znx.message',compact('count','users'));
@@ -136,6 +138,7 @@ class MessageController extends Controller
     {
         //
         $messages = Message::findOrFail($id);
+        
 
         if ($messages->delete()) {
             return back()->with('success','删除成功');
@@ -172,7 +175,20 @@ class MessageController extends Controller
         }
     }
 
-    /*-------------------------------------*/
+
+    //后台消息回收站
+    public function recycle()
+    {
+        $recycle = Message::onlyTrashed()
+                ->where('airline_id', 1)
+                ->get();
+        $messages = Message::orderBy('id','desc')
+        ->where('content', 'like','%'.request()->keywords.'%')
+        ->paginate(5);
+        return view('admin.znx.recycle',compact('recycle','messages'));
+    }
+
+    /*---------------------------------------------------------------*/
 
     //用户消息列表
     public function list()

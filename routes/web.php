@@ -28,7 +28,7 @@ Route::post('/admin/login','AdminController@dologin');
 
 //后台路由
 
-Route::group(['middleware'=>['admin','login']],function(){
+Route::group(['middleware'=>['login','admin']],function(){
 
 	//后台主页
 	Route::get('/admin','AdminController@index');
@@ -88,6 +88,8 @@ Route::group(['middleware'=>['admin','login']],function(){
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');
+
+	Route::get('/admin/recycle','MessageController@recycle');
 
 });
 
@@ -171,6 +173,18 @@ Route::group(['middleware'=>'home'],function(){
 	//订单
 	Route::post('/order/TianJia/{id?}','OrderController@TianJia');
 	Route::get('/order/liebiao/{id}','OrderController@liebiao');
+
+	//用户消息列表
+	Route::get('/messages','MessageController@list');
+
+	//消息回复页
+	Route::get('/reply/{id}','MessageController@reply');
+
+	//执行回复
+	Route::post('/doreply/{id}','MessageController@doreply');
+
+	//用户删除消息
+	Route::post('/del/{id}','MessageController@delmessage');
 });
 //用户条款
 Route::get('/terms','ShouyeController@terms');
@@ -183,15 +197,3 @@ Route::get('auth/callback', 'AuthController@callback');
 
 //markdown发送邮件
 Route::get('sendEmail', 'IndexController@sendEmail');
-
-//用户消息列表
-Route::get('/messages','MessageController@list');
-
-//消息回复页
-Route::get('/reply/{id}','MessageController@reply');
-
-//执行回复
-Route::post('/doreply/{id}','MessageController@doreply');
-
-//用户删除消息
-Route::post('/del/{id}','MessageController@delmessage');
