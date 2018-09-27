@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('shi')->comment('市')->nullable();
             $table->string('xian')->comment('县')->nullable();
             $table->timestamps();
+            
         });
     }
 
