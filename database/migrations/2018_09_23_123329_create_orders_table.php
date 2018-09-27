@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('size')->comment('商品尺寸');
             $table->string('site')->comment('地址');
             $table->string('user_id')->comment('用户ID');
-            $table->Integer('amount')->comment('数量');
+            $table->Integer('amount')->comment('数量')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

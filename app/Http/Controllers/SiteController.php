@@ -53,8 +53,9 @@ class SiteController extends Controller
         $site -> shi = $request->shi;
         $site -> qu = $request->qu;
         $site -> address = $request->address;
-
+        $site -> user_id = session('id');
         if($site -> save()){
+
             return redirect('/site')->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');;

@@ -160,7 +160,6 @@ class GoodController extends Controller
         if ($request->hasFile('image')) {
             $goods->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
-
         //插入
         if ($goods -> save()) {
 

@@ -43,7 +43,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                             <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive " src="{{$v['image']}}" alt="" width="200px" height="400px"></a>
                         </div>
                         <div class=" fashion-grid1">
-                            <h6 class="best2"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
+                            <h6 class="chaochu"><a href="/home/xiang?good_id={{$v['id']}}">{{$v['title']}}</a></h6>
                             <span class=" price-in1">{{$v['price']}}</span>
                         </div>
                         <div class="clearfix"> </div>

@@ -128,7 +128,7 @@ body{
     <script type="text/javascript">
     $('.zb').click(function() {
         $(this).html(function() {
-            return '给卖家留言:<textarea>11</textarea>';
+            return '给卖家留言:<textarea>请留言</textarea>';
         });
     })
     var money = $('.money').html();
