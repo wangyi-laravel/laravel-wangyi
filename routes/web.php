@@ -84,6 +84,7 @@ Route::group(['middleware'=>['login','admin']],function(){
 	//站内信
 	Route::resource('message','MessageController');
 	Route::get('/back/{id}/edit','MessageController@back');
+	Route::get('/look/{id}/edit','MessageController@look');
 	Route::post('/doback/{id}','MessageController@doback');
 
 	//消息数量

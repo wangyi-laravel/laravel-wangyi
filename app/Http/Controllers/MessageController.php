@@ -164,6 +164,16 @@ class MessageController extends Controller
         }
     }
 
+    //查看消息
+    public function look($id)
+    {
+        //
+        $messages = Message::findorFail($id);
+        $messages -> status = '1'; 
+        $messages ->save();
+        return view('admin.znx.look',compact('messages'));
+    }
+
 
     //后台消息回收站
     public function recycle()

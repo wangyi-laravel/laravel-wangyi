@@ -4,13 +4,7 @@
 <script type="text/javascript" src="/znx/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="/znx/js/qna.js"></script>
 <script type="text/javascript" src="/znx/js/pager.js"></script>
-<!-- <style type="text/css">
-    .mainContainner{
-        width: 1100px;
-        margin: 40px 170px;
-    }
-</style> -->
-<!-- 开始 -->
+
 <form action="/doback/{{$message['id']}}" method="post">
     {{csrf_field()}} 
     <div class="mainContainner">

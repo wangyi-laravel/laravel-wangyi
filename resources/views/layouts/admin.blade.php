@@ -47,7 +47,7 @@
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="am-icon-comment-o"></span> 消息 
-                        @if($messages['status'] == 0 )
+                        @if($messages['status'] == 0 && $mess !=0)
                         <span class="am-badge tpl-badge-danger am-round">{{$mess}}</span>
                         @endif
                         </span>
