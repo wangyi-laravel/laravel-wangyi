@@ -91,7 +91,7 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 	Route::get('/admin/recycle','MessageController@recycle');
 
-	
+
 	//订单管理
 	Route::get('/orders/index','AdminOrderController@index');
 	Route::post('/orders/{id}','AdminOrderController@delete');

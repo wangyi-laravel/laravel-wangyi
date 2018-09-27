@@ -42,16 +42,16 @@ class Shouyecontroller extends Controller
         
 
         $this->validate($request, [
-        'username' => 'required|regex:/^[a-zA-Z0-9_-]{2,12}$/',
+        'username' => 'required|regex:/^\w{2,12}$/',
         ]);          
         
 
 
       	$user = new User;
       	$user -> username = $request->username;
-        $user-> password = Hash::make($request ->password);
+        $user -> password = Hash::make($request ->password);
         $user -> name = $request->name;
-        $user ->image = url('http://img5.imgtn.bdimg.com/it/u=415293130,2419074865&fm=27&gp=0.jpg');
+        $user -> image = url('http://www.imeitou.com/uploads/allimg/180913/3-1P913113U6-lp.jpg');
       	if($user -> save()){
             return redirect('/login')->with('success','註冊成功');
         }else{

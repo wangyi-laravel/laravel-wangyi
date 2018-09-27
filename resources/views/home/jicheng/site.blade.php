@@ -65,7 +65,32 @@ table.dataintable tr:nth-child(even) {
                     <h4>邮政编码</h4>
                     <p class="grid1">
                         <input type="text" placeholder="请输入6位邮政编码" minlength="6" maxlength="6" required="" name="mail">
+                        <span></span>
                     </p>
+                    <script>
+                    //密码
+                    $('input[name=mail]').focus(function(){
+
+                    }).blur(function(){
+                        $(this).removeClass('active');
+                        //获取用户的输入值
+                        var v = $(this).val();
+                        //正则
+                        var reg = /^\d{6}$/;
+
+                        if(!reg.test(v)) {
+                            //边框
+                            $(this).addClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:red">格式不正确!!</span>').show();
+                        }else{
+                            //边框
+                            $(this).removeClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+                        }
+                    })
+                    </script>
                 </div>
                 <div class="contact-form2">
                     <h4>收货人姓名</h4>
@@ -73,7 +98,32 @@ table.dataintable tr:nth-child(even) {
                 </div>
                 <div class="contact-form2">
                     <h4>手机号码</h4>
-                    <input type="number" placeholder="请输入11位手机号" maxlength="11" required="" name="call">
+                    <input type="text" placeholder="请输入11位手机号" maxlength="11" required="" name="call">
+                    <span></span>
+                    <script>
+                    //密码
+                    $('input[name=call]').focus(function(){
+
+                    }).blur(function(){
+                        $(this).removeClass('active');
+                        //获取用户的输入值
+                        var v = $(this).val();
+                        //正则
+                        var reg = /^\d+$/;
+
+                        if(!reg.test(v)) {
+                            //边框
+                            $(this).addClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:red">格式不正确!!</span>').show();
+                        }else{
+                            //边框
+                            $(this).removeClass('error');
+                            //文字提醒
+                            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+                        }
+                    })
+                    </script>
                 </div>
                 <input type="submit" value="Submit">
             </form>
