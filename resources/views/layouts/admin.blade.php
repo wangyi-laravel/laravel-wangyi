@@ -96,7 +96,7 @@
                 <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">{{Session::get('username')}}</span><span class="tpl-header-list-user-ico"><img src="{{Session::get('image')}}"></span>
+                        <span class="tpl-header-list-user-nick">{{Session::get('name')}}</span><span class="tpl-header-list-user-ico"><img src="{{Session::get('image')}}"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="/admin/set"><span class="am-icon-cog"></span> 设置</a></li>
