@@ -252,31 +252,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--content-->
     <div class="content">
         <div class="content-head">
-            <div class="col-md-12 col-m1 animated wow fadeInLeft" data-wow-delay=".1s">
-                <div class="col-1">
-                    <div class="col-md-6">
-                        <a href="https://clot.com/"><img src="/qiantai/images/CLOT.jpg" class="img-responsive" alt="" width="450px" height="300px">
-                            </a></div>
-                    <div class="col-md-6 col-p">
-                        <h5>CLOT</h5>
-                        <p>CLOT是香港著名艺人陈冠希创办的凝结集团（CLOT FAMILY）的简称及该公司旗下潮流服装品牌名称。凝结集团是一个LIFESTYLE的公司，由香港著名艺人陈冠希创办于2003年6月。主要以创作服装（包括CLOT品牌服装以及在香港的JUICE店铺）、策划PARTY、帮助服装公司做Consultant等。CLOT品牌服装是中国第一潮牌，在全球潮流品牌中占有一席之地。</p>
-                        <a href="https://clot.com/" class="shop" data-hover="Shop Now">Shop Now</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <!-- <div class="col-1">
-                    <div class="col-md-6 col-p">
-                        <h5>For All Collections</h5>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                        <a href="single.html" class="shop" data-hover="Shop Now">Shop Now</a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="single.html"><img src="/qiantai/images/pi.jpg" class="img-responsive" alt="">
-                            </a></div>
-                    <div class="clearfix"> </div>
-                </div> -->
-            </div>
-            <div class="col-md-6 col-m2 animated wow fadeInRight" data-wow-delay=".1s">
+            <div class="col-md-6 col-m1 animated wow fadeInLeft" data-wow-delay=".1s" style="height: 500px">
+                        <div class="col-1">
+                        <div class="col-md-6 col-2">
+                            <img src="/qiantai/images/woman.jpg" class="img-responsive" alt="" style="width: 380px;height: 255px">
+                            </div>
+                            <div class="col-md-6 col-p">
+                                <h5>完美女性</h5>
+                                <p>我们希望每一个女性都能在这里找到最适合自己东西,我们会尽心尽力更新我们的'装备'.
+                                来武'装'大师,成就完美女性!</p>
+                                @foreach($cates as $v) @if($v['parent_id'] == 0 && $v['id'] == 2)
+                <a href="/home/biao?cates_id={{$v['id']}}"> @endif @endforeach 开始武'装'</a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="col-1">
+                        <div class="col-md-6 col-p">
+                                <h5>潮流型男</h5>
+                                <p>越来越多的男性被冠以'油腻'的称号,这能忍嘛!来我们武'装'大师吧
+                                !让你摆脱油腻的称号,
+                        重回自信的巅峰!</p>
+                                @foreach($cates as $v) @if($v['parent_id'] == 0 && $v['id'] == 1)
+                <a href="/home/biao?cates_id={{$v['id']}}"> @endif @endforeach 开始武'装'</a>
+                            </div>
+                        <div class="col-md-6 col-2">
+                            <img src="/qiantai/images/man.jpg" class="img-responsive" alt="" style="width: 380px;height: 225px">
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        </div>
+            <div class="col-md-6 col-m2 animated wow fadeInRight" data-wow-delay=".1s" style="height: 500px">
                 <!---->
                 <!-- requried-jsfiles-for owl -->
                 <link href="/qiantai/css/owl.carousel.css" rel="stylesheet">
@@ -295,24 +300,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </script>
                 <!-- //requried-jsfiles-for owl -->
                 <!-- start content_slider -->
-                <!-- <div id="owl-demo" class="owl-carousel">
+                <div id="owl-demo" class="owl-carousel">
+                    @foreach($good as $v)
                     <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc.png" alt="" /></a>
-                        <a href="single.html" class="shop-2">Shop Now</a>
+                        <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive" src="{{$v['image']}}" alt="" style="width: 153px; height: 405px" /></a>
                     </div>
-                    <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/ppc1.png" alt="" /></a>
-                        <a href="single.html" class="shop-2">Shop Now</a>
-                    </div>
-                    <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb.png" alt="" /> </a>
-                        <a href="single.html" class="shop-2">Shop Now</a>
-                    </div>
-                    <div class="item">
-                        <a href="single.html"><img class="img-responsive" src="/qiantai/images/bb1.png" alt="" /></a>
-                        <a href="single.html" class="shop-2">Shop Now</a>
-                    </div>
-                </div> -->
+                    @endforeach
+                </div>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -338,8 +332,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class=" grid-product ">
                         <figure>
                             <a href="/home/xiang?good_id={{$v['id']}}">
-                                <div class="grid-img">
-                                    <img src="{{$v['image']}}" class="img-responsive" width="1000" alt="">
+                                <div class="grid-img" style="width:150px; height:300px">
+                                    <img src="{{$v['image']}}" class="img-responsive" width="1000" alt="" style="width:150px; height:300px">
 
                                 </div>
                             </a>
