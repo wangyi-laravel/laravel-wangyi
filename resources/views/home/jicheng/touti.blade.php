@@ -199,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="nbs-flexisel-item" style="width: 443px;">
                             <div class="banner-grid">
                                 <h2 class="chaochu">新品推荐</h2>
-                                <div class="wome">
+                                <div class="wome" style="width:250px; height: 400px">
                                     <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive" src="{{$v['image']}}" alt="">
                                 </a>
                                     <div class="women simpleCart_shelfItem">
@@ -338,6 +338,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="/home/xiang?good_id={{$v['id']}}">
                                 <div class="grid-img">
                                     <img src="{{$v['image']}}" class="img-responsive" width="1000" alt="">
+
                                 </div>
                             </a>
                         </figure>
@@ -365,8 +366,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class=" grid-product ">
                         <figure>
                             <a href="/home/xiang?good_id={{$v['id']}}">
-                                <div class="grid-img">
-                                    <img src="{{$v['image']}}" class="img-responsive" alt="">
+                                <div class="grid-img" style="width:150px; height:300px">
+                                    <img src="{{$v['image']}}" class="img-responsive" alt="" style="width:150px; height:300px">
                                 </div>
                             </a>
                         </figure>
@@ -431,7 +432,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>联系我们</h3>
                     <ul>
                         <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x-Pw8fDx9-f18Ie2tumkqKo">{{$v['email']}}</a></li>
+                        <li class="foot-mid"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=u4KMjo6Oio_IjvvKypXY1NY" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png"/></a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>
