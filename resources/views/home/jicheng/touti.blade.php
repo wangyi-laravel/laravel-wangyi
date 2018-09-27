@@ -202,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="banner-grid">
                                 <h2 class="chaochu">新品推荐</h2>
                                 <div class="wome" style="width:250px; height: 400px">
-                                    <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive" src="{{$v['image']}}" alt="">
+                                    <a href="/home/xiang?good_id={{$v['id']}}"><img class="img-responsive" src="{{$v['image']}}" alt="" style="width:185px; height: 200px">
                                 </a>
                                     <div class="women simpleCart_shelfItem">
                                         <a href="#"><img src="/qiantai/images/ll.png" alt=""></a>
