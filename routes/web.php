@@ -93,6 +93,8 @@ Route::group(['middleware'=>['login','admin']],function(){
 	Route::get('/restore/{id}','MessageController@restore');
 	//彻底删除消息
 	Route::get('/del/{id}','MessageController@dele');
+	//标为未读
+	Route::get('/noread/{id}','MessageController@noread');
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');

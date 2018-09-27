@@ -110,6 +110,8 @@ class MessageController extends Controller
         $messages -> send_id = $request->send_id;
         $messages -> send_name = $request->send_name;
 
+        $messages -> status = '0'; 
+
         if ($messages -> save()) {
             return redirect('/message')->with('success', '更新成功');
         }else{
@@ -188,6 +190,8 @@ class MessageController extends Controller
     public function restore($id)
     {
         $recycle = Message::onlyTrashed()->findorFail($id);
+        $recycle -> status = '1'; 
+        $recycle ->save();
         if ($recycle -> restore()) {
             return redirect('/message')->with('success', '恢复成功');
         }else{
@@ -206,7 +210,21 @@ class MessageController extends Controller
         }
     }
 
-    /*---------------------------------------------------------------------------------------*/
+    //设置为未读
+    public function noread(Request $request,$id)
+    {
+        $messages = Message::findOrFail($id);
+
+        $messages -> status = '0'; 
+
+        if ($messages -> save()) {
+            return redirect('/message')->with('success', '设置成功');
+        }else{
+            return back()->with('error', '设置失败');
+        }
+    }
+
+    /*--------------------------------------↓前台用户↓-------------------------------------------------*/
 
     //用户消息列表
     public function list()
