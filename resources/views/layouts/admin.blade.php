@@ -37,33 +37,54 @@
 
                 use \App\Message;
                 use \App\User;
-                    $messages = Message::where('catch_id',Session('id'))->where('status','0')->count();
-                    $contents = Message::take(2)->where('catch_id',Session('id'))->get();
+                    $messages = Message::where('catch_id',Session('id'))->count();
+                    $contents = Message::orderby('id','desc')->where('catch_id',Session('id'))->take(2)->get();
+                    $user = User::all();
+
                 ?> 
                 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="am-icon-comment-o"></span> 消息 
-                        @if($messages != 0 && $message['catch_id'] != Session::get('id'))
-                        <span class="am-badge tpl-badge-danger am-round">
-                        {{$messages}}</span>
+                        @if($messages != 0 && $messages['catch_id'] != Session::get('id'))
+                        <span class="am-badge tpl-badge-danger am-round">{{$messages}}</span>
                         @endif
                         </span>
                     </a>
                     <ul class="am-dropdown-content tpl-dropdown-content">
                         <li class="tpl-dropdown-content-external">
-                            <h3>你有 <span class="tpl-color-danger">{{$messages}}</span> 条新消息</h3><a href="/message">全部</a></li>
+                            <h3>你有 <span class="tpl-color-danger">{{$messages}}</span> 条新消息</h3><a href="/message">查看全部</a></li>
                         <li>
                             @foreach($contents as $v)
                             <a href="#" class="tpl-dropdown-content-message">
-                                <span class="tpl-dropdown-content-photo">
-                                    <img src="{{$v['image']}}" alt=""> 
-                                </span>
-                                <span class="tpl-dropdown-content-subject">
-                                    <span class="tpl-dropdown-content-from">  </span>
-                                    <span class="tpl-dropdown-content-time">10分钟前 </span>
-                                </span>
-                                <span class="tpl-dropdown-content-font"> {{$v['content']}} </span>
+                                @foreach($user as $u)
+                                    @if($v['send_id'] == $u['id'])
+                                    <span class="tpl-dropdown-content-photo">
+                                        <img src="{{$u['image']}}" alt=""> 
+                                    </span>
+                                    <span class="tpl-dropdown-content-subject">
+                                        <span class="tpl-dropdown-content-from">  </span>
+                                        <span class="tpl-dropdown-content-time">
+                                        <?php 
+                                            $catime = strtotime($v['created_at']);
+                                            $time = time();
+                                            $ago = $time - $catime;
+                                            $ago1 = date('i',$ago);
+                                            if ($ago1 > 60) {
+                                                echo $v['created_at'];
+                                            }else{
+                                                if ($ago < 1) {
+                                                    echo '刚刚';
+                                                }
+                                                echo $ago1.'分钟之前';
+                                            }
+                                            
+                                         ?>
+                                        </span>
+                                    </span>
+                                    <span class="tpl-dropdown-content-font"> {{$v['content']}} </span>
+                                    @endif
+                                @endforeach
                             </a>
                             @endforeach
                         </li>

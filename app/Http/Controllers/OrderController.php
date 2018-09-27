@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Good;
 use App\Order;
+use App\Site;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -11,9 +12,9 @@ class OrderController extends Controller
     //将购物车数据加到订单页里
     public function TianJia(Request $request)
     {
+        
         # code...
         $arr = explode('-',$request->order[0]);
-        // dd($arr);
         $good_id = $arr[0];
         $id = $arr[1];
         
@@ -45,14 +46,15 @@ class OrderController extends Controller
     public function liebiao($id)
     {
         # code...
+        $sites = Site::all();
         $orders = Order::find($id);
-        return view('home.order.index',compact('orders'));
+        return view('home.order.index',compact('orders','sites'));
     }
 
-    public function chengnuo()
-    {
-    	return view('home.order.chengnuo');
-    }
+    // public function chengnuo()
+    // {
+    // 	return view('home.order.chengnuo');
+    // }
 
     
 }

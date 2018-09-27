@@ -25,9 +25,9 @@
             <div class="am-u-sm-12 am-u-md-6">
                 <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                        <a href="/message/create">
+                        <!-- <a href="/message/create">
                             <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -47,23 +47,19 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-                            <td style="width:3%"></td>
+
                             <td style="width:3%">id</td>
                             <td style="width:35%">消息内容</td>
                             <td style="width:8%">发送人id</td>
                             <td style="width:10%">发送人昵称</td>
                             <td style="width:8%">接收人id</td>
                             <td style="width:14%">发送时间</td>
-                            <td style="width:14%">修改时间</td>
+
                             <td>&nbsp;&nbsp;操作</td>
                         </tr>
-                        @foreach($messages as $v)
+                        @foreach($recycles as $v)
                         <tr>
-                            <td style="width:3%" class="click" name="status" >
-                                @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
-                                <i class="am-badge tpl-badge-danger am-round">1</i>
-                                @endif
-                            </td>
+
                             <td style="width:3%">{{$v['id']}}</td>
                             <td style="width:40%">
                                 @if($v['catch_id'] == Session::get('id'))
@@ -84,7 +80,7 @@
                                 @endif
                             </td>
                             <td style="width:14%">{{$v['created_at']}}</td>
-                            <td style="width:14%">{{$v['updated_at']}}</td>
+
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
@@ -104,11 +100,7 @@
                         @endforeach
                     </table>
                 </div>
-                <!-- <script type="text/javascript">
-                    if ($('.a').html() == 0) {
-                        $('.a').html("全员消息");
-                    }
-                </script> -->
+
                 <style>
                 .pagination {
                     padding-left: 0;

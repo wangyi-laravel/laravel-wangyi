@@ -56,7 +56,7 @@ class LoginController extends Controller
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'image'=>$user->image,'name'=>$user->name,]);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'image'=>$user->image,'name'=>$user->name,'created_at'=>$user->created_at]);
 			return redirect('/')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');

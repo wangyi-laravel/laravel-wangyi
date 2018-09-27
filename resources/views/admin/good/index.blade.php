@@ -76,7 +76,7 @@
                             </td>
                             <td style="width:3%"><div style="width:95%">{{$v['id']}}</div></td>
                             <td style="width:10%"><div class="title" style="width:90%">{{$v['title']}}</div></td>
-                            <td style="width:10%"><img src="{{$v['image']}}" width="80"></td>
+                            <td style="width:10%"><img src="{{$v['image']}}" width="40"></td>
                             <td style="width:40%"><div class="miaoshu"  style="width:95%">{{$v['miaoshu']}}</div></td>
                             <td style="width:8%"><div style="width: 90%">{{$v['price']}}</div></td>
                             <td style="width:5%"><div style="width: 80%">{{$v['jifen']}}</div></td>

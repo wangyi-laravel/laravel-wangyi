@@ -114,32 +114,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </div>
                     @if(Session::has('id'))
-                    <div class="header-right2">
-                        <div class="cart box_1">
-                            <a href="/home/cart_items">
-                                <h3> <div class="total">
-                                <span class="simpleCart_total">$140.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">1</span> items)</div>
-                                <img src="images/cart.png" alt="">
-                            </h3>
+                    <div class="message" >
+                        <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle style="padding-left: 20px;">
+                            <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
+                                <b><span class="glyphicon glyphicon-shopping-cart"></span> 购物车 
+                                   
+                                </b>
                             </a>
-                            <!-- <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
-
-                            <div class="clearfix" ></div>
-
-                        </div>
-                        
+                        </li>
                     </div>
                     <div class="message" >
                         <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle style="padding-left: 20px;">
                             <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
                                 <b><span class="am-icon-comment-o"></span> 消息 
                                     @if($messages != 0)
-                                    <span class="badge">{{$messages}}</span>
+                                    <span class="am-badge tpl-badge-danger am-round">{{$messages}}</span>
                                     @endif
                                 </b>
                             </a>
                         </li>
                     </div>
+                    
+
                     @endif
                     <div class="clearfix" style="margin-right:0px;"> </div>
                 </div>

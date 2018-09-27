@@ -8,6 +8,13 @@
     overflow: hidden;
     width: 97%;
 }
+.username {
+    width: 120px;
+    white-space: nowrap;/*强制一行显示*/
+    overflow:hidden;/*超出部分隐藏*/
+    text-overflow: ellipsis;/*最后添加省略号*/
+
+}
 </style>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
@@ -52,55 +59,69 @@
                             <td style="width:35%">消息内容</td>
                             <td style="width:8%">发送人id</td>
                             <td style="width:10%">发送人昵称</td>
-                            <td style="width:8%">接收人id</td>
-                            <td style="width:14%">发送时间</td>
-                            <td style="width:14%">修改时间</td>
-                            <td>&nbsp;&nbsp;操作</td>
+                            <td style="width:10%">接收人昵称</td>
+                            <td style="width:10%">发送时间</td>
+                            <td style="width:10%">修改时间</td>
+                            <td style="width:8%">操作</td>
                         </tr>
                         @foreach($messages as $v)
-                        <tr>
-                            <td style="width:3%" class="click" name="status" >
-                                @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
-                                <i class="am-badge tpl-badge-danger am-round">1</i>
-                                @endif
-                            </td>
-                            <td style="width:3%">{{$v['id']}}</td>
-                            <td style="width:40%">
-                                @if($v['catch_id'] == Session::get('id'))
-                                <a href="/back/{{$v['id']}}/edit">
-                                @else
-                                <a href="/message/{{$v['id']}}/edit">
-                                @endif
-                                    <div class="content">{{$v['content']}}</div>
-                                </a>
-                            </td>
-                            <td style="width:8%">{{$v['send_id']}}</td>
-                            <td style="width:10%">{{$v['send_name']}}</td>
-                            <td style="width:10%" class="a">
-                                @if($v['catch_id'] == 0)
-                                    全员消息
-                                @else
-                                    {{$v['catch_id']}}
-                                @endif
-                            </td>
-                            <td style="width:14%">{{$v['created_at']}}</td>
-                            <td style="width:14%">{{$v['updated_at']}}</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        @if($v['catch_id'] == Session::get('id'))
-                                        <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 回复</a>
+                            @if($v['catch_id'] == Session::get('id') || $v['send_id'] == Session::get('id'))
+                            <tr>
+                                <td style="width:3%" class="click" name="status" >
+                                    @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
+                                    <i class="am-badge tpl-badge-danger am-round">1</i>
+                                    @endif
+                                </td>
+                                <td style="width:3%">{{$v['id']}}</td>
+                                <td style="width:35%">
+                                    @if($v['catch_id'] == Session::get('id'))
+                                    <a href="/back/{{$v['id']}}/edit">
+                                    @else
+                                        @if($v['send_id'] == Session::get('id'))
+                                            <a href="/message/{{$v['id']}}/edit">
                                         @else
-                                        <a style="float:left; width: 62.5px" href="/message/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                            <a href="/back/{{$v['id']}}/edit">
                                         @endif
-                                        <form style="float:left; width: 62.5px" action="/message/{{$v['id']}}" method="post">
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                            {{csrf_field('post')}} {{method_field('delete')}}
-                                        </form>
+                                    @endif
+                                        <div class="content">{{$v['content']}}</div>
+                                    </a>
+                                </td>
+                                <td style="width:8%">{{$v['send_id']}}</td>
+                                <td style="width:10%">{{$v['send_name']}}</td>
+                                <td style="width:10%" class="a">
+                                    @if($v['catch_id'] == 0)
+                                        全员消息
+                                    @else
+                                        @foreach($user as $u)
+                                            @if($v['catch_id'] == $u['id'])
+                                                <div class="username" style="width:90px">{{$u['username']}}</div>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </td>
+                                <td style="width:10%">{{$v['created_at']}}</td>
+                                <td style="width:10%">{{$v['updated_at']}}</td>
+                                <td style="width:8%">
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            @if($v['send_id'] == Session::get('id'))
+                                                @if($v['catch_id'] == Session::get('id'))
+                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 回复</a>
+                                                @else
+                                                <a style="float:left; width: 62.5px" href="/message/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                                @endif
+                                            @else
+                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 查看</a>
+                                            @endif
+                                            <form style="float:left; width: 62.5px" action="/message/{{$v['id']}}" method="post">
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                {{csrf_field('post')}} {{method_field('delete')}}
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                            @endif
                         @endforeach
                     </table>
                 </div>

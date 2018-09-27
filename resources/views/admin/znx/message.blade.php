@@ -13,7 +13,7 @@
         <div style="height: 50px">
             <form action="/message/create" method="get">
                 <div class="am-input-group am-input-group-sm">
-                    <input type="text" name="keywords" class="am-form-field" value="{{request()->keywords}}">
+                    <input type="text" name="keywords" class="am-form-field" value="{{request()->keywords}}" placeholder="请选择需要接收消息的人, 默认为全员消息. ">
                     <span class="am-input-group-btn">
                         <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"></button>
                       </span>
