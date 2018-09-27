@@ -110,6 +110,8 @@ class MessageController extends Controller
         $messages -> send_id = $request->send_id;
         $messages -> send_name = $request->send_name;
 
+        $messages -> status = '0'; 
+
         if ($messages -> save()) {
             return redirect('/message')->with('success', '更新成功');
         }else{
@@ -168,9 +170,7 @@ class MessageController extends Controller
     public function look($id)
     {
         //
-        $messages = Message::findorFail($id);
-        $messages -> status = '1'; 
-        $messages ->save();
+        $messages = Message::onlyTrashed()->findorFail($id);
         return view('admin.znx.look',compact('messages'));
     }
 
@@ -179,17 +179,52 @@ class MessageController extends Controller
     public function recycle()
     {
         $user = User::all();
-        $recycle = Message::onlyTrashed()
-                ->where('id', 1)
-                ->get();
+        $recycle = Message::onlyTrashed()->get();
         $messages = Message::orderBy('id','desc')
         ->where('content', 'like','%'.request()->keywords.'%')
         ->paginate(5);
         return view('admin.znx.recycle',compact('recycle','messages','user'));
-
     }
 
-    /*---------------------------------------------------------------------------------------*/
+    //恢复消息
+    public function restore($id)
+    {
+        $recycle = Message::onlyTrashed()->findorFail($id);
+        $recycle -> status = '1'; 
+        $recycle ->save();
+        if ($recycle -> restore()) {
+            return redirect('/message')->with('success', '恢复成功');
+        }else{
+            return back()->with('error', '恢复失败');
+        }
+    }
+
+    //永久删除消息
+    public function dele($id)
+    {
+        $dele = Message::onlyTrashed()->findorFail($id);
+        if($dele->forceDelete()) {
+            return redirect('/admin/recycle')->with('success', '删除成功');
+        }else{
+            return back()->with('error', '删除失败');
+        }
+    }
+
+    //设置为未读
+    public function noread(Request $request,$id)
+    {
+        $messages = Message::findOrFail($id);
+
+        $messages -> status = '0'; 
+
+        if ($messages -> save()) {
+            return redirect('/message')->with('success', '设置成功');
+        }else{
+            return back()->with('error', '设置失败');
+        }
+    }
+
+    /*--------------------------------------↓前台用户↓-------------------------------------------------*/
 
     //用户消息列表
     public function list()

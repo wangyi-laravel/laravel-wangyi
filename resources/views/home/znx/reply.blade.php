@@ -41,7 +41,7 @@
             <div class="Csunbmit">
                 <label class="Cnick"></label>
                 <input type="hidden" name="send_id" value="{{Session::get('id')}}">
-                <input type="hidden" class="Cusername" placeholder="" name="send_name" value="{{Session::get('username')}}"></input>
+                <input type="hidden" class="Cusername" placeholder="" name="send_name" value="{{Session::get('name')}}"></input>
                 <button class="submitBtn">回复</button>
             </div>
         </div>

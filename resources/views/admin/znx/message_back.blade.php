@@ -36,8 +36,13 @@
                 <input type="hidden" name="send_id" value="{{Session::get('id')}}">
                 <input type="hidden" class="Cusername" placeholder="" name="send_name" value="{{Session::get('username')}}"></input>
                 <button class="submitBtn">回复</button>
+
+
             </div>
         </div>
     </div>
+</form>
+<form action="/noread/{{$message['id']}}" method="get">
+<button class="submitBtn" >设为未读</button>
 </form>
 @endsection

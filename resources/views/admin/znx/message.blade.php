@@ -53,7 +53,7 @@
         <div class="Csunbmit">
             <label class="Cnick">你的昵称：</label>
             <input type="hidden" name="send_id" value="{{Session::get('id')}}" />
-            <input class="Cusername" placeholder="" name="send_name" value="{{Session::get('name')}}"></input>
+            <input class="Cusername" placeholder="" name="send_name" value="{{Session::get('username')}}"></input>
             <button class="submitBtn">发布通知</button>
         </div>
     </div>

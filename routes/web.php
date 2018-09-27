@@ -83,9 +83,18 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 	//站内信
 	Route::resource('message','MessageController');
+	//回消息
 	Route::get('/back/{id}/edit','MessageController@back');
+	//查看消息
 	Route::get('/look/{id}/edit','MessageController@look');
+	//执行回复
 	Route::post('/doback/{id}','MessageController@doback');
+	//恢复消息
+	Route::get('/restore/{id}','MessageController@restore');
+	//彻底删除消息
+	Route::get('/del/{id}','MessageController@dele');
+	//标为未读
+	Route::get('/noread/{id}','MessageController@noread');
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');
