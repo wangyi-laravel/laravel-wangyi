@@ -210,7 +210,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
                                 </div>
                                 <div class="Csunbmit">
                                     <label class="Cnick"></label>
-                                    <input type="hidden"class="Cusername" value="￥&nbsp;{{$good['title']}}♔★♔{{Session::get('name')}}"id="Cusername"></input>
+                                    <input type="hidden"class="Cusername" value="商品:&nbsp;{{$good['title']}}★用户名:{{Session::get('name')}}"id="Cusername"></input>
                                     <button class="submitBtn" onclick="submit_pl(0)">发起❤飞吻</button>
                                 </div>
                             </div>
