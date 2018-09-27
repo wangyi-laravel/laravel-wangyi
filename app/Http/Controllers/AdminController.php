@@ -85,7 +85,7 @@ class AdminController extends Controller
 		//校验密码
 		if(Hash::check($request->password, $user->password)){
 			//写入session
-			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight]);
+			session(['username'=>$user->username, 'id'=>$user->id,'password'=>$user->password,'weight'=>$user->weight,'name'=>$user->name]);
 			return redirect('/admin')->with('success','登陆成功');
 		}else{
 			return back()->with('error','登陆失败!');

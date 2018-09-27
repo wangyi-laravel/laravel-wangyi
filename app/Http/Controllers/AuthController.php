@@ -18,8 +18,6 @@ class AuthController extends Controller
  
     public function callback() {
         $oauthUser = \Socialite::with('weibo')->user();
-        // dd($oauthUser->expiresIn);
- 		
         // dd($oauthUser->avatar);
  		$user = new User;
  		$res = $user -> where('username','=',$oauthUser->id)->get()->first();
