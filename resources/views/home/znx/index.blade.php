@@ -28,7 +28,6 @@
       <?php 
         $mtime = strtotime($v['created_at']);
         $utime = Session::all();
-        print_r($utime);
 
        ?>
       <tr>
