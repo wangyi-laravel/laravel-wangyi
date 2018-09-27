@@ -50,6 +50,7 @@
                                 <th class="table-title">所在市</th>
                                 <th class="table-title">所在区</th>
                                 <th class="table-title">详细地址</th>
+                                <th class="table-title">所属用户</th>
                                 <th class="table-set">操作</th>
                             </tr>
                         </thead>
@@ -67,6 +68,13 @@
                                 <td class="am-hide-sm-only">{{$v['shi']}}</td>
                                 <td class="am-hide-sm-only">{{$v['qu']}}</td>
                                 <td class="am-hide-sm-only">{{$v['address']}}</td>
+                                <td class="am-hide-sm-only">
+                                @foreach($users as $u)
+                                @if($v['user_id'] == $u['id'])
+                                    {{$u['name']}}
+                                @endif
+                                @endforeach
+                                </td>
                                 
                                 <td>
                                     <div class="am-btn-toolbar">

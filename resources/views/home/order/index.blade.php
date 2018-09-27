@@ -30,16 +30,16 @@ body{
             <td>收货人姓名</td>
             <td>收货人电话</td>
         </tr>
+        @foreach($sites as $v)
         <tr>
-            @foreach($sites as $v)
-            <td><input type="radio" name="" value="{{$v['id']}}"></td>
+            <td><input type="radio" name="danxuan" value="{{$v['id']}}"></td>
             <td>{{$v['sheng']}}{{$v['shi']}}{{$v['qu']}}</td>
             <td>{{$v['address']}}</td>
             <td>{{$v['mail']}}</td>
             <td>{{$v['name']}}</td>
             <td>{{$v['call']}}</td>
-            @endforeach
         </tr>
+         @endforeach
     </table>
     <div class="container">
         <nav class="navbar navbar-inverse col-md-12" style="color:white;">
