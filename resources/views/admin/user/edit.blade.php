@@ -66,13 +66,6 @@
                         </div>
                     </div>
 
-                    <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">地址 <span class="tpl-form-line-small-title">site</span></label>
-                        <div class="am-u-sm-9">
-                            <input type="text" name="site" class="tpl-form-input" id="user-name" value="{{$user -> site}}">
-                            <small></small>
-                        </div>
-                    </div>
 
                     <div class="am-form-group">
                         <div class="am-u-sm-9 am-u-sm-push-3">

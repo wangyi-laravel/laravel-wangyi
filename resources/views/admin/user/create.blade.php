@@ -65,24 +65,6 @@
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">地址 <span class="tpl-form-line-small-title">site</span></label>
-                        <div class="am-u-sm-9" id="city_china">
-                            <select class="province" name="sheng">
-                            </select>
-                            <select class="city" name="shi">
-                            </select>
-                            <select class="area" name="qu">
-                            </select>
-                        </div>
-                        <script>
-                    var urlChina = '/sj/js/cityData.min.json';
-                    $.cxSelect.defaults.url = urlChina;
-                    $('#city_china').cxSelect({
-                        selects: ['province', 'city', 'area']
-                    });
-                    </script>
-                    </div>
-                    <div class="am-form-group">
                         <div class="am-u-sm-9 am-u-sm-push-3">
                             <button class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
                         </div>
