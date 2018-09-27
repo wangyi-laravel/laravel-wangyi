@@ -168,9 +168,7 @@ class MessageController extends Controller
     public function look($id)
     {
         //
-        $messages = Message::findorFail($id);
-        $messages -> status = '1'; 
-        $messages ->save();
+        $messages = Message::onlyTrashed()->findorFail($id);
         return view('admin.znx.look',compact('messages'));
     }
 
@@ -179,14 +177,33 @@ class MessageController extends Controller
     public function recycle()
     {
         $user = User::all();
-        $recycle = Message::onlyTrashed()
-                ->where('id', 1)
-                ->get();
+        $recycle = Message::onlyTrashed()->get();
         $messages = Message::orderBy('id','desc')
         ->where('content', 'like','%'.request()->keywords.'%')
         ->paginate(5);
         return view('admin.znx.recycle',compact('recycle','messages','user'));
+    }
 
+    //恢复消息
+    public function restore($id)
+    {
+        $recycle = Message::onlyTrashed()->findorFail($id);
+        if ($recycle -> restore()) {
+            return redirect('/message')->with('success', '恢复成功');
+        }else{
+            return back()->with('error', '恢复失败');
+        }
+    }
+
+    //永久删除消息
+    public function dele($id)
+    {
+        $dele = Message::onlyTrashed()->findorFail($id);
+        if($dele->forceDelete()) {
+            return redirect('/admin/recycle')->with('success', '删除成功');
+        }else{
+            return back()->with('error', '删除失败');
+        }
     }
 
     /*---------------------------------------------------------------------------------------*/

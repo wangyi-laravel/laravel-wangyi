@@ -31,22 +31,11 @@
         <div class="am-g">
             <div class="am-u-sm-12 am-u-md-6">
                 <div class="am-btn-toolbar">
-                    <div class="am-btn-group am-btn-group-xs">
-                        <a href="/message/create">
-                            <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
             <div class="am-u-sm-12 am-u-md-3">
-                <form action="/message" method="get">
-                    <div class="am-input-group am-input-group-sm">
-                        <input type="text" name="keywords" class="am-form-field" placeholder="{{request()->keywords}}">
-                        <span class="am-input-group-btn">
-                        <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"></button>
-                      </span>
-                    </div>
-                </form>
+                
             </div>
         </div>
         <div class="am-g">
@@ -54,7 +43,6 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-
                             <td style="width:3%">id</td>
                             <td style="width:35%">消息内容</td>
                             <td style="width:8%">发送人id</td>
@@ -70,15 +58,7 @@
 
                                 <td style="width:3%">{{$v['id']}}</td>
                                 <td style="width:35%">
-                                    @if($v['catch_id'] == Session::get('id'))
-                                    <a href="/back/{{$v['id']}}/edit">
-                                    @else
-                                        @if($v['send_id'] == Session::get('id'))
-                                            <a href="/message/{{$v['id']}}/edit">
-                                        @else
-                                            <a href="/back/{{$v['id']}}/edit">
-                                        @endif
-                                    @endif
+                                    <a href="/look/{{$v['id']}}/edit">
                                         <div class="content">{{$v['content']}}</div>
                                     </a>
                                 </td>
@@ -100,18 +80,10 @@
                                 <td style="width:8%">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            @if($v['send_id'] == Session::get('id'))
-                                                @if($v['catch_id'] == Session::get('id'))
-                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 回复</a>
-                                                @else
-                                                <a style="float:left; width: 62.5px" href="/message/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
-                                                @endif
-                                            @else
-                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 查看</a>
-                                            @endif
-                                            <form style="float:left; width: 62.5px" action="/message/{{$v['id']}}" method="post">
+                                            <a style="float:left; width: 62.5px" href="/look/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 查看</a>
+                                            <form style="float:left; width: 62.5px" action="/del/{{$v['id']}}" method="get">
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                                {{csrf_field('post')}} {{method_field('delete')}}
+                                                {{csrf_field()}} 
                                             </form>
                                         </div>
                                     </div>
