@@ -38,6 +38,7 @@
                 use \App\Message;
                 use \App\User;
                     $messages = Message::where('catch_id',Session('id'))->count();
+                    $mess = Message::where('catch_id',Session('id'))->where('status','0')->count();
                     $contents = Message::orderby('id','desc')->where('catch_id',Session('id'))->take(2)->get();
                     $user = User::all();
 
@@ -46,14 +47,14 @@
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                         <span class="am-icon-comment-o"></span> 消息 
-                        @if($messages != 0 && $messages['catch_id'] != Session::get('id'))
-                        <span class="am-badge tpl-badge-danger am-round">{{$messages}}</span>
+                        @if($messages['status'] == 0 && $mess !=0)
+                        <span class="am-badge tpl-badge-danger am-round">{{$mess}}</span>
                         @endif
                         </span>
                     </a>
                     <ul class="am-dropdown-content tpl-dropdown-content">
                         <li class="tpl-dropdown-content-external">
-                            <h3>你有 <span class="tpl-color-danger">{{$messages}}</span> 条新消息</h3><a href="/message">查看全部</a></li>
+                            <h3>你有 <span class="tpl-color-danger">{{$mess}}</span> 条新消息</h3><a href="/message">查看全部</a></li>
                         <li>
                             @foreach($contents as $v)
                             <a href="#" class="tpl-dropdown-content-message">
@@ -73,10 +74,11 @@
                                             if ($ago1 > 60) {
                                                 echo $v['created_at'];
                                             }else{
-                                                if ($ago < 1) {
+                                                if ($ago < 60) {
                                                     echo '刚刚';
+                                                }else{
+                                                    echo $ago1.'分钟之前';
                                                 }
-                                                echo $ago1.'分钟之前';
                                             }
                                             
                                          ?>

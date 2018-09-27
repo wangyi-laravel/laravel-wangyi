@@ -65,13 +65,21 @@
                             <td style="width:8%">操作</td>
                         </tr>
                         @foreach($messages as $v)
-                            @if($v['catch_id'] == Session::get('id') || $v['send_id'] == Session::get('id'))
+                            @if($v['catch_id'] == Session::get('id') || $v['send_id'] == Session::get('id') || $v['catch_id'] == 0)
                             <tr>
+                                @if($v['catch_id'] == 0)
+                                <td style="width:3%" class="click" name="status" >
+                                    @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
+                                    <i class="am-badge btn-info am-round">1</i>
+                                    @endif
+                                </td>
+                                @else
                                 <td style="width:3%" class="click" name="status" >
                                     @if($v['status'] == 0 && $v['send_id'] != Session::get('id'))
                                     <i class="am-badge tpl-badge-danger am-round">1</i>
                                     @endif
                                 </td>
+                                @endif
                                 <td style="width:3%">{{$v['id']}}</td>
                                 <td style="width:35%">
                                     @if($v['catch_id'] == Session::get('id'))
@@ -106,12 +114,16 @@
                                         <div class="am-btn-group am-btn-group-xs">
                                             @if($v['send_id'] == Session::get('id'))
                                                 @if($v['catch_id'] == Session::get('id'))
-                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 回复</a>
+                                                    <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-btn-icon-pencil-square-o"></span> 回复</a>
                                                 @else
-                                                <a style="float:left; width: 62.5px" href="/message/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                                    <a style="float:left; width: 62.5px" href="/message/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="actionm-icon-pencil-square-o"></span> 编辑</a>
                                                 @endif
                                             @else
-                                                <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 查看</a>
+                                                @if($v['catch_id'] == Session::get('id'))
+                                                    <a style="float:left; width: 62.5px" href="/back/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-btn-icon-pencil-square-o"></span> 回复</a>
+                                                @else
+                                                    <a style="float:left; width: 62.5px" href="/look/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 查看</a>
+                                                @endif
                                             @endif
                                             <form style="float:left; width: 62.5px" action="/message/{{$v['id']}}" method="post">
                                                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>

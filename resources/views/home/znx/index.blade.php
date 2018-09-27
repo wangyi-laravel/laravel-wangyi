@@ -1,4 +1,5 @@
 @extends('home.jicheng.touti') @section('content')
+
 <style type="text/css">
   .one{
     width: 1100px;
@@ -28,7 +29,6 @@
       <?php 
         $mtime = strtotime($v['created_at']);
         $utime = Session::all();
-        print_r($utime);
 
        ?>
       <tr>
@@ -41,7 +41,7 @@
         <td style="width: 10%">{{$v['send_name']}}</td>
         <td style="width: 10%">
           <a href="/reply/{{$v['id']}}"><button class="label label-info"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></button></a>
-
+          <input type="hidden" name="time" value="{{Session::get('created_at')}}">
           <form style="float:left; width: 62.5px" action="/del/{{$v['id']}}" method="post">
               <button class="label label-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">删除</font></font></button>
               {{csrf_field()}} 

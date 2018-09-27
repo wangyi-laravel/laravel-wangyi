@@ -40,7 +40,6 @@ class Shouyecontroller extends Controller
     public function store(Request $request)
     {
         
-
         $this->validate($request, [
         'username' => 'required|regex:/^\w{2,12}$/',
         ]);          
