@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use App\User;
-use Illuminate\Contracts\Session\Session;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,10 +18,11 @@ class MessageController extends Controller
     public function index()
     {
         //
+        $user = User::all();
         $messages = Message::orderBy('id','desc')
         ->where('content', 'like','%'.request()->keywords.'%')
-        ->paginate(2);
-        return view('admin.znx.message_list',compact('messages'));
+        ->paginate(8);
+        return view('admin.znx.message_list',compact('messages','user'));
     }
 
     /**
@@ -53,26 +54,14 @@ class MessageController extends Controller
         $messages -> content = $request->content;
         $messages -> send_id = $request->send_id;
         $messages -> send_name = $request->send_name;
-        $messages-> catch_id = $request->catch_id;
 
         if ($request->catch_id) {
-            $messages->catch_id = $request->catch_id;
+            $messages-> catch_id = $request->catch_id;
         }else{
             $messages->catch_id = 0;
         }
 
-        // DB::beginTransaction();
         if ($messages -> save()) {
-
-            // 写加入中间表
-            /*try{
-                $res = $messages->users()->sync($request->catch_id);
-                DB::commit();
-                return redirect('/message')->with('success','添加成功');
-            }catch(\Exception $e){
-                DB::rollback();
-                return back()->with('error','添加失败!');
-            }*/
             return redirect('/message')->with('success', '添加成功');
         }else{
             return back()->with('error', '添加失败');
@@ -188,7 +177,7 @@ class MessageController extends Controller
         return view('admin.znx.recycle',compact('recycle','messages'));
     }
 
-    /*---------------------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------*/
 
     //用户消息列表
     public function list()

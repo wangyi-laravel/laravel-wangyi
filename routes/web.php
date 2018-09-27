@@ -88,11 +88,14 @@ Route::group(['middleware'=>['login','admin']],function(){
 
 	//消息数量
 	Route::get('/htadmin','MessageController@htadmin');
+
 	Route::get('/admin/recycle','MessageController@recycle');
 
-	//订单管理
-	Route::get('/order/index','AdminOrderController@index');
 
+	//订单管理
+	Route::get('/orders/index','AdminOrderController@index');
+	Route::post('/orders/{id}','AdminOrderController@delete');
+	Route::get('/orders/{id}/edit','AdminOrderController@edit');
 });
 
 
@@ -174,7 +177,7 @@ Route::group(['middleware'=>'home'],function(){
 
 	//订单
 	Route::post('/order/TianJia/{id?}','OrderController@TianJia');
-	Route::get('/order/liebiao/{id}','OrderController@liebiao');
+	Route::get('/order/liebiao/{dd}','OrderController@liebiao');
 
 	//用户消息列表
 	Route::get('/messages','MessageController@list');

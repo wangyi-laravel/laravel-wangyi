@@ -21,8 +21,9 @@ class Cart_itemsController extends Controller
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
+        $sizes = Sizes::all();
         $goods = Good::orderBy('id','desc');
-         return view('home.Cart_items.index',compact('setting','link','cates','goods'));
+         return view('home.Cart_items.index',compact('setting','link','cates','goods','sizes'));
     }
 
     /**

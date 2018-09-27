@@ -128,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
                                 <b><span class="am-icon-comment-o"></span> 消息 
                                     @if($messages != 0)
-                                    <span class="badge">{{$messages}}</span>
+                                    <span class="am-badge tpl-badge-danger am-round">{{$messages}}</span>
                                     @endif
                                 </b>
                             </a>

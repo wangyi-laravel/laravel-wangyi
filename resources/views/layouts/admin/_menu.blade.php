@@ -226,7 +226,7 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none;">
             <li>
-                <a href="/order/index">
+                <a href="/orders/index">
                     <i class="am-icon-angle-right"></i>
                     <span>订单列表管理</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
