@@ -54,7 +54,7 @@ class UserController extends Controller
         $user -> name = $request->name;
         $user -> phone = $request->phone;
         $user -> sex = $request->sex;
-        $user -> weight = $request->weight;
+        $user -> sheng = $request->sheng;
         // dd($request->post());
         if ($request -> hasFile('image')) {
 

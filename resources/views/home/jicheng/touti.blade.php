@@ -21,9 +21,8 @@
 <head>
 
       
-    <title>Home</title>
+    <title>武'装'大师</title>
     <!-- for-mobile-apps -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Classic Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -40,7 +39,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/jquery.min.js"></script>
     <!-- //js -->
     <!-- 评论引入 -->
-    
     <!-- 评论结束 -->
     <!-- cart -->
     <script src="/qiantai/js/simpleCart.min.js"></script>
@@ -53,24 +51,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/qiantai/js/wow.min.js"></script>
     <script>
     new WOW().init();
-
-
     </script>
     <!-- //animation-effect -->
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/amazeui.min.css" />
-  <link rel="stylesheet" href="/assets/css/admin.css">
-  <link rel="stylesheet" href="/assets/css/app.css">
-
-
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style type="text/css">
-        .multi{
-            width:2px;
-        }
-        
+    .multi {
+        width: 2px;
+    }
     </style>
-
     <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
     <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/pingluns/js/qna.js"></script>
@@ -80,12 +72,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
     <style>
-.chaochu{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-</style>
+    .chaochu {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    </style>
     <!-- header -->
     <div class="header">
         <div class="header-grid">
@@ -107,23 +99,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><i class="glyphicon glyphicon-book"></i><a href="/register">注册</a></li>
                             @endif @if(Session::has('id'))
                             <li><a href="/home/people/{{session('id')}}">个人信息</a></li>
-                            <li></i><a href="/home/site">收货地址</a></li>
+                            <li>
+                                </i><a href="/home/site">收货地址</a></li>
                             <li><a href="/home/logout">退出</a></li>
-                            <li>{{Session::get('name')}}<img src="{{Session::get('image')}}" style="border-radius:50%;width:40px;height:40px;margin-left:3px;" ></li>
+                            <li>{{Session::get('name')}}
+                                <img src="{{Session::get('image')}}" alt="" onerror="this.src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538619261&di=7b82a72f2d41e7d6a47ddb81531c129e&imgtype=jpg&er=1&src=http%3A%2F%2Fdesk.fd.zol-img.com.cn%2Fg5%2FM00%2F0B%2F0A%2FChMkJlaoaXSIPSZyAAkRZnVdTP4AAHtfgG80z0ACRF-307.jpg'"/ style="border-radius:50%;width:40px;height:40px;margin-left:3px;">
+                            </li>
                             @endif
                         </ul>
                     </div>
                     @if(Session::has('id'))
-                    <div class="message" >
+                    <div class="message">
                         <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle style="padding-left: 20px;">
-                            <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
+                            <a class="am-dropdown-toggle tpl-header-list-link" href="/home/cart_items">
                                 <b><span class="glyphicon glyphicon-shopping-cart"></span> 购物车 
                                    
                                 </b>
                             </a>
                         </li>
                     </div>
-                    <div class="message" >
+                    <div class="message">
                         <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle style="padding-left: 20px;">
                             <a class="am-dropdown-toggle tpl-header-list-link" href="/messages">
                                 <b><span class="am-icon-comment-o"></span> 消息 
@@ -134,8 +129,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                         </li>
                     </div>
-                    
-
                     @endif
                     <div class="clearfix" style="margin-right:0px;"> </div>
                 </div>
@@ -167,10 +160,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     {{$v['name']}} <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi">
                                     <div class="row">
-                                        <div class="col-sm-4" >
-                                            <ul class="multi-column-dropdown" >
+                                        <div class="col-sm-4">
+                                            <ul class="multi-column-dropdown">
                                                 @if(!empty($v->child)) @foreach($v->child as $b)
-                                                <li style="float: left;"><a href="/home/liebiao?cate_id={{$b['id']}}" >{{$b['name']}}</a></li>
+                                                <li style="float: left;"><a href="/home/liebiao?cate_id={{$b['id']}}">{{$b['name']}}</a></li>
                                                 @endforeach @endif
                                             </ul>
                                         </div>
@@ -197,8 +190,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    @show 
-    @section('content')
+    @show @section('content')
     <!-- banner -->
     <div class="banner">
         <div class="banner-right">
@@ -340,15 +332,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="col-md-7 col-md2 animated wow fadeInRight" data-wow-delay=".1s">
-            @foreach($good2 as $v)
-            @if($v['cates_id'] == 2)
+            @foreach($good2 as $v) @if($v['cates_id'] == 2)
             <div class="col-sm-4 item-grid simpleCart_shelfItem">
                 <div class="grid-pro">
                     <div class=" grid-product ">
                         <figure>
                             <a href="/home/xiang?good_id={{$v['id']}}">
-                                <div class="grid-img" style="width:150px; height:300px">
-                                    <img src="{{$v['image']}}" class="img-responsive" alt="" style="width:150px; height:300px">
+                                <div class="grid-img">
+                                    <img src="{{$v['image']}}" class="img-responsive" width="1000" alt="">
+
                                 </div>
                             </a>
                         </figure>
@@ -361,8 +353,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+            @endif @endforeach
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
@@ -371,8 +362,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!---->
     <div class="content-top">
         <div class="col-md-7 col-md2 animated wow fadeInLeft" data-wow-delay=".1s">
-            @foreach($good1 as $v)
-            @if($v['cates_id'] == 1)
+            @foreach($good1 as $v) @if($v['cates_id'] == 1)
             <div class="col-sm-4 item-grid simpleCart_shelfItem">
                 <div class="grid-pro">
                     <div class=" grid-product ">
@@ -392,8 +382,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+            @endif @endforeach
             <div class="clearfix"></div>
         </div>
         <div class="col-md-5 col-md1 animated wow fadeInRight" data-wow-delay=".1s">
@@ -445,7 +434,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>联系我们</h3>
                     <ul>
                         <li><i class="glyphicon glyphicon-map-marker"></i>{{$v['address']}}</li>
-                        <li class="foot-mid"><i class="glyphicon glyphicon-envelope"></i><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x-Pw8fDx9-f18Ie2tumkqKo">{{$v['email']}}</a></li>
+                        <li class="foot-mid"><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=u4KMjo6Oio_IjvvKypXY1NY" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png"/></a></li>
                         <li><i class="glyphicon glyphicon-earphone"></i>{{$v['phone']}}</li>
                     </ul>
                 </div>

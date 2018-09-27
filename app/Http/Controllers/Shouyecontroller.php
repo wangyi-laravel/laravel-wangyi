@@ -40,7 +40,6 @@ class Shouyecontroller extends Controller
     public function store(Request $request)
     {
         
-
         $this->validate($request, [
         'username' => 'required|regex:/^\w{2,12}$/',
         ]);          
@@ -53,9 +52,9 @@ class Shouyecontroller extends Controller
         $user -> name = $request->name;
         $user -> image = url('http://www.imeitou.com/uploads/allimg/180913/3-1P913113U6-lp.jpg');
       	if($user -> save()){
-            return redirect('/login')->with('success','註冊成功');
+            return redirect('/login')->with('success','註冊成功,请登录');
         }else{
-            return back()->with('error','註冊失败');
+            return back()->with('error','註冊失败,请重试');
         }
       	
     }  

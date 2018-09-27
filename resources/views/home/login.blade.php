@@ -1,10 +1,25 @@
 @extends('home.jicheng.touti') @section('content')
 <style type="text/css">
-    .login-mail{
-        border: 0px  gray; 
-        background: white;
-    }
+.login-mail {
+    border: 0px gray;
+    background: white;
+}
 </style>
+<!-- 闪存start -->
+@if(Session::has('success'))
+<div class="am-u-sm-12" style="padding: 0px;margin: 0px;">
+    <div class="dashboard-stat green">
+        <div class="desc" style="text-align: center;line-height: 95px;color: white"> {{Session::get('success')}} </div>
+    </div>
+</div>
+@endif @if(Session::has('error'))
+<div class="am-u-sm-12" style="padding: 0px;margin: 0px;">
+    <div class="dashboard-stat red">
+        <div class="desc" style="text-align: center;line-height: 95px;color: white"> {{Session::get('error')}} </div>
+    </div>
+</div>
+@endif
+<!-- 闪存end -->
 <div class="login">
     <div class="container">
         <form action="/login" method="post">
@@ -16,7 +31,7 @@
                 </div>
                 <div class="login-mail">
                     <input id="show" type="password" placeholder="Password" required="" name="password" style="width:485px;">
-                    <i id="set" class="glyphicon glyphicon-eye-open" ></i>
+                    <i id="set" class="glyphicon glyphicon-eye-open"></i>
                 </div>
                 <style type="text/css">
                 #set {
@@ -27,18 +42,18 @@
                 <script>
                 $('#set').click(function() {
 
-                        if ($(this).attr('erro')==0) {
-                            $(this).attr('erro','1');
-                            $(this).attr('class','glyphicon glyphicon-eye-open');
-                            $('#show').attr('type',"password");
-                        } else {
-                            $(this).attr('erro','0');
+                    if ($(this).attr('erro') == 0) {
+                        $(this).attr('erro', '1');
+                        $(this).attr('class', 'glyphicon glyphicon-eye-open');
+                        $('#show').attr('type', "password");
+                    } else {
+                        $(this).attr('erro', '0');
 
-                            $(this).attr('class','glyphicon glyphicon-eye-close');
-                            
-                            $('#show').attr('type',"text");
-                        }
-                    });
+                        $(this).attr('class', 'glyphicon glyphicon-eye-close');
+
+                        $('#show').attr('type', "text");
+                    }
+                });
                 </script>
                 <input type="text" name="num" style="height: 40px; border: 0px solid black;">
                 <img src="{{url('/capcha')}}" alt="" onclick="this.src=this.src+'?'+Math.random()" width="100" height="40" border="0">

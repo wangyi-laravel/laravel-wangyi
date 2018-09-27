@@ -64,30 +64,20 @@
             </div>
             <!---->
         </div>
+        <form action="/home/liebiao" method="get">
         <div class="col-md-9 animated wow fadeInRight" data-wow-delay=".5s">
             <div class="mens-toolbar">
-                <p>Showing 1–9 of 21 results</p>
-                <p class="showing">Sorting By
-                    <select>
-                        <option value=""> Name</option>
-                        <option value=""> Rate</option>
-                        <option value=""> Color </option>
-                        <option value=""> Price </option>
-                    </select>
-                </p>
-                <p>Show
-                    <select>
-                        <option value=""> 9</option>
-                        <option value=""> 10</option>
-                        <option value=""> 11 </option>
-                        <option value=""> 12 </option>
-                    </select>
-                </p>
+                <p style="float: left; margin-top: 12px">筛选商品:</p>
+                    <div  style="float: left; width: 200px">
+                        <p><input type="text" name="keywords" class="am-form-field" placeholder="{{request()->keywords}}" style="width: 150px"></p><span><button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" ></button></span>
+                    </div>
+                
                 <div class="clearfix"></div>
             </div>
             <div class="mid-popular">
                 @foreach($good as $v)
                 @if($v['cate_id'] == $cate)
+                <input type="hidden" name="cate_id" value="{{$v['cate_id']}}">
                 <div class="col-sm-4 item-grid item-gr  simpleCart_shelfItem">
                     <div class="grid-pro">
                         <div class=" grid-product ">
@@ -113,6 +103,7 @@
                 </div>
                 @endif
                 @endforeach
+            </form>
                 <div class="clearfix"></div>
             </div>
         </div>

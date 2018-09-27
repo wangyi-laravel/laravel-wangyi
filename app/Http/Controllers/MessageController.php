@@ -164,17 +164,29 @@ class MessageController extends Controller
         }
     }
 
+    //查看消息
+    public function look($id)
+    {
+        //
+        $messages = Message::findorFail($id);
+        $messages -> status = '1'; 
+        $messages ->save();
+        return view('admin.znx.look',compact('messages'));
+    }
+
 
     //后台消息回收站
     public function recycle()
     {
+        $user = User::all();
         $recycle = Message::onlyTrashed()
-                ->where('airline_id', 1)
+                ->where('id', 1)
                 ->get();
         $messages = Message::orderBy('id','desc')
         ->where('content', 'like','%'.request()->keywords.'%')
         ->paginate(5);
-        return view('admin.znx.recycle',compact('recycle','messages'));
+        return view('admin.znx.recycle',compact('recycle','messages','user'));
+
     }
 
     /*---------------------------------------------------------------------------------------*/

@@ -41,7 +41,6 @@ class AdminController extends Controller
 
 		$setting -> author = $request->author;
 		$setting -> jianjie = $request->jianjie;
-		$setting -> email = $request->email;
 		$setting -> phone = $request->phone;
 		$setting -> address = $request->address;
 		

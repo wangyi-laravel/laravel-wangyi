@@ -55,7 +55,6 @@
                                 <th class="table-set">手机号</th>
                                 <th class="table-set">头像</th>
                                 <th class="table-set">性别</th>
-                                <th class="table-set">地址</th>
                                 <th class="table-set">积分</th>
                                 <th class="table-set">操作</th>
                             </tr>
@@ -89,7 +88,6 @@
                                         女
                                 @endif
                                 </td>
-                                <td class="am-hide-sm-only">{{$v['site']}}</td>
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">

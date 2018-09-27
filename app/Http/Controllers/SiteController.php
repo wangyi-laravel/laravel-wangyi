@@ -18,9 +18,10 @@ class SiteController extends Controller
     {
         //
         $sites = Site::all();
+        $users = User::all();
         // $users -> name = $request -> name;
         // dd($users);
-        return view('admin.site.index',compact('sites'));
+        return view('admin.site.index',compact('sites','users'));
     }
 
     /**

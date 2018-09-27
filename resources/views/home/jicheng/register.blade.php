@@ -81,7 +81,7 @@
                         <font style="vertical-align: inherit;">已经注册?</font>
                     </font>
                 </p>
-                <a href="login.html" class="hvr-sweep-to-top">
+                <a href="/login" class="hvr-sweep-to-top">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">登录</font>
                     </font>

@@ -21,7 +21,9 @@ class LiebiaoController extends Controller
         $setting = Setting::all();
         $link = Link::all();
         $cates = Cates::all();
-        $good = Good::all();
+        $good = Good::orderBy('id','desc')
+        ->where('title', 'like','%'.request()->keywords.'%')
+        ->get();
         $cate = $_GET['cate_id'];
         return view('home.liebiao.index',compact('setting','link','cates','good','cate'));
 
