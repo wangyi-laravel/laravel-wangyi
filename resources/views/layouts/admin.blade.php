@@ -99,7 +99,7 @@
                         <span class="tpl-header-list-user-nick">{{Session::get('username')}}</span><span class="tpl-header-list-user-ico"><img src="{{Session::get('image')}}"></span>
                     </a>
                     <ul class="am-dropdown-content">
-                        <li><a href="/admin/setting"><span class="am-icon-cog"></span> 设置</a></li>
+                        <li><a href="/admin/set"><span class="am-icon-cog"></span> 设置</a></li>
                         <li><a href="/admin/logout"><span class="am-icon-power-off"></span> 退出</a></li>
                     </ul>
                 </li>
