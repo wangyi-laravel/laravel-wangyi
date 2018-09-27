@@ -21,7 +21,6 @@ class CreateCartItemsTable extends Migration
             $table->string('color')->comment('商品颜色')->nullable();
             $table->string('size')->comment('商品尺寸')->nullable();
             $table->Integer('user_id')->comment('用户ID');
-            $table->string('amount')->comment('数量');
             $table->timestamps();
         });
     }

@@ -21,6 +21,26 @@ body{
 </style>
 <form action="/order/jiezhang" method="get">
     {{csrf_field()}}
+    <table class="container table-hover" style="margin-bottom: 40px ">
+        <tr style="background-color: black;color: white">
+            <td>用户编号</td>
+            <td>收货地址</td>
+            <td>详细地址</td>
+            <td>邮政编码</td>
+            <td>收货人姓名</td>
+            <td>收货人电话</td>
+        </tr>
+        <tr>
+            @foreach($sites as $v)
+            <td><input type="radio" name="" value="{{$v['id']}}"></td>
+            <td>{{$v['sheng']}}{{$v['shi']}}{{$v['qu']}}</td>
+            <td>{{$v['address']}}</td>
+            <td>{{$v['mail']}}</td>
+            <td>{{$v['name']}}</td>
+            <td>{{$v['call']}}</td>
+            @endforeach
+        </tr>
+    </table>
     <div class="container">
         <nav class="navbar navbar-inverse col-md-12" style="color:white;">
             <table>
