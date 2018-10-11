@@ -39,11 +39,11 @@
                     <button class="submitBtn">回复</button>
                 </div>
             </form>
-            <button class="submitBtn" >设为未读</button>
+            <form action="/noread/{{$message['id']}}" method="get">
+                <button class="submitBtn" >设为未读</button>
+            </form>
         </div>
     </div>
-</form>
-<form action="/noread/{{$message['id']}}" method="get">
 
 
 @endsection
